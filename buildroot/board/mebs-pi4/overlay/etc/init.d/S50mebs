@@ -1,0 +1,20 @@
+#!/bin/sh
+case "$1" in
+  start)
+    mkdir -p /run/mebs
+    export MEBS_FONT=/usr/share/fonts/mebs/NotoSansCJK-Regular.ttc
+    export PYTHONDONTWRITEBYTECODE=1
+    start-stop-daemon -S -b -m -p /run/mebs.pid -x /usr/bin/mebs -- appliance >>/run/mebs/service.log 2>&1
+    ;;
+  stop)
+    if [ -f /run/mebs.pid ]; then
+      pid=$(cat /run/mebs.pid)
+      kill -TERM "$pid" 2>/dev/null || true
+      # Do not kill a running copy or unmount operation during normal shutdown.
+      while kill -0 "$pid" 2>/dev/null; do sleep 1; done
+      rm -f /run/mebs.pid
+    fi
+    ;;
+  restart) "$0" stop; "$0" start ;;
+  *) echo "Usage: $0 {start|stop|restart}" >&2; exit 1 ;;
+esac

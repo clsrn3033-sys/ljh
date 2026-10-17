@@ -1,0 +1,28 @@
+OK      git
+OK      python3
+OK      gcc
+OK      g++
+OK      make
+OK      which
+OK      sed
+OK      ld
+OK      diff
+OK      bash
+MISSING patch
+OK      gzip
+OK      bzip2
+OK      perl
+OK      tar
+OK      cpio
+OK      unzip
+OK      rsync
+OK      file
+OK      bc
+OK      find
+OK      awk
+OK      wget
+QEMU: /usr/bin/qemu-system-x86_64
+KVM visible: no
+Available disk:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda3       465G  311G  150G  68% /var/home/bazzite

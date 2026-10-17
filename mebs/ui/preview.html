@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<title>MEBS · 현장 백업 미리보기</title>
+<style>
+:root{color-scheme:dark;--bg:#080d14;--card:#111b28;--line:#253246;--muted:#94a3b8;--white:#f1f5f9;--orange:#ff9d47;--green:#63dfac}
+*{box-sizing:border-box}body{margin:0;color:var(--white);background:radial-gradient(ellipse at 80% 0%,#182638 0,transparent 50%),var(--bg);font-family:system-ui,-apple-system,"Noto Sans CJK KR",sans-serif;line-height:1.6}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid var(--orange);outline-offset:4px}main{max-width:1240px;margin:auto;padding:32px 36px 60px}header{display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:1px solid var(--line);padding-bottom:24px}.brand{font-size:26px;font-weight:800;letter-spacing:1px}.brand span{color:var(--orange)}.tag{color:var(--muted);font-size:11px;letter-spacing:2px}.hero{display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:30px;margin:46px 0 30px}.eyebrow{font-size:11px;letter-spacing:2px;color:var(--orange);font-weight:700}h1{font-size:clamp(28px,4vw,43px);line-height:1.3;letter-spacing:-1.8px;margin:12px 0 0}.intro{color:var(--muted);font-size:14px;margin:0;max-width:480px}.layout{display:grid;grid-template-columns:minmax(0,1fr) 248px;gap:22px;align-items:start}.device{padding:14px;border:1px solid #344151;border-radius:23px;background:linear-gradient(135deg,#25303b,#111923);box-shadow:0 24px 80px #0007}.screen{aspect-ratio:5/3;overflow:hidden;border-radius:10px;background:#0b111b}.screen img{display:block;width:100%;height:auto}.device-bottom{display:flex;justify-content:space-between;align-items:center;padding:10px 11px 0;color:#7c899a;font-size:9px;letter-spacing:2px}.led{width:5px;height:5px;background:var(--green);border-radius:50%;box-shadow:0 0 8px #63dfac55}.playback{margin-top:20px;display:flex;align-items:center;justify-content:space-between;gap:12px}.buttons{display:flex;gap:8px}.control{padding:9px 15px;border-radius:9px;border:1px solid var(--line);background:#152132;color:var(--white);font-size:13px}.control.primary{background:var(--orange);border-color:var(--orange);color:#1b130c;font-weight:750}.control:disabled{opacity:.35;cursor:default}.counter{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}.track{width:100%;accent-color:var(--orange);margin:16px 0 6px}.caption{display:flex;justify-content:space-between;gap:15px;color:var(--muted);font-size:11px}.panel{background:#111b28bb;border:1px solid var(--line);border-radius:15px;padding:20px}.panel+.panel{margin-top:14px}.panel-title{font-size:12px;font-weight:700;margin:0 0 15px}.cases{display:grid;gap:9px}.case{background:transparent;border:1px solid var(--line);border-radius:10px;padding:13px 14px;text-align:left;color:var(--white);font-size:14px}.case small{display:block;color:var(--muted);font-size:11px;margin-top:2px}.case[aria-pressed=true]{border-color:var(--orange);background:#ff9d470b}.facts{margin:0}.facts div{display:flex;justify-content:space-between;gap:10px;margin:12px 0;font-size:12px}.facts dt{color:var(--muted)}.facts dd{margin:0;color:var(--green)}.notice{font-size:11px;color:var(--muted);margin:14px 0 0;line-height:1.8}.below{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}.feature{padding:19px 0;border-top:1px solid var(--line)}.feature b{display:block;font-size:14px;margin-bottom:7px}.feature p{color:var(--muted);font-size:12px;margin:0}details{margin-top:20px;border:1px solid var(--line);border-radius:12px;padding:15px 18px;font-size:12px}summary{cursor:pointer;color:var(--muted)}pre{overflow:auto;max-height:320px;color:#b9c7d7;font-size:11px;white-space:pre-wrap;word-break:break-all}footer{margin-top:26px;font-size:11px;color:var(--muted)}.pill{font-size:11px;padding:5px 10px;border:1px solid var(--line);border-radius:30px;color:var(--muted)}
+@media(max-width:950px){.layout{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:1fr 1fr;gap:14px}.panel+.panel{margin-top:0}.hero{grid-template-columns:1fr;gap:18px}.cases{grid-template-columns:1fr}.device{max-width:850px}}
+@media(max-width:560px){main{padding:20px 15px 35px}.tag{font-size:9px;letter-spacing:1px}.hero{margin:30px 0 24px}.sidebar,.below{grid-template-columns:1fr}.device{padding:8px;border-radius:15px}.screen{border-radius:7px}.control{padding:9px 12px}.caption{flex-direction:column;gap:3px}.below{gap:0}.playback{gap:8px}.counter{font-size:11px}.device-bottom{font-size:7px}.intro{font-size:13px}}
+</style>
+</head>
+<body>
+<main>
+ <header><div class="brand">M<span>E</span>BS</div><div class="tag">FIELD BACKUP / LOCAL PREVIEW</div></header>
+ <section class="hero"><div><div class="eyebrow">촬영 현장을 위한 독립형 백업기</div><h1>촬영은 계속.<br>백업은 MEBS.</h1></div><p class="intro">SD카드의 원본을 보존하며 외장 저장장치로 복사하고, SHA-256으로 확인합니다. 아래 화면은 실제 샘플 파일로 실행한 백업 기록을 재생합니다.</p></section>
+ <section class="layout">
+  <div>
+   <div class="device"><div class="screen"><img id="screen" alt="MEBS 백업 상태 화면" width="800" height="480"></div><div class="device-bottom"><span>MEBS · AUTO BACKUP</span><span class="led"></span><span>DISPLAY STUDY / 800 × 480</span></div></div>
+   <div class="playback"><div class="buttons"><button id="play" class="control primary">재생</button><button id="previous" class="control" aria-label="이전 화면">←</button><button id="next" class="control" aria-label="다음 화면">→</button><button id="restart" class="control">처음</button></div><span id="counter" class="counter"></span></div>
+   <input id="seek" class="track" type="range" min="0" value="0" aria-label="실행 기록 탐색">
+   <div class="caption"><span id="phase" aria-live="polite"></span><span>실행 기록 재생 · 실제 USB 제어 없음</span></div>
+  </div>
+  <aside class="sidebar">
+   <div class="panel"><p class="panel-title">확인할 작업</p><div class="cases"><button class="case" data-case="success" aria-pressed="true">정상 백업<small>복사 → 검증 → 완료</small></button><button class="case" data-case="corruption" aria-pressed="false">검증 실패<small>복사본 손상 감지</small></button><button class="case" data-case="cancel" aria-pressed="false">작업 중단<small>부분 작업과 완료 구분</small></button></div></div>
+   <div class="panel"><p class="panel-title">실행 결과</p><dl class="facts"><div><dt>원본 내용</dt><dd id="original"></dd></div><div><dt>완료된 백업</dt><dd id="jobs"></dd></div><div><dt>시나리오 결과</dt><dd id="result"></dd></div></dl><p class="notice">이 결과는 선택한 시나리오의 전체 실행 결과입니다. 화면 진행 위치와는 별개입니다.</p></div>
+  </aside>
+ </section>
+ <section class="below"><div class="feature"><b>원본을 그대로</b><p>샘플 폴더·XML·한글 파일명을 보존하고 원본의 변경 여부도 확인했습니다.</p></div><div class="feature"><b>검증해야 완료</b><p>해시가 다르거나 작업이 중단되면 완료 백업으로 게시하지 않습니다.</p></div><div class="feature"><b>현장에서 독립적으로</b><p>최종 제품은 컴퓨터 없이 동작할 예정입니다. 보드·LCD·GPIO 실물 검증은 남아 있습니다.</p></div></section>
+ <details><summary>실제 실행 데이터와 검증 기록 보기</summary><pre id="evidence"></pre></details>
+ <footer>화면은 신규 확인용 초안입니다. 이전 공유 대화의 승인 디자인을 재현한 것으로 간주하지 않습니다.<br>실제 로고·LCD 해상도·Produced by 최종 이름·배터리/충전 회로는 미확정입니다. 샘플 MP4는 테스트 바이트이며 재생 가능한 영상이 아닙니다.<br>이 파일은 인터넷 연결이나 웹 서버 없이 열 수 있습니다. 검증 완료와 저장장치 안전 분리는 서로 다른 단계입니다.</footer>
+</main>
+<script type="application/json" id="trace">__MEBS_TRACE_JSON__</script>
+<script>
+"use strict";
+const trace = JSON.parse(document.getElementById("trace").textContent);
+const labels = {READY:"백업 준비",WAITING_SOURCE:"외장 하드 연결 · SD카드 대기",WAITING_TARGET:"원본 연결 · 대상 대기",CONNECTED:"두 장치 연결",SCANNING:"원본 검사",COPYING:"파일 복사",VERIFYING:"SHA-256 확인",FINAL_CHECK:"전체 백업 재검증",COMPLETE:"검증 완료 · 안전 분리 필요",ERROR:"실패 · 원본 보존",CANCELLED:"중단 · 원본 보존"};
+const el = id => document.getElementById(id);
+let current = trace.cases[0], position = 0, timer = null;
+function stop(){if(timer !== null) clearInterval(timer);timer=null;el("play").textContent="재생";}
+function show(){
+ const frame=current.frames[position];
+ el("screen").src=frame.image;el("screen").alt="MEBS · "+labels[frame.state.state];
+ el("counter").textContent=(position+1)+" / "+current.frames.length;
+ el("phase").textContent=labels[frame.state.state] || frame.state.state;
+ el("seek").max=current.frames.length-1;el("seek").value=position;
+ el("previous").disabled=position===0;el("next").disabled=position===current.frames.length-1;
+ el("original").textContent=current.source_unchanged?"변경 없음":"변경 감지";
+ el("jobs").textContent=current.published_jobs+"개";
+ el("result").textContent={COMPLETE:"검증 통과",ERROR:"실패 감지",CANCELLED:"중단 확인"}[current.final_state];
+ el("evidence").textContent=JSON.stringify({generated_at:trace.generated_at,scenario:current.kind,current_frame:frame.state,final_state:current.final_state,source_unchanged:current.source_unchanged,published_jobs:current.published_jobs,manifest:current.manifest,hardware_tested:false},null,2);
+}
+el("play").addEventListener("click",()=>{if(timer!==null){stop();return;}if(position===current.frames.length-1)position=0;show();el("play").textContent="일시 정지";timer=setInterval(()=>{position++;show();if(position>=current.frames.length-1)stop();},850);});
+el("previous").addEventListener("click",()=>{stop();position=Math.max(0,position-1);show();});
+el("next").addEventListener("click",()=>{stop();position=Math.min(current.frames.length-1,position+1);show();});
+el("restart").addEventListener("click",()=>{stop();position=0;show();});
+el("seek").addEventListener("input",event=>{stop();position=Number(event.target.value);show();});
+document.querySelectorAll("[data-case]").forEach(button=>button.addEventListener("click",()=>{stop();current=trace.cases.find(c=>c.kind===button.dataset.case);position=0;document.querySelectorAll("[data-case]").forEach(b=>b.setAttribute("aria-pressed",String(b===button)));show();}));
+show();
+</script>
+</body>
+</html>

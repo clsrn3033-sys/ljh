@@ -1,0 +1,39 @@
+python3 -m unittest discover -s tests -v
+test_busy_destination_rejected (test_backup.BackupTests.test_busy_destination_rejected) ... ok
+test_cancellation_leaves_partial_job_and_source (test_backup.BackupTests.test_cancellation_leaves_partial_job_and_source) ... ok
+test_cli_failure_has_nonzero_exit_and_failed_event (test_backup.BackupTests.test_cli_failure_has_nonzero_exit_and_failed_event) ... ok
+test_copy_enospc_does_not_commit (test_backup.BackupTests.test_copy_enospc_does_not_commit) ... ok
+test_copy_preserves_tree_xml_empty_files_and_metadata (test_backup.BackupTests.test_copy_preserves_tree_xml_empty_files_and_metadata) ... ok
+test_corrupt_copied_data_is_detected_before_commit (test_backup.BackupTests.test_corrupt_copied_data_is_detected_before_commit) ... ok
+test_destination_data_symlink_rejected_by_verify (test_backup.BackupTests.test_destination_data_symlink_rejected_by_verify) ... ok
+test_destination_lock_symlink_rejected (test_backup.BackupTests.test_destination_lock_symlink_rejected) ... ok
+test_empty_source (test_backup.BackupTests.test_empty_source) ... ok
+test_existing_target_files_and_earlier_jobs_not_overwritten (test_backup.BackupTests.test_existing_target_files_and_earlier_jobs_not_overwritten) ... ok
+test_extra_file_detected_by_verify (test_backup.BackupTests.test_extra_file_detected_by_verify) ... ok
+test_fifo_rejected_without_hanging (test_backup.BackupTests.test_fifo_rejected_without_hanging) ... ok
+test_hash_mismatch_does_not_commit (test_backup.BackupTests.test_hash_mismatch_does_not_commit) ... ok
+test_later_corruption_detected_by_verify (test_backup.BackupTests.test_later_corruption_detected_by_verify) ... ok
+test_manifest_traversal_rejected (test_backup.BackupTests.test_manifest_traversal_rejected) ... ok
+test_nested_source (test_backup.BackupTests.test_nested_source) ... ok
+test_nested_target (test_backup.BackupTests.test_nested_target) ... ok
+test_partial_writes_handled (test_backup.BackupTests.test_partial_writes_handled) ... ok
+test_same_directory (test_backup.BackupTests.test_same_directory) ... ok
+test_source_change_during_copy_fails (test_backup.BackupTests.test_source_change_during_copy_fails) ... ok
+test_source_file_added_during_backup_fails (test_backup.BackupTests.test_source_file_added_during_backup_fails) ... ok
+test_space_check (test_backup.BackupTests.test_space_check) ... ok
+test_symlink_root_alias_overlap (test_backup.BackupTests.test_symlink_root_alias_overlap) ... ok
+test_symlink_source_rejected (test_backup.BackupTests.test_symlink_source_rejected) ... ok
+test_distinct_insertion_order (test_devices.RoleTests.test_distinct_insertion_order) ... ok
+test_duplicate_identity_rejected (test_devices.RoleTests.test_duplicate_identity_rejected) ... ok
+test_initial_disk_does_not_invent_insertion_order (test_devices.RoleTests.test_initial_disk_does_not_invent_insertion_order) ... ok
+test_inventory_excludes_internal_disks (test_devices.RoleTests.test_inventory_excludes_internal_disks) ... ok
+test_removal_clears_roles_until_empty (test_devices.RoleTests.test_removal_clears_roles_until_empty) ... ok
+test_simultaneous_insertions_ambiguous (test_devices.RoleTests.test_simultaneous_insertions_ambiguous) ... ok
+test_third_device_ambiguous (test_devices.RoleTests.test_third_device_ambiguous) ... ok
+test_sigkill_cannot_publish_partial_copy (test_process.ProcessInterruptionTests.test_sigkill_cannot_publish_partial_copy) ... ok
+test_sigterm_records_failure_and_keeps_source (test_process.ProcessInterruptionTests.test_sigterm_records_failure_and_keeps_source) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 0.322s
+
+OK

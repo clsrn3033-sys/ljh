@@ -1,0 +1,152 @@
+make: Entering directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+rm -Rf /var/home/bazzite/ljh/output/pi4-hdmi/build/mebs-0.1.0
+make: Leaving directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+make: Entering directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+>>> mebs 0.1.0 Syncing from source dir /var/home/bazzite/ljh/buildroot/../mebs
+rsync -au --chmod=u=rwX,go=rX  --exclude .svn --exclude .git --exclude .hg --exclude .bzr --exclude CVS /var/home/bazzite/ljh/buildroot/../mebs/ /var/home/bazzite/ljh/output/pi4-hdmi/build/mebs-0.1.0
+>>> mebs 0.1.0 Configuring
+>>> mebs 0.1.0 Building
+>>> mebs 0.1.0 Installing to target
+/usr/bin/install -d /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/lib/mebs/mebs
+/usr/bin/install -m 0644 /var/home/bazzite/ljh/output/pi4-hdmi/build/mebs-0.1.0/*.py /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/lib/mebs/mebs/
+/usr/bin/install -D -m 0644 /var/home/bazzite/ljh/output/pi4-hdmi/build/mebs-0.1.0/ui/preview.html /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/lib/mebs/mebs/ui/preview.html
+/usr/bin/install -D -m 0755 /var/home/bazzite/ljh/buildroot/package/mebs/mebs-launcher /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/bin/mebs
+>>>   Finalizing host directory
+>>>   Finalizing target directory
+rm -rf /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/src/hare
+mkdir -p /var/home/bazzite/ljh/output/pi4-hdmi/host/etc/meson
+sed -e "s%@TARGET_CFLAGS@%'-D_LARGEFILE_SOURCE', '-D_LARGEFILE64_SOURCE', '-D_FILE_OFFSET_BITS=64', '-O2', '-g0', '-D_FORTIFY_SOURCE=1'@PKG_TARGET_CFLAGS@%g" -e "s%@TARGET_LDFLAGS@%@PKG_TARGET_LDFLAGS@%g" -e "s%@TARGET_CXXFLAGS@%'-D_LARGEFILE_SOURCE', '-D_LARGEFILE64_SOURCE', '-D_FILE_OFFSET_BITS=64', '-O2', '-g0', '-D_FORTIFY_SOURCE=1'@PKG_TARGET_CXXFLAGS@%g" -e "s%@TARGET_FCFLAGS@%'-O2', '-g0'@PKG_TARGET_FCFLAGS@%g"         -e "s%@TARGET_CC@%/var/home/bazzite/ljh/output/pi4-hdmi/host/bin/aarch64-buildroot-linux-gnu-gcc%g" -e "s%@TARGET_CXX@%/var/home/bazzite/ljh/output/pi4-hdmi/host/bin/aarch64-buildroot-linux-gnu-g++%g" -e "s%@TARGET_AR@%/var/home/bazzite/ljh/output/pi4-hdmi/host/bin/aarch64-buildroot-linux-gnu-gcc-ar%g" -e "s%@TARGET_FC@%/bin/false%g" -e "s%@TARGET_STRIP@%/var/home/bazzite/ljh/output/pi4-hdmi/host/bin/aarch64-buildroot-linux-gnu-strip%g" -e "s%@TARGET_ARCH@%aarch64%g" -e "s%@TARGET_CPU@%cortex-a72%g" -e "s%@TARGET_ENDIAN@%little%g" -e "s%@TARGET_FCFLAGS@%%g" -e "s%@TARGET_CFLAGS@%%g" -e "s%@TARGET_LDFLAGS@%%g" -e "s%@TARGET_CXXFLAGS@%%g" -e "s%@BR2_CMAKE@%/usr/bin/cmake%g" -e "s%@PKGCONF_HOST_BINARY@%/var/home/bazzite/ljh/output/pi4-hdmi/host/bin/pkgconf%g" -e "s%@HOST_DIR@%/var/home/bazzite/ljh/output/pi4-hdmi/host%g" -e "s%@STAGING_DIR@%/var/home/bazzite/ljh/output/pi4-hdmi/host/aarch64-buildroot-linux-gnu/sysroot%g" -e "s%@STATIC@%false%g" /var/home/bazzite/ljh/vendor/buildroot-2026.08/support/misc/cross-compilation.conf.in > /var/home/bazzite/ljh/output/pi4-hdmi/host/etc/meson/cross-compilation.conf.in
+sed         -e "s%@TARGET_CC@%/var/home/bazzite/ljh/output/pi4-hdmi/host/bin/aarch64-buildroot-linux-gnu-gcc%g" -e "s%@TARGET_CXX@%/var/home/bazzite/ljh/output/pi4-hdmi/host/bin/aarch64-buildroot-linux-gnu-g++%g" -e "s%@TARGET_AR@%/var/home/bazzite/ljh/output/pi4-hdmi/host/bin/aarch64-buildroot-linux-gnu-gcc-ar%g" -e "s%@TARGET_FC@%/bin/false%g" -e "s%@TARGET_STRIP@%/var/home/bazzite/ljh/output/pi4-hdmi/host/bin/aarch64-buildroot-linux-gnu-strip%g" -e "s%@TARGET_ARCH@%aarch64%g" -e "s%@TARGET_CPU@%cortex-a72%g" -e "s%@TARGET_ENDIAN@%little%g" -e "s%@TARGET_FCFLAGS@%'-O2', '-g0'%g" -e "s%@TARGET_CFLAGS@%'-D_LARGEFILE_SOURCE', '-D_LARGEFILE64_SOURCE', '-D_FILE_OFFSET_BITS=64', '-O2', '-g0', '-D_FORTIFY_SOURCE=1'%g" -e "s%@TARGET_LDFLAGS@%%g" -e "s%@TARGET_CXXFLAGS@%'-D_LARGEFILE_SOURCE', '-D_LARGEFILE64_SOURCE', '-D_FILE_OFFSET_BITS=64', '-O2', '-g0', '-D_FORTIFY_SOURCE=1'%g" -e "s%@BR2_CMAKE@%/usr/bin/cmake%g" -e "s%@PKGCONF_HOST_BINARY@%/var/home/bazzite/ljh/output/pi4-hdmi/host/bin/pkgconf%g" -e "s%@HOST_DIR@%/var/home/bazzite/ljh/output/pi4-hdmi/host%g" -e "s%@STAGING_DIR@%/var/home/bazzite/ljh/output/pi4-hdmi/host/aarch64-buildroot-linux-gnu/sysroot%g" -e "s%@STATIC@%false%g" /var/home/bazzite/ljh/vendor/buildroot-2026.08/support/misc/cross-compilation.conf.in > /var/home/bazzite/ljh/output/pi4-hdmi/host/etc/meson/cross-compilation.conf
+/usr/bin/sed -i -e '/# GENERIC_SERIAL$/s~^.*#~console::respawn:/sbin/getty -L  console 0 vt100 #~' /var/home/bazzite/ljh/output/pi4-hdmi/target/etc/inittab
+/usr/bin/sed -i -e '/^[^#].*-o remount,rw \/$/s~^~#~' /var/home/bazzite/ljh/output/pi4-hdmi/target/etc/inittab
+if grep -q CONFIG_ASH=y /var/home/bazzite/ljh/output/pi4-hdmi/build/busybox-1.38.0/.config; then grep -qsE '^/bin/ash$' /var/home/bazzite/ljh/output/pi4-hdmi/target/etc/shells || echo "/bin/ash" >> /var/home/bazzite/ljh/output/pi4-hdmi/target/etc/shells; fi
+if grep -q CONFIG_HUSH=y /var/home/bazzite/ljh/output/pi4-hdmi/build/busybox-1.38.0/.config; then grep -qsE '^/bin/hush$' /var/home/bazzite/ljh/output/pi4-hdmi/target/etc/shells || echo "/bin/hush" >> /var/home/bazzite/ljh/output/pi4-hdmi/target/etc/shells; fi
+PYTHONPATH="/var/home/bazzite/ljh/output/pi4-hdmi/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/python3.14/" /var/home/bazzite/ljh/output/pi4-hdmi/host/bin/python3.14 /var/home/bazzite/ljh/output/pi4-hdmi/build/python3-3.14.7/Lib/compileall.py -q -b -s /var/home/bazzite/ljh/output/pi4-hdmi/target -p / /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/lib/python3.14
+find /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/lib/python3.14 -name '*.py'  -print0 | xargs -0 --no-run-if-empty rm -f
+find /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/lib/python3.14 -name '*.opt-1.pyc' -print0 -o -name '*.opt-2.pyc' -print0 | xargs -0 --no-run-if-empty rm -f
+mkdir -p /var/home/bazzite/ljh/output/pi4-hdmi/target/etc
+echo "mebs" > /var/home/bazzite/ljh/output/pi4-hdmi/target/etc/hostname
+/usr/bin/sed -i -e '$a \127.0.1.1\tmebs' -e '/^127.0.1.1/d' /var/home/bazzite/ljh/output/pi4-hdmi/target/etc/hosts
+mkdir -p /var/home/bazzite/ljh/output/pi4-hdmi/target/etc
+echo "Welcome to Buildroot" > /var/home/bazzite/ljh/output/pi4-hdmi/target/etc/issue
+/usr/bin/sed -i -e s,^root:[^:]*:,root::, /var/home/bazzite/ljh/output/pi4-hdmi/target/etc/shadow
+grep -qsE '^/bin/sh$' /var/home/bazzite/ljh/output/pi4-hdmi/target/etc/shells || echo "/bin/sh" >> /var/home/bazzite/ljh/output/pi4-hdmi/target/etc/shells
+if [ -x /var/home/bazzite/ljh/output/pi4-hdmi/target/sbin/swapon -a -x /var/home/bazzite/ljh/output/pi4-hdmi/target/sbin/swapoff ]; then /usr/bin/sed -i -e '/^#.*\/sbin\/swap/s/^#\+[[:blank:]]*//' /var/home/bazzite/ljh/output/pi4-hdmi/target/etc/inittab; else /usr/bin/sed -i -e '/^[^#].*\/sbin\/swap/s/^/#/' /var/home/bazzite/ljh/output/pi4-hdmi/target/etc/inittab; fi
+if test -d /var/home/bazzite/ljh/output/pi4-hdmi/target/lib/modules/`MAKEFLAGS='-j6 --jobserver-auth=fifo:/tmp/GMfifo373' /usr/bin/make  HOSTCC="/usr/bin/gcc -O2 -isystem /var/home/bazzite/ljh/output/pi4-hdmi/host/include -L/var/home/bazzite/ljh/output/pi4-hdmi/host/lib -Wl,-rpath,/var/home/bazzite/ljh/output/pi4-hdmi/host/lib" ARCH=arm64 KCFLAGS="-Wno-attribute-alias" INSTALL_MOD_PATH=/var/home/bazzite/ljh/output/pi4-hdmi/target CROSS_COMPILE="/var/home/bazzite/ljh/output/pi4-hdmi/host/bin/aarch64-buildroot-linux-gnu-" WERROR=0 REGENERATE_PARSERS=1 DEPMOD=true INSTALL_MOD_STRIP=1 -C /var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom --no-print-directory -s kernelrelease 2>/dev/null` && grep -q "CONFIG_MODULES=y" /var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom/.config; then /var/home/bazzite/ljh/output/pi4-hdmi/host/sbin/depmod -a -b /var/home/bazzite/ljh/output/pi4-hdmi/target `MAKEFLAGS='-j6 --jobserver-auth=fifo:/tmp/GMfifo373' /usr/bin/make  HOSTCC="/usr/bin/gcc -O2 -isystem /var/home/bazzite/ljh/output/pi4-hdmi/host/include -L/var/home/bazzite/ljh/output/pi4-hdmi/host/lib -Wl,-rpath,/var/home/bazzite/ljh/output/pi4-hdmi/host/lib" ARCH=arm64 KCFLAGS="-Wno-attribute-alias" INSTALL_MOD_PATH=/var/home/bazzite/ljh/output/pi4-hdmi/target CROSS_COMPILE="/var/home/bazzite/ljh/output/pi4-hdmi/host/bin/aarch64-buildroot-linux-gnu-" WERROR=0 REGENERATE_PARSERS=1 DEPMOD=true INSTALL_MOD_STRIP=1 -C /var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom --no-print-directory -s kernelrelease 2>/dev/null`; fi
+printf '%s\n' C en_US locale-archive > /var/home/bazzite/ljh/output/pi4-hdmi/build/locales.nopurge
+for dir in /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/share/locale /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/share/X11/locale /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/lib/locale; do if [ ! -d $dir ]; then continue; fi; for langdir in $dir/*; do if [ -e "${langdir}" ]; then grep -qx "${langdir##*/}" /var/home/bazzite/ljh/output/pi4-hdmi/build/locales.nopurge || rm -rf $langdir; fi done; done
+if [ -d /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/share/X11/locale ]; then for lang in C en_US; do if [ -f /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/share/X11/locale/$lang/XLC_LOCALE ]; then echo "$lang/XLC_LOCALE: $lang"; fi done > /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/share/X11/locale/locale.dir; fi
+rm -rf /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/include /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/share/aclocal \
+	/var/home/bazzite/ljh/output/pi4-hdmi/target/usr/lib/pkgconfig /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/share/pkgconfig \
+	/var/home/bazzite/ljh/output/pi4-hdmi/target/usr/lib/cmake /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/share/cmake \
+	/var/home/bazzite/ljh/output/pi4-hdmi/target/usr/lib/rpm /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/doc
+find /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/{lib,share}/ -name '*.cmake' -print0 | xargs -0 rm -f
+find /var/home/bazzite/ljh/output/pi4-hdmi/target/lib/ /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/lib/ /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/libexec/ \
+	\( -name '*.a' -o -name '*.la' -o -name '*.prl' \) -print0 | xargs -0 rm -f
+find: ‘/var/home/bazzite/ljh/output/pi4-hdmi/target/usr/libexec/’: No such file or directory
+rm -rf /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/share/gdb
+rm -rf /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/share/bash-completion
+rm -rf /var/home/bazzite/ljh/output/pi4-hdmi/target/etc/bash_completion.d
+rm -rf /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/share/zsh
+rm -rf /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/man /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/share/man
+rm -rf /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/info /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/share/info
+rm -rf /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/doc /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/share/doc
+rm -rf /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/share/gtk-doc
+rmdir /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/share 2>/dev/null || true
+rm -rf /var/home/bazzite/ljh/output/pi4-hdmi/target/lib/debug /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/lib/debug
+find /var/home/bazzite/ljh/output/pi4-hdmi/target   -type f \( -perm /111 -o -name '*.so*' \) -not \( -name 'libpthread*.so*' -o -name 'ld-*.so*' -o -name '*.ko' \) -print0 | xargs -0 /var/home/bazzite/ljh/output/pi4-hdmi/host/bin/aarch64-buildroot-linux-gnu-strip --remove-section=.comment --remove-section=.note 2>/dev/null || true
+find /var/home/bazzite/ljh/output/pi4-hdmi/target   \( -name 'ld-*.so*' -o -name 'libpthread*.so*' \) -print0 | xargs -0 -r /var/home/bazzite/ljh/output/pi4-hdmi/host/bin/aarch64-buildroot-linux-gnu-strip --remove-section=.comment --remove-section=.note --strip-debug 2>/dev/null || true
+test -f /var/home/bazzite/ljh/output/pi4-hdmi/target/etc/ld.so.conf && \
+	{ echo "ERROR: we shouldn't have a /etc/ld.so.conf file"; exit 1; } || true
+test -d /var/home/bazzite/ljh/output/pi4-hdmi/target/etc/ld.so.conf.d && \
+	{ echo "ERROR: we shouldn't have a /etc/ld.so.conf.d directory"; exit 1; } || true
+mkdir -p /var/home/bazzite/ljh/output/pi4-hdmi/target/etc
+( \
+	echo "NAME=Buildroot"; \
+	echo "VERSION=2026.08"; \
+	echo "ID=buildroot"; \
+	echo "VERSION_ID=2026.08"; \
+	echo "PRETTY_NAME=\"Buildroot 2026.08\"" \
+) >  /var/home/bazzite/ljh/output/pi4-hdmi/target/usr/lib/os-release
+ln -sf ../usr/lib/os-release /var/home/bazzite/ljh/output/pi4-hdmi/target/etc
+>>>   Sanitizing RPATH in target tree
+PARALLEL_JOBS=13 \
+	PER_PACKAGE_DIR=/var/home/bazzite/ljh/output/pi4-hdmi/per-package \
+	/var/home/bazzite/ljh/vendor/buildroot-2026.08/support/scripts/fix-rpath target
+>>>   Sanity check in overlays /var/home/bazzite/ljh/buildroot/board/mebs-pi4/overlay
+support/scripts/check-merged \
+	-t overlay \
+	 \
+	 \
+	/var/home/bazzite/ljh/buildroot/board/mebs-pi4/overlay
+>>>   Copying overlay /var/home/bazzite/ljh/buildroot/board/mebs-pi4/overlay
+>>>   Executing post-build script /var/home/bazzite/ljh/buildroot/board/mebs-pi4/post-build.sh
+touch /var/home/bazzite/ljh/output/pi4-hdmi/target/usr
+>>>   Generating root filesystems common tables
+rm -rf /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs
+mkdir -p /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs
+printf '   \n' >> /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/full_users_table.txt
+printf '   	/bin/busybox                     f 4755 0  0 - - - - -\n\n' > /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/full_devices_table.txt
+cat system/device_table.txt >> /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/full_devices_table.txt
+>>>   Generating filesystem image rootfs.ext2
+mkdir -p /var/home/bazzite/ljh/output/pi4-hdmi/images
+rm -rf /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2
+mkdir -p /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2
+rsync -auH --exclude=/THIS_IS_NOT_YOUR_ROOT_FILESYSTEM /var/home/bazzite/ljh/output/pi4-hdmi/target/ /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2/target
+echo '#!/bin/sh' > /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2/fakeroot
+echo "set -e" >> /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2/fakeroot
+echo "chown -h -R 0:0 /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2/target" >> /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2/fakeroot
+PATH="/var/home/bazzite/ljh/output/pi4-hdmi/host/bin:/var/home/bazzite/ljh/output/pi4-hdmi/host/sbin:/var/home/bazzite/ljh/.local-build/tools/bin:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0oaHHTG:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0ZNo2pP:/var/home/bazzite/.codex/packages/standalone/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.local/bin:/home/bazzite/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" /var/home/bazzite/ljh/vendor/buildroot-2026.08/support/scripts/mkusers /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/full_users_table.txt /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2/target >> /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2/fakeroot
+echo "/var/home/bazzite/ljh/output/pi4-hdmi/host/bin/makedevs -d /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/full_devices_table.txt /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2/target" >> /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2/fakeroot
+printf '   	rm -rf /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2/target/usr/lib/udev/hwdb.d/ /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2/target/etc/udev/hwdb.d/\n' >> /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2/fakeroot
+echo "find /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2/target/run/ -mindepth 1 -prune -print0 | xargs -0r rm -rf --" >> /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2/fakeroot
+echo "find /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2/target/tmp/ -mindepth 1 -prune -print0 | xargs -0r rm -rf --" >> /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2/fakeroot
+printf '   \n' >> /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2/fakeroot
+printf '   \n' >> /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2/fakeroot
+printf '   	rm -f /var/home/bazzite/ljh/output/pi4-hdmi/images/rootfs.ext2\n	/var/home/bazzite/ljh/output/pi4-hdmi/host/sbin/mkfs.ext4 -d /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2/target -N 0 -m 5 -L "rootfs" -I 256 -O ^64bit /var/home/bazzite/ljh/output/pi4-hdmi/images/rootfs.ext2 "192M" || { ret=$?; echo "*** Maybe you need to increase the filesystem size (BR2_TARGET_ROOTFS_EXT2_SIZE)" 1>&2; exit $ret; }\n' >> /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2/fakeroot
+chmod a+x /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2/fakeroot
+PATH="/var/home/bazzite/ljh/output/pi4-hdmi/host/bin:/var/home/bazzite/ljh/output/pi4-hdmi/host/sbin:/var/home/bazzite/ljh/.local-build/tools/bin:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0oaHHTG:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0ZNo2pP:/var/home/bazzite/.codex/packages/standalone/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.local/bin:/home/bazzite/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" FAKEROOTDONTTRYCHOWN=1 /var/home/bazzite/ljh/output/pi4-hdmi/host/bin/fakeroot -- /var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2/fakeroot
+rootdir=/var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/ext2/target
+table='/var/home/bazzite/ljh/output/pi4-hdmi/build/buildroot-fs/full_devices_table.txt'
+mke2fs 1.47.4 (6-Mar-2025)
+Creating regular file /var/home/bazzite/ljh/output/pi4-hdmi/images/rootfs.ext2
+64-bit filesystem support is not enabled.  The larger fields afforded by this feature enable full-strength checksumming.  Pass -O 64bit to rectify.
+Creating filesystem with 196608 1k blocks and 49152 inodes
+Filesystem UUID: 55c506ef-247c-4760-8613-a6e029439c38
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/24     done                            
+Writing inode tables:  0/24     done                            
+Creating journal (4096 blocks): done
+Copying files into the device: done
+Writing superblocks and filesystem accounting information:  0/24     done
+
+ln -sf rootfs.ext2 /var/home/bazzite/ljh/output/pi4-hdmi/images/rootfs.ext4
+>>>   Executing post-image script /var/home/bazzite/ljh/buildroot/board/mebs-pi4/post-image.sh
+INFO: cmd: "rm -rf "/var/home/bazzite/ljh/output/pi4-hdmi/build/mebs-genimage.h0oplI/work"/*" (stderr):
+INFO: cmd: "mkdir -p "/var/home/bazzite/ljh/output/pi4-hdmi/build/mebs-genimage.h0oplI/work"" (stderr):
+INFO: cmd: "cp -a "/var/home/bazzite/ljh/output/pi4-hdmi/build/mebs-genimage.h0oplI/root" "/var/home/bazzite/ljh/output/pi4-hdmi/build/mebs-genimage.h0oplI/work/root"" (stderr):
+INFO: cmd: "mkdir -p "/var/home/bazzite/ljh/output/pi4-hdmi/images"" (stderr):
+INFO: vfat(boot.vfat): cmd: "mkdosfs -F 32  '/var/home/bazzite/ljh/output/pi4-hdmi/images/boot.vfat'" (stderr):
+INFO: vfat(boot.vfat): adding file 'bcm2711-rpi-4-b.dtb' as 'bcm2711-rpi-4-b.dtb' ...
+INFO: vfat(boot.vfat): cmd: "MTOOLS_SKIP_CHECK=1 mcopy -sp -i '/var/home/bazzite/ljh/output/pi4-hdmi/images/boot.vfat' '/var/home/bazzite/ljh/output/pi4-hdmi/images/bcm2711-rpi-4-b.dtb' '::'" (stderr):
+INFO: vfat(boot.vfat): adding file 'rpi-firmware/cmdline.txt' as 'rpi-firmware/cmdline.txt' ...
+INFO: vfat(boot.vfat): cmd: "MTOOLS_SKIP_CHECK=1 mcopy -sp -i '/var/home/bazzite/ljh/output/pi4-hdmi/images/boot.vfat' '/var/home/bazzite/ljh/output/pi4-hdmi/images/rpi-firmware/cmdline.txt' '::'" (stderr):
+INFO: vfat(boot.vfat): adding file 'rpi-firmware/config.txt' as 'rpi-firmware/config.txt' ...
+INFO: vfat(boot.vfat): cmd: "MTOOLS_SKIP_CHECK=1 mcopy -sp -i '/var/home/bazzite/ljh/output/pi4-hdmi/images/boot.vfat' '/var/home/bazzite/ljh/output/pi4-hdmi/images/rpi-firmware/config.txt' '::'" (stderr):
+INFO: vfat(boot.vfat): adding file 'rpi-firmware/fixup4.dat' as 'rpi-firmware/fixup4.dat' ...
+INFO: vfat(boot.vfat): cmd: "MTOOLS_SKIP_CHECK=1 mcopy -sp -i '/var/home/bazzite/ljh/output/pi4-hdmi/images/boot.vfat' '/var/home/bazzite/ljh/output/pi4-hdmi/images/rpi-firmware/fixup4.dat' '::'" (stderr):
+INFO: vfat(boot.vfat): adding file 'rpi-firmware/overlays' as 'rpi-firmware/overlays' ...
+INFO: vfat(boot.vfat): cmd: "MTOOLS_SKIP_CHECK=1 mcopy -sp -i '/var/home/bazzite/ljh/output/pi4-hdmi/images/boot.vfat' '/var/home/bazzite/ljh/output/pi4-hdmi/images/rpi-firmware/overlays' '::'" (stderr):
+INFO: vfat(boot.vfat): adding file 'rpi-firmware/start4.elf' as 'rpi-firmware/start4.elf' ...
+INFO: vfat(boot.vfat): cmd: "MTOOLS_SKIP_CHECK=1 mcopy -sp -i '/var/home/bazzite/ljh/output/pi4-hdmi/images/boot.vfat' '/var/home/bazzite/ljh/output/pi4-hdmi/images/rpi-firmware/start4.elf' '::'" (stderr):
+INFO: vfat(boot.vfat): adding file 'Image' as 'Image' ...
+INFO: vfat(boot.vfat): cmd: "MTOOLS_SKIP_CHECK=1 mcopy -sp -i '/var/home/bazzite/ljh/output/pi4-hdmi/images/boot.vfat' '/var/home/bazzite/ljh/output/pi4-hdmi/images/Image' '::'" (stderr):
+INFO: hdimage(sdcard.img): adding primary partition 'boot' (in MBR) from 'boot.vfat' ...
+INFO: hdimage(sdcard.img): adding primary partition 'rootfs' (in MBR) from 'rootfs.ext4' ...
+INFO: hdimage(sdcard.img): adding primary partition '[MBR]' ...
+INFO: hdimage(sdcard.img): writing MBR
+INFO: cmd: "rm -rf "/var/home/bazzite/ljh/output/pi4-hdmi/build/mebs-genimage.h0oplI/work"/*" (stderr):
+make: Leaving directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+61203cb0f621c193dc827c6d1bd0b069327b3905b59a638d80fe514de658629d  /var/home/bazzite/ljh/output/pi4-hdmi/images/sdcard.img

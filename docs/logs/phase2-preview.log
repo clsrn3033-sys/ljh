@@ -1,0 +1,4 @@
+python3 scripts/build.py
+/var/home/bazzite/ljh/dist/mebs.pyz
+python3 dist/mebs.pyz preview --output preview
+{"preview": "/var/home/bazzite/ljh/preview/index.html", "cases": 3, "source_unchanged": true, "hardware_tested": false}

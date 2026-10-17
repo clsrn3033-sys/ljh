@@ -1,0 +1,2 @@
+PASS: local Linux C header and Python ctypes ABI agree: (80, 160, 48, 32)
+Host x86_64 only; ARM and actual framebuffer output remain untested.

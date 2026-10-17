@@ -1,0 +1,3 @@
+make: Entering directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+rm -Rf /var/home/bazzite/ljh/output/pi4-hdmi/build/rpi-firmware-063bcab6c8a90efb0d19f69d88cbbc7ec79cab68
+make: Leaving directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'

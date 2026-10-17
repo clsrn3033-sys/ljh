@@ -1,0 +1,7 @@
+make: Entering directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+  GEN     /var/home/bazzite/ljh/output/pi4-hdmi/Makefile
+#
+# configuration written to /var/home/bazzite/ljh/output/pi4-hdmi/.config
+#
+make: *** No rule to make target 'linux-reconfigure'.  Stop.
+make: Leaving directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'

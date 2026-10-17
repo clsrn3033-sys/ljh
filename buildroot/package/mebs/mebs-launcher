@@ -1,0 +1,5 @@
+#!/bin/sh
+export PYTHONPATH=/usr/lib/mebs
+export PATH=/sbin:/usr/sbin:/bin:/usr/bin
+export PYTHONDONTWRITEBYTECODE=1
+exec /usr/bin/python3 -m mebs "$@"

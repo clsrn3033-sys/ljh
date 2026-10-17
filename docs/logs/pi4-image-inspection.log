@@ -1,0 +1,23 @@
+BOOT  FAT32 filesystem
+BOOT  config.txt
+BOOT  cmdline.txt
+BOOT  start4.elf
+BOOT  fixup4.dat
+BOOT  Image
+BOOT  bcm2711-rpi-4-b.dtb
+ROOT  /etc/mebs/appliance
+ROOT  /etc/init.d/S50mebs
+ROOT  /usr/bin/mebs
+ROOT  /usr/lib/mebs/mebs/appliance.py
+ROOT  /usr/share/fonts/mebs/NotoSansCJK-Regular.ttc
+Disk /var/home/bazzite/ljh/output/pi4-hdmi/images/sdcard.img: 289 MiB, 303038464 bytes, 591872 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x00000000
+
+Device                                                   Boot  Start    End Sectors  Size Id Type
+/var/home/bazzite/ljh/output/pi4-hdmi/images/sdcard.img1 *      2048 198655  196608   96M  c W95 FAT32 (LBA)
+/var/home/bazzite/ljh/output/pi4-hdmi/images/sdcard.img2      198656 591871  393216  192M 83 Linux
+61203cb0f621c193dc827c6d1bd0b069327b3905b59a638d80fe514de658629d  /var/home/bazzite/ljh/output/pi4-hdmi/images/sdcard.img

@@ -1,0 +1,12 @@
+python3 scripts/build.py
+/var/home/bazzite/ljh/dist/mebs.pyz
+python3 scripts/demo.py
+{"state": "SCANNING"}
+{"state": "COPYING", "path": "\uce74\uba54\ub77c/clip.bin", "bytes": 1048576, "total_bytes": 2097193}
+{"state": "COPYING", "path": "\uce74\uba54\ub77c/clip.bin", "bytes": 2097152, "total_bytes": 2097193}
+{"state": "VERIFYING", "path": "\uce74\uba54\ub77c/clip.bin"}
+{"state": "COPYING", "path": "\uce74\uba54\ub77c/clip.xml", "bytes": 2097193, "total_bytes": 2097193}
+{"state": "VERIFYING", "path": "\uce74\uba54\ub77c/clip.xml"}
+{"state": "VERIFIED", "job": "/tmp/mebs-demo-uss3gygi/target/mebs-backup-20261017T053151Z-7da00d68f237482aaf76daeff74281fe", "bytes": 2097193, "files": 2, "message": "Flush complete; unmount still required before unplugging"}
+{"state": "VERIFIED", "files": 2, "bytes": 2097193}
+{"demo": "PASS", "source_unchanged": true, "xml_and_empty_directory": true}

@@ -1,0 +1,15 @@
+2026-10-17 MEBS QEMU ARM virtual USB validation (terminal observation summary)
+Image: output/pi4-hdmi/images/Image + rootfs.ext2 from release Buildroot image
+QEMU: virt/cortex-a72, virtio root, qemu-xhci, two file-backed usb-storage disks
+Guest initial lsblk: sda usb ext4 rw; sdb usb vfat ro; vda virtio ext4 /
+Guest test command: mebs.appliance.inventory(); run_job(source=sdb, target=sda)
+Guest PATH_EXPORTED: None (service command path fallback tested)
+Observed states: MOUNTING SCANNING COPYING VERIFYING FINAL_CHECK UNMOUNTING SAFE_TO_REMOVE
+Result: SAFE_TO_REMOVE True
+Guest lsblk after job: sda and sdb have no mountpoints; sdb remains read-only.
+Host inspection: target ext4 contains one mebs-backup-* job and VERIFIED manifest.
+Target file: DCIM/C0001.XML, 92 bytes,
+SHA-256 1a7df833e5a511c0f1b4fd0aae14dab1c81374d0bfe7ffdc4ebbcf8f7190c0f2
+Source fixture SHA-256: same value; source QEMU drive exposed read-only.
+e2fsck -fn on the target file-backed disk completed with no reported errors.
+Scope: manual run_job invocation in guest, not HDMI or automatic insertion-order daemon test.

@@ -1,0 +1,4 @@
+Script started on 2026-10-17 17:59:07+09:00 [COMMAND="bash scripts/qemu-usb-guest.sh /tmp/mebs-qemu-usb.rW2D1j" TERM="dumb" TTY="/dev/console" COLUMNS="80" LINES="24"]
+Terminated                 timeout --signal=TERM "${MEBS_QEMU_TIMEOUT:-120}" qemu-system-aarch64 -M virt -cpu cortex-a72 -m 1024 -smp 2 -display none -serial stdio -monitor none -kernel "$images/Image" -append 'root=/dev/vda rootwait ro console=ttyAMA0,115200 init=/bin/sh' -drive file=/tmp/mebs-qemu-final-root.qcow2,format=qcow2,if=none,id=root -device virtio-blk-device,drive=root -device qemu-xhci,id=xhci -drive file="$case_dir/external-ext4.img",format=raw,if=none,id=external -device usb-storage,bus=xhci.0,drive=external -drive file="$case_dir/camera-vfat.img",format=raw,if=none,id=camera,readonly=on -device usb-storage,bus=xhci.0,drive=camera
+
+Script done on 2026-10-17 18:00:05+09:00 [COMMAND_EXIT_CODE="143"]

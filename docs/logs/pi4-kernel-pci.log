@@ -1,0 +1,177 @@
+make: Entering directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+rm -f /var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom/.stamp_installed
+rm -f /var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom/.stamp_staging_installed
+rm -f /var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom/.stamp_target_installed
+rm -f /var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom/.stamp_images_installed
+rm -f /var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom/.stamp_host_installed
+rm -f /var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom/.stamp_built
+rm -f /var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom/.stamp_dotconfig
+rm -f /var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom/.stamp_configured
+make[1]: Entering directory '/var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom'
+  HOSTCC  scripts/basic/fixdep
+  HOSTCC  scripts/kconfig/conf.o
+  HOSTCC  scripts/kconfig/confdata.o
+  HOSTCC  scripts/kconfig/expr.o
+  HOSTCC  scripts/kconfig/lexer.lex.o
+  HOSTCC  scripts/kconfig/menu.o
+  HOSTCC  scripts/kconfig/parser.tab.o
+  HOSTCC  scripts/kconfig/preprocess.o
+  HOSTCC  scripts/kconfig/symbol.o
+  HOSTCC  scripts/kconfig/util.o
+  HOSTLD  scripts/kconfig/conf
+#
+# configuration written to .config
+#
+make[1]: Leaving directory '/var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom'
+Using /var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom/.config as base
+Merging /var/home/bazzite/ljh/buildroot/board/mebs-pi4/linux.fragment
+Value of CONFIG_MODULES is redefined by fragment /var/home/bazzite/ljh/buildroot/board/mebs-pi4/linux.fragment:
+Previous value: CONFIG_MODULES=y
+New value: CONFIG_MODULES=n
+
+Value of CONFIG_EXFAT_FS is redefined by fragment /var/home/bazzite/ljh/buildroot/board/mebs-pi4/linux.fragment:
+Previous value: CONFIG_EXFAT_FS=m
+New value: CONFIG_EXFAT_FS=y
+
+Value of CONFIG_NTFS3_FS is redefined by fragment /var/home/bazzite/ljh/buildroot/board/mebs-pi4/linux.fragment:
+Previous value: CONFIG_NTFS3_FS=m
+New value: CONFIG_NTFS3_FS=y
+
+Value of CONFIG_NLS_ISO8859_1 is redefined by fragment /var/home/bazzite/ljh/buildroot/board/mebs-pi4/linux.fragment:
+Previous value: CONFIG_NLS_ISO8859_1=m
+New value: CONFIG_NLS_ISO8859_1=y
+
+Value of CONFIG_NLS_UTF8 is redefined by fragment /var/home/bazzite/ljh/buildroot/board/mebs-pi4/linux.fragment:
+Previous value: CONFIG_NLS_UTF8=m
+New value: CONFIG_NLS_UTF8=y
+
+Value of CONFIG_I2C_BCM2835 is redefined by fragment /var/home/bazzite/ljh/buildroot/board/mebs-pi4/linux.fragment:
+Previous value: CONFIG_I2C_BCM2835=m
+New value: CONFIG_I2C_BCM2835=y
+
+Value of CONFIG_DRM is redefined by fragment /var/home/bazzite/ljh/buildroot/board/mebs-pi4/linux.fragment:
+Previous value: CONFIG_DRM=m
+New value: CONFIG_DRM=y
+
+Value of CONFIG_DRM_VC4 is redefined by fragment /var/home/bazzite/ljh/buildroot/board/mebs-pi4/linux.fragment:
+Previous value: CONFIG_DRM_VC4=m
+New value: CONFIG_DRM_VC4=y
+
+Value of CONFIG_FRAMEBUFFER_CONSOLE is redefined by fragment /var/home/bazzite/ljh/buildroot/board/mebs-pi4/linux.fragment:
+Previous value: CONFIG_FRAMEBUFFER_CONSOLE=y
+New value: CONFIG_FRAMEBUFFER_CONSOLE=n
+
+Value of CONFIG_SND is redefined by fragment /var/home/bazzite/ljh/buildroot/board/mebs-pi4/linux.fragment:
+Previous value: CONFIG_SND=m
+New value: CONFIG_SND=y
+
+Value of CONFIG_SND_SOC is redefined by fragment /var/home/bazzite/ljh/buildroot/board/mebs-pi4/linux.fragment:
+Previous value: CONFIG_SND_SOC=m
+New value: CONFIG_SND_SOC=y
+
+Value of CONFIG_WLAN is redefined by fragment /var/home/bazzite/ljh/buildroot/board/mebs-pi4/linux.fragment:
+Previous value: CONFIG_WLAN=y
+New value: CONFIG_WLAN=n
+
+Value of CONFIG_BT is redefined by fragment /var/home/bazzite/ljh/buildroot/board/mebs-pi4/linux.fragment:
+Previous value: CONFIG_BT=m
+New value: CONFIG_BT=n
+
+Value of CONFIG_PCI_HOST_GENERIC is redefined by fragment /var/home/bazzite/ljh/buildroot/board/mebs-pi4/linux.fragment:
+Previous value: # CONFIG_PCI_HOST_GENERIC is not set
+New value: CONFIG_PCI_HOST_GENERIC=y
+
+Value of CONFIG_VIRTIO_MMIO is redefined by fragment /var/home/bazzite/ljh/buildroot/board/mebs-pi4/linux.fragment:
+Previous value: # CONFIG_VIRTIO_MMIO is not set
+New value: CONFIG_VIRTIO_MMIO=y
+
+Value of CONFIG_VIRTIO_PCI is redefined by fragment /var/home/bazzite/ljh/buildroot/board/mebs-pi4/linux.fragment:
+Previous value: # CONFIG_VIRTIO_PCI is not set
+New value: CONFIG_VIRTIO_PCI=y
+
+#
+# merged configuration written to /var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom/.config (needs make)
+#
+make[1]: Entering directory '/var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom'
+#
+# configuration written to .config
+#
+make[1]: Leaving directory '/var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom'
+>>> linux custom Updating kernel config with fixups
+make[1]: Entering directory '/var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom'
+#
+# configuration written to .config
+#
+make[1]: Leaving directory '/var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom'
+>>> linux custom Configuring
+>>> linux custom Building
+GIT_DIR=. PATH="/var/home/bazzite/ljh/output/pi4-hdmi/host/bin:/var/home/bazzite/ljh/output/pi4-hdmi/host/sbin:/var/home/bazzite/ljh/.local-build/tools/bin:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0oaHHTG:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0ZNo2pP:/var/home/bazzite/.codex/packages/standalone/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.local/bin:/home/bazzite/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" PKG_CONFIG="/var/home/bazzite/ljh/output/pi4-hdmi/host/bin/pkg-config" PKG_CONFIG_SYSROOT_DIR="/" PKG_CONFIG_ALLOW_SYSTEM_CFLAGS=1 PKG_CONFIG_ALLOW_SYSTEM_LIBS=1 PKG_CONFIG_LIBDIR="/var/home/bazzite/ljh/output/pi4-hdmi/host/lib/pkgconfig:/var/home/bazzite/ljh/output/pi4-hdmi/host/share/pkgconfig" BR_BINARIES_DIR=/var/home/bazzite/ljh/output/pi4-hdmi/images DTC_FLAGS=-@ /usr/bin/make -j13 HOSTCC="/usr/bin/gcc -O2 -isystem /var/home/bazzite/ljh/output/pi4-hdmi/host/include -L/var/home/bazzite/ljh/output/pi4-hdmi/host/lib -Wl,-rpath,/var/home/bazzite/ljh/output/pi4-hdmi/host/lib" ARCH=arm64 KCFLAGS="-Wno-attribute-alias" INSTALL_MOD_PATH=/var/home/bazzite/ljh/output/pi4-hdmi/target CROSS_COMPILE="/var/home/bazzite/ljh/output/pi4-hdmi/host/bin/aarch64-buildroot-linux-gnu-" WERROR=0 REGENERATE_PARSERS=1 DEPMOD=true INSTALL_MOD_STRIP=1 -C /var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom all
+make[1]: Entering directory '/var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom'
+  SYNC    include/config/auto.conf
+  HOSTCC  scripts/basic/fixdep
+  HOSTCC  scripts/kconfig/conf.o
+  HOSTCC  scripts/kconfig/confdata.o
+  HOSTCC  scripts/kconfig/expr.o
+  HOSTCC  scripts/kconfig/lexer.lex.o
+  HOSTCC  scripts/kconfig/menu.o
+  HOSTCC  scripts/kconfig/parser.tab.o
+  HOSTCC  scripts/kconfig/preprocess.o
+  HOSTCC  scripts/kconfig/symbol.o
+  HOSTCC  scripts/kconfig/util.o
+  HOSTLD  scripts/kconfig/conf
+  CALL    scripts/checksyscalls.sh
+  UPD     kernel/config_data
+  CC      drivers/pci/ecam.o
+  CC      drivers/pci/controller/pci-host-common.o
+  CC      drivers/pci/controller/pci-host-generic.o
+  CC      drivers/pci/controller/pcie-brcmstb.o
+  GZIP    kernel/config_data.gz
+  CC      kernel/configs.o
+  AR      kernel/built-in.a
+  AR      drivers/pci/controller/built-in.a
+  AR      drivers/pci/built-in.a
+  AR      drivers/built-in.a
+  AR      built-in.a
+  AR      vmlinux.a
+  LD      vmlinux.o
+  OBJCOPY modules.builtin.modinfo
+  GEN     modules.builtin
+  MODPOST vmlinux.symvers
+  UPD     include/generated/utsversion.h
+  CC      init/version-timestamp.o
+  KSYMS   .tmp_vmlinux0.kallsyms.S
+  AS      .tmp_vmlinux0.kallsyms.o
+  LD      .tmp_vmlinux1
+  NM      .tmp_vmlinux1.syms
+  KSYMS   .tmp_vmlinux1.kallsyms.S
+  AS      .tmp_vmlinux1.kallsyms.o
+  LD      .tmp_vmlinux2
+  NM      .tmp_vmlinux2.syms
+  KSYMS   .tmp_vmlinux2.kallsyms.S
+  AS      .tmp_vmlinux2.kallsyms.o
+  LD      vmlinux
+  NM      System.map
+  SORTTAB vmlinux
+  OBJCOPY arch/arm64/boot/Image
+  GZIP    arch/arm64/boot/Image.gz
+make[1]: Leaving directory '/var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom'
+GIT_DIR=. PATH="/var/home/bazzite/ljh/output/pi4-hdmi/host/bin:/var/home/bazzite/ljh/output/pi4-hdmi/host/sbin:/var/home/bazzite/ljh/.local-build/tools/bin:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0oaHHTG:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0ZNo2pP:/var/home/bazzite/.codex/packages/standalone/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.local/bin:/home/bazzite/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" PKG_CONFIG="/var/home/bazzite/ljh/output/pi4-hdmi/host/bin/pkg-config" PKG_CONFIG_SYSROOT_DIR="/" PKG_CONFIG_ALLOW_SYSTEM_CFLAGS=1 PKG_CONFIG_ALLOW_SYSTEM_LIBS=1 PKG_CONFIG_LIBDIR="/var/home/bazzite/ljh/output/pi4-hdmi/host/lib/pkgconfig:/var/home/bazzite/ljh/output/pi4-hdmi/host/share/pkgconfig" BR_BINARIES_DIR=/var/home/bazzite/ljh/output/pi4-hdmi/images DTC_FLAGS=-@ /usr/bin/make -j13 HOSTCC="/usr/bin/gcc -O2 -isystem /var/home/bazzite/ljh/output/pi4-hdmi/host/include -L/var/home/bazzite/ljh/output/pi4-hdmi/host/lib -Wl,-rpath,/var/home/bazzite/ljh/output/pi4-hdmi/host/lib" ARCH=arm64 KCFLAGS="-Wno-attribute-alias" INSTALL_MOD_PATH=/var/home/bazzite/ljh/output/pi4-hdmi/target CROSS_COMPILE="/var/home/bazzite/ljh/output/pi4-hdmi/host/bin/aarch64-buildroot-linux-gnu-" WERROR=0 REGENERATE_PARSERS=1 DEPMOD=true INSTALL_MOD_STRIP=1 -C /var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom Image
+make[1]: Entering directory '/var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom'
+  CALL    scripts/checksyscalls.sh
+make[1]: Leaving directory '/var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom'
+GIT_DIR=. PATH="/var/home/bazzite/ljh/output/pi4-hdmi/host/bin:/var/home/bazzite/ljh/output/pi4-hdmi/host/sbin:/var/home/bazzite/ljh/.local-build/tools/bin:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0oaHHTG:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0ZNo2pP:/var/home/bazzite/.codex/packages/standalone/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.local/bin:/home/bazzite/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" PKG_CONFIG="/var/home/bazzite/ljh/output/pi4-hdmi/host/bin/pkg-config" PKG_CONFIG_SYSROOT_DIR="/" PKG_CONFIG_ALLOW_SYSTEM_CFLAGS=1 PKG_CONFIG_ALLOW_SYSTEM_LIBS=1 PKG_CONFIG_LIBDIR="/var/home/bazzite/ljh/output/pi4-hdmi/host/lib/pkgconfig:/var/home/bazzite/ljh/output/pi4-hdmi/host/share/pkgconfig" BR_BINARIES_DIR=/var/home/bazzite/ljh/output/pi4-hdmi/images DTC_FLAGS=-@ /usr/bin/make -j13 HOSTCC="/usr/bin/gcc -O2 -isystem /var/home/bazzite/ljh/output/pi4-hdmi/host/include -L/var/home/bazzite/ljh/output/pi4-hdmi/host/lib -Wl,-rpath,/var/home/bazzite/ljh/output/pi4-hdmi/host/lib" ARCH=arm64 KCFLAGS="-Wno-attribute-alias" INSTALL_MOD_PATH=/var/home/bazzite/ljh/output/pi4-hdmi/target CROSS_COMPILE="/var/home/bazzite/ljh/output/pi4-hdmi/host/bin/aarch64-buildroot-linux-gnu-" WERROR=0 REGENERATE_PARSERS=1 DEPMOD=true INSTALL_MOD_STRIP=1 -C /var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom broadcom/bcm2711-rpi-4-b.dtb broadcom/bcm2711-rpi-400.dtb broadcom/bcm2711-rpi-cm4.dtb broadcom/bcm2711-rpi-cm4s.dtb 
+make[1]: Entering directory '/var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom'
+make[1]: Leaving directory '/var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom'
+>>> linux custom Installing to target
+# Install modules and remove symbolic links pointing to build
+# directories, not relevant on the target
+# Installing dtc (device tree compiler) as host tool, if selected
+if grep -q "CONFIG_DTC=y" /var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom/.config; then /usr/bin/install -D -m 0755 /var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom/scripts/dtc/dtc /var/home/bazzite/ljh/output/pi4-hdmi/host/bin/linux-dtc ; ln -sf linux-dtc /var/home/bazzite/ljh/output/pi4-hdmi/host/bin/dtc; fi
+>>> linux custom Installing to images directory
+/usr/bin/install -m 0644 -D /var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom/arch/arm64/boot/Image /var/home/bazzite/ljh/output/pi4-hdmi/images/Image
+# dtbs moved from arch/<ARCH>/boot to arch/<ARCH>/boot/dts since 3.8-rc1
+install -D /var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom/arch/arm64/boot/dts/broadcom/bcm2711-rpi-4-b.dtb /var/home/bazzite/ljh/output/pi4-hdmi/images/bcm2711-rpi-4-b.dtb
+install -D /var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom/arch/arm64/boot/dts/broadcom/bcm2711-rpi-400.dtb /var/home/bazzite/ljh/output/pi4-hdmi/images/bcm2711-rpi-400.dtb
+install -D /var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom/arch/arm64/boot/dts/broadcom/bcm2711-rpi-cm4.dtb /var/home/bazzite/ljh/output/pi4-hdmi/images/bcm2711-rpi-cm4.dtb
+install -D /var/home/bazzite/ljh/output/pi4-hdmi/build/linux-custom/arch/arm64/boot/dts/broadcom/bcm2711-rpi-cm4s.dtb /var/home/bazzite/ljh/output/pi4-hdmi/images/bcm2711-rpi-cm4s.dtb
+make: Leaving directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'

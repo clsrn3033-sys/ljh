@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+dist/
+output/
+vendor/
+.venv/
+preview/
+.local-build/
+buildroot-*.tar.xz
+artifacts/
+docs/logs/pi4-build.log

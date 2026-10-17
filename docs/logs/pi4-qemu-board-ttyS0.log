@@ -1,0 +1,5 @@
+qemu-system-aarch64: warning: bcm2711 dtc: brcm,bcm2711-pcie has been disabled!
+qemu-system-aarch64: warning: bcm2711 dtc: brcm,bcm2711-rng200 has been disabled!
+qemu-system-aarch64: warning: bcm2711 dtc: brcm,bcm2711-thermal has been disabled!
+qemu-system-aarch64: warning: bcm2711 dtc: brcm,bcm2711-genet-v5 has been disabled!
+qemu-system-aarch64: terminating on signal 15 from pid 3 (timeout)
