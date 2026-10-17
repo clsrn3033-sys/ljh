@@ -1,6 +1,0 @@
-# MEBS UI safety invariants
-WIDTH = 480
-HEIGHT = 320
-VERIFIED = "COMPLETE"
-SAFE = "SAFE_TO_REMOVE"
-assert VERIFIED != SAFE
