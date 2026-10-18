@@ -1,0 +1,2 @@
+{"status": "BLOCKED", "qemu_exit": 124, "wall_seconds": 30.028, "kernel_log_observed": false, "login_observed": false, "note": "No real Pi, EEPROM/firmware boot or DSI tested. Inspect serial log; a timeout is not boot success."}
+/var/home/bazzite/ljh/tests/v2-integration/logs/raspi4b-20261019-070016.log

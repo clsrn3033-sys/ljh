@@ -1,0 +1,104 @@
+COMMAND qemu-system-aarch64 -M virt -cpu cortex-a72 -m 1024 -smp 2 -nographic -nic none -monitor none -kernel /var/home/bazzite/ljh/output/pi4-v2-validated-20261019/images/Image -append 'root=/dev/vda2 rootwait ro console=ttyAMA0,115200 loglevel=6' -drive file=/tmp/mebs-v2-suite-r88hz33l/T04/os.qcow2,format=qcow2,if=none,id=os -device virtio-blk-device,drive=os -device qemu-xhci,id=xhci -qmp unix:/tmp/mebs-v2-suite-r88hz33l/T04/qmp.sock,server=on,wait=off
+[    0.000000] Linux version 6.12.61-v8 (bazzite@bazzite) (aarch64-buildroot-linux-gnu-gcc.br_real (Buildroot -g24c30ba-dirty) 15.3.0, GNU ld (GNU Binutils) 2.45.1) #1 SMP PREEMPT Sun Oct 18 23:53:33 KST 2026
+[    0.000000] random: crng init done
+[    0.000000] Kernel command line: root=/dev/vda2 rootwait ro console=ttyAMA0,115200 loglevel=6
+[    0.056377] cacheinfo: Unable to detect cache hierarchy for CPU 0
+[    0.193633] Enabled cp15_barrier support
+[    0.193798] Enabled setend support
+[    0.252762] audit: type=2000 audit(0.228:1): state=initialized audit_enabled=0 res=1
+[    0.341838] SCSI subsystem initialized
+[    0.367785] VFS: Disk quotas dquot_6.6.0
+[    1.469225] Initialise system trusted keyrings
+[    1.477691] NFS: Registering the id_resolver key type
+[    1.478405] Key type id_resolver registered
+[    1.478686] Key type id_legacy registered
+[    1.484359] Key type asymmetric registered
+[    1.484769] Asymmetric key parser 'x509' registered
+[    1.503418] pci-host-generic 4010000000.pcie: Memory resource size exceeds max for 32 bits
+[    1.593776] virtio_blk virtio0: [vda] 608256 512-byte logical blocks (311 MB/297 MiB)
+[    1.686986] Key type dns_resolver registered
+[    1.732625] Loading compiled-in X.509 certificates
+[    1.752865] Key type .fscrypt registered
+[    1.753177] Key type fscrypt-provisioning registered
+Saving 256 bits of creditable seed for next boot
+Starting syslogd: OK
+Starting klogd: OK
+Running sysctl: OK
+Starting network: OK
+Starting crond: OK
+
+Welcome to Buildroot
+mebs login: root
+# stty -echo; export PS1=$(printf 'MEBS_'; printf 'TEST# ')
+MEBS_TEST# MEBS_JSON{"state": "BOOTING"}
+MEBS_TEST# MEBS_JSON{"state": "BOOTING"}
+MEBS_TEST# MEBS_JSON{"state": "BOOTING"}
+MEBS_TEST# MEBS_JSON{"state": "READY", "target_connected": false, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# {'pid1': 'init', 'settings_mounted': True, 'status': '{"state": "READY", "target_connected": false, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}\n', 'uptime': '7.16 3.35\n'}
+MEBS_TEST# FULL_INIT_AUTO_READY wall_seconds=7.193 {'state': 'READY', 'target_connected': False, 'source_connected': False, 'battery_guard': 'UNCONFIGURED', 'shutdown_pending': False}
+MEBS_JSON{"state": "READY", "target_connected": false, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# [    8.619323] scsi 0:0:0:0: Direct-Access     QEMU     QEMU HARDDISK    2.5+ PQ: 0 ANSI: 5
+[    8.636192] sd 0:0:0:0: Power-on or device reset occurred
+[    8.647640] sd 0:0:0:0: [sda] 393216 512-byte logical blocks: (201 MB/192 MiB)
+[    8.649215] sd 0:0:0:0: [sda] Write Protect is off
+[    8.652597] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, supports DPO and FUA
+[    8.686597] sd 0:0:0:0: [sda] Attached SCSI disk
+MEBS_JSON{"state": "READY", "target_connected": false, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"state": "WAITING_SOURCE", "target_connected": true, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"state": "WAITING_SOURCE", "target_connected": true, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# [   10.946001] scsi 1:0:0:0: Direct-Access     QEMU     QEMU HARDDISK    2.5+ PQ: 0 ANSI: 5
+[   10.949913] sd 1:0:0:0: Power-on or device reset occurred
+[   10.957959] sd 1:0:0:0: [sdb] 131072 512-byte logical blocks: (67.1 MB/64.0 MiB)
+[   10.959504] sd 1:0:0:0: [sdb] Write Protect is on
+[   10.968944] sd 1:0:0:0: [sdb] Write cache: disabled, read cache: enabled, supports DPO and FUA
+[   11.003039] sd 1:0:0:0: [sdb] Attached SCSI disk
+MEBS_JSON{"state": "WAITING_SOURCE", "target_connected": true, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"state": "WAITING_SOURCE", "target_connected": true, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"state": "WAITING_SOURCE", "target_connected": true, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"state": "MOUNTING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 0, "verified_files": 0, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"state": "MOUNTING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 0, "verified_files": 0, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"state": "MOUNTING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 33557739, "verified_files": 0, "total_files": 11, "needed_bytes": 34634752, "free_bytes": 168751104, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 34634752, "free_bytes": 168751104, "state": "SCANNING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 33557739, "verified_files": 0, "current_file": "", "total_files": 11, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 34634752, "free_bytes": 168751104, "state": "SCANNING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 33557739, "verified_files": 0, "current_file": "", "total_files": 11, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 34634752, "free_bytes": 168751104, "state": "SCANNING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 33557739, "verified_files": 0, "current_file": "", "total_files": 11, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 34634752, "free_bytes": 168751104, "state": "SCANNING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 33557739, "verified_files": 0, "current_file": "", "total_files": 11, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 34634752, "free_bytes": 168751104, "state": "SCANNING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 33557739, "verified_files": 0, "current_file": "", "total_files": 11, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 34634752, "free_bytes": 168751104, "state": "SCANNING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 33557739, "verified_files": 0, "current_file": "", "total_files": 11, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 34634752, "free_bytes": 168751104, "state": "SCANNING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 33557739, "verified_files": 0, "current_file": "", "total_files": 11, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 34634752, "free_bytes": 168751104, "state": "SCANNING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 33557739, "verified_files": 0, "current_file": "", "total_files": 11, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 34634752, "free_bytes": 168751104, "state": "VERIFYING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 6, "total_bytes": 33557739, "verified_files": 0, "current_file": ".hidden", "total_files": 11, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 34634752, "free_bytes": 168751104, "state": "VERIFYING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 6, "total_bytes": 33557739, "verified_files": 1, "current_file": ".hidden", "total_files": 11, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 34634752, "free_bytes": 168751104, "state": "VERIFYING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 744, "total_bytes": 33557739, "verified_files": 1, "current_file": "DCIM/A/same.bin", "total_files": 11, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 34634752, "free_bytes": 168751104, "state": "COPYING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 1389, "total_bytes": 33557739, "verified_files": 2, "current_file": "DCIM/A/\uc0ac\uc9c4 01.JPG", "total_files": 11, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# [   27.164265] device offline error, dev sda, sector 4 op 0x1:(WRITE) flags 0x103000 phys_seg 1 prio class 2
+[   27.164844] Buffer I/O error on dev sda, logical block 2, lost async page write
+[   27.165536] device offline error, dev sda, sector 522 op 0x1:(WRITE) flags 0x103000 phys_seg 1 prio class 2
+[   27.165958] Buffer I/O error on dev sda, logical block 261, lost async page write
+[   27.167270] device offline error, dev sda, sector 592 op 0x1:(WRITE) flags 0x3000 phys_seg 1 prio class 2
+[   27.167766] Buffer I/O error on dev sda, logical block 296, lost async page write
+[   27.168441] device offline error, dev sda, sector 598 op 0x1:(WRITE) flags 0x3000 phys_seg 1 prio class 2
+[   27.168827] Buffer I/O error on dev sda, logical block 299, lost async page write
+[   27.169319] device offline error, dev sda, sector 552 op 0x1:(WRITE) flags 0x103000 phys_seg 1 prio class 2
+[   27.169731] Buffer I/O error on dev sda, logical block 276, lost async page write
+[   27.170197] device offline error, dev sda, sector 16076 op 0x1:(WRITE) flags 0x3000 phys_seg 1 prio class 2
+[   27.170601] Buffer I/O error on dev sda, logical block 8038, lost async page write
+[   27.171767] device offline error, dev sda, sector 0 op 0x1:(WRITE) flags 0x800 phys_seg 0 prio class 2
+[   27.174306] EXT4-fs (sda): shut down requested (2)
+[   27.174791] Aborting journal on device sda-8.
+[   27.175174] device offline error, dev sda, sector 163842 op 0x1:(WRITE) flags 0x29800 phys_seg 1 prio class 2
+[   27.175692] Buffer I/O error on dev sda, logical block 81921, lost sync page write
+[   27.181617] JBD2: I/O error when updating journal superblock for sda-8.
+[   27.218073] sd 0:0:0:0: [sda] Synchronizing SCSI cache
+[   27.536868] Buffer I/O error on dev sda, logical block 1, lost sync page write
+[   27.537294] EXT4-fs (sda): I/O error while writing superblock
+MEBS_JSON{"needed_bytes": 34634752, "free_bytes": 168751104, "state": "ERROR", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 1389, "total_bytes": 33557739, "verified_files": 2, "current_file": "DCIM/A/\uc0ac\uc9c4 01.JPG", "total_files": 11, "error": "\uc800\uc7a5\uc7a5\uce58 \uc5f0\uacb0\uc774 \ubcc0\uacbd\ub418\uc5c8\uc2b5\ub2c8\ub2e4. \ubc31\uc5c5\uc744 \uc911\ub2e8\ud569\ub2c8\ub2e4.", "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# /dev/vda2 on / type ext4 (ro,relatime)
+devtmpfs on /dev type devtmpfs (rw,relatime,size=496392k,nr_inodes=124098,mode=755)
+proc on /proc type proc (rw,relatime)
+devpts on /dev/pts type devpts (rw,relatime,gid=5,mode=620,ptmxmode=666)
+tmpfs on /dev/shm type tmpfs (rw,relatime)
+tmpfs on /tmp type tmpfs (rw,relatime)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,relatime,mode=755)
+sysfs on /sys type sysfs (rw,relatime)
+/dev/vda3 on /var/lib/mebs type ext4 (rw,nosuid,nodev,noexec,noatime)
+MEBS_TEST# [   28.122772] reboot: Power down
