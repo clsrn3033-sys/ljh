@@ -1,0 +1,2 @@
+output/pi4-v2-validated-20261019/images/sdcard.img : 12.54%   (   297 MiB =>   37.2 MiB, artifacts/MEBS-V2-test-candidate-20261019.img.zst) 
+artifacts/MEBS-V2-test-candidate-20261019.img.zst: 311427072 bytes 

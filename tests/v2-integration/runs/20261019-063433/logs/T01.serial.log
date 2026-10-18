@@ -1,0 +1,42 @@
+COMMAND qemu-system-aarch64 -M virt -cpu cortex-a72 -m 1024 -smp 2 -nographic -nic none -monitor none -kernel /var/home/bazzite/ljh/output/pi4-v2-dsi-800x480-20261018/images/Image -append 'root=/dev/vda2 rootwait ro console=ttyAMA0,115200 loglevel=6' -drive file=/tmp/mebs-v2-suite-7l6dhcw5/T01/os.qcow2,format=qcow2,if=none,id=os -device virtio-blk-device,drive=os -device qemu-xhci,id=xhci -qmp unix:/tmp/mebs-v2-suite-7l6dhcw5/T01/qmp.sock,server=on,wait=off
+[    0.000000] Linux version 6.12.61-v8 (bazzite@bazzite) (aarch64-buildroot-linux-gnu-gcc.br_real (Buildroot -g24c30ba-dirty) 15.3.0, GNU ld (GNU Binutils) 2.45.1) #1 SMP PREEMPT Sun Oct 18 23:53:33 KST 2026
+[    0.000000] random: crng init done
+[    0.000000] Kernel command line: root=/dev/vda2 rootwait ro console=ttyAMA0,115200 loglevel=6
+[    0.059735] cacheinfo: Unable to detect cache hierarchy for CPU 0
+[    0.208776] Enabled cp15_barrier support
+[    0.208963] Enabled setend support
+[    0.277609] audit: type=2000 audit(0.248:1): state=initialized audit_enabled=0 res=1
+[    0.372818] SCSI subsystem initialized
+[    0.405904] VFS: Disk quotas dquot_6.6.0
+[    1.502502] Initialise system trusted keyrings
+[    1.511177] NFS: Registering the id_resolver key type
+[    1.511917] Key type id_resolver registered
+[    1.512129] Key type id_legacy registered
+[    1.518045] Key type asymmetric registered
+[    1.518435] Asymmetric key parser 'x509' registered
+[    1.537814] pci-host-generic 4010000000.pcie: Memory resource size exceeds max for 32 bits
+[    1.644715] virtio_blk virtio0: [vda] 608256 512-byte logical blocks (311 MB/297 MiB)
+[    1.748215] Key type dns_resolver registered
+[    1.803601] Loading compiled-in X.509 certificates
+[    1.825706] Key type .fscrypt registered
+[    1.825941] Key type fscrypt-provisioning registered
+seedrng: can't create directory '/var/lib/seedrng': Read-only file system
+Starting syslogd: OK
+Starting klogd: OK
+Running sysctl: OK
+Starting network: OK
+Starting crond: OK
+
+Welcome to Buildroot
+mebs login: root
+# cat /run/mebs/service.log; mount
+/dev/vda2 on / type ext4 (ro,relatime)
+devtmpfs on /dev type devtmpfs (rw,relatime,size=496392k,nr_inodes=124098,mode=755)
+proc on /proc type proc (rw,relatime)
+devpts on /dev/pts type devpts (rw,relatime,gid=5,mode=620,ptmxmode=666)
+tmpfs on /dev/shm type tmpfs (rw,relatime)
+tmpfs on /tmp type tmpfs (rw,relatime)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,relatime,mode=755)
+sysfs on /sys type sysfs (rw,relatime)
+/dev/vda3 on /var/lib/mebs type ext4 (rw,nosuid,nodev,noexec,noatime)
+# 

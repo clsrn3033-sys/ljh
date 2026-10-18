@@ -1,0 +1,108 @@
+[
+  {
+    "monotonic": 33799.561184931,
+    "status": {
+      "state": "READY",
+      "target_connected": false,
+      "source_connected": false,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 33803.177240315,
+    "status": {
+      "state": "WAITING_SOURCE",
+      "target_connected": true,
+      "source_connected": false,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 33807.050172971,
+    "status": {
+      "state": "MOUNTING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 0,
+      "total_bytes": 0,
+      "verified_files": 0,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 33807.954900285,
+    "status": {
+      "state": "MOUNTING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 0,
+      "total_bytes": 0,
+      "verified_files": 0,
+      "total_files": 0,
+      "needed_bytes": 1049600,
+      "free_bytes": 168750080,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 33808.95695656,
+    "status": {
+      "needed_bytes": 1049600,
+      "free_bytes": 168750080,
+      "state": "SCANNING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 0,
+      "total_bytes": 0,
+      "verified_files": 0,
+      "current_file": "",
+      "total_files": 0,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 33809.984941744,
+    "status": {
+      "needed_bytes": 1049600,
+      "free_bytes": 168750080,
+      "state": "FINAL_CHECK",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 0,
+      "total_bytes": 0,
+      "verified_files": 0,
+      "current_file": "",
+      "total_files": 0,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 33810.876367852,
+    "status": {
+      "needed_bytes": 1049600,
+      "free_bytes": 168750080,
+      "state": "SAFE_TO_REMOVE",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": true,
+      "copied_bytes": 0,
+      "total_bytes": 0,
+      "verified_files": 0,
+      "current_file": "",
+      "total_files": 0,
+      "job": "/run/mebs/target/mebs-backup-19700101T000017Z-9808b81b624b41f7be30fc8bd2580efa",
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  }
+]

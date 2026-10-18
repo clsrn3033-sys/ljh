@@ -1,0 +1,35 @@
+UTC start: 2026-10-19T04:43:34.179226+09:00
+Image: /var/home/bazzite/ljh/output/pi4-v2-dsi-800x480-20261018/images/sdcard.img
+/bin/sh: can't access tty; job control turned off
+~ # mount -t proc proc /proc; mount -t sysfs sysfs /sys; mount -t devtmpfs devtm
+pfs /dev; mount -t tmpfs tmpfs /run; mount -t tmpfs tmpfs /tmp; mount /dev/vda3 
+/var/lib/mebs; echo MEBS_QEMU_READY
+MEBS_QEMU_READY
+~ # /etc/init.d/S50mebs start; sleep 4; cat /run/mebs/status.json
+{"state": "WAITING_SOURCE", "target_connected": true, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+~ # cat /run/mebs/status.json
+{"state": "WAITING_SOURCE", "target_connected": true, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+~ # cat /run/mebs/status.json
+{"state": "WAITING_SOURCE", "target_connected": true, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+~ # cat /run/mebs/status.json
+{"state": "WAITING_SOURCE", "target_connected": true, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+~ # cat /run/mebs/status.json
+{"state": "MOUNTING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 0, "verified_files": 0, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+~ # cat /run/mebs/status.json
+{"needed_bytes": 1052672, "free_bytes": 110574592, "state": "SCANNING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 62, "verified_files": 0, "current_file": "", "total_files": 1, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+~ # cat /run/mebs/status.json
+{"needed_bytes": 1052672, "free_bytes": 110574592, "state": "SCANNING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 62, "verified_files": 0, "current_file": "", "total_files": 1, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+~ # cat /run/mebs/status.json
+{"needed_bytes": 1052672, "free_bytes": 110574592, "state": "VERIFYING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 62, "total_bytes": 62, "verified_files": 0, "current_file": "DCIM/C0001.XML", "total_files": 1, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+~ # cat /run/mebs/status.json
+{"needed_bytes": 1052672, "free_bytes": 110574592, "state": "FINAL_CHECK", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 62, "total_bytes": 62, "verified_files": 1, "current_file": "DCIM/C0001.XML", "total_files": 1, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+~ # cat /run/mebs/status.json
+{"needed_bytes": 1052672, "free_bytes": 110574592, "state": "FINAL_CHECK", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 62, "total_bytes": 62, "verified_files": 1, "current_file": "DCIM/C0001.XML", "total_files": 1, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+~ # cat /run/mebs/status.json
+{"needed_bytes": 1052672, "free_bytes": 110574592, "state": "SAFE_TO_REMOVE", "source_connected": true, "target_connected": true, "safe_to_remove": true, "copied_bytes": 62, "total_bytes": 62, "verified_files": 1, "current_file": "", "total_files": 1, "job": "/run/mebs/target/mebs-backup-19700101T000011Z-ac0ff670b10b4fdba42e45bfefdf6b6a", "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+~ # mkdir -p /run/verify; mount -t ext4 -o ro /dev/sda /run/verify; find /run/ve
+rify -type f -name C0001.XML -exec sha256sum {} +
+5c81656654ab670796a06d1c1d14bf3f7ddbdddb47316d01ee27c05056a459fa  /run/verify/mebs-backup-19700101T000011Z-ac0ff670b10b4fdba42e45bfefdf6b6a/data/DCIM/C0001.XML
+~ # umount /run/verify; /etc/init.d/S50mebs stop; poweroff -f
+[   18.836062] reboot: Power down
+RESULT {"status": "PASS", "state": "SAFE_TO_REMOVE", "verified_files": 1, "source_sha256": "5c81656654ab670796a06d1c1d14bf3f7ddbdddb47316d01ee27c05056a459fa", "target_sha256": "5c81656654ab670796a06d1c1d14bf3f7ddbdddb47316d01ee27c05056a459fa", "source_unchanged": true, "finished": "2026-10-19T04:43:53.811442+09:00", "log": "TEST_LOGS/v2-qemu-e2e-06-20261019-044334.log"}

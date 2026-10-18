@@ -1,0 +1,20 @@
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 475
+e2fsck 1.47.3 (8-Jul-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+rootfs: 1359/49152 files (0.7% non-contiguous), 73843/196608 blocks
+{
+  "base_image": "/var/home/bazzite/ljh/output/pi4-v2-dsi-800x480-20261018/images/sdcard.img",
+  "base_sha256": "272fcf5e9ab509ec9e3ce6d15dca0bf9a206d18f0f7441b8020a2c0f598618a3",
+  "fixed_sha256": "a95ba8f4b6bd924b83d48ef51ca8fa4e8679c083568326914ef4f60616e71a32",
+  "changed_file": "/usr/lib/mebs/mebs/appliance.py",
+  "source_sha256": "890b010a77e45bbe4666176b4909ace9d7ee23639db7721551e4e91148eeb140",
+  "method": "Python source update in new copy of locally built Buildroot image; kernel/firmware unchanged; no QEMU fstab change",
+  "physical_hardware_tested": false
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "monotonic": 33644.708482153,
+    "status": {
+      "state": "READY",
+      "target_connected": false,
+      "source_connected": false,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 33648.159070838,
+    "status": {
+      "state": "WAITING_SOURCE",
+      "target_connected": true,
+      "source_connected": false,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  }
+]

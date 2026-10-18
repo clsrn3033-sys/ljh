@@ -1,0 +1,36 @@
+[
+  {
+    "id": "T01",
+    "status": "PASS",
+    "executed": true,
+    "boot_seconds": 8.007681656999921,
+    "autostart": true,
+    "state": {
+      "needed_bytes": 1079296,
+      "free_bytes": 168751104,
+      "state": "SAFE_TO_REMOVE",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": true,
+      "copied_bytes": 3307,
+      "total_bytes": 3307,
+      "verified_files": 10,
+      "current_file": "",
+      "total_files": 10,
+      "job": "/run/mebs/target/mebs-backup-19700101T000016Z-d80676558c6540649cfc2b77a92aa7a0",
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    },
+    "detail": "Every file hash and directory match; existing target data preserved",
+    "files": 10,
+    "bytes": 3307,
+    "source_unchanged": true,
+    "elapsed_seconds": 62.59
+  },
+  {
+    "id": "T12",
+    "status": "BLOCKED",
+    "executed": false,
+    "detail": "Shipped V2 has no manual formatter or format-approval UI. No SD format executed."
+  }
+]

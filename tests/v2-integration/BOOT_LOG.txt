@@ -1,0 +1,112 @@
+FINAL CANDIDATE: full BusyBox init, test-copy fstab adaptation only
+COMMAND qemu-system-aarch64 -M virt -cpu cortex-a72 -m 1024 -smp 2 -nographic -nic none -monitor none -kernel /var/home/bazzite/ljh/output/pi4-v2-validated-20261019/images/Image -append 'root=/dev/vda2 rootwait ro console=ttyAMA0,115200 loglevel=6' -drive file=/tmp/mebs-v2-suite-1ijieppc/T01/os.qcow2,format=qcow2,if=none,id=os -device virtio-blk-device,drive=os -device qemu-xhci,id=xhci -qmp unix:/tmp/mebs-v2-suite-1ijieppc/T01/qmp.sock,server=on,wait=off
+[    0.000000] Linux version 6.12.61-v8 (bazzite@bazzite) (aarch64-buildroot-linux-gnu-gcc.br_real (Buildroot -g24c30ba-dirty) 15.3.0, GNU ld (GNU Binutils) 2.45.1) #1 SMP PREEMPT Sun Oct 18 23:53:33 KST 2026
+
+[    0.000000] random: crng init done
+
+[    0.000000] Kernel command line: root=/dev/vda2 rootwait ro console=ttyAMA0,115200 loglevel=6
+
+[    0.056731] cacheinfo: Unable to detect cache hierarchy for CPU 0
+
+[    0.196442] Enabled cp15_barrier support
+
+[    0.196614] Enabled setend support
+
+[    0.256668] audit: type=2000 audit(0.232:1): state=initialized audit_enabled=0 res=1
+
+[    0.345101] SCSI subsystem initialized
+
+[    0.374098] VFS: Disk quotas dquot_6.6.0
+
+[    1.475729] Initialise system trusted keyrings
+
+[    1.485427] NFS: Registering the id_resolver key type
+
+[    1.486122] Key type id_resolver registered
+
+[    1.486366] Key type id_legacy registered
+
+[    1.492017] Key type asymmetric registered
+
+[    1.492374] Asymmetric key parser 'x509' registered
+
+[    1.510186] pci-host-generic 4010000000.pcie: Memory resource size exceeds max for 32 bits
+
+[    1.607974] virtio_blk virtio0: [vda] 608256 512-byte logical blocks (311 MB/297 MiB)
+
+[    1.704225] Key type dns_resolver registered
+
+[    1.750193] Loading compiled-in X.509 certificates
+
+[    1.770102] Key type .fscrypt registered
+
+[    1.770378] Key type fscrypt-provisioning registered
+
+Saving 256 bits of creditable seed for next boot
+
+Starting syslogd: OK
+
+Starting klogd: OK
+
+Running sysctl: OK
+
+Starting network: OK
+
+Starting crond: OK
+
+
+
+
+Welcome to Buildroot
+
+
+mebs login: root
+
+# stty -echo; export PS1=$(printf 'MEBS_'; printf 'TEST# ')
+
+MEBS_TEST# Traceback (most recent call last):
+
+  File [35m"<string>"[0m, line [35m1[0m, in [35m<module>[0m
+
+    import base64;[31mexec[0m[1;31m(base64.b64decode('aW1wb3J0IGpzb247IHByaW50KCJNRUJTX0pTT04iK2pzb24uZHVtcHMoanNvbi5sb2FkKG9wZW4oJy9ydW4vbWVicy9zdGF0dXMuanNvbicpKSwgZW5zdXJlX2FzY2lpPVRydWUpKQ=='))[0m
+
+                  [31m~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+
+  File [35m"<string>"[0m, line [35m1[0m, in [35m<module>[0m
+
+    import base64;exec(base64.b64decode('aW1wb3J0IGpzb24[1;31m7IHByaW50KCJNRUJTX0pTT04iK2pz[0mb24uZHVtcHMoanNvbi5sb2FkKG9wZW4oJy9ydW4vbWVicy9zdGF0dXMuanNvbicpKSwgZW5zdXJlX2FzY2lpPVRydWUpKQ=='))
+
+                                                        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+
+[1;35mFileNotFoundError[0m: [35m[Errno 2] No such file or directory: '/run/mebs/status.json'[0m
+
+MEBS_TEST# Traceback (most recent call last):
+
+  File [35m"<string>"[0m, line [35m1[0m, in [35m<module>[0m
+
+    import base64;[31mexec[0m[1;31m(base64.b64decode('aW1wb3J0IGpzb247IHByaW50KCJNRUJTX0pTT04iK2pzb24uZHVtcHMoanNvbi5sb2FkKG9wZW4oJy9ydW4vbWVicy9zdGF0dXMuanNvbicpKSwgZW5zdXJlX2FzY2lpPVRydWUpKQ=='))[0m
+
+                  [31m~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+
+  File [35m"<string>"[0m, line [35m1[0m, in [35m<module>[0m
+
+    import base64;exec(base64.b64decode('aW1wb3J0IGpzb24[1;31m7IHByaW50KCJNRUJTX0pTT04iK2pz[0mb24uZHVtcHMoanNvbi5sb2FkKG9wZW4oJy9ydW4vbWVicy9zdGF0dXMuanNvbicpKSwgZW5zdXJlX2FzY2lpPVRydWUpKQ=='))
+
+                                                        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+
+[1;35mFileNotFoundError[0m: [35m[Errno 2] No such file or directory: '/run/mebs/status.json'[0m
+
+MEBS_TEST# MEBS_JSON{"state": "READY", "target_connected": false, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+
+MEBS_TEST# {'pid1': 'init', 'settings_mounted': True, 'status': '{"state": "READY", "target_connected": false, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}\n', 'uptime': '7.95 3.97\n'}
+
+MEBS_TEST# FULL_INIT_AUTO_READY wall_seconds=8.023 {'state': 'READY', 'target_connected': False, 'source_connected': False, 'battery_guard': 'UNCONFIGURED', 'shutdown_pending': False}
+
+DIRECT RASPI4B MODEL ATTEMPT (same kernel, preceding UTF8 candidate):
+COMMAND qemu-system-aarch64 -M raspi4b -m 2G -smp 4 -display none -serial stdio -monitor none -kernel /var/home/bazzite/ljh/output/pi4-v2-utf8-20261019/images/Image -dtb /var/home/bazzite/ljh/output/pi4-v2-utf8-20261019/images/bcm2711-rpi-4-b.dtb -append 'root=/dev/mmcblk0p2 rootwait ro console=ttyAMA0,115200 console=ttyS0,115200 loglevel=7' -drive file=/tmp/mebs-pi4-probe-kuojj00z/sd.raw,format=raw,if=sd
+qemu-system-aarch64: warning: bcm2711 dtc: brcm,bcm2711-pcie has been disabled!
+qemu-system-aarch64: warning: bcm2711 dtc: brcm,bcm2711-rng200 has been disabled!
+qemu-system-aarch64: warning: bcm2711 dtc: brcm,bcm2711-thermal has been disabled!
+qemu-system-aarch64: warning: bcm2711 dtc: brcm,bcm2711-genet-v5 has been disabled!
+
+RESULT {"status": "BLOCKED", "qemu_exit": 124, "wall_seconds": 30.024, "kernel_log_observed": false, "login_observed": false, "note": "No real Pi, EEPROM/firmware boot or DSI tested. Inspect serial log; a timeout is not boot success."}

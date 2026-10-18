@@ -1,0 +1,31 @@
+{
+  "files": {
+    "나.txt": "b11da8771e5cc66a7d3a591ce971b1dc2ad8923bf2ca9b0dde223a859c2e7573",
+    "가.txt": "3ace8fcbea72818083b15b149720ea85ed603fc5157cd43b41c5c12aed55379c",
+    "zero.dat": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".hidden": "e564b4081d7a9ea4b00dada53bdae70c99b87b6fce869f0c3dd4d2bfa1e53e1c",
+    "DCIM/B/same.bin": "64784ed12b5c82799dcdd70be30d9b8c866c026dcb4e3cb0576bf4463a8f532c",
+    "DCIM/A/same.bin": "64784ed12b5c82799dcdd70be30d9b8c866c026dcb4e3cb0576bf4463a8f532c",
+    "DCIM/A/사진 01.JPG": "c04e52d306f6e7c317d7de48061ad12bfe5bf46360090223b9ec5781c47b5d43",
+    "PRIVATE/CLIP/large.bin": "a4d7b6097aab36368e838e258edc4e3b3612fdf93e9ffb265b4711043658a37a",
+    "PRIVATE/CLIP/C0001.XML": "a1a0db820f1c5a8b1f94b7116a7f767018b77af89fdca259a0ac7db975787af3",
+    "PRIVATE/CLIP/C0001.MP4": "9fe8b13c2f88d3beafa8350475c74038ea591c191e1e87524c0f21d0c64bd041",
+    "한글 폴더/深い/하위/파일 [1] & 공백.txt": "61b092b8e04ea043f2d602c73af74e6fded549873ce0959511cde7202fd32ecc"
+  },
+  "directories": [
+    "DCIM",
+    "DCIM/A",
+    "DCIM/B",
+    "EMPTY",
+    "PRIVATE",
+    "PRIVATE/CLIP",
+    "한글 폴더",
+    "한글 폴더/深い",
+    "한글 폴더/深い/하위"
+  ],
+  "source_image_sha256": "96f716ce74b776f77f78a67d15960846ecb2398b55d639271029f263a5066759",
+  "existing_target": {
+    "수정금지.txt": "04c3aae440bf9f0bb717e790cc2d20d1a0440bf98a67be3b3625cba9d835db4e",
+    "KEEP_EXISTING.txt": "21899631239491b08759e384b1d91ac33bedcd608ebe1702d8fca7b1a2a07dbb"
+  }
+}

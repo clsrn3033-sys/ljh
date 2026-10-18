@@ -24,8 +24,8 @@ python3 scripts/test-pi4-v2-qemu.py --repeat-until 06:00 --interval-minutes 30 -
 
 The schedule was restarted with the corrected wall-clock interval calculation
 at 02:13 KST. Scheduled run 1 passed at 02:13:54, reached `SAFE_TO_REMOVE`,
-verified one XML file, and left the virtual source image unchanged. Subsequent
-run count and statuses are appended to `TEST_LOGS/v2-qemu-repeat-summary.log`.
+verified one XML file, and left the virtual source image unchanged. All eight scheduled runs completed successfully (02:13 through 05:43 KST);
+the final records are in `TEST_LOGS/v2-qemu-repeat-summary.log`.
 The pre-fix rapid runs are retained as diagnostic logs and excluded from the
 30-minute scheduled count.
 
@@ -38,3 +38,11 @@ Image artifacts:
 The QEMU test is a functional Linux/file-backed-storage check, not a Pi 4
 hardware emulation. The GUI storyboard is a software preview, not a captured
 QEMU framebuffer or proof of the real DSI panel.
+
+## Expanded full-init integration tests
+
+See [the V2 integration report](../tests/v2-integration/TEST_REPORT.md).
+It supersedes the limited XML-only smoke results for deployment decisions.
+The original image has a confirmed FAT32 Unicode filename defect. A new
+source/config-patched candidate is available; original images remain intact.
+Passing the earlier eight smoke runs does not establish full V2 compliance.

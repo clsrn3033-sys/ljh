@@ -1,0 +1,15 @@
+[    0.056828] cacheinfo: Unable to detect cache hierarchy for CPU 0
+[    1.505716] pci-host-generic 4010000000.pcie: Memory resource size exceeds max for 32 bits
+mount: /var/lib/mebs: fsconfig() failed: /dev/mmcblk0p3: Can't lookup blockdev.
+       dmesg(1) may have more information after failed mount system call.
+Saving 256 bits of creditable seed for next boot
+Starting syslogd: OK
+Starting klogd: OK
+Running sysctl: OK
+Starting network: OK
+Starting crond: OK
+
+Welcome to Buildroot
+mebs login: qemu-system-aarch64: terminating on signal 15 from pid 7 (timeout)
+
+QEMU_EXIT=124

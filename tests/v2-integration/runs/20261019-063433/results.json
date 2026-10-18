@@ -1,0 +1,15 @@
+[
+  {
+    "id": "T01",
+    "status": "BLOCKED",
+    "executed": true,
+    "error": "TIMEOUT(\"Timeout exceeded.\\n<pexpect.pty_spawn.spawn object at 0x7f357c4f7230>\\ncommand: /usr/bin/qemu-system-aarch64\\nargs: [b'/usr/bin/qemu-system-aarch64', b'-M', b'virt', b'-cpu', b'cortex-a72', b'-m', b'1024', b'-smp', b'2', b'-nographic', b'-nic', b'none', b'-monitor', b'none', b'-kernel', b'/var/home/bazzite/ljh/output/pi4-v2-dsi-800x480-20261018/images/Image', b'-append', b'root=/dev/vda2 rootwait ro console=ttyAMA0,115200 loglevel=6', b'-drive', b'file=/tmp/mebs-v2-suite-7l6dhcw5/T01/os.qcow2,format=qcow2,if=none,id=os', b'-device', b'virtio-blk-device,drive=os', b'-device', b'qemu-xhci,id=xhci', b'-qmp', b'unix:/tmp/mebs-v2-suite-7l6dhcw5/T01/qmp.sock,server=on,wait=off']\\nbuffer (last 100 chars): 'ype sysfs (rw,relatime)\\\\r\\\\r\\\\n/dev/vda3 on /var/lib/mebs type ext4 (rw,nosuid,nodev,noexec,noatime)\\\\r\\\\r\\\\n# '\\nbefore (last 100 chars): 'ype sysfs (rw,relatime)\\\\r\\\\r\\\\n/dev/vda3 on /var/lib/mebs type ext4 (rw,nosuid,nodev,noexec,noatime)\\\\r\\\\r\\\\n# '\\nafter: <class 'pexpect.exceptions.TIMEOUT'>\\nmatch: None\\nmatch_index: None\\nexitstatus: None\\nflag_eof: False\\npid: 799851\\nchild_fd: 6\\nclosed: False\\ntimeout: 60\\ndelimiter: <class 'pexpect.exceptions.EOF'>\\nlogfile: None\\nlogfile_read: <_io.TextIOWrapper name='/var/home/bazzite/ljh/tests/v2-integration/runs/20261019-063433/logs/T01.serial.log' mode='w' encoding='UTF-8'>\\nlogfile_send: None\\nmaxread: 2000\\nignorecase: False\\nsearchwindowsize: None\\ndelaybeforesend: 0.05\\ndelayafterclose: 0.1\\ndelayafterterminate: 0.1\\nsearcher: searcher_re:\\n    0: re.compile('MEBS_TEST# ')\")",
+    "elapsed_seconds": 100.413
+  },
+  {
+    "id": "T12",
+    "status": "BLOCKED",
+    "executed": false,
+    "detail": "Shipped V2 has no manual formatter or format-approval UI. No SD format executed."
+  }
+]

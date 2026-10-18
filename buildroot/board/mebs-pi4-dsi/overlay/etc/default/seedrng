@@ -1,0 +1,3 @@
+# The root filesystem is read-only. Persist seeds on the OS-owned partition,
+# which is mounted by init before S01seedrng runs. Images ship without seed files.
+SEEDRNG_ARGS="--seed-dir=/var/lib/mebs/seedrng"

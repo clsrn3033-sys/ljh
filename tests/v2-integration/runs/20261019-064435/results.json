@@ -1,0 +1,58 @@
+[
+  {
+    "id": "T01",
+    "status": "PASS",
+    "executed": true,
+    "boot_seconds": 8.023339139006566,
+    "autostart": true,
+    "state": {
+      "needed_bytes": 1079296,
+      "free_bytes": 168750080,
+      "state": "SAFE_TO_REMOVE",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": true,
+      "copied_bytes": 3307,
+      "total_bytes": 3307,
+      "verified_files": 10,
+      "current_file": "",
+      "total_files": 10,
+      "job": "/run/mebs/target/mebs-backup-19700101T000016Z-fcf5f9bedb684ffca204b901bd65dcb7",
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    },
+    "detail": "Every file hash and directory match; existing target data preserved",
+    "files": 10,
+    "bytes": 3307,
+    "source_unchanged": true,
+    "elapsed_seconds": 63.785
+  },
+  {
+    "id": "T09",
+    "status": "PASS",
+    "executed": true,
+    "boot_seconds": 7.985800759000995,
+    "autostart": true,
+    "state": {
+      "state": "ERROR",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 0,
+      "total_bytes": 0,
+      "verified_files": 0,
+      "error": "외장 하드는 ext4 형식이 필요합니다. 자동 포맷하지 않습니다.",
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    },
+    "detail": "Unsupported FAT32 destination rejected. Marker is ordinary existing data, not an identity requirement (user clarification).",
+    "source_unchanged": true,
+    "elapsed_seconds": 15.942
+  },
+  {
+    "id": "T12",
+    "status": "BLOCKED",
+    "executed": false,
+    "detail": "Shipped V2 has no manual formatter or format-approval UI. No SD format executed."
+  }
+]

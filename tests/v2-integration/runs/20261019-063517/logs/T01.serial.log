@@ -1,0 +1,118 @@
+COMMAND qemu-system-aarch64 -M virt -cpu cortex-a72 -m 1024 -smp 2 -nographic -nic none -monitor none -kernel /var/home/bazzite/ljh/output/pi4-v2-dsi-800x480-20261018/images/Image -append 'root=/dev/vda2 rootwait ro console=ttyAMA0,115200 loglevel=6' -drive file=/tmp/mebs-v2-suite-qb3p2_j2/T01/os.qcow2,format=qcow2,if=none,id=os -device virtio-blk-device,drive=os -device qemu-xhci,id=xhci -qmp unix:/tmp/mebs-v2-suite-qb3p2_j2/T01/qmp.sock,server=on,wait=off
+[    0.000000] Linux version 6.12.61-v8 (bazzite@bazzite) (aarch64-buildroot-linux-gnu-gcc.br_real (Buildroot -g24c30ba-dirty) 15.3.0, GNU ld (GNU Binutils) 2.45.1) #1 SMP PREEMPT Sun Oct 18 23:53:33 KST 2026
+[    0.000000] random: crng init done
+[    0.000000] Kernel command line: root=/dev/vda2 rootwait ro console=ttyAMA0,115200 loglevel=6
+[    0.060645] cacheinfo: Unable to detect cache hierarchy for CPU 0
+[    0.204558] Enabled cp15_barrier support
+[    0.204730] Enabled setend support
+[    0.269924] audit: type=2000 audit(0.248:1): state=initialized audit_enabled=0 res=1
+[    0.355753] SCSI subsystem initialized
+[    0.389416] VFS: Disk quotas dquot_6.6.0
+[    1.499521] Initialise system trusted keyrings
+[    1.507848] NFS: Registering the id_resolver key type
+[    1.508561] Key type id_resolver registered
+[    1.508794] Key type id_legacy registered
+[    1.514254] Key type asymmetric registered
+[    1.514826] Asymmetric key parser 'x509' registered
+[    1.533940] pci-host-generic 4010000000.pcie: Memory resource size exceeds max for 32 bits
+[    1.638053] virtio_blk virtio0: [vda] 608256 512-byte logical blocks (311 MB/297 MiB)
+[    1.742321] Key type dns_resolver registered
+[    1.791330] Loading compiled-in X.509 certificates
+[    1.811885] Key type .fscrypt registered
+[    1.812135] Key type fscrypt-provisioning registered
+seedrng: can't create directory '/var/lib/seedrng': Read-only file system
+Starting syslogd: OK
+Starting klogd: OK
+Running sysctl: OK
+Starting network: OK
+Starting crond: OK
+
+Welcome to Buildroot
+mebs login: root
+# stty -echo; export PS1=$(printf 'MEBS_'; printf 'TEST# ')
+MEBS_TEST# Traceback (most recent call last):
+  File [35m"<string>"[0m, line [35m1[0m, in [35m<module>[0m
+    import base64;[31mexec[0m[1;31m(base64.b64decode('aW1wb3J0IGpzb247IHByaW50KCJNRUJTX0pTT04iK2pzb24uZHVtcHMoanNvbi5sb2FkKG9wZW4oJy9ydW4vbWVicy9zdGF0dXMuanNvbicpKSwgZW5zdXJlX2FzY2lpPVRydWUpKQ=='))[0m
+                  [31m~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"<string>"[0m, line [35m1[0m, in [35m<module>[0m
+    import base64;exec(base64.b64decode('aW1wb3J0IGpzb24[1;31m7IHByaW50KCJNRUJTX0pTT04iK2pz[0mb24uZHVtcHMoanNvbi5sb2FkKG9wZW4oJy9ydW4vbWVicy9zdGF0dXMuanNvbicpKSwgZW5zdXJlX2FzY2lpPVRydWUpKQ=='))
+                                                        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[1;35mFileNotFoundError[0m: [35m[Errno 2] No such file or directory: '/run/mebs/status.json'[0m
+MEBS_TEST# Traceback (most recent call last):
+  File [35m"<string>"[0m, line [35m1[0m, in [35m<module>[0m
+    import base64;[31mexec[0m[1;31m(base64.b64decode('aW1wb3J0IGpzb247IHByaW50KCJNRUJTX0pTT04iK2pzb24uZHVtcHMoanNvbi5sb2FkKG9wZW4oJy9ydW4vbWVicy9zdGF0dXMuanNvbicpKSwgZW5zdXJlX2FzY2lpPVRydWUpKQ=='))[0m
+                  [31m~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"<string>"[0m, line [35m1[0m, in [35m<module>[0m
+    import base64;exec(base64.b64decode('aW1wb3J0IGpzb24[1;31m7IHByaW50KCJNRUJTX0pTT04iK2pz[0mb24uZHVtcHMoanNvbi5sb2FkKG9wZW4oJy9ydW4vbWVicy9zdGF0dXMuanNvbicpKSwgZW5zdXJlX2FzY2lpPVRydWUpKQ=='))
+                                                        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[1;35mFileNotFoundError[0m: [35m[Errno 2] No such file or directory: '/run/mebs/status.json'[0m
+MEBS_TEST# MEBS_JSON{"state": "READY", "target_connected": false, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# {'pid1': 'init', 'settings_mounted': True, 'status': '{"state": "READY", "target_connected": false, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}\n', 'uptime': '8.59 4.09\n'}
+MEBS_TEST# FULL_INIT_AUTO_READY wall_seconds=8.679 {'state': 'READY', 'target_connected': False, 'source_connected': False, 'battery_guard': 'UNCONFIGURED', 'shutdown_pending': False}
+MEBS_JSON{"state": "READY", "target_connected": false, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# [   10.023803] scsi 0:0:0:0: Direct-Access     QEMU     QEMU HARDDISK    2.5+ PQ: 0 ANSI: 5
+[   10.035341] sd 0:0:0:0: Power-on or device reset occurred
+[   10.048637] sd 0:0:0:0: [sda] 393216 512-byte logical blocks: (201 MB/192 MiB)
+[   10.055276] sd 0:0:0:0: [sda] Write Protect is off
+[   10.060483] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, supports DPO and FUA
+[   10.104534] sd 0:0:0:0: [sda] Attached SCSI disk
+MEBS_JSON{"state": "READY", "target_connected": false, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"state": "WAITING_SOURCE", "target_connected": true, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"state": "WAITING_SOURCE", "target_connected": true, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# [   12.663977] scsi 1:0:0:0: Direct-Access     QEMU     QEMU HARDDISK    2.5+ PQ: 0 ANSI: 5
+[   12.666328] sd 1:0:0:0: Power-on or device reset occurred
+[   12.671216] sd 1:0:0:0: [sdb] 131072 512-byte logical blocks: (67.1 MB/64.0 MiB)
+[   12.674694] sd 1:0:0:0: [sdb] Write Protect is on
+[   12.680137] sd 1:0:0:0: [sdb] Write cache: disabled, read cache: enabled, supports DPO and FUA
+[   12.712462] sd 1:0:0:0: [sdb] Attached SCSI disk
+MEBS_JSON{"state": "WAITING_SOURCE", "target_connected": true, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"state": "WAITING_SOURCE", "target_connected": true, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"state": "WAITING_SOURCE", "target_connected": true, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"state": "MOUNTING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 0, "verified_files": 0, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"state": "MOUNTING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 3246, "verified_files": 0, "total_files": 8, "needed_bytes": 1075200, "free_bytes": 168750080, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "SCANNING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 3246, "verified_files": 0, "current_file": "", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "SCANNING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 3246, "verified_files": 0, "current_file": "", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "SCANNING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 3246, "verified_files": 0, "current_file": "", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "SCANNING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 3246, "verified_files": 0, "current_file": "", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "SCANNING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 3246, "verified_files": 0, "current_file": "", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "SCANNING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 3246, "verified_files": 0, "current_file": "", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "SCANNING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 3246, "verified_files": 0, "current_file": "", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "COPYING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 6, "total_bytes": 3246, "verified_files": 0, "current_file": ".hidden", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "VERIFYING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 6, "total_bytes": 3246, "verified_files": 1, "current_file": ".hidden", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "COPYING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 33, "total_bytes": 3246, "verified_files": 1, "current_file": "?? ??/??/??/?? [1] & ??.txt", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "VERIFYING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 33, "total_bytes": 3246, "verified_files": 2, "current_file": "?? ??/??/??/?? [1] & ??.txt", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "VERIFYING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 678, "total_bytes": 3246, "verified_files": 2, "current_file": "DCIM/A/?? 01.JPG", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "VERIFYING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 678, "total_bytes": 3246, "verified_files": 3, "current_file": "DCIM/A/?? 01.JPG", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "VERIFYING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 1416, "total_bytes": 3246, "verified_files": 4, "current_file": "DCIM/A/same.bin", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "VERIFYING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 2154, "total_bytes": 3246, "verified_files": 4, "current_file": "DCIM/B/same.bin", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "VERIFYING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 2154, "total_bytes": 3246, "verified_files": 5, "current_file": "DCIM/B/same.bin", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "VERIFYING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 3190, "total_bytes": 3246, "verified_files": 5, "current_file": "PRIVATE/CLIP/C0001.MP4", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "VERIFYING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 3190, "total_bytes": 3246, "verified_files": 6, "current_file": "PRIVATE/CLIP/C0001.MP4", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "VERIFYING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 3246, "total_bytes": 3246, "verified_files": 6, "current_file": "PRIVATE/CLIP/C0001.XML", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "VERIFYING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 3246, "total_bytes": 3246, "verified_files": 7, "current_file": "PRIVATE/CLIP/C0001.XML", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "VERIFYING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 3246, "total_bytes": 3246, "verified_files": 8, "current_file": "zero.dat", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "FINAL_CHECK", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 3246, "total_bytes": 3246, "verified_files": 8, "current_file": "zero.dat", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "FINAL_CHECK", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 3246, "total_bytes": 3246, "verified_files": 8, "current_file": "zero.dat", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "FINAL_CHECK", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 3246, "total_bytes": 3246, "verified_files": 8, "current_file": "zero.dat", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "FINAL_CHECK", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 3246, "total_bytes": 3246, "verified_files": 8, "current_file": "zero.dat", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "FINAL_CHECK", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 3246, "total_bytes": 3246, "verified_files": 8, "current_file": "zero.dat", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "FINAL_CHECK", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 3246, "total_bytes": 3246, "verified_files": 8, "current_file": "zero.dat", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "FINAL_CHECK", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 3246, "total_bytes": 3246, "verified_files": 8, "current_file": "zero.dat", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "FINAL_CHECK", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 3246, "total_bytes": 3246, "verified_files": 8, "current_file": "zero.dat", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "FINAL_CHECK", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 3246, "total_bytes": 3246, "verified_files": 8, "current_file": "zero.dat", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "FINAL_CHECK", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 3246, "total_bytes": 3246, "verified_files": 8, "current_file": "zero.dat", "total_files": 8, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 1075200, "free_bytes": 168750080, "state": "SAFE_TO_REMOVE", "source_connected": true, "target_connected": true, "safe_to_remove": true, "copied_bytes": 3246, "total_bytes": 3246, "verified_files": 8, "current_file": "", "total_files": 8, "job": "/run/mebs/target/mebs-backup-19700101T000017Z-1e146eaffe374c3ca7e9343e728d4e77", "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_TEST# MEBS_JSON"/dev/vda2 on / type ext4 (ro,relatime)\ndevtmpfs on /dev type devtmpfs (rw,relatime,size=496392k,nr_inodes=124098,mode=755)\nproc on /proc type proc (rw,relatime)\ndevpts on /dev/pts type devpts (rw,relatime,gid=5,mode=620,ptmxmode=666)\ntmpfs on /dev/shm type tmpfs (rw,relatime)\ntmpfs on /tmp type tmpfs (rw,relatime)\ntmpfs on /run type tmpfs (rw,nosuid,nodev,relatime,mode=755)\nsysfs on /sys type sysfs (rw,relatime)\n/dev/vda3 on /var/lib/mebs type ext4 (rw,nosuid,nodev,noexec,noatime)\n/dev/sda on /run/inspect type ext4 (ro,relatime)\n"
+MEBS_TEST# MEBS_JSON[{"job": "/run/inspect/mebs-backup-19700101T000017Z-1e146eaffe374c3ca7e9343e728d4e77", "manifest": {"version": 1, "state": "VERIFIED", "algorithm": "sha256", "files": [{"path": ".hidden", "size": 6, "sha256": "e564b4081d7a9ea4b00dada53bdae70c99b87b6fce869f0c3dd4d2bfa1e53e1c"}, {"path": "?? ??/??/??/?? [1] & ??.txt", "size": 27, "sha256": "61b092b8e04ea043f2d602c73af74e6fded549873ce0959511cde7202fd32ecc"}, {"path": "DCIM/A/?? 01.JPG", "size": 645, "sha256": "c04e52d306f6e7c317d7de48061ad12bfe5bf46360090223b9ec5781c47b5d43"}, {"path": "DCIM/A/same.bin", "size": 738, "sha256": "64784ed12b5c82799dcdd70be30d9b8c866c026dcb4e3cb0576bf4463a8f532c"}, {"path": "DCIM/B/same.bin", "size": 738, "sha256": "64784ed12b5c82799dcdd70be30d9b8c866c026dcb4e3cb0576bf4463a8f532c"}, {"path": "PRIVATE/CLIP/C0001.MP4", "size": 1036, "sha256": "9fe8b13c2f88d3beafa8350475c74038ea591c191e1e87524c0f21d0c64bd041"}, {"path": "PRIVATE/CLIP/C0001.XML", "size": 56, "sha256": "a1a0db820f1c5a8b1f94b7116a7f767018b77af89fdca259a0ac7db975787af3"}, {"path": "zero.dat", "size": 0, "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}], "bytes": 3246, "directories": ["?? ??", "?? ??/??", "?? ??/??/??", "DCIM", "DCIM/A", "DCIM/B", "EMPTY", "PRIVATE", "PRIVATE/CLIP"]}, "files": {".hidden": "e564b4081d7a9ea4b00dada53bdae70c99b87b6fce869f0c3dd4d2bfa1e53e1c", "zero.dat": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "?? ??/??/??/?? [1] & ??.txt": "61b092b8e04ea043f2d602c73af74e6fded549873ce0959511cde7202fd32ecc", "PRIVATE/CLIP/C0001.XML": "a1a0db820f1c5a8b1f94b7116a7f767018b77af89fdca259a0ac7db975787af3", "PRIVATE/CLIP/C0001.MP4": "9fe8b13c2f88d3beafa8350475c74038ea591c191e1e87524c0f21d0c64bd041", "DCIM/B/same.bin": "64784ed12b5c82799dcdd70be30d9b8c866c026dcb4e3cb0576bf4463a8f532c", "DCIM/A/same.bin": "64784ed12b5c82799dcdd70be30d9b8c866c026dcb4e3cb0576bf4463a8f532c", "DCIM/A/?? 01.JPG": "c04e52d306f6e7c317d7de48061ad12bfe5bf46360090223b9ec5781c47b5d43"}, "dirs": ["?? ??", "?? ??/??", "?? ??/??/??", "DCIM", "DCIM/A", "DCIM/B", "EMPTY", "PRIVATE", "PRIVATE/CLIP"]}]
+MEBS_TEST# /dev/vda2 on / type ext4 (ro,relatime)
+devtmpfs on /dev type devtmpfs (rw,relatime,size=496392k,nr_inodes=124098,mode=755)
+proc on /proc type proc (rw,relatime)
+devpts on /dev/pts type devpts (rw,relatime,gid=5,mode=620,ptmxmode=666)
+tmpfs on /dev/shm type tmpfs (rw,relatime)
+tmpfs on /tmp type tmpfs (rw,relatime)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,relatime,mode=755)
+sysfs on /sys type sysfs (rw,relatime)
+/dev/vda3 on /var/lib/mebs type ext4 (rw,nosuid,nodev,noexec,noatime)
+/dev/sda on /run/inspect type ext4 (ro,relatime)
+MEBS_TEST# [   52.566283] sd 0:0:0:0: [sda] Synchronizing SCSI cache
+[   52.573898] reboot: Power down

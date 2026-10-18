@@ -90,6 +90,11 @@ class Mounts:
         source = role == "source"
         fs = selected["fstype"]
         options = "ro,nosuid,nodev,noexec,noatime" if source else "rw,nosuid,nodev,noexec,noatime"
+        # Pi kernels can default VFAT to ASCII. Without this, non-ASCII long
+        # names appear as '?' before scanning, so content hashes alone cannot
+        # detect the loss of the original filenames.
+        if fs == "vfat":
+            options += ",utf8=1"
         if source:
             # Block-layer protection also prevents filesystem journal writes.
             self.run("blockdev", "--setro", disk["path"])

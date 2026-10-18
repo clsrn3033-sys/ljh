@@ -42,9 +42,9 @@ Buildroot root partition, and a separate OS-owned settings partition.
   No panel-specific overlay or touch input path is guessed. A generic
   framebuffer path is enabled as a fallback for compatible HDMI output;
   actual DSI display, touch, backlight, and 60 Hz must be tested on the Pi.
-- The V1 policy is retained pending explicit resolution of contradictory V2
-  handoff items: the target does not require `수정금지.txt`, and SD formatting is
-  disabled. This prevents any unapproved destructive behavior in the image.
+- The user confirmed insertion-order identification: first USB is destination,
+  second is source; `수정금지.txt` is not required. Manual SD formatting is
+  still unimplemented and no automatic formatting occurs.
 - QEMU `virt` can exercise ARM64 Linux and file-backed storage but does not
   reproduce Raspberry Pi firmware, DSI, touchscreen, GPIO, or USB power.
   `bash scripts/qemu-pi4-v2.sh output/pi4-v2-dsi-800x480-20261018/images`
@@ -66,12 +66,22 @@ Buildroot root partition, and a separate OS-owned settings partition.
   sequential target-then-source backup flow. One XML fixture was copied and
   SHA-256 matched; the virtual camera image remained unchanged and the app
   reported `SAFE_TO_REMOVE`.
-- Repeated QEMU runs: scheduled at 30-minute intervals through 06:00 KST on
-  2026-10-19. The final count is recorded in `TEST_RESULTS_V2.md` when the
-  schedule ends; do not interpret the run currently in progress as complete.
+- Repeated QEMU smoke runs: all eight completed at 30-minute intervals from
+  02:13 through 05:43 KST on 2026-10-19; all passed the limited XML fixture.
 - Physical Pi 4B boot, DSI/touch/backlight, GPIO, power behavior, and the
   five-second cold-boot target: **NOT TESTED**. QEMU `virt` cannot establish
   those hardware results.
 
 Detailed run logs are under `TEST_LOGS/`. The test harness and scheduling
 issues found during setup are documented in `TEST_FAILURES_V2.md`.
+
+## Corrected candidate and remaining failures
+
+Read [TEST_REPORT.md](../tests/v2-integration/TEST_REPORT.md) before hardware testing.
+The baseline above failed FAT32 Unicode-name preservation. The new candidate
+`output/pi4-v2-validated-20261019/images/sdcard.img` fixes VFAT UTF-8 and
+read-only-root seed persistence. Its directory name is not a hardware approval.
+Full-init `virt` testing uses only a disposable fstab-adapted copy.
+Direct `raspi4b` boot was attempted but no kernel/login output was observed.
+Deduplication, interrupted-job UI and manual formatting remain incomplete.
+Do not deploy to production footage; physical Pi4/DSI/power tests are outstanding.

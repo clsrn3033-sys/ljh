@@ -1,0 +1,109 @@
+[
+  {
+    "id": "T04",
+    "status": "PASS",
+    "executed": true,
+    "boot_seconds": 8.49127395999676,
+    "autostart": true,
+    "state": {
+      "needed_bytes": 34634752,
+      "free_bytes": 168750080,
+      "state": "ERROR",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 1389,
+      "total_bytes": 33557739,
+      "verified_files": 2,
+      "current_file": "DCIM/A/사진 01.JPG",
+      "total_files": 11,
+      "error": "[Errno 2] No such file or directory: '/dev/sda'",
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    },
+    "detail": "Actual guest rejection/error; never marked safe",
+    "source_unchanged": true,
+    "elapsed_seconds": 34.774
+  },
+  {
+    "id": "T05",
+    "status": "PASS",
+    "executed": true,
+    "boot_seconds": 9.066372479996062,
+    "autostart": true,
+    "state": {
+      "needed_bytes": 34634752,
+      "free_bytes": 168750080,
+      "state": "ERROR",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 2127,
+      "total_bytes": 33557739,
+      "verified_files": 3,
+      "current_file": "DCIM/B/same.bin",
+      "total_files": 11,
+      "error": "저장장치 연결이 변경되었습니다. 백업을 중단합니다.",
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    },
+    "detail": "Actual guest rejection/error; never marked safe",
+    "source_unchanged": true,
+    "elapsed_seconds": 36.87
+  },
+  {
+    "id": "T06",
+    "status": "FAIL",
+    "executed": true,
+    "boot_seconds": 8.513621466001496,
+    "autostart": true,
+    "detail": "VM SIGKILL during COPY; pending jobs preserved, but restart shows WAITING_SOURCE instead of identifying interrupted work",
+    "pending": [
+      "/run/inspect/.mebs-pending-19700101T000017Z-28f8f7fa0c3b41df9d53fd1c89db42f1"
+    ],
+    "state": {
+      "state": "WAITING_SOURCE",
+      "target_connected": true,
+      "source_connected": false,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    },
+    "source_unchanged": true,
+    "elapsed_seconds": 43.16
+  },
+  {
+    "id": "T02",
+    "status": "FAIL",
+    "executed": true,
+    "boot_seconds": 8.422133793006651,
+    "autostart": true,
+    "state": {
+      "needed_bytes": 1079296,
+      "free_bytes": 168750080,
+      "state": "SAFE_TO_REMOVE",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": true,
+      "copied_bytes": 3307,
+      "total_bytes": 3307,
+      "verified_files": 10,
+      "current_file": "",
+      "total_files": 10,
+      "job": "/run/mebs/target/mebs-backup-19700101T000017Z-b35b0a15bc49426c9da854c9ac788f4f",
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    },
+    "detail": "Identical rebackup created 2 committed jobs; copied_bytes=3307; deduplication absent",
+    "files": 10,
+    "bytes": 3307,
+    "jobs": 2,
+    "source_unchanged": true,
+    "elapsed_seconds": 110.741
+  },
+  {
+    "id": "T12",
+    "status": "BLOCKED",
+    "executed": false,
+    "detail": "Shipped V2 has no manual formatter or format-approval UI. No SD format executed."
+  }
+]
