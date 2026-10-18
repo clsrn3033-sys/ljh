@@ -21,3 +21,12 @@ config BR2_PACKAGE_MEBS_DISPLAY
 	  Optional PNG renderer and Linux framebuffer display demo.
 	  A Korean TTF/TTC/OTF font must be supplied separately and
 	  selected using MEBS_FONT. Does not enable automatic backup.
+
+config BR2_PACKAGE_MEBS_CONTROLS
+    bool "MEBS optional 800x480 touch controls / direct KMS"
+    depends on BR2_PACKAGE_MEBS_DISPLAY
+    select BR2_PACKAGE_LIBDRM
+    help
+      Additive display-independent backup worker, sensor and settings runtime.
+      Only the separate DSI test board profile starts this runtime by default.
+      Requires a verified panel configuration before enabling live DSI output.

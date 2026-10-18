@@ -1,0 +1,20 @@
+Cloning into 'vendor/buildroot-2026.08'...
+warning: refs/tags/2026.08 813cbac680a73092e1ebb86da72972c44573145c is not a commit!
+Note: switching to 'd5180309b1b66ef3b8eaccca70ad69be8e0729a1'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Updating files:  43% (6613/15193)Updating files:  44% (6685/15193)Updating files:  45% (6837/15193)Updating files:  46% (6989/15193)Updating files:  47% (7141/15193)Updating files:  48% (7293/15193)Updating files:  49% (7445/15193)Updating files:  50% (7597/15193)Updating files:  51% (7749/15193)Updating files:  52% (7901/15193)Updating files:  53% (8053/15193)Updating files:  54% (8205/15193)Updating files:  55% (8357/15193)Updating files:  56% (8509/15193)Updating files:  57% (8661/15193)Updating files:  58% (8812/15193)Updating files:  59% (8964/15193)Updating files:  60% (9116/15193)Updating files:  61% (9268/15193)Updating files:  62% (9420/15193)Updating files:  63% (9572/15193)Updating files:  64% (9724/15193)Updating files:  65% (9876/15193)Updating files:  66% (10028/15193)Updating files:  67% (10180/15193)Updating files:  68% (10332/15193)Updating files:  69% (10484/15193)Updating files:  70% (10636/15193)Updating files:  71% (10788/15193)Updating files:  72% (10939/15193)Updating files:  73% (11091/15193)Updating files:  74% (11243/15193)Updating files:  75% (11395/15193)Updating files:  76% (11547/15193)Updating files:  77% (11699/15193)Updating files:  78% (11851/15193)Updating files:  79% (12003/15193)Updating files:  80% (12155/15193)Updating files:  81% (12307/15193)Updating files:  82% (12459/15193)Updating files:  83% (12611/15193)Updating files:  84% (12763/15193)Updating files:  85% (12915/15193)Updating files:  86% (13066/15193)Updating files:  87% (13218/15193)Updating files:  88% (13370/15193)Updating files:  89% (13522/15193)Updating files:  90% (13674/15193)Updating files:  91% (13826/15193)Updating files:  92% (13978/15193)Updating files:  93% (14130/15193)Updating files:  94% (14282/15193)Updating files:  95% (14434/15193)Updating files:  96% (14586/15193)Updating files:  97% (14738/15193)Updating files:  98% (14890/15193)Updating files:  99% (15042/15193)Updating files: 100% (15193/15193)Updating files: 100% (15193/15193), done.

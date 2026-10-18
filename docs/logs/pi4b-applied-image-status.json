@@ -1,0 +1,16 @@
+{
+  "target": "Raspberry Pi 4B ARM64",
+  "profile": "mebs-pi4-dsi",
+  "ui": "800x480",
+  "role_policy": "first USB = target; second = source SD; ambiguous = stop",
+  "required_config": {
+    "BR2_aarch64=y": true,
+    "BR2_cortex_a72=y": true,
+    "BR2_PACKAGE_MEBS=y": true,
+    "BR2_PACKAGE_MEBS_DISPLAY=y": true,
+    "BR2_PACKAGE_MEBS_CONTROLS=y": true
+  },
+  "image_exists": false,
+  "build_log": "docs/logs/pi4b-applied-image-build.log",
+  "boot_tested": false
+}

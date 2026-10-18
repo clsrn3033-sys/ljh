@@ -1,0 +1,13 @@
+test_distinct_insertion_order (test_devices.RoleTests.test_distinct_insertion_order) ... ok
+test_duplicate_identity_rejected (test_devices.RoleTests.test_duplicate_identity_rejected) ... ok
+test_inventory_excludes_internal_disks (test_devices.RoleTests.test_inventory_excludes_internal_disks) ... ok
+test_removal_clears_roles_until_empty (test_devices.RoleTests.test_removal_clears_roles_until_empty) ... ok
+test_simultaneous_insertions_ambiguous (test_devices.RoleTests.test_simultaneous_insertions_ambiguous) ... ok
+test_single_initial_disk_is_the_first_destination (test_devices.RoleTests.test_single_initial_disk_is_the_first_destination) ... ok
+test_third_device_ambiguous (test_devices.RoleTests.test_third_device_ambiguous) ... ok
+test_two_initial_disks_remain_ambiguous (test_devices.RoleTests.test_two_initial_disks_remain_ambiguous) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+OK

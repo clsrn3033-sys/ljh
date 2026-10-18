@@ -1,0 +1,40 @@
+{
+  "date_utc": "2026-10-18",
+  "target": "Raspberry Pi 4B Buildroot 2026.08 800x480 DSI integration TEST source",
+  "tests": {
+    "host_software_passed": 118,
+    "failed": 0,
+    "original_baseline_passed": 75
+  },
+  "native_drm_compile": true,
+  "buildroot_configure": true,
+  "image_build": false,
+  "image_build_exit": 2,
+  "image_build_blocker": "proxy CONNECT 403 for pkgconf source and sources.buildroot.net",
+  "image_file": null,
+  "qemu_boot_tested": false,
+  "hardware_tested": false,
+  "five_second_boot_measured": false,
+  "dsi_fps_measured": false,
+  "original_logo_animation_working": "supplied JPEG logo rendered in host simulation; hardware boot untested",
+  "sd_format_implemented": false,
+  "preservation_handoff_files": 95,
+  "preservation_handoff_check": "OK",
+  "preserved_original_zip_sha256": "b859b7e238c20c741e45b4059694b1810dd49fb15fd2670bdc0c003dc0ba4bb5",
+  "environment_draft": "saved; requires_publish=true; not runtime network validation",
+  "github_pushed": false,
+  "device_role_policy": {
+    "method": "distinct_usb_connection_order",
+    "first": "backup_destination",
+    "second": "source_sd",
+    "marker_file_required": false,
+    "ambiguous": "block_backup_until_all_disconnected_and_reconnected_in_order",
+    "user_confirmed": true
+  },
+  "boot_logo_exception_handled": true,
+  "logo_fallback": "supplied PNG mask is default; temporary text only on asset failure",
+  "hardware_battery_information": "user provided 8.4V; cell/BMS/shunt remain unknown",
+  "supplied_logo_applied": true,
+  "embedded_mask_recovered": false,
+  "hardware_design_revision": "A-design-only"
+}

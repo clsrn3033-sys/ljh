@@ -1,0 +1,17 @@
+{
+  "revision": "A-design-only",
+  "status": "not_fabricated_not_hardware_tested",
+  "board": "Raspberry Pi 4B",
+  "architecture": "aarch64",
+  "display": {"connector": "15-pin DSI", "size_inches": 5, "width": 800, "height": 480, "orientation": "landscape", "refresh_hz_goal": 60, "color_bits": 24, "touch": "capacitive", "product_model": null, "panel_controller": null, "touch_controller": null, "dts_overlay": null, "confirmed": false},
+  "i2c": {"bus": "/dev/i2c-1", "logic_voltage": 3.3, "pins": {"power": 1, "sda_gpio2": 3, "scl_gpio3": 5, "ground": 6}, "pullup_voltage_measured": false},
+  "ina226": {"planned_address": 64, "shunt_ohms": null, "shunt_power_w": null, "max_current_a": null, "position": "protected battery high side, before 5V regulator; charge-current path depends on power-path topology", "confirmed": false},
+  "bh1750": {"planned_address": 35, "alternate_address": 92, "confirmed": false},
+  "ds3231": {"planned_address": 104, "logic_3v3_confirmed": false, "backup_cell_and_module_charge_circuit_confirmed": false, "confirmed": false},
+  "battery": {"series_cells": 2, "user_voltage_v": 8.4, "voltage_meaning": "reported charge-full voltage, not discharge cutoff", "cell_model": null, "capacity_ah": null, "bms_model": null, "bms_undervoltage_v": null, "bms_continuous_a": null, "warn_v": null, "block_new_backup_v": null, "confirmed": false},
+  "charger": {"description": "user-described purple 2S/3S Type-C QC boost charger", "mode": "2S", "full_pack_v": 8.4, "default_charge_a_approx": [1.4, 1.5], "balance_midpoint": "BM, 2S only, verify manufacturer wiring", "ntc": "100K B4100 to charger NTC only", "power_path_load_sharing_confirmed": false, "model": null},
+  "pi_supply": {"input": "protected 2S battery via confirmed BMS path", "regulator": "separate regulated 5V buck stage required", "output_v_target": 5.1, "pi4_supply_design_reference_a": 3, "system_current_rating_a": null, "include_loads": ["Pi4B", "DSI LCD", "USB external storage", "USB SD reader", "sensors"], "usb_c_primary_input": true, "regulator_model": null, "validated_under_load": false},
+  "power_cutoff": {"gpio_implemented": false, "latch_model": null, "future_interface_only": true},
+  "excluded": ["SPI LCD output", "ADS1115", "100K B3950 NTC x2", "NTC divider", "battery/case temperature UI", "buzzer", "vibration motor", "internal SATA", "GPIO battery cutoff"],
+  "storage_role_policy": {"first_usb": "backup destination", "second_usb": "source SD", "marker_file_required": false}
+}

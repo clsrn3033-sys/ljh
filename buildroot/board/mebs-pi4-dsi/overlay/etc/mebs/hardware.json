@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "ui_fps": 30,
+  "drm_card": null,
+  "framebuffer": null,
+  "touch": {
+    "device": null,
+    "rotation": 0
+  },
+  "backlight": null,
+  "i2c_bus": "/dev/i2c-1",
+  "ina226": {
+    "enabled": false,
+    "address": 64,
+    "shunt_ohms": null,
+    "discharge_polarity": 1,
+    "capacity_ah": null,
+    "ocv_curve": null,
+    "shunt_power_w": null,
+    "max_current_a": null
+  },
+  "bh1750": {
+    "enabled": false,
+    "address": 35
+  },
+  "ds3231": {
+    "enabled": false,
+    "address": 104,
+    "device": null
+  },
+  "battery_thresholds": {
+    "warn": null,
+    "block": null
+  },
+  "i2c_logic_3v3_confirmed": false,
+  "battery_bms_confirmed": false,
+  "display": {
+    "width": 800,
+    "height": 480,
+    "panel_model": null,
+    "panel_confirmed": false,
+    "touch_controller": null,
+    "touch_controller_confirmed": false
+  },
+  "power_cutoff": {
+    "gpio_enabled": false
+  }
+}

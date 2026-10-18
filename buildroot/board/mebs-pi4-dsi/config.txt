@@ -1,0 +1,17 @@
+# Pi4 DSI integration TEST profile: panel model unconfirmed, no forced overlay.
+start_file=start4.elf
+fixup_file=fixup4.dat
+kernel=Image
+arm_64bit=1
+disable_overscan=1
+disable_splash=1
+boot_delay=0
+camera_auto_detect=0
+display_auto_detect=0
+dtoverlay=vc4-kms-v3d
+avoid_warnings=2
+max_framebuffers=1
+enable_uart=1
+
+# I2C sensors; optional RTC/panel overlay ONLY after controller and address verification.
+dtparam=i2c_arm=on

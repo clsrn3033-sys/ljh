@@ -1,3 +1,9 @@
+> **최신 인계: Raspberry Pi4B / MEBS ver1**
+>
+> [ver 1 인계 폴더](ver%201/README.md)에 기안서·목표서·결정된 UI·다른 기기 재개 지침·증거를 정리했습니다.
+> 현재 **118개 호스트 테스트 통과 / 새 `.img` 미생성 / source 다운로드403으로 빌드 차단 / 실물·QEMU 부팅 미검증**입니다.
+> 제작자 최종 표기는 **Produced by 이정헌**, UI는800×480 검정·청록색입니다. 아래 기존 개발 이력보다 ver1 결정사항을 우선하세요.
+
 # MEBS Auto Backup System
 
 Orange Pi 3B V1.1용 독립형 자동 백업 장치. 초기 실물 검증은 Raspberry Pi 4,

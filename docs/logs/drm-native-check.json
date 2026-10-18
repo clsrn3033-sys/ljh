@@ -1,0 +1,7 @@
+{
+  "architecture": "x86_64 host only",
+  "compile_exit": 0,
+  "usage_exit": 2,
+  "stderr": "Usage: mebs-drm /dev/dri/cardN\n",
+  "scanout_tested": false
+}

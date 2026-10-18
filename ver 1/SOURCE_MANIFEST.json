@@ -1,0 +1,396 @@
+{
+  "version": "ver 1",
+  "date": "2026-10-18",
+  "ui_approved": true,
+  "producer": "Produced by 이정헌",
+  "image_built": false,
+  "qemu_tested": false,
+  "hardware_tested": false,
+  "files": [
+    {
+      "path": "mebs/__init__.py",
+      "bytes": 54,
+      "sha256": "78e8bcc46ac2d46ba02224f706c52a1b16b425233e2bdcf0b1b28b11c4565d4f"
+    },
+    {
+      "path": "mebs/__main__.py",
+      "bytes": 4274,
+      "sha256": "3c72a2ef8915333224b454d013b4985a7f3bfc56ff83d50cdf77dab7920c6cc9"
+    },
+    {
+      "path": "mebs/appliance.py",
+      "bytes": 12952,
+      "sha256": "483660e673fa304a18d6e1aed846935fc76c34a3f00e125c64eeec0691f64c03"
+    },
+    {
+      "path": "mebs/assets/logo-provenance.json",
+      "bytes": 653,
+      "sha256": "4e8cf33b51e4ac0393fb3b83337bf124a7a0ae4479f5fa85f578467f584c787a"
+    },
+    {
+      "path": "mebs/assets/mebs-boot-reference.jpg",
+      "bytes": 36381,
+      "sha256": "71ac1545d4272327551253582674fee1e79e0e0ba49af10ee61cce97737b2fbf"
+    },
+    {
+      "path": "mebs/assets/mebs-logo-mask.png",
+      "bytes": 22980,
+      "sha256": "b5853fe4583af7d341c6837094a4e65281ef0453abb1c1a7c78f34c4bc430168"
+    },
+    {
+      "path": "mebs/backup.py",
+      "bytes": 14024,
+      "sha256": "abe7651550d8045f993350bcabaf67b0560c815d988775336b0e939f6a2c108a"
+    },
+    {
+      "path": "mebs/boot_animation.py",
+      "bytes": 11874,
+      "sha256": "303eb35097bac1e41005b6ed0a1d3e20982cc9001d4f3bc6733bdaf999881267"
+    },
+    {
+      "path": "mebs/controls.py",
+      "bytes": 8379,
+      "sha256": "7c74c18b2f8c1b3755885d5e798dc5ed6af0a6721f0ef045e8fa18841a3649e5"
+    },
+    {
+      "path": "mebs/devices.py",
+      "bytes": 2921,
+      "sha256": "dbf415e34ebd05d40a6cff2f5e479f3a47e9f904be6f0989ccffd7e676ba7677"
+    },
+    {
+      "path": "mebs/display.py",
+      "bytes": 7012,
+      "sha256": "6bdd93b166b13676b062bea331a8838779f46792ea03f042fc3157a76fb86f48"
+    },
+    {
+      "path": "mebs/drm_presenter.c",
+      "bytes": 4824,
+      "sha256": "807c272021a86952b88c3d41d57f37f3cb9678dc60ce04d119df6bacb0affd89"
+    },
+    {
+      "path": "mebs/framebuffer.py",
+      "bytes": 5247,
+      "sha256": "f60a5a0d8fa81cfba1df56ab7cc98c6da9dac2b5dad0ed4b56f388dc3810798d"
+    },
+    {
+      "path": "mebs/hardware_profile.py",
+      "bytes": 2365,
+      "sha256": "62c503dfa115220fc898e342708ec8dad5545a539771446b04b297282e24a545"
+    },
+    {
+      "path": "mebs/logo_asset.py",
+      "bytes": 3133,
+      "sha256": "e4af673b671040bcef1131fd8f6b62135ae61e768022782f44081420c5565c72"
+    },
+    {
+      "path": "mebs/outputs.py",
+      "bytes": 2663,
+      "sha256": "0451e135b0d62af6aba48803f819451f897eb858e5a350108feb41cc7162de13"
+    },
+    {
+      "path": "mebs/preflight.py",
+      "bytes": 1070,
+      "sha256": "abc143ccb6b1c2440bd74b9579619d78c0d65418eed81b8588cf820435d52bdd"
+    },
+    {
+      "path": "mebs/preview.py",
+      "bytes": 5920,
+      "sha256": "2fabab83898ada04ebcc8f846c1e334c896c01e40172f69bf5b59fd7f388559f"
+    },
+    {
+      "path": "mebs/rtc.py",
+      "bytes": 1984,
+      "sha256": "5d6708bd8eea9d3ed7b2b6dea55f83dca943ab1b6d2e43f4d8d0eddb21d70c61"
+    },
+    {
+      "path": "mebs/runtime800.py",
+      "bytes": 14345,
+      "sha256": "3fb880a44c18f330745b63469f65a7b264aabbefc17635d76da56635de494f63"
+    },
+    {
+      "path": "mebs/runtime_ui_480.py",
+      "bytes": 7775,
+      "sha256": "1f9e673b4cac92d7a550021cbff59f6e5582b59aeefe939f137241ba97c69347"
+    },
+    {
+      "path": "mebs/sensors.py",
+      "bytes": 5435,
+      "sha256": "3cc74cc0d3393fb1a701e2e50e39ad0ba5672ecb6b2459c83df78f8ea59a299c"
+    },
+    {
+      "path": "mebs/session.py",
+      "bytes": 4777,
+      "sha256": "81453e9de1c07463b49d09bdad4f7e3a55b6470fe4485685d5e9fe4f770476e0"
+    },
+    {
+      "path": "mebs/settings.py",
+      "bytes": 2098,
+      "sha256": "f7d00fcbfd63e3e02011a7c6ae124416bae70fd0ea51fd8c78b453ae81e3930f"
+    },
+    {
+      "path": "mebs/touch.py",
+      "bytes": 3640,
+      "sha256": "ac0d61dd30f347afbf94f777e66772f563f09f3ef992a5183498b708bad2f6bf"
+    },
+    {
+      "path": "mebs/ui/preview.html",
+      "bytes": 11081,
+      "sha256": "bd11f538c70c2ba9be98486dbfd1974d032c50c00cb3c8d41cc4db4fb3d1da99"
+    },
+    {
+      "path": "mebs/ui800.py",
+      "bytes": 5471,
+      "sha256": "72ec43c3f73d741290109c0ab1ef883edae5f43acb6d2a6e87d6ae29b9d6035c"
+    },
+    {
+      "path": "scripts/build.py",
+      "bytes": 645,
+      "sha256": "8b4d9fd78713c6a38009400e174a0147b567913d5b1a7336c354e5a20cec7ea2"
+    },
+    {
+      "path": "scripts/buildroot.sh",
+      "bytes": 1674,
+      "sha256": "58d1cb44c609f35da56c44bb1f6bb9e2c587c27b8467f3f413fa2f2d0ed6d2bc"
+    },
+    {
+      "path": "scripts/check-host.sh",
+      "bytes": 537,
+      "sha256": "f99de88f2208f6ba8b9b6a52d0dc20b3e23a20efec1d814db3cb3db2fd16748e"
+    },
+    {
+      "path": "scripts/demo.py",
+      "bytes": 1349,
+      "sha256": "d968497eb638efed4cf21a044fc7546f9fb7568746ae03e6714bf58007eabaa2"
+    },
+    {
+      "path": "scripts/host-tools.py",
+      "bytes": 2380,
+      "sha256": "5fb78e4c15a1d7865e6994ccad56f251665bec02e92418ead09a33eda509e20f"
+    },
+    {
+      "path": "scripts/inspect-pi4-image.sh",
+      "bytes": 1195,
+      "sha256": "5ef59c2f736e45a2bc2cd1da46b40dbfa61d6a483022243f07cbb9652cbca2d1"
+    },
+    {
+      "path": "scripts/make_preview_480.py",
+      "bytes": 933,
+      "sha256": "ffae094cc5809694273b15fe95cd476100ca0845c51bd10f68aafbe6e7b48347"
+    },
+    {
+      "path": "scripts/pi4-dsi-image.sh",
+      "bytes": 3214,
+      "sha256": "2a039c59ccbb798960384395579e6e57b80ca96e830af09b70b8a66c178bc0fa"
+    },
+    {
+      "path": "scripts/pi4-hardware-report.py",
+      "bytes": 3009,
+      "sha256": "4e8b4aa83acc88cbabea964416e8cd5eb31c7939c9a36b3d837eb1d8c21fbcec"
+    },
+    {
+      "path": "scripts/pi4-image.sh",
+      "bytes": 3100,
+      "sha256": "a3407a47c283e5bfa8cb1a392de4ce5c7f31fe9457cfcf1875a4266a97f090b3"
+    },
+    {
+      "path": "scripts/prepare-logo.py",
+      "bytes": 1503,
+      "sha256": "f20f7c4130f64a46bee11036c3a7eea53226a59e2fc5fb54e60398bc8e8973b7"
+    },
+    {
+      "path": "scripts/preview-journey.py",
+      "bytes": 8688,
+      "sha256": "3650a6e5ea10d1f14ff4cc3bb7b7c0c6155ff8a5455f41f5b93e7bddbf64a429"
+    },
+    {
+      "path": "scripts/qemu-usb-fixtures.sh",
+      "bytes": 533,
+      "sha256": "e93d69300464cc5dee0fa4fc43374b17dd4a6bf1af0d1c8208f07afb0fc7c95e"
+    },
+    {
+      "path": "scripts/qemu-usb-guest.sh",
+      "bytes": 1152,
+      "sha256": "82aa6ab6034ea7fa433b3ca7eca2f1a74dacffe9fd7a30d63dff420071fbb0b1"
+    },
+    {
+      "path": "scripts/qemu.sh",
+      "bytes": 638,
+      "sha256": "7b1bf13dadbdd567c20b77cc4e55698e7333b15ef415420b1662a78a37e573e9"
+    },
+    {
+      "path": "buildroot/Config.in",
+      "bytes": 56,
+      "sha256": "c96a3c4c07c3fb3bb9d5c8576e94f000e663e668d911dcdae9a41a206d1a4a03"
+    },
+    {
+      "path": "buildroot/board/mebs-pi4/cmdline.txt",
+      "bytes": 154,
+      "sha256": "acfef0133e554c141cdac398a42d7e057d6b6f2cb4d2d465b4507ebe7241ada2"
+    },
+    {
+      "path": "buildroot/board/mebs-pi4/config.txt",
+      "bytes": 302,
+      "sha256": "d132392a6379d6cf9d4d594dabd4834c3968c59e7fe439a200e39b60c75659ff"
+    },
+    {
+      "path": "buildroot/board/mebs-pi4/genimage.cfg",
+      "bytes": 619,
+      "sha256": "0c317e4a916cf52c78020a9d8d43284e88ddacec84466acc6c134824dcdfe9c3"
+    },
+    {
+      "path": "buildroot/board/mebs-pi4/linux.fragment",
+      "bytes": 1053,
+      "sha256": "3790e3da687bec999b627d9d213fd37c2e51fce57df15d7c9adb0d323038cf62"
+    },
+    {
+      "path": "buildroot/board/mebs-pi4/overlay/etc/init.d/S50mebs",
+      "bytes": 666,
+      "sha256": "02e3109ef7333beb465deed5ae0925782622aee385a5e47cd87e9543e2a5601e"
+    },
+    {
+      "path": "buildroot/board/mebs-pi4/post-build.sh",
+      "bytes": 707,
+      "sha256": "04b25886aaebe6782e9f35c858b542b54fa12c9b2064a924cff9a2be08b84afe"
+    },
+    {
+      "path": "buildroot/board/mebs-pi4/post-image.sh",
+      "bytes": 477,
+      "sha256": "48eeb3c8dd44c072de4d31846c86f3c854b71c161bb82ea64b49ec8da0141696"
+    },
+    {
+      "path": "buildroot/board/mebs-pi4-dsi/cmdline.txt",
+      "bytes": 126,
+      "sha256": "b7fce9f8f1febfe327dad808874128ac9a0f219eb425816430328d1ab1e3c360"
+    },
+    {
+      "path": "buildroot/board/mebs-pi4-dsi/config.txt",
+      "bytes": 423,
+      "sha256": "ce12bca430f4c7138b6000bc5780ac2cfcbffcc4289d87f852a94357d6279d81"
+    },
+    {
+      "path": "buildroot/board/mebs-pi4-dsi/genimage.cfg",
+      "bytes": 834,
+      "sha256": "214b0e43e08e1c74918947eca58ab93f0110e6919519467a628779a86b9efb47"
+    },
+    {
+      "path": "buildroot/board/mebs-pi4-dsi/linux.fragment",
+      "bytes": 1318,
+      "sha256": "a09771a9ff8afe27be604551fd3efbcf3afcee29e1535053d9e687526b851f93"
+    },
+    {
+      "path": "buildroot/board/mebs-pi4-dsi/overlay/etc/init.d/S50mebs",
+      "bytes": 714,
+      "sha256": "69895ea88a37a69622d93b12796277ae1db0c7867fe22b4f7b2654e7bfeb1a48"
+    },
+    {
+      "path": "buildroot/board/mebs-pi4-dsi/overlay/etc/mebs/hardware.json",
+      "bytes": 905,
+      "sha256": "4bbedc38634bf8140d058590bd6aa734d0a0dca7ecf2c09befce9848187505fa"
+    },
+    {
+      "path": "buildroot/board/mebs-pi4-dsi/post-build.sh",
+      "bytes": 968,
+      "sha256": "afe245b4fa239fc4010fba08b38925b882717911910b38264958f96cc0660729"
+    },
+    {
+      "path": "buildroot/board/mebs-pi4-dsi/post-image.sh",
+      "bytes": 481,
+      "sha256": "3b507f363351df6615922f9cbe929f2a5543a96c0f522e941e0129d0fc268477"
+    },
+    {
+      "path": "buildroot/external.desc",
+      "bytes": 41,
+      "sha256": "355aaa1b138622caf8abc46ab5f2122b07c61846f7521b316a05c49cd6096d7d"
+    },
+    {
+      "path": "buildroot/external.mk",
+      "bytes": 69,
+      "sha256": "7a735a356831c5ece0a0b8672f763ca9cc0709c84d123e9e818d45bddbb74c37"
+    },
+    {
+      "path": "buildroot/package/mebs/Config.in",
+      "bytes": 1194,
+      "sha256": "b8abaaae5b4aa401527b05364c137982196cab00d6398e48a76a5e1a0a7b7397"
+    },
+    {
+      "path": "buildroot/package/mebs/mebs-launcher",
+      "bytes": 152,
+      "sha256": "8e4496ebd5a91adc411684d908462498ca05838de91ef8df043458f4eb5f0af6"
+    },
+    {
+      "path": "buildroot/package/mebs/mebs.mk",
+      "bytes": 1204,
+      "sha256": "93df8a8107225017215ce6d1edf8014b1235091d899717049976161ffbddbb69"
+    },
+    {
+      "path": "tests/check_preview.mjs",
+      "bytes": 2408,
+      "sha256": "cf76aad2c8feefa3041f00aaea836bb933ca88436e74acf5be64027eb3152e9c"
+    },
+    {
+      "path": "tests/fixtures/C0001.XML",
+      "bytes": 92,
+      "sha256": "1a7df833e5a511c0f1b4fd0aae14dab1c81374d0bfe7ffdc4ebbcf8f7190c0f2"
+    },
+    {
+      "path": "tests/test_appliance.py",
+      "bytes": 6152,
+      "sha256": "0165999367956059e880bed12f0c9aa3786c944d9a835cc41bfd4839386570c7"
+    },
+    {
+      "path": "tests/test_backup.py",
+      "bytes": 8748,
+      "sha256": "743fdc722a3ec6a3c978c3817801936e0a1db47112d2afd03c7d1eadc2b207ae"
+    },
+    {
+      "path": "tests/test_controls800.py",
+      "bytes": 16167,
+      "sha256": "4e590ef3089f497b5eb6171f5950adacb3edb6c10fdbcc381e56c0575b281144"
+    },
+    {
+      "path": "tests/test_devices.py",
+      "bytes": 2432,
+      "sha256": "3c5048e5724917231cd17e030edea04cd38082f46170dd11a7059d53d26757e9"
+    },
+    {
+      "path": "tests/test_framebuffer.py",
+      "bytes": 1997,
+      "sha256": "443e3ebc8a86a26a5200e666aa301bd8d31daac41b37bec257d7f114c955b614"
+    },
+    {
+      "path": "tests/test_hardware_profile.py",
+      "bytes": 3742,
+      "sha256": "de35234f6d231274d106d88999f248565c70b7a98eafcfef2fd83d7b43c465b7"
+    },
+    {
+      "path": "tests/test_logo_asset.py",
+      "bytes": 3590,
+      "sha256": "c78958be5039356c5e7a0dfe4dac82b8fdcdfac24cde0813a76c08f2e296cc33"
+    },
+    {
+      "path": "tests/test_process.py",
+      "bytes": 3244,
+      "sha256": "7a76dfd8f61c364d0b6664d77a541f83897d7a44670bab8dd293f1e1a36bacff"
+    },
+    {
+      "path": "tests/test_runtime_ui_480.py",
+      "bytes": 1983,
+      "sha256": "8f3627fc0e51d509b5d5b1d7f0d874c23c86116d80b5edc3798166c3dcbce0f7"
+    },
+    {
+      "path": "tests/test_session.py",
+      "bytes": 4364,
+      "sha256": "610cdaf1f79727acc306f264656dcdff66dfb1eaf8a395b70c210d746d81db32"
+    },
+    {
+      "path": "hardware/mebs-pi4b-revA.json",
+      "bytes": 2490,
+      "sha256": "28cf9237f262839042ac2a27568432b421b715b6646f71552937cf5995c49231"
+    },
+    {
+      "path": "hardware/wiring-pi4b.csv",
+      "bytes": 988,
+      "sha256": "b5fc0347bbab59e3ae21acb64009f79ad2f3637b77835dae2b7ff79515716a3a"
+    }
+  ]
+}

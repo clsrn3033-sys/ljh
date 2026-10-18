@@ -49,7 +49,14 @@ def amount(size):
     return f"{size / 1024:.1f} KB"
 
 
-def render(state):
+DEFAULT_THEME = {name: globals()[name] for name in ('BG','PANEL','EDGE','WHITE','MUTED','ORANGE','GREEN','RED')}
+
+
+def render(state, theme=None):
+    # Legacy callers retain the original palette; 800px controls opt into the
+    # user's black/cyan boot-reference theme without mutating global colours.
+    colors = DEFAULT_THEME if theme is None else DEFAULT_THEME | theme
+    BG, PANEL, EDGE, WHITE, MUTED, ORANGE, GREEN, RED = (colors[name] for name in ('BG','PANEL','EDGE','WHITE','MUTED','ORANGE','GREEN','RED'))
     image = Image.new("RGB", (WIDTH, HEIGHT), BG)
     draw = ImageDraw.Draw(image)
 
@@ -126,7 +133,7 @@ def render(state):
     if percent:
         draw.rounded_rectangle((36, 395, 36 + max(6, 728 * percent // 100), 401), radius=3, fill=accent)
     text(36, 435, "제49기 보도부 이정헌", 15, MUTED)
-    right(764, 435, "Produced by 이정원", 14, MUTED)
+    right(764, 435, "Produced by 이정헌", 14, MUTED)
     return image
 
 

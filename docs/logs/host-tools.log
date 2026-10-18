@@ -1,0 +1,40 @@
+Hit:1 https://deb.debian.org/debian trixie InRelease
+rm: cannot remove '/var/cache/apt/archives/partial/*.deb': Permission denied
+Reading package lists...
+W: Unable to read /etc/apt/apt.conf.d/80-applied-apt-retries - open (13: Permission denied)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  debconf gcc-14-base init-system-helpers libacl1 libc-dev-bin libc6 libc6-dev
+  libcrypt-dev libcrypt1 libdrm-amdgpu1 libdrm-common libdrm-intel1
+  libdrm-nouveau2 libdrm-radeon1 libdrm2 libelf1t64 libgcc-s1 liblz4-1
+  libpciaccess-dev libpciaccess0 libpopt0 libreadline8t64 libssl3t64 libtinfo6
+  libxxhash0 libzstd-dev libzstd1 linux-libc-dev m4 openssl-provider-legacy
+  readline-common rpcsvc-proto zlib1g zlib1g-dev
+Suggested packages:
+  bison-doc libarchive-dev debconf-doc debconf-kde-helper debconf-utils
+  libgtk3-perl libnet-ldap-perl libterm-readline-gnu-perl perl whiptail
+  | dialog build-essential flex-doc fonts-noto-cjk-extra libc-devtools
+  glibc-doc libc-l10n locales libnss-nis libnss-nisplus manpages-dev pciutils
+  libssl-doc m4-doc readline-doc openssh-client openssh-server python3
+  python3-braceexpand
+Recommended packages:
+  apt | apt-utils debconf-i18n gcc | c-compiler libfl-dev manpages
+  manpages-dev libidn2-0
+The following NEW packages will be installed:
+  bc bison cpio debconf flex fonts-noto-cjk gcc-14-base init-system-helpers
+  libacl1 libc-dev-bin libc6 libc6-dev libcrypt-dev libcrypt1 libdrm-amdgpu1
+  libdrm-common libdrm-dev libdrm-intel1 libdrm-nouveau2 libdrm-radeon1
+  libdrm2 libelf-dev libelf1t64 libgcc-s1 liblz4-1 libpciaccess-dev
+  libpciaccess0 libpopt0 libreadline8t64 libssl-dev libssl3t64 libtinfo6
+  libxxhash0 libzstd-dev libzstd1 linux-libc-dev m4 openssl-provider-legacy
+  readline-common rpcsvc-proto rsync zlib1g zlib1g-dev
+0 upgraded, 43 newly installed, 0 to remove and 0 not upgraded.
+Need to get 56.7 MB/76.8 MB of archives.
+After this operation, 175 MB of additional disk space will be used.
+Get:1 https://deb.debian.org/debian trixie/main amd64 fonts-noto-cjk all 1:20240730+repack1-1 [56.7 MB]
+Fetched 56.7 MB in 1s (51.9 MB/s)
+Download complete and in download only mode
+W: Unable to read /etc/apt/apt.conf.d/80-applied-apt-retries - open (13: Permission denied)
+Tools extracted: /workspace/1/work/ljh-pi4-dsi/.local-build/tools/bin

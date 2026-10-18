@@ -1,0 +1,20 @@
+{
+  "reference": "mebs-boot-reference.jpg",
+  "reference_sha256": "71ac1545d4272327551253582674fee1e79e0e0ba49af10ee61cce97737b2fbf",
+  "reference_size": [
+    1280,
+    853
+  ],
+  "crop_ltrb": [
+    315,
+    195,
+    978,
+    335
+  ],
+  "transformation": "grayscale mask; values below12=0; no new logo generated",
+  "mask": "mebs-logo-mask.png",
+  "mask_sha256": "b5853fe4583af7d341c6837094a4e65281ef0453abb1c1a7c78f34c4bc430168",
+  "reference_credits": "제49기 보도부 이정헌 / Produced by 이정원",
+  "runtime_credits": "제49기 보도부 이정헌 / Produced by 이정헌 (user correction)",
+  "source": "User attachment 1000065842.jpg"
+}

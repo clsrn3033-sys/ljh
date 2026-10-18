@@ -44,7 +44,7 @@ def main():
 
     try:
         if args.command == "ready":
-            print("MEBS\n제49기 보도부 이정헌\nProduced by 이정원 [최종 이름 미확정]\nBACKUP READY")
+            print("MEBS\n제49기 보도부 이정헌\nProduced by 이정헌\nBACKUP READY")
             print("Directory engine only; automatic USB/LCD/GPIO not enabled.")
         elif args.command == "devices":
             emit({"devices": usb_disks()})

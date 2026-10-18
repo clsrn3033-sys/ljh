@@ -1,0 +1,174 @@
+[
+  {
+    "file": "bc_1.07.1-4_amd64.deb",
+    "sha256": "d055a11f0f9c5f8fe78b31d502c01dfe46ddf9c24f753aaddadaaff95fcc75ad"
+  },
+  {
+    "file": "bison_2%3a3.8.2+dfsg-1+b2_amd64.deb",
+    "sha256": "ce6eb1f7aad18850e32d223a68f54bcbe756d74f138c8ec5460ad9d220f4d335"
+  },
+  {
+    "file": "cpio_2.15+dfsg-2_amd64.deb",
+    "sha256": "d8faece250bcf72e91ac15a5fef198be173af18c9f48bae257e7ee937fbc6cdc"
+  },
+  {
+    "file": "debconf_1.5.91_all.deb",
+    "sha256": "1ddc7e6c5925f748eefb7ca811d98e049f18c158bb21fbc7e122262ce6011e49"
+  },
+  {
+    "file": "flex_2.6.4-8.2+b4_amd64.deb",
+    "sha256": "75f963765232c356d0a2fb70e780dfa9de2425aca036ec60eefb7fc98a2c905b"
+  },
+  {
+    "file": "fonts-noto-cjk_1%3a20240730+repack1-1_all.deb",
+    "sha256": "f5dc28a754e17327d99f0a612134d92c8dd6187314ae967cb77f25df60860139"
+  },
+  {
+    "file": "gcc-14-base_14.2.0-19_amd64.deb",
+    "sha256": "5b6825de4263824b78c4c51f6476414f3b4e89c2ab63e81dc8b9b5501e867cf6"
+  },
+  {
+    "file": "init-system-helpers_1.69~deb13u1_all.deb",
+    "sha256": "addf78073e1cbc5a5508937e11d2571055e29835e00ee8fab52a66775649378f"
+  },
+  {
+    "file": "libacl1_2.3.2-2+b1_amd64.deb",
+    "sha256": "08074f01e384bc07c0c2d79a58cf4a6523f71cf75d1808101c79617656c9a39d"
+  },
+  {
+    "file": "libc-dev-bin_2.41-12+deb13u4_amd64.deb",
+    "sha256": "2c21175d6a8283ed566d154c0c0bc06f60836e53b0b9e1f74c14eac586b68c24"
+  },
+  {
+    "file": "libc6-dev_2.41-12+deb13u4_amd64.deb",
+    "sha256": "1fda734dabcd80b77266a09ab62b0f1e3e16d8091db62899890b2200745632a2"
+  },
+  {
+    "file": "libc6_2.41-12+deb13u4_amd64.deb",
+    "sha256": "967aa62605721081c3eb2a17650611a792aa802d76a6511d1840242623d204c9"
+  },
+  {
+    "file": "libcrypt-dev_1%3a4.4.38-1_amd64.deb",
+    "sha256": "98e2333aea8d64ca68f9b75c16256d3a05492fd8f9e6dba96adbc6f19e4f5a09"
+  },
+  {
+    "file": "libcrypt1_1%3a4.4.38-1_amd64.deb",
+    "sha256": "0ebc144d662e3197982d1bf3a7b8b35ca845e54c68811de0328b1f0d7c67585c"
+  },
+  {
+    "file": "libdrm-amdgpu1_2.4.124-2_amd64.deb",
+    "sha256": "c1d97a5e32e2bc68e833b8abeae026b6306198e87ee4396a7ffecd4779caefbf"
+  },
+  {
+    "file": "libdrm-common_2.4.124-2_all.deb",
+    "sha256": "9a8a6c65c165e9964f106fb4ac710959b5d33e0790227e3ab6b27c4742d1254a"
+  },
+  {
+    "file": "libdrm-dev_2.4.124-2_amd64.deb",
+    "sha256": "83b84b1207c4dda3d64ebad7725a7ad237c69c870668db3b01eabad1052f0dcb"
+  },
+  {
+    "file": "libdrm-intel1_2.4.124-2_amd64.deb",
+    "sha256": "188ab1fd74c838b3c8055d62107351e16a4bb7a25d39c30bbb9aac30ddd37238"
+  },
+  {
+    "file": "libdrm-nouveau2_2.4.124-2_amd64.deb",
+    "sha256": "634dcb46487fb2ca267850261291463845ada90b81d16a926ca40d333ce57180"
+  },
+  {
+    "file": "libdrm-radeon1_2.4.124-2_amd64.deb",
+    "sha256": "7a82b1c88b45235e314a15b71781b47ed472dafbbf697481ec8427079840fc32"
+  },
+  {
+    "file": "libdrm2_2.4.124-2_amd64.deb",
+    "sha256": "fe2276901c7cd7b8079de63072d37fe1cbeb4eb001a3bc1f1d662ad89aa0890e"
+  },
+  {
+    "file": "libelf-dev_0.192-4_amd64.deb",
+    "sha256": "7a67f944281523d6e3c55c1797449bab223b08665cc6ad8b51293056b65d9bd6"
+  },
+  {
+    "file": "libelf1t64_0.192-4_amd64.deb",
+    "sha256": "94497b7e17b6f574a0605b380d454e20d3f01a9c63b70c2a2263f679d30053e1"
+  },
+  {
+    "file": "libgcc-s1_14.2.0-19_amd64.deb",
+    "sha256": "3c71917b490d1a17aed43196a2787a256ecf060526cdb20216a74bedc061b150"
+  },
+  {
+    "file": "liblz4-1_1.10.0-4_amd64.deb",
+    "sha256": "c31ec4c7c82755a38b2f3fe066fc0c5518cc91a601a268fbcd19bdacb1f22e1e"
+  },
+  {
+    "file": "libpciaccess-dev_0.17-3+b3_amd64.deb",
+    "sha256": "dfaa687d4ccb943f5b222261a11a1678992bc499abe472d539aa59c4787a0c33"
+  },
+  {
+    "file": "libpciaccess0_0.17-3+b3_amd64.deb",
+    "sha256": "d9a0091071635a84e837051e4813005ac445071731becea28fba4d9806df5252"
+  },
+  {
+    "file": "libpopt0_1.19+dfsg-2_amd64.deb",
+    "sha256": "07f649b706852af937654295697dcfc7858f3295718ec18681dce1704663e4f2"
+  },
+  {
+    "file": "libreadline8t64_8.2-6_amd64.deb",
+    "sha256": "eeadf2b5e755c9f183883feea2d9b5b28560284275d5f54d3e55d0923b1d0967"
+  },
+  {
+    "file": "libssl-dev_3.5.7-1~deb13u2_amd64.deb",
+    "sha256": "f245b646a4fe5beb31d6a387da9db3399e3b14a904efef1a23227ff5465a1d11"
+  },
+  {
+    "file": "libssl3t64_3.5.7-1~deb13u2_amd64.deb",
+    "sha256": "916f7f40b34a06e6ebfaefcdab331bff458328411da672598f126a760472467d"
+  },
+  {
+    "file": "libtinfo6_6.5+20250216-2_amd64.deb",
+    "sha256": "8b9f6a7983e9418564e48a627518de4c03917b56efe68d7f3e93bd8fffa1cc10"
+  },
+  {
+    "file": "libxxhash0_0.8.3-2_amd64.deb",
+    "sha256": "81da7064d56fc044f5db4bb3c1e80ff50a4986dcbbf80d958eeca565b44c157f"
+  },
+  {
+    "file": "libzstd-dev_1.5.7+dfsg-1_amd64.deb",
+    "sha256": "de5f8aabcf4cb5cd1b441495ea4c24838e88ecbb30ae22c032a1b3b68a9d6f1e"
+  },
+  {
+    "file": "libzstd1_1.5.7+dfsg-1_amd64.deb",
+    "sha256": "2f6a2aeacfc925eba8b00ac9139bc4bfccf8cacb09eb93de067074b26948eef9"
+  },
+  {
+    "file": "linux-libc-dev_6.12.107-1_all.deb",
+    "sha256": "dc68dd53c7356598d005866da0d19d7bd33af2a62971aced624cdf04492902b4"
+  },
+  {
+    "file": "m4_1.4.19-8_amd64.deb",
+    "sha256": "221b3e224708c1da2a1a88b6824380593579b2254ae7d914afa14cbd5d343334"
+  },
+  {
+    "file": "openssl-provider-legacy_3.5.7-1~deb13u2_amd64.deb",
+    "sha256": "f155c8191ae6d41da73d792f4182680aeafeb85c3dd223934ee9fdd115c4f1fa"
+  },
+  {
+    "file": "readline-common_8.2-6_all.deb",
+    "sha256": "f77e8aa0bf0de618f11cb0b21658a4ed60f177d63b3cf26d7fc3706b6d0eaaa9"
+  },
+  {
+    "file": "rpcsvc-proto_1.4.3-1_amd64.deb",
+    "sha256": "32ac0692694f8a34cc90c895f4fc739680fb2ef0e2d4870a68833682bf1c81a3"
+  },
+  {
+    "file": "rsync_3.4.1+ds1-5+deb13u4_amd64.deb",
+    "sha256": "8aa122f6ba8d2ff112c72bb9814ee096ee516f0213b36b98bbe79c83c92fb226"
+  },
+  {
+    "file": "zlib1g-dev_1%3a1.3.dfsg+really1.3.1-1+b1_amd64.deb",
+    "sha256": "76ed5c858e1aef38b7be93acce5910e457e77bd6271471b9d05fb42e78826224"
+  },
+  {
+    "file": "zlib1g_1%3a1.3.dfsg+really1.3.1-1+b1_amd64.deb",
+    "sha256": "015be740d6236ad114582dea500c1d907f29e16d6db00566ca32fb68d71ac90d"
+  }
+]

@@ -1,0 +1,49 @@
+make: Entering directory '/workspace/1/work/ljh-pi4-dsi/vendor/buildroot-2026.08'
+mkdir -p /workspace/1/work/ljh-pi4-dsi/output/pi4-dsi-800x480/build/buildroot-config/lxdialog
+PKG_CONFIG_PATH="" make CC="/usr/bin/gcc" HOSTCC="/usr/bin/gcc" \
+    obj=/workspace/1/work/ljh-pi4-dsi/output/pi4-dsi-800x480/build/buildroot-config -C support/kconfig -f Makefile.br conf
+/usr/bin/gcc -DCURSES_LOC="<curses.h>" -DLOCALE  -I/workspace/1/work/ljh-pi4-dsi/output/pi4-dsi-800x480/build/buildroot-config -DCONFIG_=\"\"  -MM *.c > /workspace/1/work/ljh-pi4-dsi/output/pi4-dsi-800x480/build/buildroot-config/.depend 2>/dev/null || :
+/usr/bin/gcc -DCURSES_LOC="<curses.h>" -DLOCALE  -I/workspace/1/work/ljh-pi4-dsi/output/pi4-dsi-800x480/build/buildroot-config -DCONFIG_=\"\"   -c conf.c -o /workspace/1/work/ljh-pi4-dsi/output/pi4-dsi-800x480/build/buildroot-config/conf.o
+/usr/bin/gcc -DCURSES_LOC="<curses.h>" -DLOCALE  -I/workspace/1/work/ljh-pi4-dsi/output/pi4-dsi-800x480/build/buildroot-config -DCONFIG_=\"\"  -I. -c /workspace/1/work/ljh-pi4-dsi/output/pi4-dsi-800x480/build/buildroot-config/zconf.tab.c -o /workspace/1/work/ljh-pi4-dsi/output/pi4-dsi-800x480/build/buildroot-config/zconf.tab.o
+/usr/bin/gcc -DCURSES_LOC="<curses.h>" -DLOCALE  -I/workspace/1/work/ljh-pi4-dsi/output/pi4-dsi-800x480/build/buildroot-config -DCONFIG_=\"\"   /workspace/1/work/ljh-pi4-dsi/output/pi4-dsi-800x480/build/buildroot-config/conf.o /workspace/1/work/ljh-pi4-dsi/output/pi4-dsi-800x480/build/buildroot-config/zconf.tab.o  -o /workspace/1/work/ljh-pi4-dsi/output/pi4-dsi-800x480/build/buildroot-config/conf
+rm /workspace/1/work/ljh-pi4-dsi/output/pi4-dsi-800x480/build/buildroot-config/zconf.tab.c
+  GEN     /workspace/1/work/ljh-pi4-dsi/output/pi4-dsi-800x480/Makefile
+#
+# configuration written to /workspace/1/work/ljh-pi4-dsi/output/pi4-dsi-800x480/.config
+#
+make: Leaving directory '/workspace/1/work/ljh-pi4-dsi/vendor/buildroot-2026.08'
+make: Entering directory '/workspace/1/work/ljh-pi4-dsi/vendor/buildroot-2026.08'
+  GEN     /workspace/1/work/ljh-pi4-dsi/output/pi4-dsi-800x480/Makefile
+#
+# configuration written to /workspace/1/work/ljh-pi4-dsi/output/pi4-dsi-800x480/.config
+#
+make: Leaving directory '/workspace/1/work/ljh-pi4-dsi/vendor/buildroot-2026.08'
+make: Entering directory '/workspace/1/work/ljh-pi4-dsi/vendor/buildroot-2026.08'
+/usr/bin/make -j1  O=/workspace/1/work/ljh-pi4-dsi/output/pi4-dsi-800x480 HOSTCC="/usr/bin/gcc" HOSTCXX="/usr/bin/g++" syncconfig
+make[2]: warning: -j1 forced in submake: resetting jobserver mode.
+  GEN     /workspace/1/work/ljh-pi4-dsi/output/pi4-dsi-800x480/Makefile
+>>> host-skeleton  Extracting
+>>> host-skeleton  Patching
+>>> host-skeleton  Configuring
+>>> host-skeleton  Building
+>>> host-skeleton  Installing to host directory
+# check-package DoNotInstallToHostdirUsr
+>>> host-pkgconf 2.3.0 Downloading
+wget -nd -t 3 --connect-timeout=10 -O '/workspace/1/work/ljh-pi4-dsi/output/pi4-dsi-800x480/build/.pkgconf-2.3.0.tar.xz.CCKkve/output' 'https://distfiles.ariadne.space/pkgconf/pkgconf-2.3.0.tar.xz' 
+--2026-10-18 11:35:12--  https://distfiles.ariadne.space/pkgconf/pkgconf-2.3.0.tar.xz
+Resolving proxy (proxy)... 172.31.12.45
+Connecting to proxy (proxy)|172.31.12.45|:8080... connected.
+Proxy tunneling failed: ForbiddenUnable to establish SSL connection.
+wget -nd -t 3 --connect-timeout=10 -O '/workspace/1/work/ljh-pi4-dsi/output/pi4-dsi-800x480/build/.pkgconf-2.3.0.tar.xz.1M85b5/output' 'https://sources.buildroot.net/pkgconf/pkgconf-2.3.0.tar.xz' 
+--2026-10-18 11:35:12--  https://sources.buildroot.net/pkgconf/pkgconf-2.3.0.tar.xz
+Resolving proxy (proxy)... 172.31.12.45
+Connecting to proxy (proxy)|172.31.12.45|:8080... connected.
+Proxy tunneling failed: ForbiddenUnable to establish SSL connection.
+wget -nd -t 3 --connect-timeout=10 -O '/workspace/1/work/ljh-pi4-dsi/output/pi4-dsi-800x480/build/.pkgconf-2.3.0.tar.xz.oFyLnq/output' 'https://sources.buildroot.net/pkgconf-2.3.0.tar.xz' 
+--2026-10-18 11:35:12--  https://sources.buildroot.net/pkgconf-2.3.0.tar.xz
+Resolving proxy (proxy)... 172.31.12.45
+Connecting to proxy (proxy)|172.31.12.45|:8080... connected.
+Proxy tunneling failed: ForbiddenUnable to establish SSL connection.
+make[1]: *** [package/pkg-generic.mk:179: /workspace/1/work/ljh-pi4-dsi/output/pi4-dsi-800x480/build/host-pkgconf-2.3.0/.stamp_downloaded] Error 1
+make: *** [Makefile:83: _all] Error 2
+make: Leaving directory '/workspace/1/work/ljh-pi4-dsi/vendor/buildroot-2026.08'

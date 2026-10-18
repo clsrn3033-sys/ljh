@@ -1,0 +1,4 @@
+
+# Preserve generated command logs verbatim; source whitespace checks remain enabled.
+docs/logs/** -whitespace
+"ver 1/evidence/**" -whitespace

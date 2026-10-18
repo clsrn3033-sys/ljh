@@ -1,0 +1,11 @@
+net,Pi4B connection,module connection,status
+SENSOR_3V3,physical pin1,INA226 VS / BH1750 VCC / DS3231 VCC,confirm actual module 3.3V supply and pullup compatibility
+I2C1_SDA,physical pin3 GPIO2,sensor SDA,planned verify addresses and DSI touch bus
+I2C1_SCL,physical pin5 GPIO3,sensor SCL,planned verify pullups
+GND,physical pin6,sensor GND/common reference,planned
+DSI,15-pin DSI connector,5-inch DSI LCD flex,model orientation pinout unconfirmed do not guess
+PI_POWER,USB-C power input,regulated 5V stage output,regulator and load budget unconfirmed never direct 8.4V
+INA_VBUS,not GPIO,protected battery voltage measurement node,module wiring unconfirmed
+INA_SHUNT,not GPIO,protected battery high-side sensing path,shunt and current rating unconfirmed
+CHARGER_NTC,not connected to Pi,100K B4100 to charging module NTC input,manufacturer pinout and temperature limits required
+CHARGER_BM,not connected to Pi,2S midpoint sense where manufacturer specifies,charger/BMS topology unconfirmed

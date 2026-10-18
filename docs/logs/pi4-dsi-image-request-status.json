@@ -1,0 +1,11 @@
+{
+  "checked_utc": "2026-10-18T11:54:55.573093+00:00",
+  "requested_artifact": "Raspberry Pi 4B Buildroot ARM64 .img",
+  "image_exists": false,
+  "network_probe": "curl exit 56; proxy CONNECT 403 Forbidden",
+  "build_log": "docs/logs/pi4-dsi-build-retry.log",
+  "environment_draft_revision": 4,
+  "network_allowlist_saved": true,
+  "runtime_network_access_verified": false,
+  "qemu_boot_tested": false
+}
