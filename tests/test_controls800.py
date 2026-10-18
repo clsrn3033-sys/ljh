@@ -246,6 +246,30 @@ class WorkerIntegrationTests(unittest.TestCase):
         self.worker.once()
         self.connected.append(self.sd)
 
+    def test_interrupted_job_is_reported_before_source_reconnect(self):
+        pending = self.dst/'.mebs-pending-interrupted'
+        pending.mkdir()
+        self.worker.inspect_pending = lambda _: [pending.name]
+        self.worker.once()
+        self.connected = [self.hdd]
+        self.worker.once()
+        self.assertEqual(self.c.state['state'], 'RECOVERY_REQUIRED')
+        self.assertEqual(self.c.state['incomplete_jobs'], 1)
+        self.connected.append(self.sd)
+        self.worker.once()
+        self.assertEqual(self.c.state['state'], 'SAFE_TO_REMOVE')
+        self.assertTrue(pending.is_dir())
+        verify(self.c.state['job'])
+
+    def test_ram_reading_uses_memavailable_not_demo_values(self):
+        from mebs.sensors import ram_usage
+        sample = self.root/'meminfo'
+        sample.write_text('MemTotal: 1000 kB\nMemFree: 300 kB\nMemAvailable: 250 kB\n')
+        self.assertEqual(ram_usage(sample), 75)
+        sample.write_text('MemTotal: 0 kB\nMemAvailable: 0 kB\n')
+        with self.assertRaises(ValueError):
+            ram_usage(sample)
+
     def test_headless_real_copy_while_quick_settings_and_power_queue(self):
         copied = Event(); release = Event()
         original = self.c.update
@@ -280,6 +304,9 @@ class WorkerIntegrationTests(unittest.TestCase):
         from mebs.appliance import run_job
         for removed in ('source', 'target'):
             with self.subTest(removed=removed):
+                # Each fault must copy new data; an earlier verified commit can
+                # now be safely reused without entering the COPYING phase.
+                (self.src/'clip.mov').write_bytes((b'x' if removed == 'source' else b'y') * 3 * 1024 * 1024)
                 self.connected = [self.hdd, self.sd]
                 def emit(s):
                     if s['state'] == 'COPYING':

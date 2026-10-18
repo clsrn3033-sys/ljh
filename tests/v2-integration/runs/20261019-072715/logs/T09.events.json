@@ -1,0 +1,30 @@
+[
+  {
+    "monotonic": 36916.888327859,
+    "status": {
+      "state": "BOOTING"
+    }
+  },
+  {
+    "monotonic": 36919.281371784,
+    "status": {
+      "state": "READY",
+      "target_connected": false,
+      "source_connected": false,
+      "incomplete_jobs": 0,
+      "error": "",
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36922.632066028,
+    "status": {
+      "state": "ERROR",
+      "error": "외장 하드는 ext4 형식이 필요합니다. 자동 포맷하지 않습니다.",
+      "safe_to_remove": false,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  }
+]

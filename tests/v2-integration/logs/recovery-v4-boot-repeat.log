@@ -1,0 +1,21 @@
+{"run": 1, "status": "PASS", "ready_seconds": 7.294, "pid1_init": true, "settings_mounted": true}
+{"run": 2, "status": "PASS", "ready_seconds": 7.418, "pid1_init": true, "settings_mounted": true}
+{"run": 3, "status": "PASS", "ready_seconds": 7.558, "pid1_init": true, "settings_mounted": true}
+{"run": 4, "status": "PASS", "ready_seconds": 7.414, "pid1_init": true, "settings_mounted": true}
+{"run": 5, "status": "PASS", "ready_seconds": 7.374, "pid1_init": true, "settings_mounted": true}
+{"run": 6, "status": "PASS", "ready_seconds": 7.477, "pid1_init": true, "settings_mounted": true}
+{"run": 7, "status": "PASS", "ready_seconds": 7.321, "pid1_init": true, "settings_mounted": true}
+{"run": 8, "status": "PASS", "ready_seconds": 7.281, "pid1_init": true, "settings_mounted": true}
+{"run": 9, "status": "PASS", "ready_seconds": 7.43, "pid1_init": true, "settings_mounted": true}
+{"run": 10, "status": "PASS", "ready_seconds": 7.503, "pid1_init": true, "settings_mounted": true}
+{"run": 11, "status": "PASS", "ready_seconds": 7.379, "pid1_init": true, "settings_mounted": true}
+{"run": 12, "status": "PASS", "ready_seconds": 7.3, "pid1_init": true, "settings_mounted": true}
+{"run": 13, "status": "PASS", "ready_seconds": 7.406, "pid1_init": true, "settings_mounted": true}
+{"run": 14, "status": "PASS", "ready_seconds": 7.574, "pid1_init": true, "settings_mounted": true}
+{"run": 15, "status": "PASS", "ready_seconds": 7.572, "pid1_init": true, "settings_mounted": true}
+{"run": 16, "status": "PASS", "ready_seconds": 7.538, "pid1_init": true, "settings_mounted": true}
+{"run": 17, "status": "PASS", "ready_seconds": 7.355, "pid1_init": true, "settings_mounted": true}
+{"run": 18, "status": "PASS", "ready_seconds": 7.266, "pid1_init": true, "settings_mounted": true}
+{"run": 19, "status": "PASS", "ready_seconds": 7.59, "pid1_init": true, "settings_mounted": true}
+{"run": 20, "status": "PASS", "ready_seconds": 7.629, "pid1_init": true, "settings_mounted": true}
+EVIDENCE /var/home/bazzite/ljh/tests/v2-integration/boot-runs/20261019-073645

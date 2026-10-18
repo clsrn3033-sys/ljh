@@ -1,0 +1,11 @@
+{
+  "image": "/var/home/bazzite/ljh/output/pi4-v2-recovery-qemu-v4-20261019/images/qemu-virt.img",
+  "runs": 20,
+  "passed": 20,
+  "failed": 0,
+  "min_seconds": 7.266,
+  "median_seconds": 7.416,
+  "max_seconds": 7.629,
+  "measurement": "QEMU process start to automatic READY after serial login/status polling; not physical cold boot",
+  "physical_hardware_tested": false
+}

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Assemble a new Buildroot image with the V2 Python fix; never overwrite input.
+"""Assemble a new Buildroot image with V2 source fixes; never overwrite input.
 
 The kernel/toolchain/firmware were already built locally. A Python-only change
 needs no recompilation. Both the new ext4 and raw SD image receive identical
@@ -41,9 +41,17 @@ def main():
             dst.write(chunk); remaining-=len(chunk)
     updates={
         '/usr/lib/mebs/mebs/appliance.py':ROOT/'mebs/appliance.py',
+        '/usr/lib/mebs/mebs/backup.py':ROOT/'mebs/backup.py',
+        '/usr/lib/mebs/mebs/runtime800.py':ROOT/'mebs/runtime800.py',
+        '/usr/lib/mebs/mebs/display.py':ROOT/'mebs/display.py',
+        '/usr/lib/mebs/mebs/controls.py':ROOT/'mebs/controls.py',
+        '/usr/lib/mebs/mebs/sensors.py':ROOT/'mebs/sensors.py',
+        '/usr/lib/mebs/mebs/ui800.py':ROOT/'mebs/ui800.py',
         '/etc/default/seedrng':ROOT/'buildroot/board/mebs-pi4-dsi/overlay/etc/default/seedrng',
     }
-    subprocess.run(['debugfs','-w','-R','mkdir /etc/default',str(filesystem)],check=True)
+    default_dir=subprocess.check_output(['debugfs','-R','stat /etc/default',str(filesystem)],stderr=subprocess.DEVNULL)
+    if b'Type: directory' not in default_dir:
+        subprocess.run(['debugfs','-w','-R','mkdir /etc/default',str(filesystem)],check=True)
     for guest,module in updates.items():
         for query in [f'rm {guest}',f'write {module} {guest}']:
             subprocess.run(['debugfs','-w','-R',query,str(filesystem)],check=True)

@@ -1,5 +1,20 @@
 # MEBS V2 실제 가상 디스크 시험
 
+최신 복구판의 전체 시험은 다음 한 명령으로 실행한다. Pi 이미지 입력에서 시험용
+fstab 복사본을 자동 생성한다. 별도 생성된 QEMU IMG를 쓰려면 `--prepared-os`를 추가한다.
+
+```sh
+python3 tests/v2-integration/run.py
+python3 tests/v2-integration/run.py \
+  --images output/pi4-v2-recovery-v4-20261019/images \
+  --prepared-os output/pi4-v2-recovery-qemu-v4-20261019/images/qemu-virt.img
+python3 tests/v2-integration/boot_repeat.py \
+  --images output/pi4-v2-recovery-v4-20261019/images \
+  --prepared-os output/pi4-v2-recovery-qemu-v4-20261019/images/qemu-virt.img --count 20
+```
+
+최신 24항목 판정: [V2_TEST_REPORT.md](../../docs/v2-recovery/V2_TEST_REPORT.md).
+
 V1 문서와 원본 이미지는 보존한다. 테스트는 QEMU ARM64 `virt`에서 기존
 Buildroot 커널·rootfs·BusyBox init·S50mebs·runtime800을 실행한다. Raspberry
 Pi 4B 하드웨어/EEPROM 부팅 성공을 의미하지 않는다.
@@ -11,11 +26,11 @@ e2fsprogs, util-linux, ffmpeg를 사용한다. 시스템 패키지를 설치하�
 
 ```sh
 cd /var/home/bazzite/ljh
-python3 tests/v2-integration/run.py --images output/pi4-v2-validated-20261019/images
+python3 tests/v2-integration/run.py --images output/pi4-v2-recovery-v4-20261019/images
 # 하나만 재시험
-python3 tests/v2-integration/run.py --images output/pi4-v2-validated-20261019/images --cases T01
+python3 tests/v2-integration/run.py --images output/pi4-v2-recovery-v4-20261019/images --cases T01
 # 실제 raspi4b 보드 모델의 30초 제한 시험
-python3 tests/v2-integration/probe_raspi4.py --images output/pi4-v2-validated-20261019/images
+python3 tests/v2-integration/probe_raspi4.py --images output/pi4-v2-recovery-v4-20261019/images
 ```
 
 QMP Unix 소켓을 허용하는 로컬 터미널에서 실행한다. Codex 제한 샌드박스가
@@ -49,14 +64,25 @@ loop 장치, 실제 /dev/sdX에 대한 명령은 필요하지 않다.
 
 ```sh
 python3 tests/v2-integration/build_fixed_image.py \
-  output/pi4-v2-dsi-800x480-20261018/images \
-  output/pi4-v2-utf8-reproduced/images
+  output/pi4-v2-validated-20261019/images \
+  output/<new-unique-build-directory>/images
 ```
 
 새 출력 디렉터리만 허용한다. 기존 로컬 Buildroot 빌드의 커널/펌웨어를
-재사용하고 Python 소스 `mebs/appliance.py`와 `/etc/default/seedrng` 설정을 새 ext4 및 raw IMG에 반영한다.
+재사용하고 수정된 `mebs/*.py` 및 `/etc/default/seedrng` 설정을 새 ext4 및 raw IMG에 반영한다.
 이는 전체 커널 재컴파일이 아니다. 수정 파일 해시와 기반 이미지 해시는
 `V2_FIX_PROVENANCE.json`에 기록된다. 새 이미지는 실물 검증 전 후보본이다.
+Pi image에서 QEMU 전용 사본을 만들려면 새 빈 출력 경로를 지정한다:
+
+```sh
+python3 tests/v2-integration/build_qemu_image.py \
+  output/pi4-v2-recovery-v4-20261019/images \
+  output/<new-unique-qemu-directory>/qemu-virt.img
+```
+
+압축 후보본은 `artifacts/MEBS-V2-recovery-v4-Pi4B-20261019.img.zst`이고
+`zstd -t`와 스트림 해시로 원본 raw IMG와 일치함을 검사했다. 실물 microSD에는
+아직 기록·부팅하지 않았다.
 
 ## UI 화면 증거
 

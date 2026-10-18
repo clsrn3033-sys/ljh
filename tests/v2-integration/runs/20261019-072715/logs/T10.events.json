@@ -1,0 +1,81 @@
+[
+  {
+    "monotonic": 36928.064433515,
+    "status": {
+      "state": "BOOTING"
+    }
+  },
+  {
+    "monotonic": 36930.411556302,
+    "status": {
+      "state": "READY",
+      "target_connected": false,
+      "source_connected": false,
+      "incomplete_jobs": 0,
+      "error": "",
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36933.737269468,
+    "status": {
+      "state": "WAITING_SOURCE",
+      "target_connected": true,
+      "source_connected": false,
+      "incomplete_jobs": 0,
+      "error": "",
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36937.909838542,
+    "status": {
+      "state": "MOUNTING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 0,
+      "total_bytes": 0,
+      "verified_files": 0,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36938.871983089,
+    "status": {
+      "state": "MOUNTING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 0,
+      "total_bytes": 0,
+      "verified_files": 0,
+      "total_files": 0,
+      "needed_bytes": 1049600,
+      "free_bytes": 168751104,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36939.754168945,
+    "status": {
+      "needed_bytes": 1049600,
+      "free_bytes": 168751104,
+      "state": "ERROR",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 0,
+      "total_bytes": 0,
+      "verified_files": 0,
+      "current_file": "",
+      "error": "백업할 파일 없음. 원본 SD카드를 확인하세요.",
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  }
+]

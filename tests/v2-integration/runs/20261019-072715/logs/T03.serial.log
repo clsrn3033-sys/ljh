@@ -1,0 +1,72 @@
+COMMAND qemu-system-aarch64 -M virt -cpu cortex-a72 -m 1024 -smp 2 -nographic -nic none -monitor none -kernel /var/home/bazzite/ljh/output/pi4-v2-recovery-v4-20261019/images/Image -append 'root=/dev/vda2 rootwait ro console=ttyAMA0,115200 loglevel=6' -drive file=/tmp/mebs-v2-suite-qzqkjtcz/T03/os.qcow2,format=qcow2,if=none,id=os -device virtio-blk-device,drive=os -device qemu-xhci,id=xhci -qmp unix:/tmp/mebs-v2-suite-qzqkjtcz/T03/qmp.sock,server=on,wait=off
+[    0.000000] Linux version 6.12.61-v8 (bazzite@bazzite) (aarch64-buildroot-linux-gnu-gcc.br_real (Buildroot -g24c30ba-dirty) 15.3.0, GNU ld (GNU Binutils) 2.45.1) #1 SMP PREEMPT Sun Oct 18 23:53:33 KST 2026
+[    0.000000] random: crng init done
+[    0.000000] Kernel command line: root=/dev/vda2 rootwait ro console=ttyAMA0,115200 loglevel=6
+[    0.056523] cacheinfo: Unable to detect cache hierarchy for CPU 0
+[    0.194266] Enabled cp15_barrier support
+[    0.194586] Enabled setend support
+[    0.256161] audit: type=2000 audit(0.232:1): state=initialized audit_enabled=0 res=1
+[    0.336866] SCSI subsystem initialized
+[    0.368486] VFS: Disk quotas dquot_6.6.0
+[    1.471159] Initialise system trusted keyrings
+[    1.479810] NFS: Registering the id_resolver key type
+[    1.480491] Key type id_resolver registered
+[    1.480708] Key type id_legacy registered
+[    1.486425] Key type asymmetric registered
+[    1.486813] Asymmetric key parser 'x509' registered
+[    1.505065] pci-host-generic 4010000000.pcie: Memory resource size exceeds max for 32 bits
+[    1.596828] virtio_blk virtio0: [vda] 608256 512-byte logical blocks (311 MB/297 MiB)
+[    1.696391] Key type dns_resolver registered
+[    1.744392] Loading compiled-in X.509 certificates
+[    1.763505] Key type .fscrypt registered
+[    1.763725] Key type fscrypt-provisioning registered
+Saving 256 bits of creditable seed for next boot
+Starting syslogd: OK
+Starting klogd: OK
+Running sysctl: OK
+Starting network: OK
+Starting crond: OK
+
+Welcome to Buildroot
+mebs login: root
+# stty -echo; export PS1=$(printf 'MEBS_'; printf 'TEST# ')
+MEBS_TEST# MEBS_JSON{"state": "BOOTING"}
+MEBS_TEST# MEBS_JSON{"state": "BOOTING"}
+MEBS_TEST# MEBS_JSON{"state": "BOOTING"}
+MEBS_TEST# MEBS_JSON{"state": "READY", "target_connected": false, "source_connected": false, "incomplete_jobs": 0, "error": "", "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# {'pid1': 'init', 'settings_mounted': True, 'status': '{"state": "READY", "target_connected": false, "source_connected": false, "incomplete_jobs": 0, "error": "", "battery_guard": "UNCONFIGURED", "shutdown_pending": false}\n', 'uptime': '7.23 3.53\n'}
+MEBS_TEST# FULL_INIT_AUTO_READY wall_seconds=7.461 {'state': 'READY', 'target_connected': False, 'source_connected': False, 'incomplete_jobs': 0, 'error': '', 'battery_guard': 'UNCONFIGURED', 'shutdown_pending': False}
+MEBS_JSON{"state": "READY", "target_connected": false, "source_connected": false, "incomplete_jobs": 0, "error": "", "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# [    8.680836] scsi 0:0:0:0: Direct-Access     QEMU     QEMU HARDDISK    2.5+ PQ: 0 ANSI: 5
+[    8.697167] sd 0:0:0:0: Power-on or device reset occurred
+[    8.709710] sd 0:0:0:0: [sda] 32768 512-byte logical blocks: (16.8 MB/16.0 MiB)
+[    8.715765] sd 0:0:0:0: [sda] Write Protect is off
+[    8.717856] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, supports DPO and FUA
+[    8.750857] sd 0:0:0:0: [sda] Attached SCSI disk
+MEBS_JSON{"state": "READY", "target_connected": false, "source_connected": false, "incomplete_jobs": 0, "error": "", "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"state": "WAITING_SOURCE", "target_connected": true, "source_connected": false, "incomplete_jobs": 0, "error": "", "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"state": "WAITING_SOURCE", "target_connected": true, "source_connected": false, "incomplete_jobs": 0, "error": "", "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# [   11.100174] scsi 1:0:0:0: Direct-Access     QEMU     QEMU HARDDISK    2.5+ PQ: 0 ANSI: 5
+[   11.105542] sd 1:0:0:0: Power-on or device reset occurred
+[   11.108640] sd 1:0:0:0: [sdb] 131072 512-byte logical blocks: (67.1 MB/64.0 MiB)
+[   11.109853] sd 1:0:0:0: [sdb] Write Protect is on
+[   11.112805] sd 1:0:0:0: [sdb] Write cache: disabled, read cache: enabled, supports DPO and FUA
+[   11.136041] sd 1:0:0:0: [sdb] Attached SCSI disk
+MEBS_JSON{"state": "WAITING_SOURCE", "target_connected": true, "source_connected": false, "incomplete_jobs": 0, "error": "", "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"state": "WAITING_SOURCE", "target_connected": true, "source_connected": false, "incomplete_jobs": 0, "error": "", "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"state": "WAITING_SOURCE", "target_connected": true, "source_connected": false, "incomplete_jobs": 0, "error": "", "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"state": "MOUNTING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 0, "verified_files": 0, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"state": "MOUNTING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 33557739, "verified_files": 0, "total_files": 11, "needed_bytes": 34634752, "free_bytes": 13189120, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 34634752, "free_bytes": 13189120, "state": "SCANNING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 33557739, "verified_files": 0, "current_file": "", "total_files": 11, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# MEBS_JSON{"needed_bytes": 34634752, "free_bytes": 13189120, "state": "ERROR", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 33557739, "verified_files": 0, "current_file": "", "total_files": 11, "error": "\uacf5\uac04 \ubd80\uc871: \ud544\uc694 34634752 bytes / \uc794\uc5ec 13189120 bytes. \ud3ec\ub9f7\ud558\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4.", "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# /dev/vda2 on / type ext4 (ro,relatime)
+devtmpfs on /dev type devtmpfs (rw,relatime,size=496392k,nr_inodes=124098,mode=755)
+proc on /proc type proc (rw,relatime)
+devpts on /dev/pts type devpts (rw,relatime,gid=5,mode=620,ptmxmode=666)
+tmpfs on /dev/shm type tmpfs (rw,relatime)
+tmpfs on /tmp type tmpfs (rw,relatime)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,relatime,mode=755)
+sysfs on /sys type sysfs (rw,relatime)
+/dev/vda3 on /var/lib/mebs type ext4 (rw,nosuid,nodev,noexec,noatime)
+MEBS_TEST# [   16.691512] sd 0:0:0:0: [sda] Synchronizing SCSI cache
+[   16.699083] reboot: Power down

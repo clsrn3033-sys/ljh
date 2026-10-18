@@ -1,0 +1,62 @@
+[
+  {
+    "id": "T06",
+    "status": "PASS",
+    "executed": true,
+    "boot_seconds": 7.399478142004227,
+    "autostart": true,
+    "detail": "VM SIGKILL left pending job; boot displayed recovery warning; reconnected source made a new verified backup",
+    "pending": [
+      "/run/inspect/.mebs-pending-19700101T000016Z-83699d7b9907493a9ca75f79e525c079"
+    ],
+    "state": {
+      "needed_bytes": 34634752,
+      "free_bytes": 168736768,
+      "state": "SAFE_TO_REMOVE",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": true,
+      "copied_bytes": 33557739,
+      "total_bytes": 33557739,
+      "verified_files": 11,
+      "current_file": "",
+      "total_files": 11,
+      "job": "/run/mebs/target/mebs-backup-19700101T000031Z-e41f44818a7e49c6ae43ee96afefc68f",
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    },
+    "source_unchanged": true,
+    "elapsed_seconds": 137.02
+  },
+  {
+    "id": "T10",
+    "status": "PASS",
+    "executed": true,
+    "boot_seconds": 7.217286049002723,
+    "autostart": true,
+    "state": {
+      "needed_bytes": 1049600,
+      "free_bytes": 168751104,
+      "state": "ERROR",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 0,
+      "total_bytes": 0,
+      "verified_files": 0,
+      "current_file": "",
+      "error": "백업할 파일 없음. 원본 SD카드를 확인하세요.",
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    },
+    "detail": "Empty source rejected with a no-files message",
+    "source_unchanged": true,
+    "elapsed_seconds": 27.107
+  },
+  {
+    "id": "T12",
+    "status": "BLOCKED",
+    "executed": false,
+    "detail": "Shipped V2 has no manual formatter or format-approval UI. No SD format executed."
+  }
+]

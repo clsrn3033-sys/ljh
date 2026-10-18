@@ -76,7 +76,7 @@ def render(state, theme=None):
 
     phase = state.get("state", "READY")
     good = phase in ("COMPLETE", "SAFE_TO_REMOVE")
-    error = phase in ("ERROR", "CANCELLED", "AMBIGUOUS")
+    error = phase in ("ERROR", "CANCELLED", "AMBIGUOUS", "RECOVERY_REQUIRED")
     accent = GREEN if good else RED if error else ORANGE
     draw.rounded_rectangle((34, 29, 42, 63), radius=4, fill=ORANGE)
     text(55, 24, "MEBS", 34)
@@ -88,6 +88,7 @@ def render(state, theme=None):
     titles = {
         "READY": ("BACKUP READY", "백업을 저장할 외장 하드를 먼저 연결해 주세요."),
         "WAITING_SOURCE": ("외장 하드 연결됨", "두 번째로 카메라 SD카드를 연결해 주세요."),
+        "RECOVERY_REQUIRED": ("중단된 백업 발견", "원본 SD를 다시 연결해 새 백업으로 재시도하세요."),
         "AMBIGUOUS": ("연결 순서를 확인해 주세요", "두 장치를 빼고 외장 하드부터 다시 연결해 주세요."),
         "MOUNTING": ("저장장치 확인 중", "원본은 읽기 전용으로 연결합니다."),
         "UNMOUNTING": ("안전 분리 준비 중", "저장장치를 분리하지 말고 잠시 기다려 주세요."),
@@ -121,7 +122,7 @@ def render(state, theme=None):
 
     total = state.get("total_bytes", 0)
     copied = state.get("copied_bytes", 0)
-    percent = min(100, int(copied * 100 / total)) if total else (100 if good else 0)
+    percent = 100 if good else (min(100, int(copied * 100 / total)) if total else 0)
     label = "SHA-256 일치" if good else "진행 중인 파일" if state.get("current_file") else "백업 상태"
     text(36, 334, label, 13, accent if good else MUTED)
     detail = state.get("error") or state.get("current_file") or (f"{state.get('verified_files', 0)}개 파일 검증 완료" if good else "원본 자동 삭제 없음")

@@ -1,0 +1,20 @@
+COMMAND ['fsck.fat', '-n', 'output/pi4-v2-recovery-v4-20261019/images/boot.vfat']
+fsck.fat 4.2 (2021-01-31)
+output/pi4-v2-recovery-v4-20261019/images/boot.vfat: 367 files, 57645/193550 clusters
+COMMAND ['e2fsck', '-fn', 'output/pi4-v2-recovery-v4-20261019/images/rootfs.ext4']
+e2fsck 1.47.3 (8-Jul-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+rootfs: 1361/49152 files (1.0% non-contiguous), 73852/196608 blocks
+COMMAND ['e2fsck', '-fn', 'output/pi4-v2-recovery-v4-20261019/images/mebs-settings.ext4']
+e2fsck 1.47.3 (8-Jul-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+MEBS_CONFIG: 12/2048 files (8.3% non-contiguous), 1650/8192 blocks
+PASS

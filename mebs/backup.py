@@ -137,6 +137,61 @@ def commit(root, pending, final):
     os.fsync(root)
 
 
+def matching_job(source, target, target_path, entries, files, cancel):
+    """Reuse only an intact committed job with identical data and metadata."""
+    paths = {"/".join(parts): snapshot.st_size for parts, snapshot in files}
+    folders = {"/".join(parts) for parts, snapshot in entries.items()
+               if parts and stat.S_ISDIR(snapshot.st_mode)}
+    for name in sorted(os.listdir(target), reverse=True):
+        check_cancel(cancel)
+        if not name.startswith("mebs-backup-"):
+            continue
+        try:
+            with directory(target, (name,)) as job:
+                # verify rejects incomplete, damaged, linked or inconsistent jobs.
+                manifest = verify(target_path / name, cancel)
+                if ({item["path"]: item["size"] for item in manifest["files"]} != paths
+                        or set(manifest["directories"]) != folders):
+                    continue
+                with directory(job, ("data",)) as data:
+                    for parts, snapshot in entries.items():
+                        check_cancel(cancel)
+                        with directory(source, parts[:-1]) as src_parent, directory(data, parts[:-1]) as dst_parent:
+                            if parts:
+                                src = os.open(parts[-1], DIR_FLAGS if stat.S_ISDIR(snapshot.st_mode) else FILE_FLAGS,
+                                              dir_fd=src_parent)
+                                dst = os.open(parts[-1], DIR_FLAGS if stat.S_ISDIR(snapshot.st_mode) else FILE_FLAGS,
+                                              dir_fd=dst_parent)
+                            else:
+                                src, dst = os.dup(source), os.dup(data)
+                            try:
+                                old = os.fstat(dst)
+                                if (stat.S_IMODE(snapshot.st_mode) != stat.S_IMODE(old.st_mode)
+                                        or snapshot.st_mtime_ns != old.st_mtime_ns
+                                        or {key: os.getxattr(src, key) for key in os.listxattr(src)} !=
+                                           {key: os.getxattr(dst, key) for key in os.listxattr(dst)}):
+                                    break
+                                if stat.S_ISREG(snapshot.st_mode):
+                                    record = next(item for item in manifest["files"] if item["path"] == "/".join(parts))
+                                    if digest(src, cancel) != record["sha256"]:
+                                        break
+                                if signature(os.fstat(src)) != signature(snapshot):
+                                    raise BackupError("Source changed during duplicate verification")
+                            finally:
+                                os.close(src)
+                                os.close(dst)
+                        # Continue only while all entries match.
+                    else:
+                        again = inventory(source)
+                        if {p: signature(s) for p, s in entries.items()} != {p: signature(s) for p, s in again.items()}:
+                            raise BackupError("Source changed during duplicate verification")
+                        return target_path / name
+        except (BackupError, FileNotFoundError, NotADirectoryError, OSError):
+            # An invalid old backup is never a basis for skipping this source.
+            continue
+    return None
+
+
 def backup(source, target, emit=lambda event: None, cancel=lambda: False):
     source = Path(source).resolve(strict=True)
     target = Path(target).resolve(strict=True)
@@ -171,14 +226,23 @@ def _backup(source, target, target_path, emit, cancel):
                for s in entries.values()):
             raise BackupError("Destination aliases a directory in the source tree")
         files = [(p, s) for p, s in entries.items() if stat.S_ISREG(s.st_mode)]
+        if not files:
+            raise BackupError("백업할 파일 없음. 원본 SD카드를 확인하세요.")
         total = sum(s.st_size for _, s in files)
         emit({"state": "SCANNED", "total_bytes": total, "total_files": len(files)})
+        existing = matching_job(source, target, target_path, entries, files, cancel)
+        if existing is not None:
+            emit({"state": "VERIFIED", "job": str(existing), "bytes": total,
+                  "files": len(files), "deduplicated": True,
+                  "message": "Identical verified backup reused; unmount still required"})
+            return existing
         fs = os.fstatvfs(target)
         # Conservative per-file allocation estimate plus room for journal/manifest.
         needed = sum(((s.st_size + fs.f_frsize - 1) // fs.f_frsize) * fs.f_frsize
                      for _, s in files) + len(entries) * fs.f_frsize + CHUNK
-        if fs.f_bavail * fs.f_frsize < needed:
-            raise BackupError("Insufficient free space on destination")
+        free = fs.f_bavail * fs.f_frsize
+        if free < needed:
+            raise BackupError(f"공간 부족: 필요 {needed} bytes / 잔여 {free} bytes. 포맷하지 않습니다.")
         identifier = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ") + "-" + uuid.uuid4().hex
         pending, final = ".mebs-pending-" + identifier, "mebs-backup-" + identifier
         os.mkdir(pending, 0o700, dir_fd=target)

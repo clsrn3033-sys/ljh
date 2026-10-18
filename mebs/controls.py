@@ -31,7 +31,7 @@ class Controls:
     def update(self, state):
         with self.lock:
             self.state = dict({k: v for k, v in self.state.items() if k in ('free_bytes', 'needed_bytes')}, **state)
-            if state.get('state') in ('ERROR', 'CANCELLED', 'AMBIGUOUS'):
+            if state.get('state') in ('ERROR', 'CANCELLED', 'AMBIGUOUS', 'RECOVERY_REQUIRED'):
                 self.screen_off = False
                 self.shutdown_pending = False  # failed job never triggers queued shutdown
                 self.notice = state.get('error', '장치 연결을 확인하세요.')

@@ -1,0 +1,71 @@
+debugfs 1.47.3 (8-Jul-2025)
+ext2fs_mkdir2: Ext2 directory already exists while creating directory "default"
+mkdir: Ext2 directory already exists 
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 475
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 479
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 491
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 483
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 481
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 1361
+e2fsck 1.47.3 (8-Jul-2025)
+Pass 1: Checking inodes, blocks, and sizes
+
+Running additional passes to resolve blocks claimed by more than one inode...
+Pass 1B: Rescanning for multiply-claimed blocks
+Multiply-claimed block(s) in inode 475: 65379
+Multiply-claimed block(s) in inode 1362: 65379
+Pass 1C: Scanning directories for inodes with multiply-claimed blocks
+Pass 1D: Reconciling multiply-claimed blocks
+(There are 2 inodes containing multiply-claimed blocks.)
+
+File /usr/lib/mebs/mebs/appliance.py (inode #475, mod time Mon Oct 19 07:06:38 2026) 
+  has 1 multiply-claimed block(s), shared with 1 file(s):
+	... (inode #1362, mod time Mon Oct 19 07:06:38 2026)
+Clone multiply-claimed blocks? no
+
+Delete file? no
+
+File ... (inode #1362, mod time Mon Oct 19 07:06:38 2026) 
+  has 1 multiply-claimed block(s), shared with 1 file(s):
+	/usr/lib/mebs/mebs/appliance.py (inode #475, mod time Mon Oct 19 07:06:38 2026)
+Clone multiply-claimed blocks? no
+
+Delete file? no
+
+Pass 2: Checking directory structure
+Directory inode 1362, block #0, offset 0: directory corrupted
+Salvage? no
+
+e2fsck: aborted
+
+rootfs: ********** WARNING: Filesystem still has errors **********
+
+Traceback (most recent call last):
+  File "/var/home/bazzite/ljh/tests/v2-integration/build_fixed_image.py", line 67, in <module>
+    if __name__=='__main__': main()
+                             ~~~~^^
+  File "/var/home/bazzite/ljh/tests/v2-integration/build_fixed_image.py", line 56, in main
+    subprocess.run(['e2fsck','-fn',str(filesystem)],check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['e2fsck', '-fn', '/var/home/bazzite/ljh/output/pi4-v2-recovery-20261019/images/rootfs.ext2']' returned non-zero exit status 12.

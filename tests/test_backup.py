@@ -55,14 +55,43 @@ class BackupTests(unittest.TestCase):
         (self.dst / "clip.bin").write_bytes(b"original target")
         first = backup(self.src, self.dst)
         second = backup(self.src, self.dst)
-        self.assertNotEqual(first, second)
+        self.assertEqual(first, second)
+        self.assertEqual(len(self.completed()), 1)
         self.assertEqual((self.dst / "clip.bin").read_bytes(), b"original target")
         verify(first)
+
+    def test_changed_source_creates_new_job_and_preserves_old(self):
+        first = backup(self.src, self.dst)
+        (self.src / "clip.bin").write_bytes(b"new camera data")
+        second = backup(self.src, self.dst)
+        self.assertNotEqual(first, second)
+        self.assertEqual((first / "data/clip.bin").read_bytes(), bytes(range(256)) * 8192)
+        self.assertEqual((second / "data/clip.bin").read_bytes(), b"new camera data")
+
+    def test_changed_metadata_is_not_treated_as_duplicate(self):
+        first = backup(self.src, self.dst)
+        os.utime(self.src / "clip.bin", ns=(1700000000000000000, 1700000000000000000))
+        self.assertNotEqual(first, backup(self.src, self.dst))
+
+    def test_identical_verified_job_reused_when_destination_has_no_free_space(self):
+        first = backup(self.src, self.dst)
+        with mock.patch('mebs.backup.os.fstatvfs', return_value=mock.Mock(f_frsize=4096, f_bavail=0)):
+            self.assertEqual(first, backup(self.src, self.dst))
+
+    def test_corrupted_previous_job_is_never_reused(self):
+        first = backup(self.src, self.dst)
+        (first / 'data/clip.bin').write_bytes(b'corrupt')
+        second = backup(self.src, self.dst)
+        self.assertNotEqual(first, second)
+        with self.assertRaises(BackupError):
+            verify(first)
         verify(second)
 
     def test_empty_source(self):
         (self.src / "clip.bin").unlink()
-        self.assertEqual(verify(backup(self.src, self.dst))["files"], [])
+        with self.assertRaisesRegex(BackupError, '백업할 파일 없음'):
+            backup(self.src, self.dst)
+        self.assertEqual(self.completed(), [])
 
     def test_same_directory(self):
         with self.assertRaises(BackupError):
@@ -114,7 +143,7 @@ class BackupTests(unittest.TestCase):
     def test_space_check(self):
         space = mock.Mock(f_frsize=4096, f_bavail=0)
         with mock.patch("mebs.backup.os.fstatvfs", return_value=space):
-            with self.assertRaisesRegex(BackupError, "free space"):
+            with self.assertRaisesRegex(BackupError, "공간 부족.*필요.*잔여"):
                 backup(self.src, self.dst)
         self.assertEqual(self.completed(), [])
 

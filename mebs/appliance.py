@@ -125,6 +125,34 @@ class Mounts:
         if errors:
             raise BackupError("안전 분리 실패: " + "; ".join(errors))
 
+    def inspect_pending(self, disk):
+        """Check an inserted destination read-only, before a source is present."""
+        selected = volume(disk, destination=True)
+        if disk_identity(disk) != disk["token"]:
+            raise BackupError("검사 중 외장 하드가 교체되었습니다.")
+        node = os.stat(selected["path"], follow_symlinks=False)
+        if not stat.S_ISBLK(node.st_mode) or f"{os.major(node.st_rdev)}:{os.minor(node.st_rdev)}" != selected["id"]:
+            raise BackupError("검사 대상 파티션이 변경되었습니다.")
+        point = self.root / "inspection"
+        point.mkdir(mode=0o700, exist_ok=True)
+        if point.is_symlink() or os.path.ismount(point) or any(point.iterdir()):
+            raise BackupError("안전하지 않은 검사 경로입니다.")
+        self.run("mount", "-t", "ext4", "-o", "ro,noload,nosuid,nodev,noexec,noatime",
+                 "--", selected["path"], str(point))
+        self.mounted.append(point)
+        try:
+            if (disk_identity(disk) != disk["token"] or
+                    os.stat(point).st_dev != node.st_rdev or
+                    not os.statvfs(point).f_flag & os.ST_RDONLY):
+                raise BackupError("검사 마운트 또는 읽기 전용 상태가 일치하지 않습니다.")
+            # A power cut can leave the pending inode temporarily unreadable
+            # until journal recovery. The name alone must trigger the warning;
+            # dereferencing it here can silently hide precisely that failure.
+            return sorted(entry.name for entry in point.iterdir()
+                          if entry.name.startswith(".mebs-pending-"))
+        finally:
+            self.close()
+
 
 def sync_filesystem(path):
     fd = os.open(path, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW)
@@ -164,6 +192,8 @@ def run_job(source, target, emit, stopped, mounts=None, current=inventory, sync=
         for key in ("total_bytes", "total_files", "verified_files"):
             if key in e:
                 state[key] = e[key]
+        if e.get("deduplicated"):
+            state["deduplicated"] = True
         state["copied_bytes"] = e.get("bytes", state["copied_bytes"])
         state["current_file"] = e.get("path", state.get("current_file", ""))
         emit(dict(state))
@@ -186,7 +216,8 @@ def run_job(source, target, emit, stopped, mounts=None, current=inventory, sync=
         sync(dst)
         if cancelled(True):
             raise Cancelled("최종 확인 중 중단했습니다.")
-        state.update(verified_files=len(result["files"]), copied_bytes=result["bytes"],
+        state.update(verified_files=len(result["files"]),
+                     copied_bytes=0 if state.get("deduplicated") else result["bytes"],
                      total_bytes=result["bytes"], current_file="", job=str(job), state="UNMOUNTING")
         emit(dict(state))
         success = True

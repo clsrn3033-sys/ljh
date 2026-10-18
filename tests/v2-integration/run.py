@@ -253,6 +253,13 @@ def test(case, images, os_image, temp, logs, screenshots):
         result['boot_seconds'] = guest.boot_seconds
         result['autostart'] = True
         td = guest.attach(target, 'target', readonly=case=='T08')
+        if case in {'T08','T09'}:
+            status = guest.wait({'ERROR'}, 30)
+            result['state'] = status
+            assert not status.get('safe_to_remove') and status.get('copied_bytes',0)==0, status
+            assert ('읽기 전용' if case=='T08' else 'ext4') in status.get('error',''), status
+            result.update(status='PASS', detail='Invalid destination rejected when first inserted, before the camera source was connected')
+            return result
         guest.wait({'WAITING_SOURCE'})
         sd = guest.attach(source, 'source', readonly=True, throttle=case in {'T04','T05','T06'})
         if case in {'T04','T05','T06'}:
@@ -264,23 +271,37 @@ def test(case, images, os_image, temp, logs, screenshots):
                 guest = Guest.__new__(Guest)
                 guest.__init__(images, os_image, folder, logs, case+'-reboot')
                 guest.attach(target, 'target')
-                status = guest.wait({'WAITING_SOURCE','ERROR'})
+                status = guest.wait({'RECOVERY_REQUIRED','WAITING_SOURCE','ERROR'})
+                if status['state'] == 'RECOVERY_REQUIRED':
+                    guest.capture(screenshots/'T06-guest-recovery-required.png')
                 guest.inspect_target()
                 pending = guest.json("[str(p) for p in __import__('pathlib').Path('/run/inspect').glob('.mebs-pending-*')]")
-                result.update(status='FAIL', detail='VM SIGKILL during COPY; pending jobs preserved, but restart shows WAITING_SOURCE instead of identifying interrupted work', pending=pending, state=status)
+                guest.shell('umount /run/inspect')
+                if pending and status['state'] == 'RECOVERY_REQUIRED':
+                    guest.attach(source, 'source', readonly=True)
+                    retry = guest.wait({'SAFE_TO_REMOVE','ERROR'}, 180)
+                    if retry['state'] == 'SAFE_TO_REMOVE':
+                        guest.inspect_target()
+                        jobs = guest.manifests()
+                        assert len(jobs) == 1 and jobs[0]['files'] == expected, jobs
+                        result.update(status='PASS', detail='VM SIGKILL left pending job; boot displayed recovery warning; reconnected source made a new verified backup', pending=pending, state=retry)
+                    else:
+                        result.update(status='FAIL', detail='Recovery warning shown but retry failed', pending=pending, state=retry)
+                else:
+                    result.update(status='FAIL', detail='VM SIGKILL pending job not identified on reboot', pending=pending, state=status)
                 guest.events = events+guest.events
                 return result
             guest.detach('target' if case=='T04' else 'source')
         status = guest.wait({'SAFE_TO_REMOVE','ERROR','CANCELLED'}, 120)
         result['state'] = status
-        if case in {'T03','T04','T05','T08'}:
+        if case=='T10':
+            guest.capture(screenshots/'T10-guest-empty-source.png')
+        if case in {'T03','T04','T05'}:
             assert status['state']=='ERROR' and not status.get('safe_to_remove'), status
             result.update(status='PASS',detail='Actual guest rejection/error; never marked safe')
-        elif case=='T09':
-            assert status['state']=='ERROR' and not status.get('safe_to_remove'), status
-            result.update(status='PASS',detail='Unsupported FAT32 destination rejected. No marker file is required (user clarification).')
         elif case=='T10':
-            result.update(status='FAIL',detail='Empty source treated as successful zero-file backup; dedicated no-files state/message absent')
+            good = status['state']=='ERROR' and '백업할 파일 없음' in status.get('error','') and not status.get('safe_to_remove')
+            result.update(status='PASS' if good else 'FAIL',detail='Empty source rejected with a no-files message' if good else 'Empty source did not produce a no-files warning')
         else:
             assert status['state']=='SAFE_TO_REMOVE' and status.get('safe_to_remove'), status
             guest.inspect_target()
@@ -298,7 +319,8 @@ def test(case, images, os_image, temp, logs, screenshots):
                 guest.reattach('target',td); guest.wait({'WAITING_SOURCE'})
                 guest.reattach('source',sd); second=guest.wait({'SAFE_TO_REMOVE'})
                 guest.inspect_target(); count=len(guest.manifests())
-                result.update(status='PASS' if count==1 else 'FAIL',detail=f'Identical rebackup created {count} committed jobs; copied_bytes={second.get("copied_bytes")}; deduplication absent',jobs=count)
+                reused = count==1 and second.get('copied_bytes')==0 and second.get('deduplicated') is True
+                result.update(status='PASS' if reused else 'FAIL',detail=f'Identical rebackup left {count} committed jobs; copied_bytes={second.get("copied_bytes")}; deduplicated={second.get("deduplicated")}',jobs=count)
             if case=='T07':
                 guest.inspect_target(writable=True)
                 output=guest.py("from pathlib import Path; from mebs.backup import verify,BackupError; p=next(Path('/run/inspect').glob('mebs-backup-*')); f=next((p/'data').rglob('*.XML')); b=bytearray(f.read_bytes()); b[0]^=1; f.write_bytes(b);\ntry: verify(p); print('TAMPER_NOT_DETECTED')\nexcept BackupError as e: print('TAMPER_DETECTED',str(e))")
@@ -316,7 +338,8 @@ def test(case, images, os_image, temp, logs, screenshots):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--images',type=Path,default=ROOT/'output/pi4-v2-validated-20261019/images')
+    parser.add_argument('--images',type=Path,default=ROOT/'output/pi4-v2-recovery-v4-20261019/images')
+    parser.add_argument('--prepared-os',type=Path,help='separate QEMU raw image with vda3 fstab adaptation')
     parser.add_argument('--cases',default='T01,T02,T03,T04,T05,T06,T07,T08,T09,T10,T11')
     args=parser.parse_args()
     images=args.images.resolve()
@@ -328,7 +351,9 @@ def main():
     results=[]
     with tempfile.TemporaryDirectory(prefix='mebs-v2-suite-') as path:
         temp=Path(path)
-        os_image=prepare_os(images,temp)
+        os_image=args.prepared_os.resolve() if args.prepared_os else prepare_os(images,temp)
+        if not os_image.is_file() or os_image.is_block_device():
+            raise SystemExit('Prepared OS must be a regular image file')
         for case in args.cases.split(','):
             started=time.monotonic()
             try:

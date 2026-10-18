@@ -1,0 +1,30 @@
+[
+  {
+    "monotonic": 36905.782624985,
+    "status": {
+      "state": "BOOTING"
+    }
+  },
+  {
+    "monotonic": 36908.192254674,
+    "status": {
+      "state": "READY",
+      "target_connected": false,
+      "source_connected": false,
+      "incomplete_jobs": 0,
+      "error": "",
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36911.440669556,
+    "status": {
+      "state": "ERROR",
+      "error": "백업 외장 하드가 읽기 전용입니다.",
+      "safe_to_remove": false,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  }
+]

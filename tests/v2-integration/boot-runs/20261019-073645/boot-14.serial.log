@@ -1,0 +1,49 @@
+COMMAND qemu-system-aarch64 -M virt -cpu cortex-a72 -m 1024 -smp 2 -nographic -nic none -monitor none -kernel /var/home/bazzite/ljh/output/pi4-v2-recovery-v4-20261019/images/Image -append 'root=/dev/vda2 rootwait ro console=ttyAMA0,115200 loglevel=6' -drive file=/tmp/mebs-boot-repeat-mlyb0vp7/persistent-os.qcow2,format=qcow2,if=none,id=os -device virtio-blk-device,drive=os -device qemu-xhci,id=xhci -qmp unix:/tmp/mebs-boot-repeat-mlyb0vp7/boot-14/qmp.sock,server=on,wait=off
+[    0.000000] Linux version 6.12.61-v8 (bazzite@bazzite) (aarch64-buildroot-linux-gnu-gcc.br_real (Buildroot -g24c30ba-dirty) 15.3.0, GNU ld (GNU Binutils) 2.45.1) #1 SMP PREEMPT Sun Oct 18 23:53:33 KST 2026
+[    0.000000] random: crng init done
+[    0.000000] Kernel command line: root=/dev/vda2 rootwait ro console=ttyAMA0,115200 loglevel=6
+[    0.055842] cacheinfo: Unable to detect cache hierarchy for CPU 0
+[    0.191835] Enabled cp15_barrier support
+[    0.191996] Enabled setend support
+[    0.252137] audit: type=2000 audit(0.228:1): state=initialized audit_enabled=0 res=1
+[    0.339340] SCSI subsystem initialized
+[    1.470377] VFS: Disk quotas dquot_6.6.0
+[    1.538547] Initialise system trusted keyrings
+[    1.546709] NFS: Registering the id_resolver key type
+[    1.547798] Key type id_resolver registered
+[    1.548025] Key type id_legacy registered
+[    1.553624] Key type asymmetric registered
+[    1.553976] Asymmetric key parser 'x509' registered
+[    1.573565] pci-host-generic 4010000000.pcie: Memory resource size exceeds max for 32 bits
+[    1.671871] virtio_blk virtio0: [vda] 608256 512-byte logical blocks (311 MB/297 MiB)
+[    1.767764] Key type dns_resolver registered
+[    1.817278] Loading compiled-in X.509 certificates
+[    1.837136] Key type .fscrypt registered
+[    1.837411] Key type fscrypt-provisioning registered
+Seeding 256 bits and crediting
+Saving 256 bits of creditable seed for next boot
+Starting syslogd: OK
+Starting klogd: OK
+Running sysctl: OK
+Starting network: OK
+Starting crond: OK
+
+Welcome to Buildroot
+mebs login: root
+# stty -echo; export PS1=$(printf 'MEBS_'; printf 'TEST# ')
+MEBS_TEST# MEBS_JSON{"state": "BOOTING"}
+MEBS_TEST# MEBS_JSON{"state": "BOOTING"}
+MEBS_TEST# MEBS_JSON{"state": "BOOTING"}
+MEBS_TEST# MEBS_JSON{"state": "READY", "target_connected": false, "source_connected": false, "incomplete_jobs": 0, "error": "", "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+MEBS_TEST# {'pid1': 'init', 'settings_mounted': True, 'status': '{"state": "READY", "target_connected": false, "source_connected": false, "incomplete_jobs": 0, "error": "", "battery_guard": "UNCONFIGURED", "shutdown_pending": false}\n', 'uptime': '7.31 3.54\n'}
+MEBS_TEST# FULL_INIT_AUTO_READY wall_seconds=7.574 {'state': 'READY', 'target_connected': False, 'source_connected': False, 'incomplete_jobs': 0, 'error': '', 'battery_guard': 'UNCONFIGURED', 'shutdown_pending': False}
+/dev/vda2 on / type ext4 (ro,relatime)
+devtmpfs on /dev type devtmpfs (rw,relatime,size=496392k,nr_inodes=124098,mode=755)
+proc on /proc type proc (rw,relatime)
+devpts on /dev/pts type devpts (rw,relatime,gid=5,mode=620,ptmxmode=666)
+tmpfs on /dev/shm type tmpfs (rw,relatime)
+tmpfs on /tmp type tmpfs (rw,relatime)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,relatime,mode=755)
+sysfs on /sys type sysfs (rw,relatime)
+/dev/vda3 on /var/lib/mebs type ext4 (rw,nosuid,nodev,noexec,noatime)
+MEBS_TEST# [    7.579340] reboot: Power down

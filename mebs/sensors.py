@@ -14,6 +14,7 @@ import struct
 @dataclass
 class Reading:
     cpu_c: float | None = None
+    ram_percent: float | None = None
     voltage: float | None = None
     current_a: float | None = None
     percent: float | None = None
@@ -105,6 +106,18 @@ def cpu_temperature(path='/sys/class/thermal/thermal_zone0/temp'):
     if not math.isfinite(value) or not -20 <= value <= 125:
         raise ValueError('invalid CPU temperature')
     return value
+
+
+def ram_usage(path='/proc/meminfo'):
+    fields = {}
+    for line in Path(path).read_text().splitlines():
+        key, _, value = line.partition(':')
+        if key in ('MemTotal', 'MemAvailable'):
+            fields[key] = int(value.strip().split()[0])
+    total, available = fields['MemTotal'], fields['MemAvailable']
+    if total <= 0 or not 0 <= available <= total:
+        raise ValueError('invalid memory telemetry')
+    return 100 * (total - available) / total
 
 
 def validate_addresses(config):

@@ -1,0 +1,100 @@
+[
+  {
+    "monotonic": 36623.77305131,
+    "status": {
+      "state": "BOOTING"
+    }
+  },
+  {
+    "monotonic": 36626.148302518,
+    "status": {
+      "state": "READY",
+      "target_connected": false,
+      "source_connected": false,
+      "incomplete_jobs": 0,
+      "error": "",
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36629.427800801,
+    "status": {
+      "state": "WAITING_SOURCE",
+      "target_connected": true,
+      "source_connected": false,
+      "incomplete_jobs": 0,
+      "error": "",
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36633.592885355,
+    "status": {
+      "state": "MOUNTING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 0,
+      "total_bytes": 0,
+      "verified_files": 0,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36634.456393839,
+    "status": {
+      "state": "MOUNTING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 0,
+      "total_bytes": 33557739,
+      "verified_files": 0,
+      "total_files": 11,
+      "needed_bytes": 34634752,
+      "free_bytes": 13189120,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36635.283138924,
+    "status": {
+      "needed_bytes": 34634752,
+      "free_bytes": 13189120,
+      "state": "SCANNING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 0,
+      "total_bytes": 33557739,
+      "verified_files": 0,
+      "current_file": "",
+      "total_files": 11,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36636.111363347,
+    "status": {
+      "needed_bytes": 34634752,
+      "free_bytes": 13189120,
+      "state": "ERROR",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 0,
+      "total_bytes": 33557739,
+      "verified_files": 0,
+      "current_file": "",
+      "total_files": 11,
+      "error": "공간 부족: 필요 34634752 bytes / 잔여 13189120 bytes. 포맷하지 않습니다.",
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  }
+]

@@ -1,0 +1,56 @@
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 475
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 479
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 491
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 483
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 481
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 493
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 499
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 1361
+e2fsck 1.47.3 (8-Jul-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+rootfs: 1361/49152 files (1.0% non-contiguous), 73852/196608 blocks
+{
+  "base_image": "/var/home/bazzite/ljh/output/pi4-v2-validated-20261019/images/sdcard.img",
+  "base_sha256": "27104982a1c9d5a6931d6ce4c3f301f53041e261365e43a5c759eece261f94ec",
+  "fixed_sha256": "90cf0debeb8e2405224de9ad99c0ba80a23932bbf917d70f22c7936f6db68f27",
+  "changed_files": {
+    "/usr/lib/mebs/mebs/appliance.py": "084864fd3e3b6a1cd793d5da88fff3b145dc5e53ce9f4eacb3f09256aa892350",
+    "/usr/lib/mebs/mebs/backup.py": "bfcefdeb495bef21c96fd4725d71917e0813024b1261a514ed314ad4d9634a93",
+    "/usr/lib/mebs/mebs/runtime800.py": "9c145d0253e33a764ba683784cc8b1982d3d4c5252bbb0a2c5bd80edc378abe1",
+    "/usr/lib/mebs/mebs/display.py": "5c3b6064728530523e489dcdd482d38dad402a39cdd48582f2033071700777d7",
+    "/usr/lib/mebs/mebs/controls.py": "4b514b9a550e10b92cf0a6d1bb56998eacc926e07431d48ba5e8165199ffa498",
+    "/usr/lib/mebs/mebs/sensors.py": "5287eaadc007ad769e5389ab8b54a2c16276d0d787ac6e9cb3c9b97c18a1e52b",
+    "/usr/lib/mebs/mebs/ui800.py": "96761bff2c300556dd71825ba59d0c951e56eb487781d7a77931f4f7261b2e4b",
+    "/etc/default/seedrng": "2efb91797389deb0ec365ac240bc74cbbe38373b4f7a84e2d3c36add60ebcff7"
+  },
+  "method": "Python source and seedrng configuration update in new copy of locally built Buildroot image; kernel/firmware unchanged; no QEMU fstab change",
+  "physical_hardware_tested": false
+}

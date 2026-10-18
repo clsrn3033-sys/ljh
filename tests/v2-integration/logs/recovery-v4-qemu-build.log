@@ -1,0 +1,8 @@
+{
+  "pi_image": "/var/home/bazzite/ljh/output/pi4-v2-recovery-v4-20261019/images/sdcard.img",
+  "pi_sha256": "90cf0debeb8e2405224de9ad99c0ba80a23932bbf917d70f22c7936f6db68f27",
+  "qemu_image": "/var/home/bazzite/ljh/output/pi4-v2-recovery-qemu-v4-20261019/images/qemu-virt.img",
+  "qemu_sha256": "fa7837e99a9b7d40fd646aa8701672d7d572f5c568363c68ceeed7028b90ab23",
+  "adaptation": "Only OS-owned settings fstab mmcblk0p3 -> vda3 in separate image. Boot via Image kernel and virtio disk.",
+  "hardware_tested": false
+}

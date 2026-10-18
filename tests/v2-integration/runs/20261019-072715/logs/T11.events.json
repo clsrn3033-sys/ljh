@@ -1,0 +1,442 @@
+[
+  {
+    "monotonic": 36951.645632347,
+    "status": {
+      "state": "BOOTING"
+    }
+  },
+  {
+    "monotonic": 36954.024904088,
+    "status": {
+      "state": "READY",
+      "target_connected": false,
+      "source_connected": false,
+      "incomplete_jobs": 0,
+      "error": "",
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36957.344706399,
+    "status": {
+      "state": "WAITING_SOURCE",
+      "target_connected": true,
+      "source_connected": false,
+      "incomplete_jobs": 0,
+      "error": "",
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36961.621804874,
+    "status": {
+      "state": "MOUNTING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 0,
+      "total_bytes": 0,
+      "verified_files": 0,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36962.483201251,
+    "status": {
+      "state": "MOUNTING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 0,
+      "total_bytes": 3307,
+      "verified_files": 0,
+      "total_files": 10,
+      "needed_bytes": 1079296,
+      "free_bytes": 168751104,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36963.432722433,
+    "status": {
+      "needed_bytes": 1079296,
+      "free_bytes": 168751104,
+      "state": "SCANNING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 0,
+      "total_bytes": 3307,
+      "verified_files": 0,
+      "current_file": "",
+      "total_files": 10,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36971.024259489,
+    "status": {
+      "needed_bytes": 1079296,
+      "free_bytes": 168751104,
+      "state": "COPYING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 6,
+      "total_bytes": 3307,
+      "verified_files": 0,
+      "current_file": ".hidden",
+      "total_files": 10,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36971.988984024,
+    "status": {
+      "needed_bytes": 1079296,
+      "free_bytes": 168751104,
+      "state": "VERIFYING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 6,
+      "total_bytes": 3307,
+      "verified_files": 1,
+      "current_file": ".hidden",
+      "total_files": 10,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36972.97132003,
+    "status": {
+      "needed_bytes": 1079296,
+      "free_bytes": 168751104,
+      "state": "VERIFYING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 744,
+      "total_bytes": 3307,
+      "verified_files": 1,
+      "current_file": "DCIM/A/same.bin",
+      "total_files": 10,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36973.921652377,
+    "status": {
+      "needed_bytes": 1079296,
+      "free_bytes": 168751104,
+      "state": "VERIFYING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 744,
+      "total_bytes": 3307,
+      "verified_files": 2,
+      "current_file": "DCIM/A/same.bin",
+      "total_files": 10,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36974.889963817,
+    "status": {
+      "needed_bytes": 1079296,
+      "free_bytes": 168751104,
+      "state": "VERIFYING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 1389,
+      "total_bytes": 3307,
+      "verified_files": 2,
+      "current_file": "DCIM/A/사진 01.JPG",
+      "total_files": 10,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36975.869646083,
+    "status": {
+      "needed_bytes": 1079296,
+      "free_bytes": 168751104,
+      "state": "VERIFYING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 1389,
+      "total_bytes": 3307,
+      "verified_files": 3,
+      "current_file": "DCIM/A/사진 01.JPG",
+      "total_files": 10,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36976.839691735,
+    "status": {
+      "needed_bytes": 1079296,
+      "free_bytes": 168751104,
+      "state": "VERIFYING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 2127,
+      "total_bytes": 3307,
+      "verified_files": 3,
+      "current_file": "DCIM/B/same.bin",
+      "total_files": 10,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36977.809223778,
+    "status": {
+      "needed_bytes": 1079296,
+      "free_bytes": 168751104,
+      "state": "COPYING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 3163,
+      "total_bytes": 3307,
+      "verified_files": 4,
+      "current_file": "PRIVATE/CLIP/C0001.MP4",
+      "total_files": 10,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36978.774840691,
+    "status": {
+      "needed_bytes": 1079296,
+      "free_bytes": 168751104,
+      "state": "VERIFYING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 3163,
+      "total_bytes": 3307,
+      "verified_files": 5,
+      "current_file": "PRIVATE/CLIP/C0001.MP4",
+      "total_files": 10,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36979.615671077,
+    "status": {
+      "needed_bytes": 1079296,
+      "free_bytes": 168751104,
+      "state": "VERIFYING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 3219,
+      "total_bytes": 3307,
+      "verified_files": 5,
+      "current_file": "PRIVATE/CLIP/C0001.XML",
+      "total_files": 10,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36980.487717168,
+    "status": {
+      "needed_bytes": 1079296,
+      "free_bytes": 168751104,
+      "state": "VERIFYING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 3219,
+      "total_bytes": 3307,
+      "verified_files": 6,
+      "current_file": "PRIVATE/CLIP/C0001.XML",
+      "total_files": 10,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36981.357464398,
+    "status": {
+      "needed_bytes": 1079296,
+      "free_bytes": 168751104,
+      "state": "VERIFYING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 3219,
+      "total_bytes": 3307,
+      "verified_files": 6,
+      "current_file": "zero.dat",
+      "total_files": 10,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36982.314414362,
+    "status": {
+      "needed_bytes": 1079296,
+      "free_bytes": 168751104,
+      "state": "COPYING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 3249,
+      "total_bytes": 3307,
+      "verified_files": 7,
+      "current_file": "가.txt",
+      "total_files": 10,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36983.17487103,
+    "status": {
+      "needed_bytes": 1079296,
+      "free_bytes": 168751104,
+      "state": "VERIFYING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 3249,
+      "total_bytes": 3307,
+      "verified_files": 8,
+      "current_file": "가.txt",
+      "total_files": 10,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36984.096083741,
+    "status": {
+      "needed_bytes": 1079296,
+      "free_bytes": 168751104,
+      "state": "VERIFYING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 3280,
+      "total_bytes": 3307,
+      "verified_files": 8,
+      "current_file": "나.txt",
+      "total_files": 10,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36984.943373136,
+    "status": {
+      "needed_bytes": 1079296,
+      "free_bytes": 168751104,
+      "state": "VERIFYING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 3280,
+      "total_bytes": 3307,
+      "verified_files": 9,
+      "current_file": "나.txt",
+      "total_files": 10,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36985.793922709,
+    "status": {
+      "needed_bytes": 1079296,
+      "free_bytes": 168751104,
+      "state": "COPYING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 3307,
+      "total_bytes": 3307,
+      "verified_files": 9,
+      "current_file": "한글 폴더/深い/하위/파일 [1] & 공백.txt",
+      "total_files": 10,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36986.718764947,
+    "status": {
+      "needed_bytes": 1079296,
+      "free_bytes": 168751104,
+      "state": "VERIFYING",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 3307,
+      "total_bytes": 3307,
+      "verified_files": 10,
+      "current_file": "한글 폴더/深い/하위/파일 [1] & 공백.txt",
+      "total_files": 10,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36987.570491636,
+    "status": {
+      "needed_bytes": 1079296,
+      "free_bytes": 168751104,
+      "state": "FINAL_CHECK",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": false,
+      "copied_bytes": 3307,
+      "total_bytes": 3307,
+      "verified_files": 10,
+      "current_file": "한글 폴더/深い/하위/파일 [1] & 공백.txt",
+      "total_files": 10,
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  },
+  {
+    "monotonic": 36998.428021781,
+    "status": {
+      "needed_bytes": 1079296,
+      "free_bytes": 168751104,
+      "state": "SAFE_TO_REMOVE",
+      "source_connected": true,
+      "target_connected": true,
+      "safe_to_remove": true,
+      "copied_bytes": 3307,
+      "total_bytes": 3307,
+      "verified_files": 10,
+      "current_file": "",
+      "total_files": 10,
+      "job": "/run/mebs/target/mebs-backup-19700101T000016Z-dbce55c93f34446a8535b5ac6aeba763",
+      "battery_guard": "UNCONFIGURED",
+      "shutdown_pending": false
+    }
+  }
+]

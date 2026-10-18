@@ -16,7 +16,7 @@ import time
 from .appliance import BackupError, Mounts, display_paths, inventory, run_job, sync_filesystem
 from .controls import Controls, append_log
 from .devices import Roles
-from .sensors import BatteryGuard, I2C, INA226, Reading, cpu_temperature, estimate, validate_addresses
+from .sensors import BatteryGuard, I2C, INA226, Reading, cpu_temperature, ram_usage, estimate, validate_addresses
 from .settings import SettingsStore
 
 
@@ -31,19 +31,24 @@ class ObservedMounts(Mounts):
         if role == 'source':
             self.source = path
         elif self.source is not None:
-            from .preflight import capacity, require_space
+            from .preflight import capacity
             values = capacity(self.source, path)
             with self.control.lock:
                 self.control.state.update(values)
-            require_space(values)
+            # The engine checks free space after exact-duplicate reuse. A full
+            # destination can still safely reuse an already verified job.
         return path
 
 
 class Worker:
-    def __init__(self, control, stop, mounts, current=inventory, job=run_job, sleeper=time.sleep):
+    def __init__(self, control, stop, mounts, current=inventory, job=run_job,
+                 sleeper=time.sleep, inspect_pending=None):
         self.c, self.stop, self.mounts = control, stop, mounts
         self.current, self.job, self.sleep = current, job, sleeper
         self.roles, self.latched = Roles(), False
+        self.inspect_pending = inspect_pending or getattr(mounts, 'inspect_pending', lambda _: [])
+        self.inspected_target = None
+        self.pending_count = 0
 
     def once(self):
         try:
@@ -51,6 +56,8 @@ class Worker:
             ids = [d['token'] for d in disks]
             if not ids and not self.mounts.mounted:
                 self.latched = False
+                self.inspected_target = None
+                self.pending_count = 0
             assigned = self.roles.observe(ids)
             if self.latched:
                 return
@@ -75,11 +82,21 @@ class Worker:
                         result = dict(state='ERROR', error=str(exc), safe_to_remove=False)
                 self.c.finish_job(result)
             else:
+                if (assigned['state'] == 'WAITING_FOR_SOURCE' and
+                        assigned['target'] != self.inspected_target):
+                    target = next(d for d in disks if d['token'] == assigned['target'])
+                    self.pending_count = len(self.inspect_pending(target))
+                    self.inspected_target = assigned['target']
                 with self.c.lock:
                     if not self.c.shutdown_pending and not self.c.shutting_down:
-                        self.c.update(dict(state={'WAITING_FOR_TARGET': 'READY', 'WAITING_FOR_SOURCE': 'WAITING_SOURCE'}.get(assigned['state'], assigned['state']),
+                        phase = ('RECOVERY_REQUIRED' if assigned['state'] == 'WAITING_FOR_SOURCE'
+                                 and self.pending_count else
+                                 {'WAITING_FOR_TARGET': 'READY', 'WAITING_FOR_SOURCE': 'WAITING_SOURCE'}.get(assigned['state'], assigned['state']))
+                        self.c.update(dict(state=phase,
                                            target_connected=assigned['target'] is not None,
-                                           source_connected=assigned['source'] is not None))
+                                           source_connected=assigned['source'] is not None,
+                                           incomplete_jobs=self.pending_count,
+                                           error='이전 백업이 중단되었습니다. 원본 SD를 다시 연결하면 새 백업으로 재시도합니다.' if phase == 'RECOVERY_REQUIRED' else ''))
         except Exception as exc:
             self.latched = True
             self.c.update(dict(state='ERROR', error=str(exc), safe_to_remove=False))
@@ -118,6 +135,7 @@ class Sensors:
         r = Reading()
         errors = list(self.init_errors)
         for name, operation in [('CPU', lambda: setattr(r, 'cpu_c', cpu_temperature())),
+                                ('RAM', lambda: setattr(r, 'ram_percent', ram_usage())),
                                 ('INA226', lambda: self._battery(r))]:
             try:
                 operation()
