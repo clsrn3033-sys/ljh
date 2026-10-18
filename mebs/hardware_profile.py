@@ -10,7 +10,9 @@ def positive(value, name):
 
 def validate_runtime(config):
     validate_addresses(config)
-    devices = [name for name in ('ina226','bh1750','ds3231') if config.get(name,{}).get('enabled')]
+    devices = [name for name in ('ina226','ds3231') if config.get(name,{}).get('enabled')]
+    if config.get('bh1750', {}).get('enabled'):
+        raise ValueError('BH1750 ambient sensor is not supported in V2')
     if devices and config.get('i2c_logic_3v3_confirmed') is not True:
         raise ValueError('Confirm 3.3V I2C supply/pullups before enabling sensors')
     ina = config.get('ina226',{})

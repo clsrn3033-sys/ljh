@@ -9,7 +9,6 @@ import math
 import os
 from pathlib import Path
 import struct
-import time
 
 
 @dataclass
@@ -17,7 +16,6 @@ class Reading:
     cpu_c: float | None = None
     voltage: float | None = None
     current_a: float | None = None
-    lux: float | None = None
     percent: float | None = None
     runtime_hours: float | None = None
     error: str = ''
@@ -69,31 +67,6 @@ class INA226:
         return voltage, (self.polarity * shunt_v / self.shunt if self.shunt else None)
 
 
-class BH1750:
-    def __init__(self, bus, sleep=time.sleep):
-        self.bus = bus
-        bus.write(b'\x10')  # continuous high-resolution, typically 120 ms, max 180 ms
-        sleep(.180)
-
-    def read(self):
-        return int.from_bytes(self.bus.read(2), 'big') / 1.2
-
-
-class BrightnessFilter:
-    def __init__(self, initial=70):
-        self.value, self.last = float(initial), None
-
-    def update(self, lux, now):
-        if not math.isfinite(lux) or lux < 0:
-            raise ValueError('invalid illuminance')
-        target = max(5, min(100, 10 + 30 * math.log10(1 + lux)))
-        dt = min(5, max(0, now - self.last)) if self.last is not None else 0
-        self.last = now
-        smooth = (target - self.value) * (1 - math.exp(-dt / 2))
-        self.value += max(-10 * dt, min(10 * dt, smooth))
-        return round(self.value)
-
-
 def estimate(voltage, current, curve, capacity_ah):
     """User-calibrated OCV estimate. Under-load voltage makes this approximate."""
     if not curve or not capacity_ah or capacity_ah <= 0:
@@ -136,7 +109,7 @@ def cpu_temperature(path='/sys/class/thermal/thermal_zone0/temp'):
 
 def validate_addresses(config):
     used = []
-    for name, default in [('ina226', 0x40), ('bh1750', 0x23), ('ds3231', 0x68)]:
+    for name, default in [('ina226', 0x40), ('ds3231', 0x68)]:
         item = config.get(name, {})
         if item.get('enabled', False):
             address = item.get('address', default)

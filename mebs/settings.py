@@ -9,7 +9,6 @@ import tempfile
 @dataclass(frozen=True)
 class Settings:
     brightness: int = 70
-    auto_brightness: bool = False
     night_mode: bool = False
     screen_timeout: int = 120
 
@@ -18,8 +17,8 @@ class Settings:
             raise ValueError('brightness must be 5..100')
         if type(self.screen_timeout) is not int or self.screen_timeout not in (0, 30, 60, 120, 300, 600):
             raise ValueError('invalid screen timeout')
-        if type(self.auto_brightness) is not bool or type(self.night_mode) is not bool:
-            raise ValueError('switches must be boolean')
+        if type(self.night_mode) is not bool:
+            raise ValueError('night mode must be boolean')
 
 
 class SettingsStore:
@@ -30,8 +29,12 @@ class SettingsStore:
     def load(self):
         try:
             value = json.loads(self.path.read_text())
-            if value.pop('version') != 1:
+            version = value.pop('version')
+            if type(version) is not int or version not in (1, 2):
                 raise ValueError('unsupported settings version')
+            # V1 used an ambient-light option that is absent from V2 hardware.
+            if version == 1:
+                value.pop('auto_brightness', None)
             return Settings(**value)
         except FileNotFoundError:
             return Settings()
@@ -40,7 +43,7 @@ class SettingsStore:
             return Settings()
 
     def save(self, settings):
-        payload = json.dumps(dict(version=1, **asdict(settings))) + '\n'
+        payload = json.dumps(dict(version=2, **asdict(settings))) + '\n'
         self.path.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
         fd, name = tempfile.mkstemp(prefix='.settings-', dir=self.path.parent)
         try:

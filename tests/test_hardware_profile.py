@@ -20,8 +20,13 @@ class HardwareProfileTests(unittest.TestCase):
         self.assertIsNone(self.config['drm_card'])
 
     def test_3v3_confirmation_required_before_i2c(self):
-        self.config['bh1750']['enabled']=True
+        self.config['ina226']['enabled']=True
         with self.assertRaisesRegex(ValueError,'3.3V'):
+            validate_runtime(self.config)
+
+    def test_v2_rejects_v1_ambient_sensor(self):
+        self.config['bh1750']={'enabled':True}
+        with self.assertRaisesRegex(ValueError,'not supported'):
             validate_runtime(self.config)
 
     def test_shunt_rating_and_range(self):

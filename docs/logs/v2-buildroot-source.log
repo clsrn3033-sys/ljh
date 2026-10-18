@@ -1,0 +1,20 @@
+make: Entering directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+[7m>>> libdrm 2.4.134 Downloading[27m
+wget -nd -t 3 --connect-timeout=10 -O '/var/home/bazzite/ljh/output/pi4-v2-dsi-800x480-20261018/build/.libdrm-2.4.134.tar.xz.S9Px9D/output' 'https://dri.freedesktop.org/libdrm/libdrm-2.4.134.tar.xz' 
+[0] Downloading 'https://dri.freedesktop.org/libdrm/libdrm-2.4.134.tar.xz' ...
+Saving '/var/home/bazzite/ljh/output/pi4-v2-dsi-800x480-20261018/build/.libdrm-2.4.134.tar.xz.S9Px9D/output'
+HTTP response 200 OK [https://dri.freedesktop.org/libdrm/libdrm-2.4.134.tar.xz]
+libdrm-2.4.134.tar.xz: OK (sha256: ac5e74d157830eb8bee44c6a6bf3ad49774ef0dd2a72bdad74a8f20308b52a95)
+libdrm-2.4.134.tar.xz: OK (sha512: ef2abddea59d1e93c83a48de920431b839ab50d6071ef4da3cf126e7d64ba7b235f2e34e1169d49ad9de2937a0a18acd66bb8d324b067239b1136e0ddbe792a1)
+mtools-4.0.49.tar.lz: OK (sha256: 76dfea98d923dfc9806ce34bd1786aa9b5a39d70f56f26c0670a348c664f1d2a)
+patchelf-0.13.tar.bz2: OK (sha256: 4c7ed4bcfc1a114d6286e4a0d3c1a90db147a4c3adda1814ee0eee0f9ee917ed)
+pillow-12.0.0.tar.gz: OK (md5: a7432f8c473441996d72efdefbc49d40)
+pillow-12.0.0.tar.gz: OK (sha256: 87d4f8125c9988bfbed67af47dd7a953e2fc7b0cc1e7800ec6d2080d490bb353)
+python-pybind-3.0.1.tar.gz: OK (sha256: 741633da746b7c738bb71f1854f957b9da660bcd2dce68d71949037f0969d0ca)
+rpi-firmware-063bcab6c8a90efb0d19f69d88cbbc7ec79cab68.tar.gz: OK (sha256: 812cb64617d6ffbc76f9b8dce8237b31159a1216b31845faec1bb75b6b6b291f)
+linux-21b410140c47ffab5668399f6f143c7d7b935c8b.tar.gz: OK (sha256: 7c31df8061aae748a6e72417bfe743a54198fb5bdc96e229ecc605dc621d32ef)
+flex-2.6.4.tar.gz: OK (sha256: e87aae032bf07c26f85ac0ed3250998c37621d95f8bd748b31f15b33c45ee995)
+gettext-tiny-0.3.3.tar.gz: OK (sha256: daff8b4a7863745710ec0b02657fd20bda2d90398f54945751259bb94d6ebffd)
+gettext-0.22.4.tar.xz: OK (sha256: 29217f1816ee2e777fa9a01f9956a14139c0c23cc1b20368f06b2888e8a34116)
+openssl-3.6.4.tar.gz: OK (sha256: 9bffaa1ad1e07b354c21bd3324ec02fa15579f45a7d0494b3e74bc449b7333ef)
+make: Leaving directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'

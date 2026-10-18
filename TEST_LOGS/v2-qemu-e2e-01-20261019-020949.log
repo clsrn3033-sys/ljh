@@ -1,0 +1,10 @@
+UTC start: 2026-10-19T02:09:49.751316+09:00
+Image: /var/home/bazzite/ljh/output/pi4-v2-dsi-800x480-20261018/images/sdcard.img
+/bin/sh: can't access tty; job control turned off
+~ # mount -t proc proc /proc; mount -t sysfs sysfs /sys; mount -t devtmpfs devtm
+pfs /dev; mount -t tmpfs tmpfs /run; mount -t tmpfs tmpfs /tmp; mount /dev/vda3 
+/var/lib/mebs; echo MEBS_QEMU_READY
+MEBS_QEMU_READY
+~ # /etc/init.d/S50mebs start; sleep 2; cat /run/mebs/status.json
+cat: can't open '/run/mebs/status.json': No such file or directory
+~ # RESULT {"status": "FAIL", "error": "RuntimeError(\"single target did not enter WAITING_SOURCE: /etc/init.d/S50mebs start; sleep 2; cat /run/mebs/status.json\\r\\r\\ncat: can't open '/run/mebs/status.json': No such file or directory\\r\\r\\n\")", "log": "TEST_LOGS/v2-qemu-e2e-01-20261019-020949.log", "finished": "2026-10-19T02:09:55.136033+09:00"}

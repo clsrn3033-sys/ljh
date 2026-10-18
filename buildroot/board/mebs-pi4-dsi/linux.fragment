@@ -1,5 +1,6 @@
-# Built-in appliance drivers; avoid loading a large distribution module set.
-CONFIG_MODULES=n
+# Keep optional Raspberry Pi drivers as modules while the required appliance
+# drivers below remain built in. Otherwise every tristate becomes built in.
+CONFIG_MODULES=y
 CONFIG_DEVTMPFS=y
 CONFIG_DEVTMPFS_MOUNT=y
 CONFIG_PCI=y

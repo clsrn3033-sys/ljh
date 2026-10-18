@@ -10,7 +10,7 @@ from unittest import mock
 
 from mebs.controls import Controls, FuturePowerLatch
 from mebs.settings import Settings, SettingsStore
-from mebs.sensors import BatteryGuard, BrightnessFilter, INA226, BH1750, Reading, estimate, validate_addresses
+from mebs.sensors import BatteryGuard, INA226, Reading, estimate, validate_addresses
 from mebs.rtc import DS3231
 from mebs.runtime800 import Worker, Sensors, live
 from mebs.ui800 import render
@@ -31,7 +31,7 @@ class ControlsTests(unittest.TestCase):
         return self.c.gesture((x, y), (x, y), .1)
 
     def test_800x480_main_settings_confirmation_render_with_mock_readings(self):
-        self.c.reading = Reading(cpu_c=45, voltage=7.8, current_a=.5, percent=70, lux=80)
+        self.c.reading = Reading(cpu_c=45, voltage=7.8, current_a=.5, percent=70)
         main = render(self.c)
         self.assertEqual(main.size, (800, 480))
         self.c.gesture((400, 2), (400, 120))
@@ -56,11 +56,10 @@ class ControlsTests(unittest.TestCase):
         self.tap(400, 135)
         self.assertEqual(self.c.settings.brightness, 50)
         self.tap(100, 205)
-        self.tap(350, 205)
         self.tap(650, 280)
         loaded = SettingsStore(self.root/'settings.json').load()
         self.assertEqual(loaded, self.c.settings)
-        self.assertTrue(loaded.night_mode and loaded.auto_brightness)
+        self.assertTrue(loaded.night_mode)
         self.c.tick()
         self.assertLessEqual(self.c.effective_brightness, 30)
 
@@ -70,6 +69,17 @@ class ControlsTests(unittest.TestCase):
         store = SettingsStore(p)
         self.assertEqual(store.load(), Settings())
         self.assertIn('설정 읽기 실패', store.error)
+
+    def test_v1_settings_migrate_without_ambient_sensor(self):
+        p = self.root/'settings.json'
+        p.write_text(json.dumps({'version':1,'brightness':42,'auto_brightness':True,
+                                 'night_mode':True,'screen_timeout':60}))
+        store = SettingsStore(p)
+        self.assertEqual(store.load(), Settings(brightness=42,night_mode=True,screen_timeout=60))
+        store.save(store.load())
+        saved = json.loads(p.read_text())
+        self.assertEqual(saved['version'],2)
+        self.assertNotIn('auto_brightness',saved)
 
     def test_failed_save_keeps_previous_settings(self):
         before = self.c.settings
@@ -92,9 +102,9 @@ class ControlsTests(unittest.TestCase):
 
     def test_touch_lock_requires_long_hold_power_still_accessible(self):
         self.c.panel = True
-        self.tap(650, 205)
-        self.assertTrue(self.c.locked)
         self.tap(350, 205)
+        self.assertTrue(self.c.locked)
+        self.tap(100, 205)
         self.assertFalse(self.c.settings.night_mode)
         self.tap(750, 40)
         self.assertTrue(self.c.confirm_power)
@@ -173,32 +183,17 @@ class SensorTests(unittest.TestCase):
         self.assertEqual(INA226(bus, .01).read(), (7.5, -.1))
         bus.write.assert_not_called()
 
-    def test_bh1750_command_wait_and_lux(self):
-        bus = mock.Mock()
-        bus.read.return_value = (120).to_bytes(2, 'big')
-        wait = mock.Mock()
-        self.assertEqual(BH1750(bus, wait).read(), 100)
-        bus.write.assert_called_once_with(b'\x10')
-        wait.assert_called_once_with(.180)
-
-    def test_brightness_filter_limits_slew_and_rejects_nan(self):
-        f = BrightnessFilter(50)
-        self.assertEqual(f.update(100000, 0), 50)
-        self.assertLessEqual(f.update(100000, 1), 60)
-        with self.assertRaises(ValueError):
-            f.update(float('nan'), 2)
-
     def test_address_collision(self):
         with self.assertRaisesRegex(ValueError, 'collision'):
-            validate_addresses({'ina226': {'enabled': True, 'address': 0x23}, 'bh1750': {'enabled': True}})
-        validate_addresses({'ina226': {'enabled': False, 'address': 0x23}, 'bh1750': {'enabled': True}})
+            validate_addresses({'ina226': {'enabled': True, 'address': 0x68}, 'ds3231': {'enabled': True}})
+        validate_addresses({'ina226': {'enabled': False, 'address': 0x68}, 'ds3231': {'enabled': True}})
 
     def test_missing_sensor_nonfatal_unknown_values(self):
         c = mock.Mock()
         from threading import RLock
         c.lock = RLock()
         with mock.patch('mebs.runtime800.I2C', side_effect=OSError('missing sensor')), mock.patch('mebs.runtime800.cpu_temperature', side_effect=OSError('missing thermal')):
-            s = Sensors({'ina226': {'enabled': True}, 'bh1750': {'enabled': True}}, c)
+            s = Sensors({'ina226': {'enabled': True}}, c)
             s.read()
         self.assertIsNone(c.reading.voltage)
         self.assertIsNone(c.reading.cpu_c)

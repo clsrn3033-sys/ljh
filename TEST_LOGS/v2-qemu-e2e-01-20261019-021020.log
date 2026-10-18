@@ -1,0 +1,36 @@
+UTC start: 2026-10-19T02:10:20.967427+09:00
+Image: /var/home/bazzite/ljh/output/pi4-v2-dsi-800x480-20261018/images/sdcard.img
+/bin/sh: can't access tty; job control turned off
+~ # mount -t proc proc /proc; mount -t sysfs sysfs /sys; mount -t devtmpfs devtm
+pfs /dev; mount -t tmpfs tmpfs /run; mount -t tmpfs tmpfs /tmp; mount /dev/vda3 
+/var/lib/mebs; echo MEBS_QEMU_READY
+MEBS_QEMU_READY
+~ # /etc/init.d/S50mebs start; sleep 4; cat /run/mebs/status.json
+{"state": "WAITING_SOURCE", "target_connected": true, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+~ # cat /run/mebs/status.json
+{"state": "WAITING_SOURCE", "target_connected": true, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+~ # cat /run/mebs/status.json
+{"state": "WAITING_SOURCE", "target_connected": true, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+~ # cat /run/mebs/status.json
+{"state": "WAITING_SOURCE", "target_connected": true, "source_connected": false, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+~ # cat /run/mebs/status.json
+{"state": "MOUNTING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 0, "verified_files": 0, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+~ # cat /run/mebs/status.json
+{"needed_bytes": 1052672, "free_bytes": 110574592, "state": "SCANNING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 62, "verified_files": 0, "current_file": "", "total_files": 1, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+~ # cat /run/mebs/status.json
+{"needed_bytes": 1052672, "free_bytes": 110574592, "state": "SCANNING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 0, "total_bytes": 62, "verified_files": 0, "current_file": "", "total_files": 1, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+~ # cat /run/mebs/status.json
+{"needed_bytes": 1052672, "free_bytes": 110574592, "state": "VERIFYING", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 62, "total_bytes": 62, "verified_files": 0, "current_file": "DCIM/C0001.XML", "total_files": 1, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+~ # cat /run/mebs/status.json
+{"needed_bytes": 1052672, "free_bytes": 110574592, "state": "FINAL_CHECK", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 62, "total_bytes": 62, "verified_files": 1, "current_file": "DCIM/C0001.XML", "total_files": 1, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+~ # cat /run/mebs/status.json
+{"needed_bytes": 1052672, "free_bytes": 110574592, "state": "FINAL_CHECK", "source_connected": true, "target_connected": true, "safe_to_remove": false, "copied_bytes": 62, "total_bytes": 62, "verified_files": 1, "current_file": "DCIM/C0001.XML", "total_files": 1, "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+~ # cat /run/mebs/status.json
+{"needed_bytes": 1052672, "free_bytes": 110574592, "state": "SAFE_TO_REMOVE", "source_connected": true, "target_connected": true, "safe_to_remove": true, "copied_bytes": 62, "total_bytes": 62, "verified_files": 1, "current_file": "", "total_files": 1, "job": "/run/mebs/target/mebs-backup-19700101T000011Z-32e3dd315ffe43ca93901ea3ec68a8bc", "battery_guard": "UNCONFIGURED", "shutdown_pending": false}
+~ # mkdir -p /mnt/verify; mount -t ext4 -o ro /dev/sda /mnt/verify; find /mnt/ve
+rify -type f -name C0001.XML -exec sha256sum {} +
+mkdir: can't create directory '/mnt/verify': Read-only file system
+mount: /mnt/verify: mount point does not exist.
+       dmesg(1) may have more information after failed mount system call.
+find: /mnt/verify: No such file or directory
+~ # RESULT {"status": "FAIL", "error": "RuntimeError(\"copied XML SHA-256 mismatch: mkdir -p /mnt/verify; mount -t ext4 -o ro /dev/sda /mnt/verify; find /mnt/ve\\r\\r\\r\\nrify -type f -name C0001.XML -exec sha256sum {} +\\r\\r\\nmkdir: can't create directory '/mnt/verify': Read-only file system\\r\\r\\nmount: /mnt/verify: mount point does not exist.\\r\\r\\n       dmesg(1) may have more information after failed mount system call.\\r\\r\\nfind: /mnt/verify: No such file or directory\\r\\r\\n\")", "log": "TEST_LOGS/v2-qemu-e2e-01-20261019-021020.log", "finished": "2026-10-19T02:10:39.402804+09:00"}

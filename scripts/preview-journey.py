@@ -51,7 +51,7 @@ def main():
     add('02-boot-ready','02 준비 완료 · 메인 화면으로 전환',boot_frame(100,state='ready'),1000)
     with tempfile.TemporaryDirectory() as temp:
         c=Controls(SettingsStore(Path(temp)/'settings.json'))
-        c.reading=Reading(cpu_c=46,voltage=7.6,current_a=.8,lux=100,percent=65)
+        c.reading=Reading(cpu_c=46,voltage=7.6,current_a=.8,percent=65)
         now=datetime(2026,10,18,9,0)
         def screen():return mark(render(c,now=now))
         def state(phase,**values):

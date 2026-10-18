@@ -2,7 +2,7 @@
   "version": 1,
   "ui_fps": 30,
   "drm_card": null,
-  "framebuffer": null,
+  "framebuffer": "/dev/fb0",
   "touch": {
     "device": null,
     "rotation": 0
@@ -18,10 +18,6 @@
     "ocv_curve": null,
     "shunt_power_w": null,
     "max_current_a": null
-  },
-  "bh1750": {
-    "enabled": false,
-    "address": 35
   },
   "ds3231": {
     "enabled": false,

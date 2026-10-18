@@ -16,7 +16,7 @@ import time
 from .appliance import BackupError, Mounts, display_paths, inventory, run_job, sync_filesystem
 from .controls import Controls, append_log
 from .devices import Roles
-from .sensors import BatteryGuard, BH1750, I2C, INA226, Reading, cpu_temperature, estimate, validate_addresses
+from .sensors import BatteryGuard, I2C, INA226, Reading, cpu_temperature, estimate, validate_addresses
 from .settings import SettingsStore
 
 
@@ -101,20 +101,16 @@ class Sensors:
         validate_addresses(config)
         self.config, self.c = config, control
         self.handles = []
-        self.ina = self.bh = None
+        self.ina = None
         self.init_errors = []
-        for name, address, factory in [('ina226', 0x40, INA226), ('bh1750', 0x23, BH1750)]:
+        for name, address, factory in [('ina226', 0x40, INA226)]:
             item = config.get(name, {})
             if not item.get('enabled'):
                 continue
             try:
                 bus = I2C(config.get('i2c_bus', '/dev/i2c-1'), item.get('address', address))
                 self.handles.append(bus)
-                device = factory(bus, item.get('shunt_ohms'), item.get('discharge_polarity', 1)) if name == 'ina226' else factory(bus)
-                if name == 'ina226':
-                    self.ina = device
-                else:
-                    self.bh = device
+                self.ina = factory(bus, item.get('shunt_ohms'), item.get('discharge_polarity', 1))
             except (OSError, ValueError) as exc:
                 self.init_errors.append(name + ': ' + str(exc))
 
@@ -122,13 +118,12 @@ class Sensors:
         r = Reading()
         errors = list(self.init_errors)
         for name, operation in [('CPU', lambda: setattr(r, 'cpu_c', cpu_temperature())),
-                                ('INA226', lambda: self._battery(r)),
-                                ('BH1750', lambda: setattr(r, 'lux', self.bh.read()) if self.bh else None)]:
+                                ('INA226', lambda: self._battery(r))]:
             try:
                 operation()
             except (OSError, ValueError) as exc:
                 errors.append(name + ': ' + str(exc))
-        r.error = '; '.join(errors) or ('배터리/조도 센서 미설정' if not self.ina or not self.bh else '')
+        r.error = '; '.join(errors) or ('배터리 센서 미설정' if not self.ina else '')
         with self.c.lock:
             self.c.reading = r
 
@@ -293,7 +288,7 @@ def main():
         args.mock_preview.mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory() as tmp:
             c = Controls(SettingsStore(Path(tmp)/'settings.json'))
-            c.reading = Reading(cpu_c=46, voltage=7.6, current_a=.8, lux=100, percent=65)
+            c.reading = Reading(cpu_c=46, voltage=7.6, current_a=.8, percent=65)
             c.update(dict(state='COPYING', demo=True, source_connected=True, target_connected=True, total_bytes=1000000000, copied_bytes=640000000, total_files=45, verified_files=23))
             render(c).save(args.mock_preview/'main.png')
             c.panel = True

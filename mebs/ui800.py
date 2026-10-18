@@ -54,7 +54,7 @@ def render(control, now=None):
             end = 50 + int(c.settings.brightness * 7)
             draw.rounded_rectangle((50, 124, max(60, end), 150), 10, fill=THEME["ORANGE"])
             text(55, 157, f'밝기 {c.effective_brightness}%  ·  미연결 센서: --', 12, THEME["MUTED"])
-            labels = [('자동 밝기 ' + ('ON' if c.settings.auto_brightness else 'OFF'), '야간 ' + ('ON' if c.settings.night_mode else 'OFF'), '터치 잠금'),
+            labels = [('야간 ' + ('ON' if c.settings.night_mode else 'OFF'), '터치 잠금', '수동 밝기'),
                       ('화면 끄기', '안전 제거', f'화면 대기 {c.settings.screen_timeout}s')]
             for row, items in enumerate(labels):
                 y = 180 + row * 78

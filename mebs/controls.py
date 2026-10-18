@@ -7,7 +7,7 @@ from threading import RLock
 import time
 
 from .settings import Settings, SettingsStore
-from .sensors import BatteryGuard, BrightnessFilter, Reading
+from .sensors import BatteryGuard, Reading
 
 BUSY = {'MOUNTING', 'SCANNING', 'COPYING', 'VERIFYING', 'FINAL_CHECK', 'UNMOUNTING'}
 
@@ -20,7 +20,6 @@ class Controls:
         self.state = {'state': 'READY', 'error': store.error}
         self.reading = Reading()
         self.guard = guard or BatteryGuard()
-        self.filter = BrightnessFilter(self.settings.brightness)
         self.panel = self.locked = self.screen_off = self.confirm_power = False
         self.shutdown_pending = self.shutting_down = False
         self.worker_active = False
@@ -109,8 +108,6 @@ class Controls:
                     and now - self.last_touch >= self.settings.screen_timeout):
                 self.screen_off = True
             self.effective_brightness = self.settings.brightness
-            if self.settings.auto_brightness and self.reading.lux is not None:
-                self.effective_brightness = self.filter.update(self.reading.lux, now)
             if self.settings.night_mode:
                 self.effective_brightness = min(30, self.effective_brightness)
             status = self.guard.status(self.reading.voltage)
@@ -158,15 +155,15 @@ class Controls:
                     self.panel = True
                 return None
             if 116 <= y <= 160 and 50 <= x <= 750:
-                self.configure(brightness=max(5, min(100, round((x - 50) * 100 / 700))), auto_brightness=False)
+                self.configure(brightness=max(5, min(100, round((x - 50) * 100 / 700))))
                 return 'brightness'
             if 180 <= y <= 242:
                 if x < 270:
-                    self.configure(auto_brightness=not self.settings.auto_brightness)
-                elif x < 535:
                     self.configure(night_mode=not self.settings.night_mode)
-                else:
+                elif x < 535:
                     self.locked = True
+                else:
+                    self.notice = '수동 밝기 조절: 위 슬라이더를 사용하세요.'
                 return 'toggle'
             if 258 <= y <= 320:
                 if x < 270:

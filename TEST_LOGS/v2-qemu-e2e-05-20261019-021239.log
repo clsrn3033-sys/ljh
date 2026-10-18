@@ -1,0 +1,6 @@
+UTC start: 2026-10-19T02:12:39.323715+09:00
+Image: /var/home/bazzite/ljh/output/pi4-v2-dsi-800x480-20261018/images/sdcard.img
+/bin/sh: can't access tty; job control turned off
+~ # mount -t proc proc /proc; mount -t sysfs sysfs /sys; mount -t devtmpfs devtm
+pfs /dev; mount -t tmpfs tmpfs /run; mount -t tmpfs tmpfs /tmp; mount /dev/vda3 
+/var/lib/mebs; echo MEBS_QEMU_READY

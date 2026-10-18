@@ -5,12 +5,25 @@ project_root=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
 buildroot_source=$(realpath -- "${1:-$project_root/vendor/buildroot-2026.08}")
 build_output=$(realpath -m -- "${2:-$project_root/output/pi4-dsi-800x480}")
 export PATH="$project_root/.local-build/tools/bin:$PATH"
-export MEBS_FONT_SOURCE=${MEBS_FONT_SOURCE:-$project_root/.local-build/sysroot/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc}
-export MEBS_FONT_LICENSE=${MEBS_FONT_LICENSE:-$project_root/.local-build/sysroot/usr/share/doc/fonts-noto-cjk/copyright}
+if [[ -z "${MEBS_FONT_SOURCE:-}" ]]; then
+    for candidate in \
+        "$project_root/.local-build/sysroot/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc" \
+        /usr/share/fonts/google-noto-sans-cjk-fonts/NotoSansCJK-Regular.ttc; do
+        if [[ -f "$candidate" ]]; then MEBS_FONT_SOURCE=$candidate; break; fi
+    done
+fi
+if [[ -z "${MEBS_FONT_LICENSE:-}" ]]; then
+    for candidate in \
+        "$project_root/.local-build/sysroot/usr/share/doc/fonts-noto-cjk/copyright" \
+        /usr/share/licenses/google-noto-sans-cjk-fonts/LICENSE; do
+        if [[ -f "$candidate" ]]; then MEBS_FONT_LICENSE=$candidate; break; fi
+    done
+fi
+export MEBS_FONT_SOURCE MEBS_FONT_LICENSE
 board="$project_root/buildroot/board/mebs-pi4-dsi"
 test -f "$buildroot_source/configs/raspberrypi4_64_defconfig"
-test -f "$MEBS_FONT_SOURCE"
-test -f "$MEBS_FONT_LICENSE"
+test -f "${MEBS_FONT_SOURCE:-}"
+test -f "${MEBS_FONT_LICENSE:-}"
 mkdir -p "$build_output"
 if [[ ! -e "$build_output/.config" ]]; then
     make -C "$buildroot_source" O="$build_output" BR2_EXTERNAL="$project_root/buildroot" raspberrypi4_64_defconfig
