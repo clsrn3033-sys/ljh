@@ -24,6 +24,7 @@ class Controls:
         self.panel = self.locked = self.screen_off = self.confirm_power = False
         self.shutdown_pending = self.shutting_down = False
         self.worker_active = False
+        self.explorer_active = False
         self.shutdown_requires_safe = False
         self.last_touch = clock()
         self.notice = store.error
@@ -55,7 +56,7 @@ class Controls:
 
     def begin_job(self):
         with self.lock:
-            if self.shutting_down or self.shutdown_pending or self.worker_active:
+            if self.shutting_down or self.shutdown_pending or self.worker_active or self.explorer_active:
                 return False
             if self.battery_status() in ('BLOCK', 'UNKNOWN'):
                 self.notice = '배터리 보호: 전압 측정/충전 상태를 확인하세요.'
@@ -100,7 +101,7 @@ class Controls:
             self.notice = '백업 성공·안전 분리 후 종료 예약' if self.worker_active else '안전 종료 준비'
 
     def shutdown_ready(self):
-        return (self.shutdown_pending and not self.worker_active and not self.shutting_down
+        return (self.shutdown_pending and not self.worker_active and not self.explorer_active and not self.shutting_down
                 and self.state.get('state') not in BUSY
                 and (not self.shutdown_requires_safe or (self.state.get('state') == 'SAFE_TO_REMOVE'
                                                        and self.state.get('safe_to_remove') is True)))
@@ -176,6 +177,8 @@ class Controls:
                 return 'close'
             if not self.panel:
                 if y < 64:
+                    if 320 <= x <= 394:
+                        return 'explorer-open'
                     self.panel = True
                 return None
             if 116 <= y <= 160 and 50 <= x <= 750:

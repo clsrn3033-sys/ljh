@@ -1,13 +1,12 @@
-> **최신 인계: Raspberry Pi4B / MEBS ver1**
+> **현재 개발: Raspberry Pi 4B / MEBS V3**
 >
-> [ver 1 인계 폴더](ver%201/README.md)에 기안서·목표서·결정된 UI·다른 기기 재개 지침·증거를 정리했습니다.
-> 현재 **118개 호스트 테스트 통과 / 새 `.img` 미생성 / source 다운로드403으로 빌드 차단 / 실물·QEMU 부팅 미검증**입니다.
-> 제작자 최종 표기는 **Produced by 이정헌**, UI는800×480 검정·청록색입니다. 아래 기존 개발 이력보다 ver1 결정사항을 우선하세요.
+> [V3 개발 및 검증 기록](docs/v3/README.md)을 먼저 읽으세요. V2는 `feature/mebs-v2-pi4b-800x480-20261018`, V1은 `preserve/mebs-v1-github-20261018` 브랜치에 남겨 두었습니다. V3 브랜치에서만 구 `ver 1/` 자료를 삭제했습니다.
+> 확정 화면은 800×480 검정·청록색이며, 제작자 표기는 **Produced by 이정헌**입니다. 아래 오래된 단계별 기록보다 V3 기록과 실제 테스트 결과를 우선하세요.
 
 # MEBS Auto Backup System
 
-Orange Pi 3B V1.1용 독립형 자동 백업 장치. 초기 실물 검증은 Raspberry Pi 4,
-최종 OS는 Buildroot Linux, 개발 호스트는 BC250/Bazzite이다.
+현재 대상은 Raspberry Pi 4B용 Buildroot 독립형 자동 백업 장치이며,
+개발 호스트는 BC250/Bazzite이다. Orange Pi 관련 내용은 이전 구상 기록이다.
 
 GitHub: https://github.com/clsrn3033-sys/ljh
 

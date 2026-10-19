@@ -1,0 +1,61 @@
+COMMAND qemu-system-aarch64 -M virt -cpu cortex-a72 -m 1024 -smp 2 -nographic -nic none -monitor none -kernel /var/home/bazzite/ljh/output/pi4-v2-repeat-v6-20261019/images/Image -append 'root=/dev/vda2 rootwait ro console=ttyAMA0,115200 loglevel=6' -drive file=/tmp/mebs-v2-boot-fe9dwlq3/1/os.qcow2,format=qcow2,if=none,id=os -device virtio-blk-device,drive=os -device qemu-xhci,id=xhci -qmp unix:/tmp/mebs-v2-boot-fe9dwlq3/1/qmp.sock,server=on,wait=off
+[    0.000000] Linux version 6.12.61-v8 (bazzite@bazzite) (aarch64-buildroot-linux-gnu-gcc.br_real (Buildroot -g24c30ba-dirty) 15.3.0, GNU ld (GNU Binutils) 2.45.1) #1 SMP PREEMPT Sun Oct 18 23:53:33 KST 2026
+[    0.000000] random: crng init done
+[    0.000000] Kernel command line: root=/dev/vda2 rootwait ro console=ttyAMA0,115200 loglevel=6
+[    0.063381] cacheinfo: Unable to detect cache hierarchy for CPU 0
+[    0.231407] Enabled cp15_barrier support
+[    0.231598] Enabled setend support
+[    0.306871] audit: type=2000 audit(0.268:1): state=initialized audit_enabled=0 res=1
+[    0.407449] SCSI subsystem initialized
+[    0.441234] VFS: Disk quotas dquot_6.6.0
+[    1.569645] Initialise system trusted keyrings
+[    1.582431] NFS: Registering the id_resolver key type
+[    1.583145] Key type id_resolver registered
+[    1.583356] Key type id_legacy registered
+[    1.589686] Key type asymmetric registered
+[    1.590043] Asymmetric key parser 'x509' registered
+[    1.610117] pci-host-generic 4010000000.pcie: Memory resource size exceeds max for 32 bits
+[    1.729804] virtio_blk virtio0: [vda] 608256 512-byte logical blocks (311 MB/297 MiB)
+[    1.845881] Key type dns_resolver registered
+[    1.897752] Loading compiled-in X.509 certificates
+[    1.919798] Key type .fscrypt registered
+[    1.920220] Key type fscrypt-provisioning registered
+Saving 256 bits of creditable seed for next boot
+Starting syslogd: OK
+Starting klogd: OK
+Running sysctl: OK
+Starting network: OK
+Starting crond: OK
+
+Welcome to Buildroot
+mebs login: root
+# stty -echo; export PS1=$(printf 'MEBS_'; printf 'TEST# ')
+MEBS_TEST# MEBS_JSON{"state": "BOOTING"}
+MEBS_TEST# MEBS_JSON{"state": "BOOTING"}
+MEBS_TEST# MEBS_JSON{"state": "BOOTING"}
+MEBS_TEST# Traceback (most recent call last):
+  File [35m"<string>"[0m, line [35m1[0m, in [35m<module>[0m
+    import base64;[31mexec[0m[1;31m(base64.b64decode('aW1wb3J0IGpzb247IHByaW50KCJNRUJTX0pTT04iK2pzb24uZHVtcHMoanNvbi5sb2FkKG9wZW4oJy9ydW4vbWVicy9zdGF0dXMuanNvbicpKSBpZiBfX2ltcG9ydF9fKCdvcycpLnBhdGguZXhpc3RzKCcvcnVuL21lYnMvc3RhdHVzLmpzb24nKSBlbHNlIHsnc3RhdGUnOidCT09USU5HJ30sIGVuc3VyZV9hc2NpaT1UcnVlKSk='))[0m
+                  [31m~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"<string>"[0m, line [35m1[0m, in [35m<module>[0m
+    import base64;exec(base64.b64decode('aW1wb[1;31m3J0IGpzb247IHByaW50KCJNRUJTX0pTT04iK2pzb[0m24uZHVtcHMoanNvbi5sb2FkKG9wZW4oJy9ydW4vbWVicy9zdGF0dXMuanNvbicpKSBpZiBfX2ltcG9ydF9fKCdvcycpLnBhdGguZXhpc3RzKCcvcnVuL21lYnMvc3RhdHVzLmpzb24nKSBlbHNlIHsnc3RhdGUnOidCT09USU5HJ30sIGVuc3VyZV9hc2NpaT1UcnVlKSk='))
+                                              [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/usr/lib/python3.14/json/__init__.py"[0m, line [35m298[0m, in [35mload[0m
+  File [35m"/usr/lib/python3.14/json/__init__.py"[0m, line [35m352[0m, in [35mloads[0m
+  File [35m"/usr/lib/python3.14/json/decoder.py"[0m, line [35m345[0m, in [35mdecode[0m
+  File [35m"/usr/lib/python3.14/json/decoder.py"[0m, line [35m363[0m, in [35mraw_decode[0m
+[1;35mjson.decoder.JSONDecodeError[0m: [35mExpecting value: line 1 column 1 (char 0)[0m
+MEBS_TEST# MEBS_JSON{"state": "READY", "target_connected": false, "source_connected": false, "incomplete_jobs": 0, "error": "", "battery_guard": "UNCONFIGURED", "battery_voltage": null, "battery_current_a": null, "battery_power_w": null, "sensor_source": "N/A", "sensor_model": "N/A", "sensor_timestamp": null, "display_battery_source": "SIMULATION", "display_battery_voltage": 7.4, "shutdown_pending": false}
+MEBS_TEST# {'pid1': 'init', 'settings_mounted': True, 'status': '{"state": "READY", "target_connected": false, "source_connected": false, "incomplete_jobs": 0, "error": "", "battery_guard": "UNCONFIGURED", "battery_voltage": null, "battery_current_a": null, "battery_power_w": null, "sensor_source": "N/A", "sensor_model": "N/A", "sensor_timestamp": null, "display_battery_source": "SIMULATION", "display_battery_voltage": 7.4, "shutdown_pending": false}\n', 'uptime': '9.63 4.54\n'}
+MEBS_TEST# FULL_INIT_AUTO_READY wall_seconds=9.799 {'state': 'READY', 'target_connected': False, 'source_connected': False, 'incomplete_jobs': 0, 'error': '', 'battery_guard': 'UNCONFIGURED', 'battery_voltage': None, 'battery_current_a': None, 'battery_power_w': None, 'sensor_source': 'N/A', 'sensor_model': 'N/A', 'sensor_timestamp': None, 'display_battery_source': 'SIMULATION', 'display_battery_voltage': 7.4, 'shutdown_pending': False}
+MEBS_METRICS{"available_kib": 939152, "mebs_rss_kib": 17216}
+MEBS_TEST# /dev/vda2 on / type ext4 (ro,relatime)
+devtmpfs on /dev type devtmpfs (rw,relatime,size=496392k,nr_inodes=124098,mode=755)
+proc on /proc type proc (rw,relatime)
+devpts on /dev/pts type devpts (rw,relatime,gid=5,mode=620,ptmxmode=666)
+tmpfs on /dev/shm type tmpfs (rw,relatime)
+tmpfs on /tmp type tmpfs (rw,relatime)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,relatime,mode=755)
+sysfs on /sys type sysfs (rw,relatime)
+/dev/vda3 on /var/lib/mebs type ext4 (rw,nosuid,nodev,noexec,noatime)
+MEBS_TEST# [   10.993043] reboot: Power down

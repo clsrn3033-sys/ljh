@@ -1,0 +1,4005 @@
+make: Entering directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+  GEN     /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/Makefile
+#
+# configuration written to /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/.config
+#
+make: Leaving directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+make: Entering directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+rm -Rf /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/mebs-0.1.0
+make: Leaving directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+make: Entering directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+/usr/bin/make -j1  O=/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019 HOSTCC="/usr/bin/gcc" HOSTCXX="/usr/bin/g++" syncconfig
+make[1]: Entering directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+make[1]: warning: -j1 forced in submake: resetting jobserver mode.
+  GEN     /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/Makefile
+make[1]: Leaving directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+[7m>>> ffmpeg 6.1.5 Downloading[27m
+wget -nd -t 3 --connect-timeout=10 -O '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/.ffmpeg-6.1.5.tar.xz.3XuEn4/output' 'https://ffmpeg.org/releases/ffmpeg-6.1.5.tar.xz' 
+[0] Downloading 'https://ffmpeg.org/releases/ffmpeg-6.1.5.tar.xz' ...
+Saving '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/.ffmpeg-6.1.5.tar.xz.3XuEn4/output'
+HTTP response 200  [https://ffmpeg.org/releases/ffmpeg-6.1.5.tar.xz]
+ffmpeg-6.1.5.tar.xz: OK (sha256: 05fbe9db1f5452a3605bb1d9bf91da9d4bb08162891692e4f172b58c49109412)
+[7m>>> ffmpeg 6.1.5 Extracting[27m
+xzcat /var/home/bazzite/ljh/vendor/buildroot-2026.08/dl/ffmpeg/ffmpeg-6.1.5.tar.xz | tar --strip-components=1 -C /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/ffmpeg-6.1.5   -xf -
+[7m>>> ffmpeg 6.1.5 Patching[27m
+
+Applying 0001-swscale-x86-yuv2rgb-Fix-build-without-SSSE3.patch using patch: 
+patching file libswscale/x86/yuv2rgb.c
+
+Applying 0002-avcodec-vaapi_h264-skip-decode-if-pic-has-no-slices.patch using patch: 
+patching file libavcodec/vaapi_h264.c
+
+Applying 0003-libavutil-Fix-mips-build.patch using patch: 
+patching file configure
+Hunk #1 succeeded at 2232 (offset 5 lines).
+Hunk #2 succeeded at 6492 (offset 19 lines).
+patching file libavutil/mips/cpu.c
+
+Applying 0004-configure-add-extralibs-to-extralibs_xxx.patch using patch: 
+patching file configure
+Hunk #1 succeeded at 8154 (offset 168 lines).
+
+Applying 0005-avcodec-mmaldec-Fix-build-error.patch using patch: 
+patching file libavcodec/mmaldec.c
+
+Applying 0006-avcodec-pcm-bluray-dvd-Use-correct-pointer-types-on-.patch using patch: 
+patching file libavcodec/pcm-bluray.c
+patching file libavcodec/pcm-dvd.c
+
+Applying 0007-avutil-hwcontext-vaapi-use-the-correct-type.patch using patch: 
+patching file libavutil/hwcontext_vaapi.c
+Hunk #1 succeeded at 1203 (offset -22 lines).
+[7m>>> ffmpeg 6.1.5 Updating config.sub and config.guess[27m
+for file in config.guess config.sub; do for i in $(find /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/ffmpeg-6.1.5 -name $file); do cp support/gnuconfig/$file $i; done; done
+[7m>>> ffmpeg 6.1.5 Patching libtool[27m
+[7m>>> ffmpeg 6.1.5 Configuring[27m
+(cd /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/ffmpeg-6.1.5/ && rm -rf config.cache && GIT_DIR=. PATH="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin:/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/sbin:/var/home/bazzite/ljh/.local-build/tools/bin:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0irwKPD:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg08ssPBg:/var/home/bazzite/.codex/packages/standalone/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.local/bin:/home/bazzite/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" AR="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc-ar" AS="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-as" LD="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-ld" NM="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc-nm" CC="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc" GCC="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc" CPP="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-cpp" CXX="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-g++" FC="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-gfortran" F77="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-gfortran" RANLIB="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc-ranlib" READELF="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-readelf" STRIP="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-strip" OBJCOPY="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-objcopy" OBJDUMP="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-objdump" AR_FOR_BUILD="/usr/bin/ar" AS_FOR_BUILD="/usr/bin/as" CC_FOR_BUILD="/usr/bin/gcc" GCC_FOR_BUILD="/usr/bin/gcc" CXX_FOR_BUILD="/usr/bin/g++" LD_FOR_BUILD="/usr/bin/ld" CPPFLAGS_FOR_BUILD="-I/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/include" CFLAGS_FOR_BUILD="-O2 -I/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/include" CXXFLAGS_FOR_BUILD="-O2 -I/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/include" LDFLAGS_FOR_BUILD="-L/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/lib -Wl,-rpath,/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/lib" FCFLAGS_FOR_BUILD="" DEFAULT_ASSEMBLER="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-as" DEFAULT_LINKER="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-ld" CPPFLAGS="-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64" CFLAGS="-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64  -O2 -g0 -D_FORTIFY_SOURCE=1" CXXFLAGS="-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64  -O2 -g0 -D_FORTIFY_SOURCE=1" LDFLAGS="" FCFLAGS=" -O2 -g0" FFLAGS=" -O2 -g0" PKG_CONFIG="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/pkg-config" STAGING_DIR="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot" INTLTOOL_PERL=/usr/bin/perl ac_cv_lbl_unaligned_fail=yes ac_cv_func_mmap_fixed_mapped=yes ac_cv_func_memcmp_working=yes ac_cv_have_decl_malloc=yes gl_cv_func_malloc_0_nonnull=yes ac_cv_func_malloc_0_nonnull=yes ac_cv_func_calloc_0_nonnull=yes ac_cv_func_realloc_0_nonnull=yes lt_cv_sys_lib_search_path_spec="" ac_cv_c_bigendian=no  CFLAGS="-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64  -O2 -g0 -D_FORTIFY_SOURCE=1" ./configure --enable-cross-compile --cross-prefix=/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu- --sysroot=/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot --host-cc="/usr/bin/gcc" --arch="aarch64" --target-os="linux" --disable-stripping --pkg-config="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/pkg-config" --disable-static --enable-shared --prefix=/usr --enable-avfilter --disable-version3 --enable-logging --enable-optimizations --disable-extra-warnings --enable-avdevice --enable-avcodec --enable-avformat --enable-network --disable-gray --enable-swscale-alpha --disable-small --disable-crystalhd --disable-dxva2 --enable-runtime-cpudetect --disable-hardcoded-tables --disable-mipsdsp --disable-mipsdspr2 --disable-msa --enable-hwaccels --disable-cuda --disable-cuvid --disable-nvenc --disable-avisynth --disable-frei0r --disable-libopencore-amrnb --disable-libopencore-amrwb --disable-libdc1394 --disable-libgsm --disable-libilbc --disable-libvo-amrwbenc --disable-symver --disable-doc --disable-mmal --disable-omx --disable-omx-rpi --disable-gpl --disable-nonfree --enable-ffmpeg --disable-ffplay --disable-libjack --disable-libpulse --disable-libv4l2 --enable-ffprobe --disable-libxcb --disable-postproc --enable-swscale --enable-indevs --disable-alsa --enable-outdevs --enable-pthreads --enable-zlib --disable-bzlib --disable-libfdk-aac --disable-libcdio --disable-gnutls --disable-openssl --enable-libdrm --disable-libopenh264 --disable-vaapi --disable-vdpau --disable-libopencv --disable-libopus --disable-libvpx --disable-libass --disable-libbluray --disable-libvpl --disable-libmfx --disable-librtmp --disable-libmp3lame --disable-libmodplug --disable-libopenmpt --disable-libsoxr --disable-libspeex --disable-libtheora --disable-iconv --disable-libxml2 --enable-libfreetype --disable-fontconfig --disable-libharfbuzz --disable-libfribidi --disable-libopenjpeg --disable-libx264 --disable-libx265 --disable-libdav1d --disable-x86asm --disable-mmx --disable-sse --disable-sse2 --disable-sse3 --disable-ssse3 --disable-sse4 --disable-sse42 --disable-avx --disable-avx2 --disable-armv6 --disable-armv6t2 --enable-vfp --enable-neon --disable-altivec --extra-libs=-latomic --enable-pic --cpu="cortex-a72"  )
+install prefix            /usr
+source path               .
+C compiler                /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc
+C library                 glibc
+host C compiler           /usr/bin/gcc
+host C library            glibc
+ARCH                      aarch64 (cortex-a72)
+big-endian                no
+runtime cpu detection     yes
+NEON enabled              yes
+DOTPROD enabled           yes
+I8MM enabled              yes
+debug symbols             yes
+strip symbols             no
+optimize for size         no
+optimizations             yes
+static                    no
+shared                    yes
+postprocessing support    no
+network support           yes
+threading support         pthreads
+safe bitstream reader     yes
+texi2html enabled         no
+perl enabled              yes
+pod2man enabled           yes
+makeinfo enabled          no
+makeinfo supports HTML    no
+xmllint enabled           yes
+
+External libraries:
+libdrm                  lzma
+libfreetype             zlib
+
+External libraries providing hardware acceleration:
+cuda_llvm               v4l2_m2m
+
+Libraries:
+avcodec                 avformat                swscale
+avdevice                avutil
+avfilter                swresample
+
+Programs:
+ffmpeg                  ffprobe
+
+Enabled decoders:
+aac                     flashsv                 pgssub
+aac_fixed               flashsv2                pgx
+aac_latm                flic                    phm
+aasc                    flv                     photocd
+ac3                     fmvc                    pictor
+ac3_fixed               fourxm                  pixlet
+acelp_kelvin            fraps                   pjs
+adpcm_4xm               frwu                    png
+adpcm_adx               ftr                     ppm
+adpcm_afc               g2m                     prores
+adpcm_agm               g723_1                  prosumer
+adpcm_aica              g729                    psd
+adpcm_argo              gdv                     ptx
+adpcm_ct                gem                     qcelp
+adpcm_dtk               gif                     qdm2
+adpcm_ea                gremlin_dpcm            qdmc
+adpcm_ea_maxis_xa       gsm                     qdraw
+adpcm_ea_r1             gsm_ms                  qoi
+adpcm_ea_r2             h261                    qpeg
+adpcm_ea_r3             h263                    qtrle
+adpcm_ea_xas            h263_v4l2m2m            r10k
+adpcm_g722              h263i                   r210
+adpcm_g726              h263p                   ra_144
+adpcm_g726le            h264                    ra_288
+adpcm_ima_acorn         h264_v4l2m2m            ralf
+adpcm_ima_alp           hap                     rasc
+adpcm_ima_amv           hca                     rawvideo
+adpcm_ima_apc           hcom                    realtext
+adpcm_ima_apm           hdr                     rka
+adpcm_ima_cunning       hevc                    rl2
+adpcm_ima_dat4          hevc_v4l2m2m            roq
+adpcm_ima_dk3           hnm4_video              roq_dpcm
+adpcm_ima_dk4           hq_hqa                  rpza
+adpcm_ima_ea_eacs       hqx                     rscc
+adpcm_ima_ea_sead       huffyuv                 rtv1
+adpcm_ima_iss           hymt                    rv10
+adpcm_ima_moflex        iac                     rv20
+adpcm_ima_mtf           idcin                   rv30
+adpcm_ima_oki           idf                     rv40
+adpcm_ima_qt            iff_ilbm                s302m
+adpcm_ima_rad           ilbc                    sami
+adpcm_ima_smjpeg        imc                     sanm
+adpcm_ima_ssi           imm4                    sbc
+adpcm_ima_wav           imm5                    scpr
+adpcm_ima_ws            indeo2                  screenpresso
+adpcm_ms                indeo3                  sdx2_dpcm
+adpcm_mtaf              indeo4                  sga
+adpcm_psx               indeo5                  sgi
+adpcm_sbpro_2           interplay_acm           sgirle
+adpcm_sbpro_3           interplay_dpcm          sheervideo
+adpcm_sbpro_4           interplay_video         shorten
+adpcm_swf               ipu                     simbiosis_imx
+adpcm_thp               jacosub                 sipr
+adpcm_thp_le            jpeg2000                siren
+adpcm_vima              jpegls                  smackaud
+adpcm_xa                jv                      smacker
+adpcm_xmd               kgv1                    smc
+adpcm_yamaha            kmvc                    smvjpeg
+adpcm_zork              lagarith                snow
+agm                     loco                    sol_dpcm
+aic                     lscr                    sonic
+alac                    m101                    sp5x
+alias_pix               mace3                   speedhq
+als                     mace6                   speex
+amrnb                   magicyuv                srgc
+amrwb                   mdec                    srt
+amv                     media100                ssa
+anm                     metasound               stl
+ansi                    microdvd                subrip
+anull                   mimic                   subviewer
+apac                    misc4                   subviewer1
+ape                     mjpeg                   sunrast
+apng                    mjpegb                  svq1
+aptx                    mlp                     svq3
+aptx_hd                 mmvideo                 tak
+arbc                    mobiclip                targa
+argo                    motionpixels            targa_y216
+ass                     movtext                 tdsc
+asv1                    mp1                     text
+asv2                    mp1float                theora
+atrac1                  mp2                     thp
+atrac3                  mp2float                tiertexseqvideo
+atrac3al                mp3                     tiff
+atrac3p                 mp3adu                  tmv
+atrac3pal               mp3adufloat             truehd
+atrac9                  mp3float                truemotion1
+aura                    mp3on4                  truemotion2
+aura2                   mp3on4float             truemotion2rt
+av1                     mpc7                    truespeech
+avrn                    mpc8                    tscc
+avrp                    mpeg1_v4l2m2m           tscc2
+avs                     mpeg1video              tta
+avui                    mpeg2_v4l2m2m           twinvq
+ayuv                    mpeg2video              txd
+bethsoftvid             mpeg4                   ulti
+bfi                     mpeg4_v4l2m2m           utvideo
+bink                    mpegvideo               v210
+binkaudio_dct           mpl2                    v210x
+binkaudio_rdft          msa1                    v308
+bintext                 mscc                    v408
+bitpacked               msmpeg4v1               v410
+bmp                     msmpeg4v2               vb
+bmv_audio               msmpeg4v3               vble
+bmv_video               msnsiren                vbn
+bonk                    msp2                    vc1
+brender_pix             msrle                   vc1_v4l2m2m
+c93                     mss1                    vc1image
+cavs                    mss2                    vcr1
+cbd2_dpcm               msvideo1                vmdaudio
+ccaption                mszh                    vmdvideo
+cdgraphics              mts2                    vmix
+cdtoons                 mv30                    vmnc
+cdxl                    mvc1                    vnull
+cfhd                    mvc2                    vorbis
+cinepak                 mvdv                    vp3
+clearvideo              mvha                    vp4
+cljr                    mwsc                    vp5
+cllc                    mxpeg                   vp6
+comfortnoise            nellymoser              vp6a
+cook                    notchlc                 vp6f
+cpia                    nuv                     vp7
+cri                     on2avc                  vp8
+cscd                    opus                    vp8_v4l2m2m
+cyuv                    osq                     vp9
+dca                     paf_audio               vp9_v4l2m2m
+dds                     paf_video               vplayer
+derf_dpcm               pam                     vqa
+dfa                     pbm                     vqc
+dfpwm                   pcm_alaw                wady_dpcm
+dirac                   pcm_bluray              wavarc
+dnxhd                   pcm_dvd                 wavpack
+dolby_e                 pcm_f16le               wbmp
+dpx                     pcm_f24le               wcmv
+dsd_lsbf                pcm_f32be               webp
+dsd_lsbf_planar         pcm_f32le               webvtt
+dsd_msbf                pcm_f64be               wmalossless
+dsd_msbf_planar         pcm_f64le               wmapro
+dsicinaudio             pcm_lxf                 wmav1
+dsicinvideo             pcm_mulaw               wmav2
+dss_sp                  pcm_s16be               wmavoice
+dst                     pcm_s16be_planar        wmv1
+dvaudio                 pcm_s16le               wmv2
+dvbsub                  pcm_s16le_planar        wmv3
+dvdsub                  pcm_s24be               wmv3image
+dvvideo                 pcm_s24daud             wnv1
+dxa                     pcm_s24le               wrapped_avframe
+dxtory                  pcm_s24le_planar        ws_snd1
+dxv                     pcm_s32be               xan_dpcm
+eac3                    pcm_s32le               xan_wc3
+eacmv                   pcm_s32le_planar        xan_wc4
+eamad                   pcm_s64be               xbin
+eatgq                   pcm_s64le               xbm
+eatgv                   pcm_s8                  xface
+eatqi                   pcm_s8_planar           xl
+eightbps                pcm_sga                 xma1
+eightsvx_exp            pcm_u16be               xma2
+eightsvx_fib            pcm_u16le               xpm
+escape124               pcm_u24be               xsub
+escape130               pcm_u24le               xwd
+evrc                    pcm_u32be               y41p
+exr                     pcm_u32le               ylc
+fastaudio               pcm_u8                  yop
+ffv1                    pcm_vidc                yuv4
+ffvhuff                 pcx                     zero12v
+ffwavesynth             pdv                     zerocodec
+fic                     pfm                     zlib
+fits                    pgm                     zmbv
+flac                    pgmyuv
+
+Enabled encoders:
+a64multi                h264_v4l2m2m            png
+a64multi5               hdr                     ppm
+aac                     hevc_v4l2m2m            prores
+ac3                     huffyuv                 prores_aw
+ac3_fixed               jpeg2000                prores_ks
+adpcm_adx               jpegls                  qoi
+adpcm_argo              ljpeg                   qtrle
+adpcm_g722              magicyuv                r10k
+adpcm_g726              mjpeg                   r210
+adpcm_g726le            mlp                     ra_144
+adpcm_ima_alp           movtext                 rawvideo
+adpcm_ima_amv           mp2                     roq
+adpcm_ima_apm           mp2fixed                roq_dpcm
+adpcm_ima_qt            mpeg1video              rpza
+adpcm_ima_ssi           mpeg2video              rv10
+adpcm_ima_wav           mpeg4                   rv20
+adpcm_ima_ws            mpeg4_v4l2m2m           s302m
+adpcm_ms                msmpeg4v2               sbc
+adpcm_swf               msmpeg4v3               sgi
+adpcm_yamaha            msrle                   smc
+alac                    msvideo1                snow
+alias_pix               nellymoser              sonic
+amv                     opus                    sonic_ls
+anull                   pam                     speedhq
+apng                    pbm                     srt
+aptx                    pcm_alaw                ssa
+aptx_hd                 pcm_bluray              subrip
+ass                     pcm_dvd                 sunrast
+asv1                    pcm_f32be               svq1
+asv2                    pcm_f32le               targa
+avrp                    pcm_f64be               text
+avui                    pcm_f64le               tiff
+ayuv                    pcm_mulaw               truehd
+bitpacked               pcm_s16be               tta
+bmp                     pcm_s16be_planar        ttml
+cfhd                    pcm_s16le               utvideo
+cinepak                 pcm_s16le_planar        v210
+cljr                    pcm_s24be               v308
+comfortnoise            pcm_s24daud             v408
+dca                     pcm_s24le               v410
+dfpwm                   pcm_s24le_planar        vbn
+dnxhd                   pcm_s32be               vc2
+dpx                     pcm_s32le               vnull
+dvbsub                  pcm_s32le_planar        vorbis
+dvdsub                  pcm_s64be               vp8_v4l2m2m
+dvvideo                 pcm_s64le               wavpack
+eac3                    pcm_s8                  wbmp
+exr                     pcm_s8_planar           webvtt
+ffv1                    pcm_u16be               wmav1
+ffvhuff                 pcm_u16le               wmav2
+fits                    pcm_u24be               wmv1
+flac                    pcm_u24le               wmv2
+flashsv                 pcm_u32be               wrapped_avframe
+flashsv2                pcm_u32le               xbm
+flv                     pcm_u8                  xface
+g723_1                  pcm_vidc                xsub
+gif                     pcx                     xwd
+h261                    pfm                     y41p
+h263                    pgm                     yuv4
+h263_v4l2m2m            pgmyuv                  zlib
+h263p                   phm                     zmbv
+
+Enabled hwaccels:
+
+Enabled parsers:
+aac                     dvdsub                  mpegaudio
+aac_latm                evc                     mpegvideo
+ac3                     flac                    opus
+adx                     ftr                     png
+amr                     g723_1                  pnm
+av1                     g729                    qoi
+avs2                    gif                     rv34
+avs3                    gsm                     sbc
+bmp                     h261                    sipr
+cavsvideo               h263                    tak
+cook                    h264                    vc1
+cri                     hdr                     vorbis
+dca                     hevc                    vp3
+dirac                   ipu                     vp8
+dnxhd                   jpeg2000                vp9
+dolby_e                 jpegxl                  vvc
+dpx                     misc4                   webp
+dvaudio                 mjpeg                   xbm
+dvbsub                  mlp                     xma
+dvd_nav                 mpeg4video              xwd
+
+Enabled demuxers:
+aa                      idf                     pcm_s16be
+aac                     iff                     pcm_s16le
+aax                     ifv                     pcm_s24be
+ac3                     ilbc                    pcm_s24le
+ac4                     image2                  pcm_s32be
+ace                     image2_alias_pix        pcm_s32le
+acm                     image2_brender_pix      pcm_s8
+act                     image2pipe              pcm_u16be
+adf                     image_bmp_pipe          pcm_u16le
+adp                     image_cri_pipe          pcm_u24be
+ads                     image_dds_pipe          pcm_u24le
+adx                     image_dpx_pipe          pcm_u32be
+aea                     image_exr_pipe          pcm_u32le
+afc                     image_gem_pipe          pcm_u8
+aiff                    image_gif_pipe          pcm_vidc
+aix                     image_hdr_pipe          pdv
+alp                     image_j2k_pipe          pjs
+amr                     image_jpeg_pipe         pmp
+amrnb                   image_jpegls_pipe       pp_bnk
+amrwb                   image_jpegxl_pipe       pva
+anm                     image_pam_pipe          pvf
+apac                    image_pbm_pipe          qcp
+apc                     image_pcx_pipe          r3d
+ape                     image_pfm_pipe          rawvideo
+apm                     image_pgm_pipe          realtext
+apng                    image_pgmyuv_pipe       redspark
+aptx                    image_pgx_pipe          rka
+aptx_hd                 image_phm_pipe          rl2
+aqtitle                 image_photocd_pipe      rm
+argo_asf                image_pictor_pipe       roq
+argo_brp                image_png_pipe          rpl
+argo_cvg                image_ppm_pipe          rsd
+asf                     image_psd_pipe          rso
+asf_o                   image_qdraw_pipe        rtp
+ass                     image_qoi_pipe          rtsp
+ast                     image_sgi_pipe          s337m
+au                      image_sunrast_pipe      sami
+av1                     image_svg_pipe          sap
+avi                     image_tiff_pipe         sbc
+avr                     image_vbn_pipe          sbg
+avs                     image_webp_pipe         scc
+avs2                    image_xbm_pipe          scd
+avs3                    image_xpm_pipe          sdns
+bethsoftvid             image_xwd_pipe          sdp
+bfi                     ingenient               sdr2
+bfstm                   ipmovie                 sds
+bink                    ipu                     sdx
+binka                   ircam                   segafilm
+bintext                 iss                     ser
+bit                     iv8                     sga
+bitpacked               ivf                     shorten
+bmv                     ivr                     siff
+boa                     jacosub                 simbiosis_imx
+bonk                    jpegxl_anim             sln
+brstm                   jv                      smacker
+c93                     kux                     smjpeg
+caf                     kvag                    smush
+cavsvideo               laf                     sol
+cdg                     live_flv                sox
+cdxl                    lmlm4                   spdif
+cine                    loas                    srt
+codec2                  lrc                     stl
+codec2raw               luodat                  str
+concat                  lvf                     subviewer
+data                    lxf                     subviewer1
+daud                    m4v                     sup
+dcstr                   matroska                svag
+derf                    mca                     svs
+dfa                     mcc                     swf
+dfpwm                   mgsts                   tak
+dhav                    microdvd                tedcaptions
+dirac                   mjpeg                   thp
+dnxhd                   mjpeg_2000              threedostr
+dsf                     mlp                     tiertexseq
+dsicin                  mlv                     tmv
+dss                     mm                      truehd
+dts                     mmf                     tta
+dtshd                   mods                    tty
+dv                      moflex                  txd
+dvbsub                  mov                     ty
+dvbtxt                  mp3                     usm
+dxa                     mpc                     v210
+ea                      mpc8                    v210x
+ea_cdata                mpegps                  vag
+eac3                    mpegts                  vc1
+epaf                    mpegtsraw               vc1t
+evc                     mpegvideo               vividas
+ffmetadata              mpjpeg                  vivo
+filmstrip               mpl2                    vmd
+fits                    mpsub                   vobsub
+flac                    msf                     voc
+flic                    msnwc_tcp               vpk
+flv                     msp                     vplayer
+fourxm                  mtaf                    vqf
+frm                     mtv                     vvc
+fsb                     musx                    w64
+fwse                    mv                      wady
+g722                    mvi                     wav
+g723_1                  mxf                     wavarc
+g726                    mxg                     wc3
+g726le                  nc                      webm_dash_manifest
+g729                    nistsphere              webvtt
+gdv                     nsp                     wsaud
+genh                    nsv                     wsd
+gif                     nut                     wsvqa
+gsm                     nuv                     wtv
+gxf                     obu                     wv
+h261                    ogg                     wve
+h263                    oma                     xa
+h264                    osq                     xbin
+hca                     paf                     xmd
+hcom                    pcm_alaw                xmv
+hevc                    pcm_f32be               xvag
+hls                     pcm_f32le               xwma
+hnm                     pcm_f64be               yop
+ico                     pcm_f64le               yuv4mpegpipe
+idcin                   pcm_mulaw
+
+Enabled muxers:
+a64                     h261                    pcm_s16le
+ac3                     h263                    pcm_s24be
+ac4                     h264                    pcm_s24le
+adts                    hash                    pcm_s32be
+adx                     hds                     pcm_s32le
+aiff                    hevc                    pcm_s8
+alp                     hls                     pcm_u16be
+amr                     ico                     pcm_u16le
+amv                     ilbc                    pcm_u24be
+apm                     image2                  pcm_u24le
+apng                    image2pipe              pcm_u32be
+aptx                    ipod                    pcm_u32le
+aptx_hd                 ircam                   pcm_u8
+argo_asf                ismv                    pcm_vidc
+argo_cvg                ivf                     psp
+asf                     jacosub                 rawvideo
+asf_stream              kvag                    rm
+ass                     latm                    roq
+ast                     lrc                     rso
+au                      m4v                     rtp
+avi                     matroska                rtp_mpegts
+avif                    matroska_audio          rtsp
+avm2                    md5                     sap
+avs2                    microdvd                sbc
+avs3                    mjpeg                   scc
+bit                     mkvtimestamp_v2         segafilm
+caf                     mlp                     segment
+cavsvideo               mmf                     smjpeg
+codec2                  mov                     smoothstreaming
+codec2raw               mp2                     sox
+crc                     mp3                     spdif
+dash                    mp4                     spx
+data                    mpeg1system             srt
+daud                    mpeg1vcd                stream_segment
+dfpwm                   mpeg1video              streamhash
+dirac                   mpeg2dvd                sup
+dnxhd                   mpeg2svcd               swf
+dts                     mpeg2video              tee
+dv                      mpeg2vob                tg2
+eac3                    mpegts                  tgp
+evc                     mpjpeg                  truehd
+f4v                     mxf                     tta
+ffmetadata              mxf_d10                 ttml
+fifo                    mxf_opatom              uncodedframecrc
+fifo_test               null                    vc1
+filmstrip               nut                     vc1t
+fits                    obu                     voc
+flac                    oga                     vvc
+flv                     ogg                     w64
+framecrc                ogv                     wav
+framehash               oma                     webm
+framemd5                opus                    webm_chunk
+g722                    pcm_alaw                webm_dash_manifest
+g723_1                  pcm_f32be               webp
+g726                    pcm_f32le               webvtt
+g726le                  pcm_f64be               wsaud
+gif                     pcm_f64le               wtv
+gsm                     pcm_mulaw               wv
+gxf                     pcm_s16be               yuv4mpegpipe
+
+Enabled protocols:
+async                   gopher                  rtmp
+cache                   hls                     rtmpt
+concat                  http                    rtp
+concatf                 httpproxy               srtp
+crypto                  icecast                 subfile
+data                    md5                     tcp
+fd                      mmsh                    tee
+ffrtmphttp              mmst                    udp
+file                    pipe                    udplite
+ftp                     prompeg                 unix
+
+Enabled filters:
+a3dscope                colortemperature        nlmeans
+abench                  compand                 noformat
+abitscope               compensationdelay       noise
+acompressor             concat                  normalize
+acontrast               convolution             null
+acopy                   convolve                nullsink
+acrossfade              copy                    nullsrc
+acrossover              corr                    oscilloscope
+acrusher                crop                    overlay
+acue                    crossfeed               pad
+addroi                  crystalizer             pal100bars
+adeclick                cue                     pal75bars
+adeclip                 curves                  palettegen
+adecorrelate            datascope               paletteuse
+adelay                  dblur                   pan
+adenorm                 dcshift                 perms
+aderivative             dctdnoiz                photosensitivity
+adrawgraph              deband                  pixdesctest
+adrc                    deblock                 pixelize
+adynamicequalizer       decimate                pixscope
+adynamicsmooth          deconvolve              premultiply
+aecho                   dedot                   prewitt
+aemphasis               deesser                 pseudocolor
+aeval                   deflate                 psnr
+aevalsrc                deflicker               qp
+aexciter                dejudder                random
+afade                   derain                  readeia608
+afdelaysrc              deshake                 readvitc
+afftdn                  despill                 realtime
+afftfilt                detelecine              remap
+afifo                   dialoguenhance          removegrain
+afir                    dilation                removelogo
+afireqsrc               displace                replaygain
+afirsrc                 dnn_classify            reverse
+aformat                 dnn_detect              rgbashift
+afreqshift              dnn_processing          rgbtestsrc
+afwtdn                  doubleweave             roberts
+agate                   drawbox                 rotate
+agraphmonitor           drawgraph               scale
+ahistogram              drawgrid                scale2ref
+aiir                    drmeter                 scdet
+aintegral               dynaudnorm              scharr
+ainterleave             earwax                  scroll
+alatency                ebur128                 segment
+alimiter                edgedetect              select
+allpass                 elbg                    selectivecolor
+allrgb                  entropy                 sendcmd
+allyuv                  epx                     separatefields
+aloop                   equalizer               setdar
+alphaextract            erosion                 setfield
+alphamerge              estdif                  setparams
+amerge                  exposure                setpts
+ametadata               extractplanes           setrange
+amix                    extrastereo             setsar
+amovie                  fade                    settb
+amplify                 feedback                shear
+amultiply               fftdnoiz                showcqt
+anequalizer             fftfilt                 showcwt
+anlmdn                  field                   showfreqs
+anlmf                   fieldhint               showinfo
+anlms                   fieldmatch              showpalette
+anoisesrc               fieldorder              showspatial
+anull                   fifo                    showspectrum
+anullsink               fillborders             showspectrumpic
+anullsrc                firequalizer            showvolume
+apad                    flanger                 showwaves
+aperms                  floodfill               showwavespic
+aphasemeter             format                  shuffleframes
+aphaser                 fps                     shufflepixels
+aphaseshift             framepack               shuffleplanes
+apsnr                   framerate               sidechaincompress
+apsyclip                framestep               sidechaingate
+apulsator               freezedetect            sidedata
+arealtime               freezeframes            sierpinski
+aresample               gblur                   signalstats
+areverse                geq                     silencedetect
+arls                    gradfun                 silenceremove
+arnndn                  gradients               sinc
+asdr                    graphmonitor            sine
+asegment                grayworld               siti
+aselect                 greyedge                smptebars
+asendcmd                guided                  smptehdbars
+asetnsamples            haas                    sobel
+asetpts                 haldclut                spectrumsynth
+asetrate                haldclutsrc             speechnorm
+asettb                  hdcd                    split
+ashowinfo               headphone               sr
+asidedata               hflip                   ssim
+asisdr                  highpass                ssim360
+asoftclip               highshelf               stereotools
+aspectralstats          hilbert                 stereowiden
+asplit                  histogram               streamselect
+astats                  hqx                     superequalizer
+astreamselect           hstack                  surround
+asubboost               hsvhold                 swaprect
+asubcut                 hsvkey                  swapuv
+asupercut               hue                     tblend
+asuperpass              huesaturation           telecine
+asuperstop              hwdownload              testsrc
+atadenoise              hwmap                   testsrc2
+atempo                  hwupload                thistogram
+atilt                   hysteresis              threshold
+atrim                   identity                thumbnail
+avectorscope            idet                    tile
+avgblur                 il                      tiltshelf
+avsynctest              inflate                 tlut2
+axcorrelate             interleave              tmedian
+backgroundkey           join                    tmidequalizer
+bandpass                kirsch                  tmix
+bandreject              lagfun                  tonemap
+bass                    latency                 tpad
+bbox                    lenscorrection          transpose
+bench                   life                    treble
+bilateral               limitdiff               tremolo
+biquad                  limiter                 trim
+bitplanenoise           loop                    unpremultiply
+blackdetect             loudnorm                unsharp
+blend                   lowpass                 untile
+blockdetect             lowshelf                v360
+blurdetect              lumakey                 varblur
+bm3d                    lut                     vectorscope
+bwdif                   lut1d                   vflip
+cas                     lut2                    vfrdet
+ccrepack                lut3d                   vibrance
+cellauto                lutrgb                  vibrato
+channelmap              lutyuv                  vif
+channelsplit            mandelbrot              vignette
+chorus                  maskedclamp             virtualbass
+chromahold              maskedmax               vmafmotion
+chromakey               maskedmerge             volume
+chromanr                maskedmin               volumedetect
+chromashift             maskedthreshold         vstack
+ciescope                maskfun                 w3fdif
+codecview               mcompand                waveform
+color                   median                  weave
+colorbalance            mergeplanes             xbr
+colorchannelmixer       mestimate               xcorrelate
+colorchart              metadata                xfade
+colorcontrast           midequalizer            xmedian
+colorcorrect            minterpolate            xstack
+colorhold               mix                     yadif
+colorize                monochrome              yaepblur
+colorkey                morpho                  yuvtestsrc
+colorlevels             movie                   zoneplate
+colormap                msad                    zoompan
+colorspace              multiply
+colorspectrum           negate
+
+Enabled bsfs:
+aac_adtstoasc           h264_redundant_pps      pcm_rechunk
+av1_frame_merge         hapqa_extract           pgs_frame_merge
+av1_frame_split         hevc_metadata           prores_metadata
+av1_metadata            hevc_mp4toannexb        remove_extradata
+chomp                   imx_dump_header         setts
+dca_core                media100_to_mjpegb      text2movsub
+dts2pts                 mjpeg2jpeg              trace_headers
+dump_extradata          mjpega_dump_header      truehd_core
+dv_error_marker         mov2textsub             vp9_metadata
+eac3_core               mp3_header_decompress   vp9_raw_reorder
+evc_frame_merge         mpeg2_metadata          vp9_superframe
+extract_extradata       mpeg4_unpack_bframes    vp9_superframe_split
+filter_units            noise                   vvc_metadata
+h264_metadata           null                    vvc_mp4toannexb
+h264_mp4toannexb        opus_metadata
+
+Enabled indevs:
+fbdev                   lavfi                   v4l2
+kmsgrab                 oss
+
+Enabled outdevs:
+fbdev                   oss                     v4l2
+
+License: LGPL version 2.1 or later
+[7m>>> ffmpeg 6.1.5 Building[27m
+GIT_DIR=. PATH="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin:/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/sbin:/var/home/bazzite/ljh/.local-build/tools/bin:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0irwKPD:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg08ssPBg:/var/home/bazzite/.codex/packages/standalone/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.local/bin:/home/bazzite/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin"  /usr/bin/make   -C /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/ffmpeg-6.1.5/
+make[1]: Entering directory '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/ffmpeg-6.1.5'
+GEN	libavdevice/libavdevice.version
+GEN	libavfilter/libavfilter.version
+GEN	libavformat/libavformat.version
+GEN	libavcodec/libavcodec.version
+GEN	libswresample/libswresample.version
+GEN	libswscale/libswscale.version
+GEN	libavutil/libavutil.version
+CC	libavdevice/alldevices.o
+CC	libavdevice/avdevice.o
+CC	libavdevice/fbdev_common.o
+CC	libavdevice/fbdev_dec.o
+CC	libavdevice/fbdev_enc.o
+CC	libavdevice/kmsgrab.o
+CC	libavdevice/lavfi.o
+CC	libavdevice/oss.o
+CC	libavdevice/oss_dec.o
+CC	libavdevice/oss_enc.o
+CC	libavdevice/timefilter.o
+CC	libavdevice/utils.o
+CC	libavdevice/v4l2-common.o
+CC	libavdevice/v4l2.o
+CC	libavdevice/v4l2enc.o
+CC	libavdevice/version.o
+CC	libavfilter/aarch64/vf_bwdif_init_aarch64.o
+AS	libavfilter/aarch64/vf_bwdif_neon.o
+CC	libavfilter/aarch64/vf_nlmeans_init.o
+AS	libavfilter/aarch64/vf_nlmeans_neon.o
+CC	libavfilter/aeval.o
+CC	libavfilter/af_acontrast.o
+CC	libavfilter/af_acopy.o
+CC	libavfilter/af_acrossover.o
+CC	libavfilter/af_acrusher.o
+CC	libavfilter/af_adeclick.o
+CC	libavfilter/af_adecorrelate.o
+CC	libavfilter/af_adelay.o
+CC	libavfilter/af_adenorm.o
+CC	libavfilter/af_aderivative.o
+CC	libavfilter/af_adrc.o
+CC	libavfilter/af_adynamicequalizer.o
+CC	libavfilter/af_adynamicsmooth.o
+CC	libavfilter/af_aecho.o
+CC	libavfilter/af_aemphasis.o
+CC	libavfilter/af_aexciter.o
+CC	libavfilter/af_afade.o
+CC	libavfilter/af_afftdn.o
+CC	libavfilter/af_afftfilt.o
+CC	libavfilter/af_afir.o
+CC	libavfilter/af_aformat.o
+CC	libavfilter/af_afreqshift.o
+CC	libavfilter/af_afwtdn.o
+CC	libavfilter/af_agate.o
+In file included from /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/string.h:580,
+                 from ./libavutil/common.h:40,
+                 from ./libavutil/avutil.h:301,
+                 from ./libavfilter/avfilter.h:41,
+                 from ./libavfilter/internal.h:28,
+                 from libavfilter/af_afftfilt.c:22:
+In function ‘memmove’,
+    inlined from ‘filter_channel’ at libavfilter/af_afftfilt.c:297:9:
+/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/string_fortified.h:36:10: warning: ‘__builtin_memmove’ specified bound between 18446744065119617024 and 18446744073709551608 exceeds maximum object size 9223372036854775807 [-Wstringop-overflow=]
+   36 |   return __builtin___memmove_chk (__dest, __src, __len,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   37 |                                   __glibc_objsize0 (__dest));
+      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+CC	libavfilter/af_aiir.o
+CC	libavfilter/af_alimiter.o
+CC	libavfilter/af_amerge.o
+CC	libavfilter/af_amix.o
+CC	libavfilter/af_amultiply.o
+CC	libavfilter/af_anequalizer.o
+CC	libavfilter/af_anlmdn.o
+CC	libavfilter/af_anlms.o
+CC	libavfilter/af_anull.o
+CC	libavfilter/af_apad.o
+CC	libavfilter/af_aphaser.o
+CC	libavfilter/af_apsyclip.o
+CC	libavfilter/af_apulsator.o
+CC	libavfilter/af_aresample.o
+CC	libavfilter/af_arls.o
+CC	libavfilter/af_arnndn.o
+CC	libavfilter/af_asdr.o
+CC	libavfilter/af_asetnsamples.o
+CC	libavfilter/af_asetrate.o
+CC	libavfilter/af_ashowinfo.o
+CC	libavfilter/af_asoftclip.o
+CC	libavfilter/af_aspectralstats.o
+CC	libavfilter/af_astats.o
+CC	libavfilter/af_asubboost.o
+CC	libavfilter/af_asupercut.o
+CC	libavfilter/af_atempo.o
+CC	libavfilter/af_atilt.o
+CC	libavfilter/af_axcorrelate.o
+CC	libavfilter/af_biquads.o
+CC	libavfilter/af_channelmap.o
+CC	libavfilter/af_channelsplit.o
+libavfilter/af_channelsplit.c: In function ‘filter_frame’:
+libavfilter/af_channelsplit.c:167:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  167 |     AVFrame *buf_out = av_frame_clone(buf);
+      |     ^~~~~~~
+CC	libavfilter/af_chorus.o
+CC	libavfilter/af_compand.o
+CC	libavfilter/af_compensationdelay.o
+CC	libavfilter/af_crossfeed.o
+CC	libavfilter/af_crystalizer.o
+CC	libavfilter/af_dcshift.o
+CC	libavfilter/af_deesser.o
+CC	libavfilter/af_dialoguenhance.o
+CC	libavfilter/af_drmeter.o
+CC	libavfilter/af_dynaudnorm.o
+CC	libavfilter/af_earwax.o
+CC	libavfilter/af_extrastereo.o
+CC	libavfilter/af_firequalizer.o
+CC	libavfilter/af_flanger.o
+CC	libavfilter/af_haas.o
+CC	libavfilter/af_hdcd.o
+CC	libavfilter/af_headphone.o
+CC	libavfilter/af_join.o
+CC	libavfilter/af_loudnorm.o
+In file included from /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/string.h:580,
+                 from ./libavutil/common.h:40,
+                 from ./libavutil/avutil.h:301,
+                 from ./libavutil/opt.h:31,
+                 from libavfilter/af_firequalizer.c:23:
+In function ‘memset’,
+    inlined from ‘generate_min_phase_kernel’ at libavfilter/af_firequalizer.c:558:5,
+    inlined from ‘generate_kernel’ at libavfilter/af_firequalizer.c:690:13:
+/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/string_fortified.h:59:10: warning: ‘__builtin_memset’ specified bound between 18446744069414584316 and 18446744073709551608 exceeds maximum object size 9223372036854775807 [-Wstringop-overflow=]
+   59 |   return __builtin___memset_chk (__dest, __ch, __len,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   60 |                                  __glibc_objsize0 (__dest));
+      |                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+CC	libavfilter/af_mcompand.o
+CC	libavfilter/af_pan.o
+CC	libavfilter/af_replaygain.o
+CC	libavfilter/af_sidechaincompress.o
+CC	libavfilter/af_silencedetect.o
+CC	libavfilter/af_silenceremove.o
+CC	libavfilter/af_speechnorm.o
+CC	libavfilter/af_stereotools.o
+CC	libavfilter/af_stereowiden.o
+CC	libavfilter/af_superequalizer.o
+CC	libavfilter/af_surround.o
+CC	libavfilter/af_tremolo.o
+CC	libavfilter/af_vibrato.o
+CC	libavfilter/af_virtualbass.o
+CC	libavfilter/af_volume.o
+CC	libavfilter/af_volumedetect.o
+CC	libavfilter/allfilters.o
+CC	libavfilter/asink_anullsink.o
+CC	libavfilter/asrc_afdelaysrc.o
+CC	libavfilter/asrc_afirsrc.o
+CC	libavfilter/asrc_anoisesrc.o
+CC	libavfilter/asrc_anullsrc.o
+CC	libavfilter/asrc_hilbert.o
+CC	libavfilter/asrc_sinc.o
+CC	libavfilter/asrc_sine.o
+CC	libavfilter/audio.o
+CC	libavfilter/avf_a3dscope.o
+CC	libavfilter/avf_abitscope.o
+CC	libavfilter/avf_ahistogram.o
+CC	libavfilter/avf_aphasemeter.o
+CC	libavfilter/avf_avectorscope.o
+CC	libavfilter/avf_concat.o
+CC	libavfilter/avf_showcqt.o
+CC	libavfilter/avf_showcwt.o
+CC	libavfilter/avf_showfreqs.o
+CC	libavfilter/avf_showspatial.o
+CC	libavfilter/avf_showspectrum.o
+CC	libavfilter/avf_showvolume.o
+CC	libavfilter/avf_showwaves.o
+CC	libavfilter/avfilter.o
+CC	libavfilter/avfiltergraph.o
+CC	libavfilter/bbox.o
+CC	libavfilter/buffersink.o
+CC	libavfilter/buffersrc.o
+CC	libavfilter/bwdifdsp.o
+CC	libavfilter/ccfifo.o
+CC	libavfilter/colorspace.o
+CC	libavfilter/colorspacedsp.o
+CC	libavfilter/dnn/dnn_backend_common.o
+CC	libavfilter/dnn/dnn_interface.o
+CC	libavfilter/dnn/dnn_io_proc.o
+CC	libavfilter/dnn/queue.o
+CC	libavfilter/dnn/safe_queue.o
+CC	libavfilter/dnn_filter_common.o
+CC	libavfilter/drawutils.o
+CC	libavfilter/ebur128.o
+CC	libavfilter/edge_common.o
+CC	libavfilter/f_bench.o
+CC	libavfilter/f_cue.o
+CC	libavfilter/f_drawgraph.o
+CC	libavfilter/f_ebur128.o
+CC	libavfilter/f_graphmonitor.o
+CC	libavfilter/f_interleave.o
+CC	libavfilter/f_latency.o
+CC	libavfilter/f_loop.o
+CC	libavfilter/f_metadata.o
+CC	libavfilter/f_perms.o
+CC	libavfilter/f_realtime.o
+CC	libavfilter/f_reverse.o
+CC	libavfilter/f_segment.o
+CC	libavfilter/f_select.o
+CC	libavfilter/f_sendcmd.o
+CC	libavfilter/f_sidedata.o
+CC	libavfilter/f_streamselect.o
+CC	libavfilter/fifo.o
+CC	libavfilter/formats.o
+CC	libavfilter/framepool.o
+CC	libavfilter/framequeue.o
+CC	libavfilter/framesync.o
+CC	libavfilter/generate_wave_table.o
+CC	libavfilter/graphdump.o
+CC	libavfilter/graphparser.o
+CC	libavfilter/lavfutils.o
+CC	libavfilter/lswsutils.o
+CC	libavfilter/motion_estimation.o
+CC	libavfilter/palette.o
+CC	libavfilter/pthread.o
+CC	libavfilter/qp_table.o
+CC	libavfilter/scale_eval.o
+CC	libavfilter/scene_sad.o
+CC	libavfilter/setpts.o
+CC	libavfilter/settb.o
+CC	libavfilter/split.o
+CC	libavfilter/src_avsynctest.o
+CC	libavfilter/src_movie.o
+CC	libavfilter/transform.o
+CC	libavfilter/trim.o
+CC	libavfilter/vaf_spectrumsynth.o
+CC	libavfilter/version.o
+CC	libavfilter/vf_addroi.o
+CC	libavfilter/vf_alphamerge.o
+CC	libavfilter/vf_amplify.o
+CC	libavfilter/vf_aspect.o
+CC	libavfilter/vf_atadenoise.o
+CC	libavfilter/vf_avgblur.o
+CC	libavfilter/vf_backgroundkey.o
+CC	libavfilter/vf_bbox.o
+CC	libavfilter/vf_bilateral.o
+CC	libavfilter/vf_bitplanenoise.o
+CC	libavfilter/vf_blackdetect.o
+CC	libavfilter/vf_blend.o
+CC	libavfilter/vf_blockdetect.o
+CC	libavfilter/vf_blurdetect.o
+CC	libavfilter/vf_bm3d.o
+CC	libavfilter/vf_bwdif.o
+CC	libavfilter/vf_cas.o
+CC	libavfilter/vf_ccrepack.o
+CC	libavfilter/vf_chromakey.o
+CC	libavfilter/vf_chromanr.o
+CC	libavfilter/vf_chromashift.o
+CC	libavfilter/vf_ciescope.o
+CC	libavfilter/vf_codecview.o
+CC	libavfilter/vf_colorbalance.o
+libavfilter/vf_codecview.c: In function ‘filter_frame’:
+libavfilter/vf_codecview.c:282:21: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  282 |                     uint8_t *buf = frame->data[0] + y0 * stride;
+      |                     ^~~~~~~
+CC	libavfilter/vf_colorchannelmixer.o
+CC	libavfilter/vf_colorconstancy.o
+CC	libavfilter/vf_colorcontrast.o
+CC	libavfilter/vf_colorcorrect.o
+CC	libavfilter/vf_colorize.o
+CC	libavfilter/vf_colorkey.o
+CC	libavfilter/vf_colorlevels.o
+CC	libavfilter/vf_colormap.o
+CC	libavfilter/vf_colorspace.o
+CC	libavfilter/vf_colortemperature.o
+CC	libavfilter/vf_convolution.o
+CC	libavfilter/vf_convolve.o
+CC	libavfilter/vf_copy.o
+CC	libavfilter/vf_corr.o
+CC	libavfilter/vf_crop.o
+CC	libavfilter/vf_curves.o
+CC	libavfilter/vf_datascope.o
+CC	libavfilter/vf_dblur.o
+CC	libavfilter/vf_dctdnoiz.o
+CC	libavfilter/vf_deband.o
+CC	libavfilter/vf_deblock.o
+CC	libavfilter/vf_decimate.o
+CC	libavfilter/vf_dedot.o
+CC	libavfilter/vf_deflicker.o
+CC	libavfilter/vf_dejudder.o
+CC	libavfilter/vf_derain.o
+CC	libavfilter/vf_deshake.o
+CC	libavfilter/vf_despill.o
+CC	libavfilter/vf_detelecine.o
+CC	libavfilter/vf_displace.o
+CC	libavfilter/vf_dnn_classify.o
+CC	libavfilter/vf_dnn_detect.o
+CC	libavfilter/vf_dnn_processing.o
+CC	libavfilter/vf_drawbox.o
+CC	libavfilter/vf_edgedetect.o
+CC	libavfilter/vf_elbg.o
+CC	libavfilter/vf_entropy.o
+CC	libavfilter/vf_epx.o
+CC	libavfilter/vf_estdif.o
+CC	libavfilter/vf_exposure.o
+CC	libavfilter/vf_extractplanes.o
+CC	libavfilter/vf_fade.o
+CC	libavfilter/vf_feedback.o
+CC	libavfilter/vf_fftdnoiz.o
+CC	libavfilter/vf_fftfilt.o
+CC	libavfilter/vf_field.o
+CC	libavfilter/vf_fieldhint.o
+CC	libavfilter/vf_fieldmatch.o
+CC	libavfilter/vf_fieldorder.o
+CC	libavfilter/vf_fillborders.o
+CC	libavfilter/vf_floodfill.o
+CC	libavfilter/vf_format.o
+CC	libavfilter/vf_fps.o
+CC	libavfilter/vf_framepack.o
+CC	libavfilter/vf_framerate.o
+CC	libavfilter/vf_framestep.o
+CC	libavfilter/vf_freezedetect.o
+CC	libavfilter/vf_freezeframes.o
+CC	libavfilter/vf_gblur.o
+CC	libavfilter/vf_geq.o
+CC	libavfilter/vf_gradfun.o
+CC	libavfilter/vf_grayworld.o
+CC	libavfilter/vf_guided.o
+CC	libavfilter/vf_hflip.o
+CC	libavfilter/vf_histogram.o
+CC	libavfilter/vf_hqx.o
+CC	libavfilter/vf_hsvkey.o
+CC	libavfilter/vf_hue.o
+CC	libavfilter/vf_huesaturation.o
+CC	libavfilter/vf_hwdownload.o
+CC	libavfilter/vf_hwmap.o
+CC	libavfilter/vf_hwupload.o
+CC	libavfilter/vf_hysteresis.o
+CC	libavfilter/vf_identity.o
+CC	libavfilter/vf_idet.o
+CC	libavfilter/vf_il.o
+CC	libavfilter/vf_lagfun.o
+CC	libavfilter/vf_lenscorrection.o
+CC	libavfilter/vf_limitdiff.o
+CC	libavfilter/vf_limiter.o
+CC	libavfilter/vf_lumakey.o
+CC	libavfilter/vf_lut.o
+CC	libavfilter/vf_lut2.o
+CC	libavfilter/vf_lut3d.o
+CC	libavfilter/vf_maskedclamp.o
+CC	libavfilter/vf_maskedmerge.o
+CC	libavfilter/vf_maskedminmax.o
+CC	libavfilter/vf_maskedthreshold.o
+CC	libavfilter/vf_maskfun.o
+CC	libavfilter/vf_median.o
+CC	libavfilter/vf_mergeplanes.o
+CC	libavfilter/vf_mestimate.o
+CC	libavfilter/vf_midequalizer.o
+CC	libavfilter/vf_minterpolate.o
+CC	libavfilter/vf_mix.o
+CC	libavfilter/vf_monochrome.o
+CC	libavfilter/vf_morpho.o
+CC	libavfilter/vf_multiply.o
+CC	libavfilter/vf_negate.o
+CC	libavfilter/vf_neighbor.o
+CC	libavfilter/vf_nlmeans.o
+CC	libavfilter/vf_noise.o
+CC	libavfilter/vf_normalize.o
+CC	libavfilter/vf_null.o
+CC	libavfilter/vf_overlay.o
+CC	libavfilter/vf_pad.o
+CC	libavfilter/vf_palettegen.o
+CC	libavfilter/vf_paletteuse.o
+CC	libavfilter/vf_photosensitivity.o
+CC	libavfilter/vf_pixdesctest.o
+CC	libavfilter/vf_pixelize.o
+CC	libavfilter/vf_premultiply.o
+CC	libavfilter/vf_pseudocolor.o
+CC	libavfilter/vf_psnr.o
+CC	libavfilter/vf_qp.o
+CC	libavfilter/vf_random.o
+CC	libavfilter/vf_readeia608.o
+CC	libavfilter/vf_readvitc.o
+CC	libavfilter/vf_remap.o
+CC	libavfilter/vf_removegrain.o
+CC	libavfilter/vf_removelogo.o
+CC	libavfilter/vf_rotate.o
+CC	libavfilter/vf_scale.o
+CC	libavfilter/vf_scdet.o
+CC	libavfilter/vf_scroll.o
+CC	libavfilter/vf_selectivecolor.o
+CC	libavfilter/vf_separatefields.o
+CC	libavfilter/vf_setparams.o
+CC	libavfilter/vf_shear.o
+CC	libavfilter/vf_showinfo.o
+CC	libavfilter/vf_showpalette.o
+CC	libavfilter/vf_shuffleframes.o
+CC	libavfilter/vf_shufflepixels.o
+CC	libavfilter/vf_shuffleplanes.o
+CC	libavfilter/vf_signalstats.o
+CC	libavfilter/vf_siti.o
+CC	libavfilter/vf_sr.o
+CC	libavfilter/vf_ssim.o
+CC	libavfilter/vf_ssim360.o
+CC	libavfilter/vf_stack.o
+CC	libavfilter/vf_swaprect.o
+CC	libavfilter/vf_swapuv.o
+CC	libavfilter/vf_telecine.o
+CC	libavfilter/vf_threshold.o
+CC	libavfilter/vf_thumbnail.o
+CC	libavfilter/vf_tile.o
+CC	libavfilter/vf_tmidequalizer.o
+CC	libavfilter/vf_tonemap.o
+CC	libavfilter/vf_tpad.o
+CC	libavfilter/vf_transpose.o
+CC	libavfilter/vf_unsharp.o
+CC	libavfilter/vf_untile.o
+CC	libavfilter/vf_v360.o
+CC	libavfilter/vf_varblur.o
+CC	libavfilter/vf_vectorscope.o
+CC	libavfilter/vf_vflip.o
+CC	libavfilter/vf_vfrdet.o
+CC	libavfilter/vf_vibrance.o
+CC	libavfilter/vf_vif.o
+CC	libavfilter/vf_vignette.o
+CC	libavfilter/vf_vmafmotion.o
+CC	libavfilter/vf_w3fdif.o
+CC	libavfilter/vf_waveform.o
+CC	libavfilter/vf_weave.o
+CC	libavfilter/vf_xbr.o
+CC	libavfilter/vf_xfade.o
+CC	libavfilter/vf_xmedian.o
+CC	libavfilter/vf_yadif.o
+CC	libavfilter/vf_yaepblur.o
+CC	libavfilter/vf_zoompan.o
+CC	libavfilter/video.o
+CC	libavfilter/vsink_nullsink.o
+CC	libavfilter/vsrc_cellauto.o
+CC	libavfilter/vsrc_gradients.o
+CC	libavfilter/vsrc_life.o
+CC	libavfilter/vsrc_mandelbrot.o
+CC	libavfilter/vsrc_sierpinski.o
+CC	libavfilter/vsrc_testsrc.o
+CC	libavfilter/yadif_common.o
+CC	libavfilter/log2_tab.o
+AS	libswscale/aarch64/hscale.o
+AS	libswscale/aarch64/output.o
+CC	libswscale/aarch64/rgb2rgb.o
+AS	libswscale/aarch64/rgb2rgb_neon.o
+CC	libswscale/aarch64/swscale.o
+CC	libswscale/aarch64/swscale_unscaled.o
+AS	libswscale/aarch64/yuv2rgb_neon.o
+CC	libswscale/alphablend.o
+CC	libswscale/gamma.o
+CC	libswscale/half2float.o
+CC	libswscale/hscale.o
+CC	libswscale/hscale_fast_bilinear.o
+CC	libswscale/input.o
+CC	libswscale/options.o
+CC	libswscale/output.o
+CC	libswscale/rgb2rgb.o
+CC	libswscale/slice.o
+CC	libswscale/swscale.o
+CC	libswscale/swscale_unscaled.o
+CC	libswscale/utils.o
+libswscale/utils.c: In function ‘sws_init_single_context’:
+libswscale/utils.c:1387:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1387 |     int64_t lumXInc      = (((int64_t)srcW << 16) + (dstW >> 1)) / dstW;
+      |     ^~~~~~~
+libswscale/utils.c:1559:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1559 |     int64_t chrXInc = (((int64_t)c->chrSrcW << 16) + (c->chrDstW >> 1)) / c->chrDstW;
+      |     ^~~~~~~
+libswscale/utils.c:1881:9: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1881 |         int usecascade = (ret == RETCODE_USE_CASCADE);
+      |         ^~~
+CC	libswscale/version.o
+CC	libswscale/vscale.o
+CC	libswscale/yuv2rgb.o
+CC	libswscale/log2_tab.o
+CC	libavutil/aarch64/cpu.o
+CC	libavutil/aarch64/float_dsp_init.o
+AS	libavutil/aarch64/float_dsp_neon.o
+CC	libavutil/aarch64/tx_float_init.o
+AS	libavutil/aarch64/tx_float_neon.o
+CC	libavutil/adler32.o
+CC	libavutil/aes.o
+CC	libavutil/aes_ctr.o
+CC	libavutil/ambient_viewing_environment.o
+CC	libavutil/audio_fifo.o
+CC	libavutil/avsscanf.o
+CC	libavutil/avstring.o
+CC	libavutil/base64.o
+CC	libavutil/blowfish.o
+CC	libavutil/bprint.o
+CC	libavutil/buffer.o
+CC	libavutil/camellia.o
+CC	libavutil/cast5.o
+CC	libavutil/channel_layout.o
+CC	libavutil/cpu.o
+CC	libavutil/crc.o
+CC	libavutil/csp.o
+CC	libavutil/des.o
+CC	libavutil/detection_bbox.o
+CC	libavutil/dict.o
+CC	libavutil/display.o
+CC	libavutil/dovi_meta.o
+CC	libavutil/downmix_info.o
+CC	libavutil/encryption_info.o
+CC	libavutil/error.o
+CC	libavutil/eval.o
+CC	libavutil/executor.o
+CC	libavutil/fifo.o
+libavutil/eval.c: In function ‘make_eval_expr’:
+libavutil/eval.c:522:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  522 |     AVExpr *e = av_mallocz(sizeof(AVExpr));
+      |     ^~~~~~
+CC	libavutil/file.o
+CC	libavutil/file_open.o
+CC	libavutil/film_grain_params.o
+CC	libavutil/fixed_dsp.o
+CC	libavutil/float_dsp.o
+CC	libavutil/frame.o
+CC	libavutil/hash.o
+CC	libavutil/hdr_dynamic_metadata.o
+CC	libavutil/hdr_dynamic_vivid_metadata.o
+CC	libavutil/hmac.o
+CC	libavutil/hwcontext.o
+CC	libavutil/hwcontext_drm.o
+CC	libavutil/hwcontext_stub.o
+CC	libavutil/imgutils.o
+CC	libavutil/integer.o
+CC	libavutil/intmath.o
+CC	libavutil/lfg.o
+CC	libavutil/lls.o
+CC	libavutil/log.o
+CC	libavutil/log2_tab.o
+CC	libavutil/lzo.o
+CC	libavutil/mastering_display_metadata.o
+CC	libavutil/mathematics.o
+CC	libavutil/md5.o
+CC	libavutil/mem.o
+CC	libavutil/murmur3.o
+CC	libavutil/opt.o
+CC	libavutil/parseutils.o
+CC	libavutil/pixdesc.o
+CC	libavutil/pixelutils.o
+CC	libavutil/random_seed.o
+CC	libavutil/rational.o
+CC	libavutil/rc4.o
+CC	libavutil/reverse.o
+CC	libavutil/ripemd.o
+CC	libavutil/samplefmt.o
+CC	libavutil/sha.o
+CC	libavutil/sha512.o
+CC	libavutil/slicethread.o
+CC	libavutil/spherical.o
+CC	libavutil/stereo3d.o
+CC	libavutil/tea.o
+CC	libavutil/threadmessage.o
+CC	libavutil/time.o
+CC	libavutil/timecode.o
+CC	libavutil/tree.o
+CC	libavutil/twofish.o
+CC	libavutil/tx.o
+CC	libavutil/tx_double.o
+CC	libavutil/tx_float.o
+CC	libavutil/tx_int32.o
+CC	libavutil/utils.o
+CC	libavutil/uuid.o
+CC	libavutil/version.o
+CC	libavutil/video_enc_params.o
+CC	libavutil/video_hint.o
+CC	libavutil/xga_font_data.o
+CC	libavutil/xtea.o
+CC	libavformat/3dostr.o
+CC	libavformat/4xm.o
+CC	libavformat/a64.o
+CC	libavformat/aacdec.o
+CC	libavformat/aadec.o
+CC	libavformat/aaxdec.o
+CC	libavformat/ac3dec.o
+CC	libavformat/ac4dec.o
+CC	libavformat/ac4enc.o
+CC	libavformat/acedec.o
+CC	libavformat/acm.o
+CC	libavformat/act.o
+CC	libavformat/adp.o
+CC	libavformat/ads.o
+CC	libavformat/adtsenc.o
+CC	libavformat/adxdec.o
+CC	libavformat/aea.o
+CC	libavformat/afc.o
+CC	libavformat/aiff.o
+CC	libavformat/aiffdec.o
+CC	libavformat/aiffenc.o
+CC	libavformat/aixdec.o
+CC	libavformat/allformats.o
+CC	libavformat/alp.o
+CC	libavformat/amr.o
+CC	libavformat/amvenc.o
+CC	libavformat/anm.o
+CC	libavformat/apac.o
+CC	libavformat/apc.o
+CC	libavformat/ape.o
+CC	libavformat/apetag.o
+CC	libavformat/apm.o
+CC	libavformat/apngdec.o
+CC	libavformat/apngenc.o
+CC	libavformat/aptxdec.o
+CC	libavformat/aqtitledec.o
+CC	libavformat/argo_asf.o
+CC	libavformat/argo_brp.o
+CC	libavformat/argo_cvg.o
+CC	libavformat/asf.o
+CC	libavformat/asf_tags.o
+CC	libavformat/asfcrypt.o
+CC	libavformat/asfdec_f.o
+CC	libavformat/asfdec_o.o
+libavformat/asfdec_f.c: In function ‘get_tag’:
+libavformat/asfdec_f.c:243:9: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  243 |         int ret = ffio_read_size(s->pb, value, len);
+      |         ^~~
+CC	libavformat/asfenc.o
+CC	libavformat/assdec.o
+CC	libavformat/assenc.o
+CC	libavformat/ast.o
+CC	libavformat/astdec.o
+CC	libavformat/astenc.o
+CC	libavformat/async.o
+CC	libavformat/au.o
+CC	libavformat/av1.o
+CC	libavformat/av1dec.o
+CC	libavformat/avc.o
+CC	libavformat/avformat.o
+CC	libavformat/avidec.o
+CC	libavformat/avienc.o
+libavformat/avidec.c: In function ‘read_gab2_sub’:
+libavformat/avidec.c:1124:9: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1124 |         AVIOContext *pb = avio_alloc_context(pkt->data + 7,
+      |         ^~~~~~~~~~~
+libavformat/avidec.c: In function ‘avi_load_index’:
+libavformat/avidec.c:1830:13: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1830 |             uint32_t tag1 = avio_rl32(pb);
+      |             ^~~~~~~~
+CC	libavformat/avio.o
+CC	libavformat/aviobuf.o
+CC	libavformat/avlanguage.o
+CC	libavformat/avr.o
+CC	libavformat/avs.o
+CC	libavformat/avs2dec.o
+CC	libavformat/avs3dec.o
+CC	libavformat/bethsoftvid.o
+CC	libavformat/bfi.o
+CC	libavformat/bink.o
+CC	libavformat/binka.o
+CC	libavformat/bintext.o
+CC	libavformat/bit.o
+CC	libavformat/bmv.o
+CC	libavformat/boadec.o
+CC	libavformat/bonk.o
+CC	libavformat/brstm.o
+CC	libavformat/c93.o
+CC	libavformat/cache.o
+CC	libavformat/caf.o
+CC	libavformat/cafdec.o
+CC	libavformat/cafenc.o
+CC	libavformat/cavsvideodec.o
+CC	libavformat/cdg.o
+CC	libavformat/cdxl.o
+CC	libavformat/cinedec.o
+CC	libavformat/codec2.o
+CC	libavformat/concat.o
+CC	libavformat/concatdec.o
+CC	libavformat/crcenc.o
+CC	libavformat/crypto.o
+CC	libavformat/dash.o
+CC	libavformat/dashenc.o
+CC	libavformat/data_uri.o
+CC	libavformat/dauddec.o
+CC	libavformat/daudenc.o
+CC	libavformat/dcstr.o
+CC	libavformat/demux.o
+CC	libavformat/demux_utils.o
+CC	libavformat/derf.o
+CC	libavformat/dfa.o
+CC	libavformat/dfpwmdec.o
+CC	libavformat/dhav.o
+CC	libavformat/diracdec.o
+CC	libavformat/dnxhddec.o
+libavformat/dhav.c: In function ‘dhav_read_header’:
+libavformat/dhav.c:293:17: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  293 |                 int64_t ret64 = avio_seek(s->pb, -seek_back, SEEK_CUR);
+      |                 ^~~~~~~
+CC	libavformat/dovi_isom.o
+libavformat/dashenc.c: In function ‘dash_init’:
+libavformat/dashenc.c:1580:65: warning: ‘-stream’ directive output may be truncated writing 7 bytes into a region of size between 1 and 1024 [-Wformat-truncation=]
+ 1580 |                 snprintf(os->initfile, sizeof(os->initfile), "%s-stream%d.%s", basename, i, os->format_name);
+      |                                                                 ^~~~~~~
+libavformat/dashenc.c:1580:62: note: directive argument in the range [0, 2147483647]
+ 1580 |                 snprintf(os->initfile, sizeof(os->initfile), "%s-stream%d.%s", basename, i, os->format_name);
+      |                                                              ^~~~~~~~~~~~~~~~
+In file included from /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/stdio.h:974,
+                 from ./libavutil/common.h:38,
+                 from ./libavutil/avutil.h:301,
+                 from libavformat/dashenc.c:31:
+In function ‘snprintf’,
+    inlined from ‘dash_init’ at libavformat/dashenc.c:1580:17:
+/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdio2.h:68:10: note: ‘__builtin_snprintf’ output 10 or more bytes (assuming 1042) into a destination of size 1024
+   68 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   69 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   70 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+libavformat/dashenc.c: In function ‘dash_init’:
+libavformat/dashenc.c:1584:49: warning: ‘%s’ directive output may be truncated writing up to 1023 bytes into a region of size between 1 and 1024 [-Wformat-truncation=]
+ 1584 |         snprintf(filename, sizeof(filename), "%s%s", c->dirname, os->initfile);
+      |                                                 ^~
+In function ‘snprintf’,
+    inlined from ‘dash_init’ at libavformat/dashenc.c:1584:9:
+/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdio2.h:68:10: note: ‘__builtin_snprintf’ output between 1 and 2047 bytes into a destination of size 1024
+   68 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   69 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   70 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+CC	libavformat/dsfdec.o
+CC	libavformat/dsicin.o
+CC	libavformat/dss.o
+CC	libavformat/dtsdec.o
+CC	libavformat/dtshddec.o
+CC	libavformat/dump.o
+libavformat/dashenc.c: In function ‘flush_init_segment’:
+libavformat/dashenc.c:593:49: warning: ‘%s’ directive output may be truncated writing up to 1023 bytes into a region of size between 1 and 1024 [-Wformat-truncation=]
+  593 |         snprintf(filename, sizeof(filename), "%s%s", c->dirname, os->initfile);
+      |                                                 ^~
+In function ‘snprintf’,
+    inlined from ‘flush_init_segment’ at libavformat/dashenc.c:593:9:
+/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdio2.h:68:10: note: ‘__builtin_snprintf’ output between 1 and 2047 bytes into a destination of size 1024
+   68 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   69 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   70 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+libavformat/dashenc.c: In function ‘write_hls_media_playlist’:
+libavformat/dashenc.c:487:49: warning: ‘media_’ directive output may be truncated writing 6 bytes into a region of size between 1 and 1024 [-Wformat-truncation=]
+  487 |         snprintf(playlist_name, string_size, "%smedia_%d.m3u8", base_url, id);
+      |                                                 ^~~~~~
+In function ‘snprintf’,
+    inlined from ‘get_hls_playlist_name’ at libavformat/dashenc.c:487:9,
+    inlined from ‘write_hls_media_playlist’ at libavformat/dashenc.c:523:5:
+/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdio2.h:68:10: note: ‘__builtin_snprintf’ output between 13 and 1046 bytes into a destination of size 1024
+   68 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   69 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   70 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+CC	libavformat/dv.o
+CC	libavformat/dvbsub.o
+CC	libavformat/dvbtxt.o
+CC	libavformat/dvenc.o
+CC	libavformat/dxa.o
+CC	libavformat/eacdata.o
+CC	libavformat/electronicarts.o
+CC	libavformat/epafdec.o
+CC	libavformat/evc.o
+CC	libavformat/evcdec.o
+libavformat/dashenc.c: In function ‘dash_flush’:
+libavformat/dashenc.c:1960:63: warning: ‘%s’ directive output may be truncated writing up to 1023 bytes into a region of size between 1 and 1024 [-Wformat-truncation=]
+ 1960 |             snprintf(os->full_path, sizeof(os->full_path), "%s%s", c->dirname, os->initfile);
+      |                                                               ^~
+In function ‘snprintf’,
+    inlined from ‘dash_flush’ at libavformat/dashenc.c:1960:13:
+/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdio2.h:68:10: note: ‘__builtin_snprintf’ output between 1 and 2047 bytes into a destination of size 1024
+   68 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   69 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   70 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+libavformat/dashenc.c: In function ‘dash_flush’:
+libavformat/dashenc.c:1960:63: warning: ‘%s’ directive output may be truncated writing up to 1023 bytes into a region of size between 1 and 1024 [-Wformat-truncation=]
+ 1960 |             snprintf(os->full_path, sizeof(os->full_path), "%s%s", c->dirname, os->initfile);
+      |                                                               ^~
+In function ‘snprintf’,
+    inlined from ‘dash_flush’ at libavformat/dashenc.c:1960:13:
+/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdio2.h:68:10: note: ‘__builtin_snprintf’ output between 1 and 2047 bytes into a destination of size 1024
+   68 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   69 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   70 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+CC	libavformat/ffmetadec.o
+CC	libavformat/ffmetaenc.o
+libavformat/dashenc.c: In function ‘dash_write_trailer’:
+libavformat/dashenc.c:487:49: warning: ‘media_’ directive output may be truncated writing 6 bytes into a region of size between 1 and 1024 [-Wformat-truncation=]
+  487 |         snprintf(playlist_name, string_size, "%smedia_%d.m3u8", base_url, id);
+      |                                                 ^~~~~~
+In function ‘get_hls_playlist_name’,
+    inlined from ‘dash_write_trailer’ at libavformat/dashenc.c:2323:17:
+libavformat/dashenc.c:487:46: note: directive argument in the range [0, 2147483647]
+  487 |         snprintf(playlist_name, string_size, "%smedia_%d.m3u8", base_url, id);
+      |                                              ^~~~~~~~~~~~~~~~~
+In function ‘snprintf’,
+    inlined from ‘get_hls_playlist_name’ at libavformat/dashenc.c:487:9,
+    inlined from ‘dash_write_trailer’ at libavformat/dashenc.c:2323:17:
+/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdio2.h:68:10: note: ‘__builtin_snprintf’ output between 13 and 1045 bytes into a destination of size 1024
+   68 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   69 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   70 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+libavformat/dashenc.c: In function ‘dash_write_packet’:
+libavformat/dashenc.c:2257:59: warning: ‘%s’ directive output may be truncated writing up to 1023 bytes into a region of size between 1 and 1024 [-Wformat-truncation=]
+ 2257 |         snprintf(os->full_path, sizeof(os->full_path), "%s%s", c->dirname,
+      |                                                           ^~
+In function ‘snprintf’,
+    inlined from ‘dash_write_packet’ at libavformat/dashenc.c:2257:9:
+/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdio2.h:68:10: note: ‘__builtin_snprintf’ output between 1 and 2047 bytes into a destination of size 1024
+   68 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   69 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   70 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+CC	libavformat/fifo.o
+CC	libavformat/fifo_test.o
+CC	libavformat/file.o
+CC	libavformat/filmstripdec.o
+CC	libavformat/filmstripenc.o
+CC	libavformat/fitsdec.o
+CC	libavformat/fitsenc.o
+CC	libavformat/flac_picture.o
+CC	libavformat/flacdec.o
+CC	libavformat/flacenc.o
+CC	libavformat/flacenc_header.o
+CC	libavformat/flic.o
+CC	libavformat/flvdec.o
+CC	libavformat/flvenc.o
+libavformat/flvdec.c: In function ‘flv_read_packet’:
+libavformat/flvdec.c:1297:13: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1297 |             int32_t cts = (avio_rb24(s->pb) + 0xff800000) ^ 0xff800000;
+      |             ^~~~~~~
+CC	libavformat/format.o
+CC	libavformat/framecrcenc.o
+CC	libavformat/framehash.o
+CC	libavformat/frmdec.o
+CC	libavformat/fsb.o
+CC	libavformat/ftp.o
+CC	libavformat/fwse.o
+CC	libavformat/g722.o
+CC	libavformat/g723_1.o
+CC	libavformat/g726.o
+CC	libavformat/g729dec.o
+CC	libavformat/gdv.o
+CC	libavformat/genh.o
+CC	libavformat/gif.o
+CC	libavformat/gifdec.o
+CC	libavformat/gopher.o
+CC	libavformat/gsmdec.o
+CC	libavformat/gxf.o
+CC	libavformat/gxfenc.o
+CC	libavformat/h261dec.o
+CC	libavformat/h263dec.o
+CC	libavformat/h264dec.o
+CC	libavformat/hashenc.o
+CC	libavformat/hca.o
+CC	libavformat/hcom.o
+CC	libavformat/hdsenc.o
+CC	libavformat/hevc.o
+CC	libavformat/hevcdec.o
+CC	libavformat/hls.o
+CC	libavformat/hls_sample_encryption.o
+CC	libavformat/hlsenc.o
+CC	libavformat/hlsplaylist.o
+CC	libavformat/hlsproto.o
+CC	libavformat/hnm.o
+CC	libavformat/http.o
+CC	libavformat/httpauth.o
+CC	libavformat/icecast.o
+libavformat/hls.c: In function ‘parse_playlist’:
+libavformat/hls.c:548:13: warning: ‘__builtin_strncpy’ output may be truncated copying between 2 and 62 bytes from a string of length 63 [-Wstringop-truncation]
+  548 |             strncpy(rend->language + langlen + 1, info->assoc_language,
+      |             ^
+CC	libavformat/icodec.o
+CC	libavformat/icoenc.o
+CC	libavformat/id3v1.o
+CC	libavformat/id3v2.o
+CC	libavformat/id3v2enc.o
+CC	libavformat/idcin.o
+CC	libavformat/idroqdec.o
+CC	libavformat/idroqenc.o
+CC	libavformat/iff.o
+CC	libavformat/ifv.o
+CC	libavformat/ilbc.o
+CC	libavformat/img2.o
+CC	libavformat/img2_alias_pix.o
+CC	libavformat/img2_brender_pix.o
+CC	libavformat/img2dec.o
+CC	libavformat/img2enc.o
+CC	libavformat/imx.o
+CC	libavformat/ingenientdec.o
+libavformat/img2dec.c: In function ‘ff_img_read_packet’:
+libavformat/img2dec.c:499:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  499 |     int total_size = 0;
+      |     ^~~
+CC	libavformat/ip.o
+libavformat/img2enc.c: In function ‘write_packet’:
+libavformat/img2enc.c:183:55: warning: ‘.tmp’ directive output may be truncated writing 4 bytes into a region of size between 1 and 1024 [-Wformat-truncation=]
+  183 |         snprintf(img->tmp[i], sizeof(img->tmp[i]), "%s.tmp", filename);
+      |                                                       ^~~~
+In file included from /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/stdio.h:974,
+                 from ./libavutil/common.h:38,
+                 from ./libavutil/avutil.h:301,
+                 from ./libavutil/opt.h:31,
+                 from libavformat/img2enc.c:31:
+In function ‘snprintf’,
+    inlined from ‘write_packet’ at libavformat/img2enc.c:183:9:
+/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdio2.h:68:10: note: ‘__builtin_snprintf’ output between 5 and 1028 bytes into a destination of size 1024
+   68 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   69 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   70 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+CC	libavformat/ipmovie.o
+CC	libavformat/ipudec.o
+CC	libavformat/ircam.o
+CC	libavformat/ircamdec.o
+CC	libavformat/ircamenc.o
+CC	libavformat/isom.o
+CC	libavformat/isom_tags.o
+CC	libavformat/iss.o
+CC	libavformat/iv8.o
+CC	libavformat/ivfdec.o
+CC	libavformat/ivfenc.o
+CC	libavformat/jacosubdec.o
+CC	libavformat/jacosubenc.o
+CC	libavformat/jpegxl_anim_dec.o
+CC	libavformat/jvdec.o
+CC	libavformat/kvag.o
+CC	libavformat/lafdec.o
+CC	libavformat/latmenc.o
+CC	libavformat/lmlm4.o
+CC	libavformat/loasdec.o
+CC	libavformat/lrc.o
+CC	libavformat/lrcdec.o
+CC	libavformat/lrcenc.o
+CC	libavformat/luodatdec.o
+CC	libavformat/lvfdec.o
+libavformat/lrcdec.c: In function ‘read_ts’:
+libavformat/lrcdec.c:90:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   90 |     int ret = sscanf(p, "%2[[-]%"SCNu32":%lf]", prefix, &mm, &ss);
+      |     ^~~
+CC	libavformat/lxfdec.o
+CC	libavformat/m4vdec.o
+CC	libavformat/matroska.o
+CC	libavformat/matroskadec.o
+CC	libavformat/matroskaenc.o
+CC	libavformat/mca.o
+CC	libavformat/mccdec.o
+CC	libavformat/md5proto.o
+CC	libavformat/metadata.o
+CC	libavformat/mgsts.o
+CC	libavformat/microdvddec.o
+CC	libavformat/microdvdenc.o
+CC	libavformat/mj2kdec.o
+CC	libavformat/mkvtimestamp_v2.o
+CC	libavformat/mlpdec.o
+CC	libavformat/mlvdec.o
+CC	libavformat/mm.o
+CC	libavformat/mmf.o
+CC	libavformat/mms.o
+CC	libavformat/mmsh.o
+CC	libavformat/mmst.o
+CC	libavformat/mods.o
+CC	libavformat/moflex.o
+CC	libavformat/mov.o
+CC	libavformat/mov_chan.o
+CC	libavformat/mov_esds.o
+CC	libavformat/movenc.o
+CC	libavformat/movenc_ttml.o
+CC	libavformat/movenccenc.o
+CC	libavformat/movenchint.o
+libavformat/matroskaenc.c: In function ‘mkv_write_trailer’:
+libavformat/matroskaenc.c:3302:79: warning: ‘%012.9f’ directive output may be truncated writing between 12 and 320 bytes into a region of size between 8 and 14 [-Wformat-truncation=]
+ 3302 |                 snprintf(duration_string, sizeof(duration_string), "%02d:%02d:%012.9f",
+      |                                                                               ^~~~~~~
+In file included from /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/stdio.h:974,
+                 from libavformat/avio.h:30,
+                 from libavformat/av1.h:26,
+                 from libavformat/matroskaenc.c:26:
+In function ‘snprintf’,
+    inlined from ‘mkv_write_trailer’ at libavformat/matroskaenc.c:3302:17:
+/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdio2.h:68:10: note: ‘__builtin_snprintf’ output between 19 and 333 bytes into a destination of size 20
+   68 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   69 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   70 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+CC	libavformat/mp3dec.o
+CC	libavformat/mp3enc.o
+CC	libavformat/mpc.o
+CC	libavformat/mpc8.o
+CC	libavformat/mpeg.o
+CC	libavformat/mpegenc.o
+CC	libavformat/mpegts.o
+CC	libavformat/mpegtsenc.o
+CC	libavformat/mpegvideodec.o
+CC	libavformat/mpjpeg.o
+CC	libavformat/mpjpegdec.o
+CC	libavformat/mpl2dec.o
+CC	libavformat/mpsubdec.o
+CC	libavformat/msf.o
+CC	libavformat/msnwc_tcp.o
+CC	libavformat/mspdec.o
+CC	libavformat/mtaf.o
+CC	libavformat/mtv.o
+CC	libavformat/musx.o
+CC	libavformat/mux.o
+CC	libavformat/mux_utils.o
+CC	libavformat/mvdec.o
+CC	libavformat/mvi.o
+CC	libavformat/mxf.o
+CC	libavformat/mxfdec.o
+CC	libavformat/mxfenc.o
+CC	libavformat/mxg.o
+CC	libavformat/ncdec.o
+CC	libavformat/network.o
+CC	libavformat/nistspheredec.o
+CC	libavformat/nspdec.o
+CC	libavformat/nsvdec.o
+CC	libavformat/nullenc.o
+CC	libavformat/nut.o
+CC	libavformat/nutdec.o
+CC	libavformat/nutenc.o
+CC	libavformat/nuv.o
+CC	libavformat/oggdec.o
+CC	libavformat/oggenc.o
+CC	libavformat/oggparsecelt.o
+CC	libavformat/oggparsedirac.o
+CC	libavformat/oggparseflac.o
+CC	libavformat/oggparseogm.o
+CC	libavformat/oggparseopus.o
+CC	libavformat/oggparseskeleton.o
+CC	libavformat/oggparsespeex.o
+CC	libavformat/oggparsetheora.o
+CC	libavformat/oggparsevorbis.o
+CC	libavformat/oggparsevp8.o
+CC	libavformat/oma.o
+CC	libavformat/omadec.o
+CC	libavformat/omaenc.o
+CC	libavformat/options.o
+CC	libavformat/os_support.o
+CC	libavformat/osq.o
+CC	libavformat/paf.o
+CC	libavformat/pcm.o
+CC	libavformat/pcmdec.o
+CC	libavformat/pcmenc.o
+CC	libavformat/pdvdec.o
+CC	libavformat/pjsdec.o
+CC	libavformat/pmpdec.o
+CC	libavformat/pp_bnk.o
+CC	libavformat/prompeg.o
+CC	libavformat/protocols.o
+CC	libavformat/psxstr.o
+CC	libavformat/pva.o
+CC	libavformat/pvfdec.o
+CC	libavformat/qcp.o
+CC	libavformat/qtpalette.o
+CC	libavformat/r3d.o
+CC	libavformat/rawdec.o
+CC	libavformat/rawenc.o
+CC	libavformat/rawutils.o
+CC	libavformat/rawvideodec.o
+CC	libavformat/rdt.o
+CC	libavformat/realtextdec.o
+CC	libavformat/redspark.o
+CC	libavformat/replaygain.o
+CC	libavformat/riff.o
+CC	libavformat/riffdec.o
+CC	libavformat/riffenc.o
+CC	libavformat/rka.o
+CC	libavformat/rl2.o
+CC	libavformat/rm.o
+CC	libavformat/rmdec.o
+CC	libavformat/rmenc.o
+CC	libavformat/rmsipr.o
+CC	libavformat/rpl.o
+CC	libavformat/rsd.o
+CC	libavformat/rso.o
+CC	libavformat/rsodec.o
+CC	libavformat/rsoenc.o
+CC	libavformat/rtmpdigest.o
+CC	libavformat/rtmphttp.o
+CC	libavformat/rtmppkt.o
+CC	libavformat/rtmpproto.o
+CC	libavformat/rtp.o
+CC	libavformat/rtpdec.o
+CC	libavformat/rtpdec_ac3.o
+CC	libavformat/rtpdec_amr.o
+CC	libavformat/rtpdec_asf.o
+CC	libavformat/rtpdec_dv.o
+CC	libavformat/rtpdec_g726.o
+libavformat/rtmpproto.c: In function ‘send_invoke_response’:
+libavformat/rtmpproto.c:2022:51: warning: ‘ is now published’ directive output may be truncated writing 17 bytes into a region of size between 1 and 128 [-Wformat-truncation=]
+ 2022 |         snprintf(statusmsg, sizeof(statusmsg), "%s is now published", filename);
+      |                                                   ^~~~~~~~~~~~~~~~~
+In file included from /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/stdio.h:974,
+                 from ./libavutil/common.h:38,
+                 from ./libavcodec/bytestream.h:30,
+                 from libavformat/rtmpproto.c:29:
+In function ‘snprintf’,
+    inlined from ‘send_invoke_response’ at libavformat/rtmpproto.c:2022:9:
+/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdio2.h:68:10: note: ‘__builtin_snprintf’ output between 18 and 145 bytes into a destination of size 128
+   68 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   69 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   70 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+CC	libavformat/rtpdec_h261.o
+CC	libavformat/rtpdec_h263.o
+CC	libavformat/rtpdec_h263_rfc2190.o
+CC	libavformat/rtpdec_h264.o
+CC	libavformat/rtpdec_hevc.o
+CC	libavformat/rtpdec_ilbc.o
+CC	libavformat/rtpdec_jpeg.o
+CC	libavformat/rtpdec_latm.o
+CC	libavformat/rtpdec_mpa_robust.o
+CC	libavformat/rtpdec_mpeg12.o
+CC	libavformat/rtpdec_mpeg4.o
+CC	libavformat/rtpdec_mpegts.o
+CC	libavformat/rtpdec_qcelp.o
+CC	libavformat/rtpdec_qdm2.o
+libavformat/rtpdec_qdm2.c: In function ‘qdm2_restore_block’:
+libavformat/rtpdec_qdm2.c:200:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  200 |     int min_size = 2 + (qdm->len[n] > 0xff) + 2*include_csum;
+      |     ^~~
+CC	libavformat/rtpdec_qt.o
+CC	libavformat/rtpdec_rfc4175.o
+CC	libavformat/rtpdec_svq3.o
+CC	libavformat/rtpdec_vc2hq.o
+CC	libavformat/rtpdec_vp8.o
+CC	libavformat/rtpdec_vp9.o
+CC	libavformat/rtpdec_xiph.o
+CC	libavformat/rtpenc.o
+CC	libavformat/rtpenc_aac.o
+CC	libavformat/rtpenc_amr.o
+CC	libavformat/rtpenc_chain.o
+CC	libavformat/rtpenc_h261.o
+CC	libavformat/rtpenc_h263.o
+CC	libavformat/rtpenc_h263_rfc2190.o
+CC	libavformat/rtpenc_h264_hevc.o
+CC	libavformat/rtpenc_jpeg.o
+CC	libavformat/rtpenc_latm.o
+CC	libavformat/rtpenc_mpegts.o
+CC	libavformat/rtpenc_mpv.o
+CC	libavformat/rtpenc_rfc4175.o
+CC	libavformat/rtpenc_vc2hq.o
+CC	libavformat/rtpenc_vp8.o
+CC	libavformat/rtpenc_vp9.o
+CC	libavformat/rtpenc_xiph.o
+CC	libavformat/rtpproto.o
+CC	libavformat/rtsp.o
+CC	libavformat/rtspdec.o
+CC	libavformat/rtspenc.o
+CC	libavformat/s337m.o
+CC	libavformat/samidec.o
+CC	libavformat/sapdec.o
+CC	libavformat/sapenc.o
+CC	libavformat/sauce.o
+CC	libavformat/sbcdec.o
+CC	libavformat/sbgdec.o
+CC	libavformat/sccdec.o
+CC	libavformat/sccenc.o
+CC	libavformat/scd.o
+CC	libavformat/sdns.o
+CC	libavformat/sdp.o
+CC	libavformat/sdr2.o
+CC	libavformat/sdsdec.o
+CC	libavformat/sdxdec.o
+CC	libavformat/seek.o
+CC	libavformat/segafilm.o
+CC	libavformat/segafilmenc.o
+CC	libavformat/segment.o
+CC	libavformat/serdec.o
+CC	libavformat/sga.o
+CC	libavformat/shortendec.o
+CC	libavformat/sierravmd.o
+CC	libavformat/siff.o
+libavformat/rtsp.c: In function ‘ff_rtsp_make_setup_request’:
+libavformat/rtsp.c:1591:30: warning: ‘%s’ directive output may be truncated writing up to 4095 bytes into a region of size 4085 [-Wformat-truncation=]
+ 1591 |                  "Transport: %s\r\n",
+      |                              ^~
+ 1592 |                  transport);
+      |                  ~~~~~~~~~    
+In file included from /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/stdio.h:974,
+                 from ./libavutil/common.h:38,
+                 from ./libavutil/avutil.h:301,
+                 from ./libavutil/opt.h:31,
+                 from libavformat/rtsp.c:33:
+In function ‘snprintf’,
+    inlined from ‘ff_rtsp_make_setup_request’ at libavformat/rtsp.c:1590:9:
+/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdio2.h:68:10: note: ‘__builtin_snprintf’ output between 14 and 4109 bytes into a destination of size 4096
+   68 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   69 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   70 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+CC	libavformat/smacker.o
+CC	libavformat/smjpeg.o
+CC	libavformat/smjpegdec.o
+CC	libavformat/smjpegenc.o
+CC	libavformat/smoothstreamingenc.o
+CC	libavformat/smush.o
+CC	libavformat/sol.o
+CC	libavformat/soxdec.o
+CC	libavformat/soxenc.o
+CC	libavformat/spdif.o
+CC	libavformat/spdifdec.o
+CC	libavformat/spdifenc.o
+CC	libavformat/srtdec.o
+CC	libavformat/srtenc.o
+CC	libavformat/srtp.o
+libavformat/smoothstreamingenc.c: In function ‘ism_flush’:
+libavformat/smoothstreamingenc.c:513:49: warning: ‘/temp’ directive output may be truncated writing 5 bytes into a region of size between 1 and 1024 [-Wformat-truncation=]
+  513 |         snprintf(filename, sizeof(filename), "%s/temp", os->dirname);
+      |                                                 ^~~~~
+In file included from /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/stdio.h:974,
+                 from libavformat/avformat.h:310,
+                 from libavformat/smoothstreamingenc.c:27:
+In function ‘snprintf’,
+    inlined from ‘ism_flush’ at libavformat/smoothstreamingenc.c:513:9:
+/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdio2.h:68:10: note: ‘__builtin_snprintf’ output between 6 and 1029 bytes into a destination of size 1024
+   68 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   69 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   70 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+libavformat/smoothstreamingenc.c: In function ‘ism_flush’:
+libavformat/smoothstreamingenc.c:541:53: warning: ‘/temp’ directive output may be truncated writing 5 bytes into a region of size between 1 and 1024 [-Wformat-truncation=]
+  541 |             snprintf(filename, sizeof(filename), "%s/temp", os->dirname);
+      |                                                     ^~~~~
+In function ‘snprintf’,
+    inlined from ‘ism_flush’ at libavformat/smoothstreamingenc.c:541:13:
+/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdio2.h:68:10: note: ‘__builtin_snprintf’ output between 6 and 1029 bytes into a destination of size 1024
+   68 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   69 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   70 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+libavformat/smoothstreamingenc.c: In function ‘ism_flush’:
+libavformat/smoothstreamingenc.c:548:63: warning: ‘/FragmentInfo(’ directive output may be truncated writing 14 bytes into a region of size between 1 and 1024 [-Wformat-truncation=]
+  548 |         snprintf(header_filename, sizeof(header_filename), "%s/FragmentInfo(%s=%"PRIu64")", os->dirname, os->stream_type_tag, start_ts);
+      |                                                               ^~~~~~~~~~~~~~
+In function ‘snprintf’,
+    inlined from ‘ism_flush’ at libavformat/smoothstreamingenc.c:548:9:
+/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdio2.h:68:10: note: ‘__builtin_snprintf’ output 18 or more bytes (assuming 1041) into a destination of size 1024
+   68 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   69 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   70 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+libavformat/smoothstreamingenc.c: In function ‘ism_flush’:
+libavformat/smoothstreamingenc.c:549:63: warning: ‘/Fragments(’ directive output may be truncated writing 11 bytes into a region of size between 1 and 1024 [-Wformat-truncation=]
+  549 |         snprintf(target_filename, sizeof(target_filename), "%s/Fragments(%s=%"PRIu64")", os->dirname, os->stream_type_tag, start_ts);
+      |                                                               ^~~~~~~~~~~
+In function ‘snprintf’,
+    inlined from ‘ism_flush’ at libavformat/smoothstreamingenc.c:549:9:
+/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdio2.h:68:10: note: ‘__builtin_snprintf’ output 15 or more bytes (assuming 1038) into a destination of size 1024
+   68 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   69 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   70 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+CC	libavformat/srtpproto.o
+CC	libavformat/stldec.o
+CC	libavformat/subfile.o
+CC	libavformat/subtitles.o
+CC	libavformat/subviewer1dec.o
+CC	libavformat/subviewerdec.o
+CC	libavformat/supdec.o
+CC	libavformat/supenc.o
+CC	libavformat/svag.o
+CC	libavformat/svs.o
+CC	libavformat/swf.o
+CC	libavformat/swfdec.o
+CC	libavformat/swfenc.o
+CC	libavformat/takdec.o
+CC	libavformat/tcp.o
+CC	libavformat/tedcaptionsdec.o
+CC	libavformat/tee.o
+CC	libavformat/tee_common.o
+CC	libavformat/teeproto.o
+CC	libavformat/thp.o
+CC	libavformat/tiertexseq.o
+CC	libavformat/tmv.o
+CC	libavformat/tta.o
+CC	libavformat/ttaenc.o
+CC	libavformat/ttmlenc.o
+CC	libavformat/tty.o
+CC	libavformat/txd.o
+CC	libavformat/ty.o
+CC	libavformat/udp.o
+CC	libavformat/uncodedframecrcenc.o
+CC	libavformat/unix.o
+CC	libavformat/url.o
+CC	libavformat/urldecode.o
+CC	libavformat/usmdec.o
+CC	libavformat/utils.o
+CC	libavformat/vag.o
+CC	libavformat/vc1dec.o
+CC	libavformat/vc1test.o
+CC	libavformat/vc1testenc.o
+CC	libavformat/version.o
+CC	libavformat/vividas.o
+CC	libavformat/vivo.o
+CC	libavformat/voc.o
+CC	libavformat/voc_packet.o
+CC	libavformat/vocdec.o
+CC	libavformat/vocenc.o
+CC	libavformat/vorbiscomment.o
+CC	libavformat/vpcc.o
+CC	libavformat/vpk.o
+CC	libavformat/vplayerdec.o
+libavformat/vorbiscomment.c: In function ‘ff_vorbiscomment_write’:
+libavformat/vorbiscomment.c:103:63: warning: ‘%03d’ directive output may be truncated writing between 3 and 10 bytes into a region of size 4 [-Wformat-truncation=]
+  103 |             snprintf(chapter_number, sizeof(chapter_number), "%03d", i);
+      |                                                               ^~~~
+libavformat/vorbiscomment.c:103:62: note: directive argument in the range [0, 2147483647]
+  103 |             snprintf(chapter_number, sizeof(chapter_number), "%03d", i);
+      |                                                              ^~~~~~
+In file included from /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/stdio.h:974,
+                 from libavformat/avio.h:30,
+                 from libavformat/vorbiscomment.c:22:
+In function ‘snprintf’,
+    inlined from ‘ff_vorbiscomment_write’ at libavformat/vorbiscomment.c:103:13:
+/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdio2.h:68:10: note: ‘__builtin_snprintf’ output between 4 and 11 bytes into a destination of size 4
+   68 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   69 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   70 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+libavformat/vorbiscomment.c: In function ‘ff_vorbiscomment_write’:
+libavformat/vorbiscomment.c:104:69: warning: ‘%02d’ directive output may be truncated writing between 2 and 3 bytes into a region of size between 1 and 7 [-Wformat-truncation=]
+  104 |             snprintf(chapter_time, sizeof(chapter_time), "%02d:%02d:%02d.%03d", h, m, s, ms);
+      |                                                                     ^~~~
+libavformat/vorbiscomment.c:104:58: note: directive argument in the range [-59, 59]
+  104 |             snprintf(chapter_time, sizeof(chapter_time), "%02d:%02d:%02d.%03d", h, m, s, ms);
+      |                                                          ^~~~~~~~~~~~~~~~~~~~~
+libavformat/vorbiscomment.c:104:58: note: directive argument in the range [-999, 999]
+In function ‘snprintf’,
+    inlined from ‘ff_vorbiscomment_write’ at libavformat/vorbiscomment.c:104:13:
+/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdio2.h:68:10: note: ‘__builtin_snprintf’ output between 13 and 21 bytes into a destination of size 13
+   68 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   69 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   70 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+CC	libavformat/vqf.o
+CC	libavformat/vvcdec.o
+CC	libavformat/w64.o
+CC	libavformat/wady.o
+CC	libavformat/wavarc.o
+CC	libavformat/wavdec.o
+CC	libavformat/wavenc.o
+CC	libavformat/wc3movie.o
+CC	libavformat/webm_chunk.o
+CC	libavformat/webmdashenc.o
+CC	libavformat/webpenc.o
+CC	libavformat/webvttdec.o
+CC	libavformat/webvttenc.o
+CC	libavformat/westwood_aud.o
+CC	libavformat/westwood_audenc.o
+CC	libavformat/westwood_vqa.o
+CC	libavformat/wsddec.o
+CC	libavformat/wtv_common.o
+CC	libavformat/wtvdec.o
+CC	libavformat/wtvenc.o
+CC	libavformat/wv.o
+CC	libavformat/wvdec.o
+CC	libavformat/wvedec.o
+CC	libavformat/wvenc.o
+CC	libavformat/xa.o
+CC	libavformat/xmd.o
+CC	libavformat/xmv.o
+CC	libavformat/xvag.o
+CC	libavformat/xwma.o
+CC	libavformat/yop.o
+CC	libavformat/yuv4mpegdec.o
+CC	libavformat/yuv4mpegenc.o
+CC	libavformat/ac3_channel_layout_tab.o
+CC	libavformat/dca_sample_rate_tab.o
+CC	libavformat/golomb_tab.o
+CC	libavformat/jpegtables.o
+CC	libavformat/jpegxl_parse.o
+CC	libavformat/log2_tab.o
+CC	libavformat/mpeg4audio_sample_rates.o
+CC	libavformat/mpegaudiotabs.o
+CC	libavformat/rangecoder_dec.o
+CC	libavformat/to_upper4.o
+CC	libavcodec/012v.o
+CC	libavcodec/4xm.o
+CC	libavcodec/8bps.o
+CC	libavcodec/8svx.o
+CC	libavcodec/a64multienc.o
+CC	libavcodec/aac_ac3_parser.o
+CC	libavcodec/aac_adtstoasc_bsf.o
+CC	libavcodec/aac_parser.o
+CC	libavcodec/aaccoder.o
+CC	libavcodec/aacdec.o
+CC	libavcodec/aacdec_fixed.o
+CC	libavcodec/aacenc.o
+CC	libavcodec/aacenc_is.o
+CC	libavcodec/aacenc_ltp.o
+CC	libavcodec/aacenc_pred.o
+CC	libavcodec/aacenc_tns.o
+CC	libavcodec/aacenctab.o
+CC	libavcodec/aacps_common.o
+CC	libavcodec/aacps_fixed.o
+CC	libavcodec/aacps_float.o
+CC	libavcodec/aacpsdsp_fixed.o
+CC	libavcodec/aacpsdsp_float.o
+CC	libavcodec/aacpsy.o
+CC	libavcodec/aacsbr.o
+CC	libavcodec/aacsbr_fixed.o
+CC	libavcodec/aactab.o
+CC	libavcodec/aandcttab.o
+CC	libavcodec/aarch64/aacpsdsp_init_aarch64.o
+AS	libavcodec/aarch64/aacpsdsp_neon.o
+CC	libavcodec/aarch64/fmtconvert_init.o
+AS	libavcodec/aarch64/fmtconvert_neon.o
+CC	libavcodec/aarch64/h264chroma_init_aarch64.o
+AS	libavcodec/aarch64/h264cmc_neon.o
+CC	libavcodec/aarch64/h264dsp_init_aarch64.o
+AS	libavcodec/aarch64/h264dsp_neon.o
+AS	libavcodec/aarch64/h264idct_neon.o
+CC	libavcodec/aarch64/h264pred_init.o
+AS	libavcodec/aarch64/h264pred_neon.o
+CC	libavcodec/aarch64/h264qpel_init_aarch64.o
+AS	libavcodec/aarch64/h264qpel_neon.o
+AS	libavcodec/aarch64/hevcdsp_deblock_neon.o
+AS	libavcodec/aarch64/hevcdsp_epel_neon.o
+AS	libavcodec/aarch64/hevcdsp_idct_neon.o
+CC	libavcodec/aarch64/hevcdsp_init_aarch64.o
+AS	libavcodec/aarch64/hevcdsp_qpel_neon.o
+AS	libavcodec/aarch64/hevcdsp_sao_neon.o
+CC	libavcodec/aarch64/hpeldsp_init_aarch64.o
+AS	libavcodec/aarch64/hpeldsp_neon.o
+CC	libavcodec/aarch64/idctdsp_init_aarch64.o
+AS	libavcodec/aarch64/idctdsp_neon.o
+CC	libavcodec/aarch64/me_cmp_init_aarch64.o
+AS	libavcodec/aarch64/me_cmp_neon.o
+CC	libavcodec/aarch64/mpegaudiodsp_init.o
+AS	libavcodec/aarch64/mpegaudiodsp_neon.o
+CC	libavcodec/aarch64/opusdsp_init.o
+AS	libavcodec/aarch64/opusdsp_neon.o
+CC	libavcodec/aarch64/pixblockdsp_init_aarch64.o
+AS	libavcodec/aarch64/pixblockdsp_neon.o
+CC	libavcodec/aarch64/rv40dsp_init_aarch64.o
+CC	libavcodec/aarch64/sbrdsp_init_aarch64.o
+AS	libavcodec/aarch64/sbrdsp_neon.o
+AS	libavcodec/aarch64/simple_idct_neon.o
+CC	libavcodec/aarch64/synth_filter_init.o
+AS	libavcodec/aarch64/synth_filter_neon.o
+CC	libavcodec/aarch64/vc1dsp_init_aarch64.o
+AS	libavcodec/aarch64/vc1dsp_neon.o
+AS	libavcodec/aarch64/videodsp.o
+CC	libavcodec/aarch64/videodsp_init.o
+CC	libavcodec/aarch64/vorbisdsp_init.o
+AS	libavcodec/aarch64/vorbisdsp_neon.o
+CC	libavcodec/aarch64/vp8dsp_init_aarch64.o
+AS	libavcodec/aarch64/vp8dsp_neon.o
+CC	libavcodec/aarch64/vp9dsp_init_10bpp_aarch64.o
+CC	libavcodec/aarch64/vp9dsp_init_12bpp_aarch64.o
+CC	libavcodec/aarch64/vp9dsp_init_aarch64.o
+AS	libavcodec/aarch64/vp9itxfm_16bpp_neon.o
+AS	libavcodec/aarch64/vp9itxfm_neon.o
+AS	libavcodec/aarch64/vp9lpf_16bpp_neon.o
+AS	libavcodec/aarch64/vp9lpf_neon.o
+AS	libavcodec/aarch64/vp9mc_16bpp_neon.o
+AS	libavcodec/aarch64/vp9mc_aarch64.o
+AS	libavcodec/aarch64/vp9mc_neon.o
+CC	libavcodec/aasc.o
+CC	libavcodec/ac3.o
+CC	libavcodec/ac3_channel_layout_tab.o
+CC	libavcodec/ac3_parser.o
+CC	libavcodec/ac3dec_data.o
+CC	libavcodec/ac3dec_fixed.o
+CC	libavcodec/ac3dec_float.o
+CC	libavcodec/ac3dsp.o
+CC	libavcodec/ac3enc.o
+CC	libavcodec/ac3enc_fixed.o
+CC	libavcodec/ac3enc_float.o
+CC	libavcodec/ac3tab.o
+CC	libavcodec/acelp_filters.o
+CC	libavcodec/acelp_pitch_delay.o
+CC	libavcodec/acelp_vectors.o
+CC	libavcodec/adpcm.o
+In file included from libavcodec/ac3dec_float.c:38:
+In function ‘spx_strategy’,
+    inlined from ‘decode_audio_block’ at libavcodec/ac3dec.c:1150:24:
+libavcodec/ac3dec.c:862:37: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+  862 |             s->channel_uses_spx[ch] = get_bits1(bc);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+In file included from libavcodec/ac3dec_float.c:34:
+libavcodec/ac3dec.h: In function ‘decode_audio_block’:
+libavcodec/ac3dec.h:144:13: note: at offset 7 into destination object ‘channel_uses_spx’ of size 7
+  144 |     uint8_t channel_uses_spx[AC3_MAX_CHANNELS]; ///< channel uses spectral extension        (chinspx)
+      |             ^~~~~~~~~~~~~~~~
+CC	libavcodec/adpcm_data.o
+CC	libavcodec/adpcmenc.o
+In file included from libavcodec/ac3dec_fixed.c:156:
+In function ‘spx_strategy’,
+    inlined from ‘decode_audio_block’ at libavcodec/ac3dec.c:1150:24:
+libavcodec/ac3dec.c:862:37: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+  862 |             s->channel_uses_spx[ch] = get_bits1(bc);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+In file included from libavcodec/ac3dec_fixed.c:51:
+libavcodec/ac3dec.h: In function ‘decode_audio_block’:
+libavcodec/ac3dec.h:144:13: note: at offset 7 into destination object ‘channel_uses_spx’ of size 7
+  144 |     uint8_t channel_uses_spx[AC3_MAX_CHANNELS]; ///< channel uses spectral extension        (chinspx)
+      |             ^~~~~~~~~~~~~~~~
+CC	libavcodec/adts_header.o
+CC	libavcodec/adts_parser.o
+CC	libavcodec/adx.o
+CC	libavcodec/adx_parser.o
+CC	libavcodec/adxdec.o
+CC	libavcodec/adxenc.o
+CC	libavcodec/agm.o
+CC	libavcodec/aic.o
+CC	libavcodec/alac.o
+CC	libavcodec/alac_data.o
+CC	libavcodec/alacdsp.o
+CC	libavcodec/alacenc.o
+CC	libavcodec/aliaspixdec.o
+CC	libavcodec/aliaspixenc.o
+CC	libavcodec/allcodecs.o
+CC	libavcodec/alsdec.o
+CC	libavcodec/amr_parser.o
+CC	libavcodec/amrnbdec.o
+CC	libavcodec/amrwbdec.o
+CC	libavcodec/anm.o
+CC	libavcodec/ansi.o
+CC	libavcodec/apac.o
+CC	libavcodec/apedec.o
+CC	libavcodec/aptx.o
+CC	libavcodec/aptxdec.o
+CC	libavcodec/aptxenc.o
+CC	libavcodec/arbc.o
+CC	libavcodec/argo.o
+CC	libavcodec/ass.o
+CC	libavcodec/ass_split.o
+CC	libavcodec/assdec.o
+CC	libavcodec/assenc.o
+CC	libavcodec/asv.o
+CC	libavcodec/asvdec.o
+CC	libavcodec/asvenc.o
+CC	libavcodec/atrac.o
+CC	libavcodec/atrac1.o
+CC	libavcodec/atrac3.o
+CC	libavcodec/atrac3plus.o
+CC	libavcodec/atrac3plusdec.o
+CC	libavcodec/atrac3plusdsp.o
+CC	libavcodec/atrac9dec.o
+CC	libavcodec/atsc_a53.o
+CC	libavcodec/audio_frame_queue.o
+CC	libavcodec/audiodsp.o
+CC	libavcodec/aura.o
+CC	libavcodec/av1_frame_merge_bsf.o
+CC	libavcodec/av1_frame_split_bsf.o
+CC	libavcodec/av1_metadata_bsf.o
+CC	libavcodec/av1_parse.o
+CC	libavcodec/av1_parser.o
+CC	libavcodec/av1dec.o
+CC	libavcodec/avcodec.o
+CC	libavcodec/avdct.o
+CC	libavcodec/avfft.o
+CC	libavcodec/avpacket.o
+CC	libavcodec/avrndec.o
+CC	libavcodec/avs.o
+CC	libavcodec/avs2.o
+CC	libavcodec/avs2_parser.o
+CC	libavcodec/avs3_parser.o
+CC	libavcodec/avuidec.o
+CC	libavcodec/avuienc.o
+CC	libavcodec/bethsoftvideo.o
+CC	libavcodec/bfi.o
+CC	libavcodec/bgmc.o
+CC	libavcodec/bink.o
+CC	libavcodec/binkaudio.o
+CC	libavcodec/binkdsp.o
+CC	libavcodec/bintext.o
+CC	libavcodec/bitpacked_dec.o
+CC	libavcodec/bitpacked_enc.o
+CC	libavcodec/bitstream.o
+CC	libavcodec/bitstream_filters.o
+CC	libavcodec/blockdsp.o
+CC	libavcodec/bmp.o
+CC	libavcodec/bmp_parser.o
+CC	libavcodec/bmpenc.o
+CC	libavcodec/bmvaudio.o
+CC	libavcodec/bmvvideo.o
+CC	libavcodec/bonk.o
+CC	libavcodec/brenderpix.o
+CC	libavcodec/bsf.o
+CC	libavcodec/bswapdsp.o
+CC	libavcodec/c93.o
+CC	libavcodec/cabac.o
+CC	libavcodec/canopus.o
+CC	libavcodec/cavs.o
+CC	libavcodec/cavs_parser.o
+CC	libavcodec/cavsdata.o
+CC	libavcodec/cavsdec.o
+CC	libavcodec/cavsdsp.o
+CC	libavcodec/cbrt_data.o
+CC	libavcodec/cbrt_data_fixed.o
+CC	libavcodec/cbs.o
+CC	libavcodec/cbs_av1.o
+CC	libavcodec/cbs_bsf.o
+CC	libavcodec/cbs_h2645.o
+CC	libavcodec/cbs_mpeg2.o
+CC	libavcodec/cbs_sei.o
+CC	libavcodec/cbs_vp9.o
+CC	libavcodec/ccaption_dec.o
+CC	libavcodec/cdgraphics.o
+CC	libavcodec/cdtoons.o
+CC	libavcodec/cdxl.o
+CC	libavcodec/celp_filters.o
+CC	libavcodec/celp_math.o
+CC	libavcodec/cfhd.o
+CC	libavcodec/cfhddata.o
+CC	libavcodec/cfhddsp.o
+CC	libavcodec/cfhdenc.o
+CC	libavcodec/cfhdencdsp.o
+CC	libavcodec/cga_data.o
+CC	libavcodec/chomp_bsf.o
+CC	libavcodec/cinepak.o
+CC	libavcodec/cinepakenc.o
+CC	libavcodec/clearvideo.o
+CC	libavcodec/cljrdec.o
+CC	libavcodec/cljrenc.o
+CC	libavcodec/cllc.o
+CC	libavcodec/cngdec.o
+CC	libavcodec/cngenc.o
+CC	libavcodec/codec_desc.o
+CC	libavcodec/codec_par.o
+CC	libavcodec/cook.o
+CC	libavcodec/cook_parser.o
+CC	libavcodec/cpia.o
+CC	libavcodec/cri.o
+CC	libavcodec/cri_parser.o
+libavcodec/cri.c: In function ‘cri_decode_frame’:
+libavcodec/cri.c:225:13: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  225 |             int read_len = FFMIN(length, sizeof(codec_name) - 1);
+      |             ^~~
+CC	libavcodec/cscd.o
+CC	libavcodec/cyuv.o
+CC	libavcodec/d3d11va.o
+CC	libavcodec/dca.o
+CC	libavcodec/dca_core.o
+CC	libavcodec/dca_core_bsf.o
+CC	libavcodec/dca_exss.o
+CC	libavcodec/dca_lbr.o
+CC	libavcodec/dca_parser.o
+CC	libavcodec/dca_sample_rate_tab.o
+CC	libavcodec/dca_xll.o
+CC	libavcodec/dcaadpcm.o
+CC	libavcodec/dcadata.o
+CC	libavcodec/dcadct.o
+CC	libavcodec/dcadec.o
+CC	libavcodec/dcadsp.o
+CC	libavcodec/dcaenc.o
+CC	libavcodec/dcahuff.o
+CC	libavcodec/dct32_fixed.o
+CC	libavcodec/dct32_float.o
+CC	libavcodec/dds.o
+CC	libavcodec/decode.o
+CC	libavcodec/dfa.o
+CC	libavcodec/dfpwmdec.o
+CC	libavcodec/dfpwmenc.o
+CC	libavcodec/dirac.o
+CC	libavcodec/dirac_arith.o
+CC	libavcodec/dirac_dwt.o
+CC	libavcodec/dirac_parser.o
+CC	libavcodec/dirac_vlc.o
+CC	libavcodec/diracdec.o
+CC	libavcodec/diracdsp.o
+CC	libavcodec/diractab.o
+CC	libavcodec/dnxhd_parser.o
+CC	libavcodec/dnxhddata.o
+CC	libavcodec/dnxhddec.o
+CC	libavcodec/dnxhdenc.o
+CC	libavcodec/dolby_e.o
+CC	libavcodec/dolby_e_parse.o
+CC	libavcodec/dolby_e_parser.o
+CC	libavcodec/dovi_rpu.o
+CC	libavcodec/dpcm.o
+CC	libavcodec/dpx.o
+CC	libavcodec/dpx_parser.o
+CC	libavcodec/dpxenc.o
+CC	libavcodec/dsd.o
+CC	libavcodec/dsddec.o
+CC	libavcodec/dsicinaudio.o
+CC	libavcodec/dsicinvideo.o
+CC	libavcodec/dss_sp.o
+CC	libavcodec/dstdec.o
+CC	libavcodec/dts2pts_bsf.o
+CC	libavcodec/dump_extradata_bsf.o
+CC	libavcodec/dv.o
+CC	libavcodec/dv_error_marker_bsf.o
+CC	libavcodec/dv_profile.o
+CC	libavcodec/dvaudio_parser.o
+CC	libavcodec/dvaudiodec.o
+CC	libavcodec/dvbsub_parser.o
+CC	libavcodec/dvbsubdec.o
+CC	libavcodec/dvbsubenc.o
+CC	libavcodec/dvd_nav_parser.o
+CC	libavcodec/dvdata.o
+CC	libavcodec/dvdec.o
+CC	libavcodec/dvdsub.o
+CC	libavcodec/dvdsub_parser.o
+CC	libavcodec/dvdsubdec.o
+CC	libavcodec/dvdsubenc.o
+CC	libavcodec/dvenc.o
+CC	libavcodec/dxa.o
+CC	libavcodec/dxtory.o
+CC	libavcodec/dxv.o
+libavcodec/dxv.c: In function ‘dxv_decompress_opcodes’:
+libavcodec/dxv.c:477:9: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  477 |         int read_size = bytestream2_get_buffer(gb, dstp, op_size);
+      |         ^~~
+CC	libavcodec/dynamic_hdr_vivid.o
+CC	libavcodec/eac3_core_bsf.o
+CC	libavcodec/eac3_data.o
+CC	libavcodec/eac3enc.o
+CC	libavcodec/eacmv.o
+CC	libavcodec/eaidct.o
+CC	libavcodec/eamad.o
+CC	libavcodec/eatgq.o
+CC	libavcodec/eatgv.o
+CC	libavcodec/eatqi.o
+CC	libavcodec/elbg.o
+CC	libavcodec/elsdec.o
+CC	libavcodec/encode.o
+CC	libavcodec/error_resilience.o
+CC	libavcodec/escape124.o
+CC	libavcodec/escape130.o
+CC	libavcodec/evc_frame_merge_bsf.o
+CC	libavcodec/evc_parse.o
+CC	libavcodec/evc_parser.o
+CC	libavcodec/evc_ps.o
+CC	libavcodec/evrcdec.o
+CC	libavcodec/exif.o
+CC	libavcodec/exr.o
+libavcodec/exr.c: In function ‘decode_header’:
+libavcodec/exr.c:1787:17: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1787 |                 EXRChannel *new_channels = av_realloc_array(s->channels,
+      |                 ^~~~~~~~~~
+CC	libavcodec/exrdsp.o
+CC	libavcodec/exrenc.o
+CC	libavcodec/extract_extradata_bsf.o
+CC	libavcodec/faandct.o
+CC	libavcodec/faanidct.o
+CC	libavcodec/fastaudio.o
+CC	libavcodec/faxcompr.o
+CC	libavcodec/fdctdsp.o
+CC	libavcodec/ffv1.o
+CC	libavcodec/ffv1dec.o
+CC	libavcodec/ffv1enc.o
+CC	libavcodec/ffwavesynth.o
+CC	libavcodec/fic.o
+CC	libavcodec/filter_units_bsf.o
+CC	libavcodec/fits.o
+CC	libavcodec/fitsdec.o
+CC	libavcodec/fitsenc.o
+CC	libavcodec/flac.o
+CC	libavcodec/flac_parser.o
+CC	libavcodec/flacdata.o
+CC	libavcodec/flacdec.o
+CC	libavcodec/flacdsp.o
+CC	libavcodec/flacenc.o
+CC	libavcodec/flacencdsp.o
+CC	libavcodec/flashsv.o
+CC	libavcodec/flashsv2enc.o
+CC	libavcodec/flashsvenc.o
+CC	libavcodec/flicvideo.o
+CC	libavcodec/float2half.o
+CC	libavcodec/flvdec.o
+CC	libavcodec/flvenc.o
+CC	libavcodec/fmtconvert.o
+CC	libavcodec/fmvc.o
+CC	libavcodec/frame_thread_encoder.o
+CC	libavcodec/fraps.o
+CC	libavcodec/frwu.o
+CC	libavcodec/ftr.o
+CC	libavcodec/ftr_parser.o
+CC	libavcodec/g2meet.o
+CC	libavcodec/g722.o
+CC	libavcodec/g722dec.o
+CC	libavcodec/g722dsp.o
+CC	libavcodec/g722enc.o
+CC	libavcodec/g723_1.o
+CC	libavcodec/g723_1_parser.o
+CC	libavcodec/g723_1dec.o
+CC	libavcodec/g723_1enc.o
+CC	libavcodec/g726.o
+CC	libavcodec/g729_parser.o
+CC	libavcodec/g729dec.o
+CC	libavcodec/g729postfilter.o
+CC	libavcodec/gdv.o
+CC	libavcodec/gemdec.o
+CC	libavcodec/get_buffer.o
+CC	libavcodec/gif.o
+CC	libavcodec/gif_parser.o
+CC	libavcodec/gifdec.o
+CC	libavcodec/golomb.o
+CC	libavcodec/gsm_parser.o
+CC	libavcodec/gsmdec.o
+CC	libavcodec/gsmdec_data.o
+CC	libavcodec/h261.o
+CC	libavcodec/h261_parser.o
+CC	libavcodec/h261data.o
+CC	libavcodec/h261dec.o
+CC	libavcodec/h261enc.o
+CC	libavcodec/h263.o
+CC	libavcodec/h263_parser.o
+CC	libavcodec/h263data.o
+CC	libavcodec/h263dec.o
+CC	libavcodec/h263dsp.o
+CC	libavcodec/h2645_parse.o
+CC	libavcodec/h2645_sei.o
+CC	libavcodec/h2645_vui.o
+CC	libavcodec/h2645data.o
+CC	libavcodec/h264_cabac.o
+CC	libavcodec/h264_cavlc.o
+CC	libavcodec/h264_direct.o
+CC	libavcodec/h264_levels.o
+CC	libavcodec/h264_loopfilter.o
+CC	libavcodec/h264_mb.o
+CC	libavcodec/h264_metadata_bsf.o
+CC	libavcodec/h264_mp4toannexb_bsf.o
+CC	libavcodec/h264_parse.o
+CC	libavcodec/h264_parser.o
+libavcodec/h264_parser.c: In function ‘scan_mmco_reset’:
+libavcodec/h264_parser.c:229:13: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  229 |             MMCOOpcode opcode = get_ue_golomb_31(gb);
+      |             ^~~~~~~~~~
+CC	libavcodec/h264_picture.o
+CC	libavcodec/h264_ps.o
+CC	libavcodec/h264_redundant_pps_bsf.o
+CC	libavcodec/h264_refs.o
+CC	libavcodec/h264_sei.o
+CC	libavcodec/h264_slice.o
+CC	libavcodec/h264chroma.o
+CC	libavcodec/h264data.o
+CC	libavcodec/h264dec.o
+CC	libavcodec/h264dsp.o
+CC	libavcodec/h264idct.o
+CC	libavcodec/h264pred.o
+CC	libavcodec/h264qpel.o
+CC	libavcodec/h265_metadata_bsf.o
+CC	libavcodec/h265_profile_level.o
+CC	libavcodec/h266_metadata_bsf.o
+CC	libavcodec/h274.o
+CC	libavcodec/half2float.o
+CC	libavcodec/hap.o
+CC	libavcodec/hapdec.o
+CC	libavcodec/hapqa_extract_bsf.o
+CC	libavcodec/hcadec.o
+CC	libavcodec/hcom.o
+CC	libavcodec/hdr_parser.o
+CC	libavcodec/hdrdec.o
+CC	libavcodec/hdrenc.o
+CC	libavcodec/hevc_cabac.o
+CC	libavcodec/hevc_data.o
+CC	libavcodec/hevc_filter.o
+CC	libavcodec/hevc_mp4toannexb_bsf.o
+CC	libavcodec/hevc_mvs.o
+CC	libavcodec/hevc_parse.o
+CC	libavcodec/hevc_parser.o
+CC	libavcodec/hevc_ps.o
+CC	libavcodec/hevc_refs.o
+CC	libavcodec/hevc_sei.o
+CC	libavcodec/hevcdec.o
+CC	libavcodec/hevcdsp.o
+CC	libavcodec/hevcpred.o
+libavcodec/hevcdec.c: In function ‘pred_weight_table’:
+libavcodec/hevcdec.c:176:32: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+  176 |         luma_weight_l0_flag[i] = get_bits1(gb);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+libavcodec/hevcdec.c:154:13: note: at offset 16 into destination object ‘luma_weight_l0_flag’ of size 16
+  154 |     uint8_t luma_weight_l0_flag[16];
+      |             ^~~~~~~~~~~~~~~~~~~
+libavcodec/hevcdec.c:184:38: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+  184 |             chroma_weight_l0_flag[i] = get_bits1(gb);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+libavcodec/hevcdec.c:155:13: note: at offset 16 into destination object ‘chroma_weight_l0_flag’ of size 16
+  155 |     uint8_t chroma_weight_l0_flag[16];
+      |             ^~~~~~~~~~~~~~~~~~~~~
+libavcodec/hevcdec.c:220:36: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+  220 |             luma_weight_l1_flag[i] = get_bits1(gb);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+libavcodec/hevcdec.c:156:13: note: at offset 16 into destination object ‘luma_weight_l1_flag’ of size 16
+  156 |     uint8_t luma_weight_l1_flag[16];
+      |             ^~~~~~~~~~~~~~~~~~~
+libavcodec/hevcdec.c:228:42: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+  228 |                 chroma_weight_l1_flag[i] = get_bits1(gb);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+libavcodec/hevcdec.c:157:13: note: at offset 16 into destination object ‘chroma_weight_l1_flag’ of size 16
+  157 |     uint8_t chroma_weight_l1_flag[16];
+      |             ^~~~~~~~~~~~~~~~~~~~~
+CC	libavcodec/hnm4video.o
+CC	libavcodec/hpeldsp.o
+CC	libavcodec/hq_hqa.o
+CC	libavcodec/hq_hqadata.o
+CC	libavcodec/hq_hqadsp.o
+CC	libavcodec/hqx.o
+CC	libavcodec/hqxdsp.o
+CC	libavcodec/hqxvlc.o
+CC	libavcodec/htmlsubtitles.o
+CC	libavcodec/huffman.o
+CC	libavcodec/huffyuv.o
+CC	libavcodec/huffyuvdec.o
+CC	libavcodec/huffyuvdsp.o
+CC	libavcodec/huffyuvenc.o
+CC	libavcodec/huffyuvencdsp.o
+CC	libavcodec/idcinvideo.o
+CC	libavcodec/idctdsp.o
+CC	libavcodec/iff.o
+CC	libavcodec/iirfilter.o
+CC	libavcodec/ilbcdec.o
+CC	libavcodec/imc.o
+CC	libavcodec/imgconvert.o
+CC	libavcodec/imm4.o
+CC	libavcodec/imm5.o
+CC	libavcodec/imx.o
+CC	libavcodec/imx_dump_header_bsf.o
+CC	libavcodec/indeo2.o
+CC	libavcodec/indeo3.o
+CC	libavcodec/indeo4.o
+CC	libavcodec/indeo5.o
+CC	libavcodec/intelh263dec.o
+CC	libavcodec/interplayacm.o
+CC	libavcodec/interplayvideo.o
+CC	libavcodec/intrax8.o
+CC	libavcodec/intrax8dsp.o
+CC	libavcodec/ipu_parser.o
+CC	libavcodec/ituh263dec.o
+CC	libavcodec/ituh263enc.o
+CC	libavcodec/ivi.o
+CC	libavcodec/ivi_dsp.o
+CC	libavcodec/j2kenc.o
+CC	libavcodec/jacosubdec.o
+CC	libavcodec/jfdctfst.o
+CC	libavcodec/jfdctint.o
+CC	libavcodec/jni.o
+CC	libavcodec/jpeg2000.o
+CC	libavcodec/jpeg2000_parser.o
+CC	libavcodec/jpeg2000dec.o
+libavcodec/jpeg2000dec.c: In function ‘get_siz’:
+libavcodec/jpeg2000dec.c:275:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  275 |     int cdef_used = 0;
+      |     ^~~
+libavcodec/jpeg2000dec.c:295:9: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  295 |         int i_remapped = s->cdef[i] ? s->cdef[i]-1 : (s->ncomponents-1);
+      |         ^~~
+CC	libavcodec/jpeg2000dsp.o
+CC	libavcodec/jpeg2000dwt.o
+CC	libavcodec/jpeg2000htdec.o
+CC	libavcodec/jpegls.o
+CC	libavcodec/jpeglsdec.o
+CC	libavcodec/jpeglsenc.o
+CC	libavcodec/jpegquanttables.o
+CC	libavcodec/jpegtables.o
+CC	libavcodec/jpegxl_parse.o
+CC	libavcodec/jpegxl_parser.o
+CC	libavcodec/jrevdct.o
+libavcodec/jrevdct.c:215:28: warning: argument 1 of type ‘int16_t[64]’ {aka ‘short int[64]’} with mismatched bound [-Warray-parameter=]
+  215 | void ff_j_rev_dct(DCTBLOCK data)
+      |                   ~~~~~~~~~^~~~
+In file included from libavcodec/jrevdct.c:70:
+libavcodec/dct.h:30:28: note: previously declared as ‘int16_t *’ {aka ‘short int *’}
+   30 | void ff_j_rev_dct(int16_t *data);
+      |                   ~~~~~~~~~^~~~
+libavcodec/jrevdct.c:953:29: warning: argument 1 of type ‘int16_t[64]’ {aka ‘short int[64]’} with mismatched bound [-Warray-parameter=]
+  953 | void ff_j_rev_dct4(DCTBLOCK data)
+      |                    ~~~~~~~~~^~~~
+libavcodec/dct.h:31:29: note: previously declared as ‘int16_t *’ {aka ‘short int *’}
+   31 | void ff_j_rev_dct4(int16_t *data);
+      |                    ~~~~~~~~~^~~~
+libavcodec/jrevdct.c:1140:29: warning: argument 1 of type ‘int16_t[64]’ {aka ‘short int[64]’} with mismatched bound [-Warray-parameter=]
+ 1140 | void ff_j_rev_dct2(DCTBLOCK data){
+      |                    ~~~~~~~~~^~~~
+libavcodec/dct.h:32:29: note: previously declared as ‘int16_t *’ {aka ‘short int *’}
+   32 | void ff_j_rev_dct2(int16_t *data);
+      |                    ~~~~~~~~~^~~~
+libavcodec/jrevdct.c:1155:29: warning: argument 1 of type ‘int16_t[64]’ {aka ‘short int[64]’} with mismatched bound [-Warray-parameter=]
+ 1155 | void ff_j_rev_dct1(DCTBLOCK data){
+      |                    ~~~~~~~~~^~~~
+libavcodec/dct.h:33:29: note: previously declared as ‘int16_t *’ {aka ‘short int *’}
+   33 | void ff_j_rev_dct1(int16_t *data);
+      |                    ~~~~~~~~~^~~~
+CC	libavcodec/jvdec.o
+CC	libavcodec/kbdwin.o
+CC	libavcodec/kgv1dec.o
+CC	libavcodec/kmvc.o
+CC	libavcodec/lagarith.o
+CC	libavcodec/lagarithrac.o
+CC	libavcodec/latm_parser.o
+CC	libavcodec/lcldec.o
+CC	libavcodec/lclenc.o
+libavcodec/lcldec.c: In function ‘decode_frame’:
+libavcodec/lcldec.c:309:17: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  309 |                 unsigned uqvq = AV_RL16(encoded+pixel_ptr);
+      |                 ^~~~~~~~
+CC	libavcodec/ljpegenc.o
+CC	libavcodec/loco.o
+CC	libavcodec/lossless_audiodsp.o
+CC	libavcodec/lossless_videodsp.o
+CC	libavcodec/lossless_videoencdsp.o
+CC	libavcodec/lpc.o
+CC	libavcodec/lscrdec.o
+CC	libavcodec/lsp.o
+CC	libavcodec/lzf.o
+libavcodec/lzf.c: In function ‘ff_lzf_uncompress’:
+libavcodec/lzf.c:59:13: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   59 |             int s2 = bytestream2_get_buffer(gb, p, s);
+      |             ^~~
+CC	libavcodec/lzw.o
+CC	libavcodec/lzwenc.o
+CC	libavcodec/m101.o
+CC	libavcodec/mace.o
+CC	libavcodec/magicyuv.o
+CC	libavcodec/magicyuvenc.o
+CC	libavcodec/mathtables.o
+CC	libavcodec/mdec.o
+CC	libavcodec/me_cmp.o
+CC	libavcodec/media100_to_mjpegb_bsf.o
+CC	libavcodec/mediacodec.o
+CC	libavcodec/metasound.o
+CC	libavcodec/microdvddec.o
+CC	libavcodec/midivid.o
+CC	libavcodec/mimic.o
+CC	libavcodec/misc4.o
+CC	libavcodec/misc4_parser.o
+CC	libavcodec/mjpeg2jpeg_bsf.o
+CC	libavcodec/mjpeg_parser.o
+CC	libavcodec/mjpega_dump_header_bsf.o
+CC	libavcodec/mjpegbdec.o
+CC	libavcodec/mjpegdec.o
+CC	libavcodec/mjpegdec_common.o
+CC	libavcodec/mjpegenc.o
+CC	libavcodec/mjpegenc_common.o
+CC	libavcodec/mjpegenc_huffman.o
+CC	libavcodec/mlp.o
+CC	libavcodec/mlp_parse.o
+CC	libavcodec/mlp_parser.o
+CC	libavcodec/mlpdec.o
+CC	libavcodec/mlpdsp.o
+CC	libavcodec/mlpenc.o
+CC	libavcodec/mlz.o
+CC	libavcodec/mmvideo.o
+CC	libavcodec/mobiclip.o
+CC	libavcodec/motion_est.o
+CC	libavcodec/motionpixels.o
+CC	libavcodec/movsub_bsf.o
+CC	libavcodec/movtextdec.o
+CC	libavcodec/movtextenc.o
+CC	libavcodec/mp3_header_decompress_bsf.o
+CC	libavcodec/mpc.o
+CC	libavcodec/mpc7.o
+CC	libavcodec/mpc8.o
+libavcodec/mpc8.c: In function ‘mpc8_decode_init’:
+libavcodec/mpc8.c:158:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  158 |     uint8_t sample_rate_idx = get_bits(&gb, 3);
+      |     ^~~~~~~
+CC	libavcodec/mpeg12.o
+CC	libavcodec/mpeg12data.o
+CC	libavcodec/mpeg12dec.o
+CC	libavcodec/mpeg12enc.o
+CC	libavcodec/mpeg12framerate.o
+CC	libavcodec/mpeg2_metadata_bsf.o
+CC	libavcodec/mpeg4_unpack_bframes_bsf.o
+CC	libavcodec/mpeg4audio.o
+CC	libavcodec/mpeg4audio_sample_rates.o
+CC	libavcodec/mpeg4video.o
+CC	libavcodec/mpeg4video_parser.o
+CC	libavcodec/mpeg4videodec.o
+CC	libavcodec/mpeg4videodsp.o
+CC	libavcodec/mpeg4videoenc.o
+CC	libavcodec/mpeg_er.o
+CC	libavcodec/mpegaudio.o
+CC	libavcodec/mpegaudio_parser.o
+CC	libavcodec/mpegaudiodata.o
+CC	libavcodec/mpegaudiodec_common.o
+CC	libavcodec/mpegaudiodec_fixed.o
+CC	libavcodec/mpegaudiodec_float.o
+CC	libavcodec/mpegaudiodecheader.o
+CC	libavcodec/mpegaudiodsp.o
+CC	libavcodec/mpegaudiodsp_data.o
+CC	libavcodec/mpegaudiodsp_fixed.o
+CC	libavcodec/mpegaudiodsp_float.o
+CC	libavcodec/mpegaudioenc_fixed.o
+CC	libavcodec/mpegaudioenc_float.o
+CC	libavcodec/mpegaudiotabs.o
+CC	libavcodec/mpegpicture.o
+CC	libavcodec/mpegutils.o
+CC	libavcodec/mpegvideo.o
+CC	libavcodec/mpegvideo_dec.o
+CC	libavcodec/mpegvideo_enc.o
+CC	libavcodec/mpegvideo_motion.o
+CC	libavcodec/mpegvideo_parser.o
+CC	libavcodec/mpegvideodata.o
+CC	libavcodec/mpegvideoencdsp.o
+CC	libavcodec/mpl2dec.o
+CC	libavcodec/mqc.o
+CC	libavcodec/mqcdec.o
+CC	libavcodec/mqcenc.o
+CC	libavcodec/mscc.o
+CC	libavcodec/msgsmdec.o
+CC	libavcodec/msmpeg4.o
+CC	libavcodec/msmpeg4_vc1_data.o
+CC	libavcodec/msmpeg4data.o
+CC	libavcodec/msmpeg4dec.o
+CC	libavcodec/msmpeg4enc.o
+CC	libavcodec/msp2dec.o
+CC	libavcodec/msrle.o
+CC	libavcodec/msrledec.o
+CC	libavcodec/msrleenc.o
+CC	libavcodec/mss1.o
+CC	libavcodec/mss12.o
+CC	libavcodec/mss2.o
+CC	libavcodec/mss2dsp.o
+CC	libavcodec/mss3.o
+CC	libavcodec/mss34dsp.o
+CC	libavcodec/mss4.o
+CC	libavcodec/msvideo1.o
+CC	libavcodec/msvideo1enc.o
+CC	libavcodec/mv30.o
+CC	libavcodec/mvcdec.o
+CC	libavcodec/mvha.o
+CC	libavcodec/mwsc.o
+CC	libavcodec/mxpegdec.o
+CC	libavcodec/nellymoser.o
+CC	libavcodec/nellymoserdec.o
+CC	libavcodec/nellymoserenc.o
+CC	libavcodec/neon/mpegvideo.o
+CC	libavcodec/noise_bsf.o
+CC	libavcodec/notchlc.o
+CC	libavcodec/null.o
+CC	libavcodec/null_bsf.o
+CC	libavcodec/nuv.o
+CC	libavcodec/on2avc.o
+CC	libavcodec/on2avcdata.o
+CC	libavcodec/options.o
+CC	libavcodec/opus_celt.o
+CC	libavcodec/opus_metadata_bsf.o
+CC	libavcodec/opus_parse.o
+CC	libavcodec/opus_parser.o
+CC	libavcodec/opus_pvq.o
+CC	libavcodec/opus_rc.o
+CC	libavcodec/opus_silk.o
+CC	libavcodec/opusdec.o
+CC	libavcodec/opusdec_celt.o
+CC	libavcodec/opusdsp.o
+CC	libavcodec/opusenc.o
+CC	libavcodec/opusenc_psy.o
+CC	libavcodec/opustab.o
+CC	libavcodec/osq.o
+CC	libavcodec/pafaudio.o
+CC	libavcodec/pafvideo.o
+CC	libavcodec/pamenc.o
+CC	libavcodec/parser.o
+CC	libavcodec/parsers.o
+CC	libavcodec/pcm-bluray.o
+CC	libavcodec/pcm-blurayenc.o
+CC	libavcodec/pcm-dvd.o
+CC	libavcodec/pcm-dvdenc.o
+CC	libavcodec/pcm.o
+CC	libavcodec/pcm_rechunk_bsf.o
+CC	libavcodec/pcx.o
+CC	libavcodec/pcxenc.o
+CC	libavcodec/pdvdec.o
+CC	libavcodec/pgs_frame_merge_bsf.o
+CC	libavcodec/pgssubdec.o
+CC	libavcodec/pgxdec.o
+CC	libavcodec/photocd.o
+CC	libavcodec/pictordec.o
+CC	libavcodec/pixblockdsp.o
+CC	libavcodec/pixlet.o
+CC	libavcodec/png.o
+CC	libavcodec/png_parser.o
+CC	libavcodec/pngdec.o
+CC	libavcodec/pngdsp.o
+CC	libavcodec/pngenc.o
+CC	libavcodec/pnm.o
+CC	libavcodec/pnm_parser.o
+CC	libavcodec/pnmdec.o
+CC	libavcodec/pnmenc.o
+CC	libavcodec/profiles.o
+CC	libavcodec/prores_metadata_bsf.o
+CC	libavcodec/proresdata.o
+CC	libavcodec/proresdec2.o
+CC	libavcodec/proresdsp.o
+CC	libavcodec/proresenc_anatoliy.o
+CC	libavcodec/proresenc_kostya.o
+CC	libavcodec/prosumer.o
+CC	libavcodec/psd.o
+CC	libavcodec/psymodel.o
+CC	libavcodec/pthread.o
+CC	libavcodec/pthread_frame.o
+CC	libavcodec/pthread_slice.o
+CC	libavcodec/ptx.o
+CC	libavcodec/qcelpdec.o
+CC	libavcodec/qdm2.o
+CC	libavcodec/qdmc.o
+CC	libavcodec/qdrw.o
+CC	libavcodec/qoi_parser.o
+CC	libavcodec/qoidec.o
+CC	libavcodec/qoienc.o
+CC	libavcodec/qpeg.o
+CC	libavcodec/qpeldsp.o
+CC	libavcodec/qsv_api.o
+CC	libavcodec/qtrle.o
+CC	libavcodec/qtrleenc.o
+CC	libavcodec/r210dec.o
+CC	libavcodec/r210enc.o
+CC	libavcodec/ra144.o
+CC	libavcodec/ra144dec.o
+CC	libavcodec/ra144enc.o
+CC	libavcodec/ra288.o
+CC	libavcodec/ralf.o
+CC	libavcodec/rangecoder.o
+CC	libavcodec/rasc.o
+CC	libavcodec/ratecontrol.o
+libavcodec/rasc.c: In function ‘decode_move’:
+libavcodec/rasc.c:299:13: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  299 |             uint8_t *buffer = s->mv_scratch;
+      |             ^~~~~~~
+CC	libavcodec/raw.o
+CC	libavcodec/rawdec.o
+CC	libavcodec/rawenc.o
+CC	libavcodec/realtextdec.o
+CC	libavcodec/refstruct.o
+CC	libavcodec/remove_extradata_bsf.o
+CC	libavcodec/rka.o
+CC	libavcodec/rl.o
+CC	libavcodec/rl2.o
+CC	libavcodec/rle.o
+CC	libavcodec/roqaudioenc.o
+CC	libavcodec/roqvideo.o
+CC	libavcodec/roqvideodec.o
+CC	libavcodec/roqvideoenc.o
+CC	libavcodec/rpza.o
+CC	libavcodec/rpzaenc.o
+CC	libavcodec/rscc.o
+CC	libavcodec/rtjpeg.o
+CC	libavcodec/rtv1.o
+CC	libavcodec/rv10.o
+CC	libavcodec/rv10enc.o
+CC	libavcodec/rv20enc.o
+CC	libavcodec/rv30.o
+CC	libavcodec/rv30dsp.o
+CC	libavcodec/rv34.o
+CC	libavcodec/rv34_parser.o
+CC	libavcodec/rv34dsp.o
+CC	libavcodec/rv40.o
+CC	libavcodec/rv40dsp.o
+CC	libavcodec/s302m.o
+CC	libavcodec/s302menc.o
+CC	libavcodec/samidec.o
+CC	libavcodec/sanm.o
+CC	libavcodec/sbc.o
+CC	libavcodec/sbc_parser.o
+CC	libavcodec/sbcdec.o
+CC	libavcodec/sbcdec_data.o
+CC	libavcodec/sbcdsp.o
+CC	libavcodec/sbcdsp_data.o
+CC	libavcodec/sbcenc.o
+CC	libavcodec/sbrdsp.o
+CC	libavcodec/sbrdsp_fixed.o
+CC	libavcodec/scpr.o
+CC	libavcodec/screenpresso.o
+CC	libavcodec/setts_bsf.o
+CC	libavcodec/sga.o
+CC	libavcodec/sgidec.o
+libavcodec/sga.c: In function ‘decode_palmapdata’:
+libavcodec/sga.c:256:9: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+  256 |     int ret;
+      |         ^~~
+libavcodec/sga.c: In function ‘decode_tiledata’:
+libavcodec/sga.c:281:9: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+  281 |     int ret;
+      |         ^~~
+CC	libavcodec/sgienc.o
+CC	libavcodec/sgirledec.o
+CC	libavcodec/sheervideo.o
+CC	libavcodec/shorten.o
+libavcodec/shorten.c: In function ‘shorten_decode_frame’:
+libavcodec/shorten.c:565:16: warning: passing argument 1 of ‘memset’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+  565 |     memset(buf + buf_size, 0, AV_INPUT_BUFFER_PADDING_SIZE);
+      |            ~~~~^~~~~~~~~~
+In file included from /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/features.h:540,
+                 from /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/libc-header-start.h:33,
+                 from /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/limits.h:26,
+                 from /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/lib/gcc/aarch64-buildroot-linux-gnu/15.3.0/include/limits.h:212,
+                 from /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/lib/gcc/aarch64-buildroot-linux-gnu/15.3.0/include/syslimits.h:9,
+                 from /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/lib/gcc/aarch64-buildroot-linux-gnu/15.3.0/include/limits.h:34,
+                 from libavcodec/shorten.c:28:
+/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/string_fortified.h:57:1: note: expected ‘void *’ but argument is of type ‘const uint8_t *’ {aka ‘const unsigned char *’}
+   57 | __NTH (memset (void *__dest, int __ch, size_t __len))
+      | ^~~~~
+CC	libavcodec/simple_idct.o
+CC	libavcodec/sinewin.o
+CC	libavcodec/sipr.o
+CC	libavcodec/sipr16k.o
+CC	libavcodec/sipr_parser.o
+CC	libavcodec/siren.o
+CC	libavcodec/smacker.o
+CC	libavcodec/smc.o
+CC	libavcodec/smcenc.o
+CC	libavcodec/snappy.o
+CC	libavcodec/snow.o
+CC	libavcodec/snow_dwt.o
+CC	libavcodec/snowdec.o
+CC	libavcodec/snowenc.o
+CC	libavcodec/sonic.o
+CC	libavcodec/sp5xdec.o
+CC	libavcodec/speedhq.o
+CC	libavcodec/speedhqdec.o
+CC	libavcodec/speedhqenc.o
+CC	libavcodec/speexdec.o
+CC	libavcodec/srtdec.o
+CC	libavcodec/srtenc.o
+CC	libavcodec/startcode.o
+CC	libavcodec/subviewerdec.o
+CC	libavcodec/sunrast.o
+CC	libavcodec/sunrastenc.o
+CC	libavcodec/svq1.o
+CC	libavcodec/svq1dec.o
+CC	libavcodec/svq1enc.o
+CC	libavcodec/svq3.o
+CC	libavcodec/synth_filter.o
+CC	libavcodec/tak.o
+CC	libavcodec/tak_parser.o
+CC	libavcodec/takdec.o
+CC	libavcodec/takdsp.o
+CC	libavcodec/targa.o
+CC	libavcodec/targa_y216dec.o
+CC	libavcodec/targaenc.o
+CC	libavcodec/tdsc.o
+CC	libavcodec/textdec.o
+CC	libavcodec/texturedsp.o
+CC	libavcodec/texturedspenc.o
+CC	libavcodec/tiertexseqv.o
+CC	libavcodec/tiff.o
+libavcodec/tiff.c: In function ‘horizontal_fill’:
+libavcodec/tiff.c:430:17: warning: unused variable ‘ret’ [-Wunused-variable]
+  430 |             int ret = init_get_bits8(&gb, src, width);
+      |                 ^~~
+libavcodec/tiff.c: In function ‘unpack_gray’:
+libavcodec/tiff.c:465:9: warning: unused variable ‘ret’ [-Wunused-variable]
+  465 |     int ret = init_get_bits8(&gb, src, width);
+      |         ^~~
+CC	libavcodec/tiff_common.o
+CC	libavcodec/tiffenc.o
+CC	libavcodec/tmv.o
+CC	libavcodec/to_upper4.o
+CC	libavcodec/tpeldsp.o
+CC	libavcodec/trace_headers_bsf.o
+CC	libavcodec/truehd_core_bsf.o
+CC	libavcodec/truemotion1.o
+CC	libavcodec/truemotion2.o
+CC	libavcodec/truemotion2rt.o
+CC	libavcodec/truespeech.o
+CC	libavcodec/tscc.o
+CC	libavcodec/tscc2.o
+CC	libavcodec/tta.o
+CC	libavcodec/ttadata.o
+CC	libavcodec/ttadsp.o
+CC	libavcodec/ttaenc.o
+CC	libavcodec/ttaencdsp.o
+CC	libavcodec/ttmlenc.o
+CC	libavcodec/twinvq.o
+CC	libavcodec/twinvqdec.o
+CC	libavcodec/txd.o
+CC	libavcodec/ulti.o
+CC	libavcodec/utils.o
+CC	libavcodec/utvideodec.o
+CC	libavcodec/utvideodsp.o
+CC	libavcodec/utvideoenc.o
+CC	libavcodec/v210dec.o
+CC	libavcodec/v210enc.o
+CC	libavcodec/v210x.o
+CC	libavcodec/v308dec.o
+CC	libavcodec/v308enc.o
+CC	libavcodec/v408dec.o
+CC	libavcodec/v408enc.o
+CC	libavcodec/v410dec.o
+CC	libavcodec/v410enc.o
+CC	libavcodec/v4l2_buffers.o
+CC	libavcodec/v4l2_context.o
+CC	libavcodec/v4l2_fmt.o
+CC	libavcodec/v4l2_m2m.o
+CC	libavcodec/v4l2_m2m_dec.o
+CC	libavcodec/v4l2_m2m_enc.o
+CC	libavcodec/vb.o
+CC	libavcodec/vble.o
+CC	libavcodec/vbndec.o
+CC	libavcodec/vbnenc.o
+CC	libavcodec/vc1.o
+CC	libavcodec/vc1_block.o
+CC	libavcodec/vc1_loopfilter.o
+CC	libavcodec/vc1_mc.o
+CC	libavcodec/vc1_parser.o
+CC	libavcodec/vc1_pred.o
+CC	libavcodec/vc1data.o
+CC	libavcodec/vc1dec.o
+CC	libavcodec/vc1dsp.o
+CC	libavcodec/vc2enc.o
+CC	libavcodec/vc2enc_dwt.o
+CC	libavcodec/vcr1.o
+CC	libavcodec/version.o
+CC	libavcodec/videodsp.o
+CC	libavcodec/vima.o
+CC	libavcodec/vlc.o
+CC	libavcodec/vmdaudio.o
+CC	libavcodec/vmdvideo.o
+CC	libavcodec/vmixdec.o
+CC	libavcodec/vmnc.o
+In file included from libavcodec/vlc.c:33:
+In function ‘add_level’,
+    inlined from ‘add_level’ at libavcodec/vlc.c:389:17,
+    inlined from ‘add_level’ at libavcodec/vlc.c:389:17,
+    inlined from ‘add_level’ at libavcodec/vlc.c:389:17,
+    inlined from ‘add_level’ at libavcodec/vlc.c:389:17,
+    inlined from ‘vlc_multi_gen’ at libavcodec/vlc.c:437:5,
+    inlined from ‘ff_vlc_init_multi_from_lengths’ at libavcodec/vlc.c:493:11:
+./libavutil/intreadwrite.h:223:63: warning: array subscript 4 is outside array bounds of ‘VLC_MULTI_ELEM[1]’ [-Warray-bounds=]
+  223 | #   define AV_WN(s, p, v) ((((union unaligned_##s *) (p))->l) = (v))
+      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+./libavutil/intreadwrite.h:370:26: note: in expansion of macro ‘AV_WN’
+  370 | #   define AV_WN16(p, v) AV_WN(16, p, v)
+      |                          ^~~~~
+libavcodec/vlc.c:375:26: note: in expansion of macro ‘AV_WN16’
+  375 |             if (is16bit) AV_WN16(info.val+2*curlevel, sym);
+      |                          ^~~~~~~
+libavcodec/vlc.c: In function ‘ff_vlc_init_multi_from_lengths’:
+libavcodec/vlc.c:446:5: note: at offset 8 into object ‘info’ of size 8
+  446 | int ff_vlc_init_multi_from_lengths(VLC *vlc, VLC_MULTI *multi, int nb_bits, int nb_elems,
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In function ‘add_level’,
+    inlined from ‘add_level’ at libavcodec/vlc.c:389:17,
+    inlined from ‘add_level’ at libavcodec/vlc.c:389:17,
+    inlined from ‘add_level’ at libavcodec/vlc.c:389:17,
+    inlined from ‘add_level’ at libavcodec/vlc.c:389:17,
+    inlined from ‘add_level’ at libavcodec/vlc.c:389:17,
+    inlined from ‘vlc_multi_gen’ at libavcodec/vlc.c:437:5,
+    inlined from ‘ff_vlc_init_multi_from_lengths’ at libavcodec/vlc.c:493:11:
+./libavutil/intreadwrite.h:223:63: warning: array subscript 5 is outside array bounds of ‘VLC_MULTI_ELEM[1]’ [-Warray-bounds=]
+  223 | #   define AV_WN(s, p, v) ((((union unaligned_##s *) (p))->l) = (v))
+      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+./libavutil/intreadwrite.h:370:26: note: in expansion of macro ‘AV_WN’
+  370 | #   define AV_WN16(p, v) AV_WN(16, p, v)
+      |                          ^~~~~
+libavcodec/vlc.c:375:26: note: in expansion of macro ‘AV_WN16’
+  375 |             if (is16bit) AV_WN16(info.val+2*curlevel, sym);
+      |                          ^~~~~~~
+libavcodec/vlc.c: In function ‘ff_vlc_init_multi_from_lengths’:
+libavcodec/vlc.c:446:5: note: at offset 10 into object ‘info’ of size 8
+  446 | int ff_vlc_init_multi_from_lengths(VLC *vlc, VLC_MULTI *multi, int nb_bits, int nb_elems,
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CC	libavcodec/vorbis.o
+CC	libavcodec/vorbis_data.o
+CC	libavcodec/vorbis_parser.o
+CC	libavcodec/vorbisdec.o
+CC	libavcodec/vorbisdsp.o
+CC	libavcodec/vorbisenc.o
+CC	libavcodec/vp3.o
+CC	libavcodec/vp3_parser.o
+CC	libavcodec/vp3dsp.o
+CC	libavcodec/vp5.o
+CC	libavcodec/vp56.o
+CC	libavcodec/vp56data.o
+CC	libavcodec/vp56dsp.o
+CC	libavcodec/vp6.o
+CC	libavcodec/vp6dsp.o
+CC	libavcodec/vp8.o
+CC	libavcodec/vp8_parser.o
+CC	libavcodec/vp8data.o
+CC	libavcodec/vp8dsp.o
+CC	libavcodec/vp9.o
+CC	libavcodec/vp9_metadata_bsf.o
+CC	libavcodec/vp9_parser.o
+CC	libavcodec/vp9_raw_reorder_bsf.o
+CC	libavcodec/vp9_superframe_bsf.o
+CC	libavcodec/vp9_superframe_split_bsf.o
+CC	libavcodec/vp9block.o
+CC	libavcodec/vp9data.o
+CC	libavcodec/vp9dsp.o
+CC	libavcodec/vp9dsp_10bpp.o
+CC	libavcodec/vp9dsp_12bpp.o
+CC	libavcodec/vp9dsp_8bpp.o
+CC	libavcodec/vp9lpf.o
+CC	libavcodec/vp9mvs.o
+CC	libavcodec/vp9prob.o
+CC	libavcodec/vp9recon.o
+CC	libavcodec/vpx_rac.o
+CC	libavcodec/vqavideo.o
+CC	libavcodec/vqcdec.o
+CC	libavcodec/vvc_mp4toannexb_bsf.o
+CC	libavcodec/vvc_parser.o
+CC	libavcodec/wavarc.o
+CC	libavcodec/wavpack.o
+CC	libavcodec/wavpackdata.o
+CC	libavcodec/wavpackenc.o
+CC	libavcodec/wbmpdec.o
+CC	libavcodec/wbmpenc.o
+CC	libavcodec/wcmv.o
+CC	libavcodec/webp.o
+CC	libavcodec/webp_parser.o
+CC	libavcodec/webvttdec.o
+CC	libavcodec/webvttenc.o
+CC	libavcodec/wma.o
+CC	libavcodec/wma_common.o
+CC	libavcodec/wma_freqs.o
+CC	libavcodec/wmadec.o
+CC	libavcodec/wmaenc.o
+CC	libavcodec/wmalosslessdec.o
+libavcodec/wmadec.c: In function ‘wma_decode_block’:
+libavcodec/wmadec.c:519:30: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+  519 |         s->channel_coded[ch] = a;
+      |         ~~~~~~~~~~~~~~~~~~~~~^~~
+In file included from libavcodec/wmadec.c:45:
+libavcodec/wma.h:112:13: note: at offset 2 into destination object ‘channel_coded’ of size 2
+  112 |     uint8_t channel_coded[MAX_CHANNELS];    ///< true if channel is coded
+      |             ^~~~~~~~~~~~~
+CC	libavcodec/wmaprodec.o
+CC	libavcodec/wmavoice.o
+CC	libavcodec/wmv2.o
+CC	libavcodec/wmv2data.o
+CC	libavcodec/wmv2dec.o
+CC	libavcodec/wmv2dsp.o
+CC	libavcodec/wmv2enc.o
+CC	libavcodec/wnv1.o
+CC	libavcodec/wrapped_avframe.o
+CC	libavcodec/ws-snd1.o
+CC	libavcodec/xan.o
+CC	libavcodec/xbm_parser.o
+CC	libavcodec/xbmdec.o
+CC	libavcodec/xbmenc.o
+CC	libavcodec/xface.o
+CC	libavcodec/xfacedec.o
+CC	libavcodec/xfaceenc.o
+CC	libavcodec/xiph.o
+CC	libavcodec/xl.o
+CC	libavcodec/xma_parser.o
+CC	libavcodec/xpmdec.o
+CC	libavcodec/xsubdec.o
+CC	libavcodec/xsubenc.o
+CC	libavcodec/xvididct.o
+CC	libavcodec/xwd_parser.o
+CC	libavcodec/xwddec.o
+CC	libavcodec/xwdenc.o
+CC	libavcodec/xxan.o
+CC	libavcodec/y41pdec.o
+CC	libavcodec/y41penc.o
+CC	libavcodec/ylc.o
+CC	libavcodec/yop.o
+CC	libavcodec/yuv4dec.o
+CC	libavcodec/yuv4enc.o
+CC	libavcodec/zerocodec.o
+CC	libavcodec/zlib_wrapper.o
+CC	libavcodec/zmbv.o
+CC	libavcodec/zmbvenc.o
+CC	libavcodec/log2_tab.o
+CC	libavcodec/reverse.o
+CC	libswresample/aarch64/audio_convert_init.o
+AS	libswresample/aarch64/audio_convert_neon.o
+AS	libswresample/aarch64/resample.o
+CC	libswresample/aarch64/resample_init.o
+CC	libswresample/audioconvert.o
+CC	libswresample/dither.o
+CC	libswresample/options.o
+CC	libswresample/rematrix.o
+CC	libswresample/resample.o
+CC	libswresample/resample_dsp.o
+CC	libswresample/swresample.o
+CC	libswresample/swresample_frame.o
+CC	libswresample/version.o
+CC	libswresample/log2_tab.o
+GEN	libavdevice/libavdevice.pc
+GEN	libavfilter/libavfilter.pc
+GEN	libavformat/libavformat.pc
+GEN	libavcodec/libavcodec.pc
+GEN	libswresample/libswresample.pc
+GEN	libswscale/libswscale.pc
+GEN	libavutil/libavutil.pc
+CC	fftools/ffmpeg_dec.o
+CC	fftools/ffmpeg_demux.o
+CC	fftools/ffmpeg_enc.o
+CC	fftools/ffmpeg_filter.o
+CC	fftools/ffmpeg_hw.o
+CC	fftools/ffmpeg_mux.o
+CC	fftools/ffmpeg_mux_init.o
+CC	fftools/ffmpeg_opt.o
+CC	fftools/objpool.o
+CC	fftools/sync_queue.o
+CC	fftools/thread_queue.o
+CC	fftools/cmdutils.o
+CC	fftools/opt_common.o
+CC	fftools/ffmpeg.o
+CC	fftools/ffprobe.o
+GEN	libavdevice/libavdevice.ver
+GEN	libavfilter/libavfilter.ver
+GEN	libswscale/libswscale.ver
+GEN	libavutil/libavutil.ver
+GEN	libavformat/libavformat.ver
+GEN	libswresample/libswresample.ver
+LD	libavutil/libavutil.so.58
+LD	libswscale/libswscale.so.7
+LD	libswresample/libswresample.so.4
+GEN	libavcodec/libavcodec.ver
+LD	libavcodec/libavcodec.so.60
+LD	libavformat/libavformat.so.60
+LD	libavfilter/libavfilter.so.9
+LD	libavdevice/libavdevice.so.60
+LD	ffmpeg_g
+LD	ffprobe_g
+CP	ffprobe
+STRIP	ffprobe
+skipping strip ffprobe
+CP	ffmpeg
+STRIP	ffmpeg
+skipping strip ffmpeg
+make[1]: Leaving directory '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/ffmpeg-6.1.5'
+[7m>>> ffmpeg 6.1.5 Installing to staging directory[27m
+GIT_DIR=. PATH="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin:/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/sbin:/var/home/bazzite/ljh/.local-build/tools/bin:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0irwKPD:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg08ssPBg:/var/home/bazzite/.codex/packages/standalone/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.local/bin:/home/bazzite/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin"  /usr/bin/make  DESTDIR=/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot install -C /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/ffmpeg-6.1.5/
+make[1]: Entering directory '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/ffmpeg-6.1.5'
+INSTALL	libavdevice/libavdevice.so
+INSTALL	libavfilter/libavfilter.so
+INSTALL	libavformat/libavformat.so
+INSTALL	libavcodec/libavcodec.so
+INSTALL	libswresample/libswresample.so
+INSTALL	libswscale/libswscale.so
+STRIP	install-libavcodec-shared
+skipping strip /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/libavcodec.so.60.31.102
+STRIP	install-libswresample-shared
+skipping strip /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/libswresample.so.4.12.100
+STRIP	install-libavdevice-shared
+STRIP	install-libswscale-shared
+skipping strip /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/libavdevice.so.60.3.100
+skipping strip /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/libswscale.so.7.5.100
+INSTALL	libavutil/libavutil.so
+INSTALL	presets/libvpx-1080p.ffpreset
+INSTALL	presets/libvpx-1080p50_60.ffpreset
+INSTALL	presets/libvpx-360p.ffpreset
+INSTALL	presets/libvpx-720p.ffpreset
+INSTALL	presets/libvpx-720p50_60.ffpreset
+INSTALL	doc/ffprobe.xsd
+INSTALL	doc/examples/avio_http_serve_files.c
+INSTALL	doc/examples/avio_list_dir.c
+INSTALL	doc/examples/avio_read_callback.c
+INSTALL	doc/examples/decode_audio.c
+INSTALL	doc/examples/decode_filter_audio.c
+INSTALL	doc/examples/decode_filter_video.c
+INSTALL	doc/examples/decode_video.c
+INSTALL	doc/examples/demux_decode.c
+INSTALL	doc/examples/encode_audio.c
+INSTALL	doc/examples/encode_video.c
+INSTALL	doc/examples/extract_mvs.c
+INSTALL	doc/examples/filter_audio.c
+INSTALL	doc/examples/hw_decode.c
+INSTALL	doc/examples/mux.c
+INSTALL	doc/examples/qsv_decode.c
+INSTALL	doc/examples/qsv_transcode.c
+INSTALL	doc/examples/remux.c
+INSTALL	doc/examples/resample_audio.c
+INSTALL	doc/examples/scale_video.c
+INSTALL	doc/examples/show_metadata.c
+INSTALL	doc/examples/transcode.c
+INSTALL	doc/examples/transcode_aac.c
+INSTALL	doc/examples/vaapi_encode.c
+INSTALL	doc/examples/vaapi_transcode.c
+INSTALL	doc/examples/README
+INSTALL	doc/examples/Makefile
+INSTALL	libavdevice/avdevice.h
+INSTALL	libavdevice/version.h
+INSTALL	libavdevice/version_major.h
+STRIP	install-libavutil-shared
+skipping strip /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/libavutil.so.58.29.100
+INSTALL	libavdevice/libavdevice.pc
+INSTALL	doc/examples/avio_http_serve_files.c
+INSTALL	doc/examples/avio_list_dir.c
+INSTALL	doc/examples/avio_read_callback.c
+INSTALL	doc/examples/decode_audio.c
+INSTALL	doc/examples/decode_filter_audio.c
+INSTALL	doc/examples/decode_filter_video.c
+INSTALL	doc/examples/decode_video.c
+INSTALL	doc/examples/demux_decode.c
+INSTALL	doc/examples/encode_audio.c
+INSTALL	doc/examples/encode_video.c
+INSTALL	doc/examples/extract_mvs.c
+INSTALL	doc/examples/filter_audio.c
+INSTALL	doc/examples/hw_decode.c
+INSTALL	doc/examples/mux.c
+INSTALL	doc/examples/qsv_decode.c
+INSTALL	doc/examples/qsv_transcode.c
+INSTALL	doc/examples/remux.c
+INSTALL	doc/examples/resample_audio.c
+INSTALL	doc/examples/scale_video.c
+INSTALL	doc/examples/show_metadata.c
+INSTALL	doc/examples/transcode.c
+INSTALL	doc/examples/transcode_aac.c
+INSTALL	doc/examples/vaapi_encode.c
+INSTALL	doc/examples/vaapi_transcode.c
+INSTALL	doc/examples/README
+INSTALL	doc/examples/Makefile
+INSTALL	libavfilter/avfilter.h
+INSTALL	libavfilter/buffersink.h
+INSTALL	libavfilter/buffersrc.h
+INSTALL	libavfilter/version.h
+INSTALL	libavfilter/version_major.h
+INSTALL	libavfilter/libavfilter.pc
+INSTALL	libavformat/libavformat.pc
+INSTALL	libavformat/avformat.h
+INSTALL	libavformat/avio.h
+INSTALL	libavformat/version.h
+INSTALL	libavformat/version_major.h
+INSTALL	libavcodec/libavcodec.pc
+INSTALL	libavcodec/ac3_parser.h
+INSTALL	libavcodec/adts_parser.h
+INSTALL	libavcodec/avcodec.h
+INSTALL	libavcodec/avdct.h
+INSTALL	libavcodec/avfft.h
+INSTALL	libavcodec/bsf.h
+INSTALL	libavcodec/codec.h
+INSTALL	libavcodec/codec_desc.h
+INSTALL	libavcodec/codec_id.h
+INSTALL	libavcodec/codec_par.h
+INSTALL	libavcodec/d3d11va.h
+INSTALL	libavcodec/defs.h
+INSTALL	libavcodec/dirac.h
+INSTALL	libavcodec/dv_profile.h
+INSTALL	libavcodec/dxva2.h
+INSTALL	libavcodec/jni.h
+INSTALL	libavcodec/mediacodec.h
+INSTALL	libavcodec/packet.h
+INSTALL	libavcodec/qsv.h
+INSTALL	libavcodec/vdpau.h
+INSTALL	libavcodec/version.h
+INSTALL	libavcodec/version_major.h
+INSTALL	libavcodec/videotoolbox.h
+INSTALL	libavcodec/vorbis_parser.h
+INSTALL	libavcodec/xvmc.h
+INSTALL	libswresample/swresample.h
+INSTALL	libswresample/version.h
+INSTALL	libswresample/version_major.h
+INSTALL	libswresample/libswresample.pc
+INSTALL	libswscale/swscale.h
+INSTALL	libswscale/version.h
+INSTALL	libswscale/version_major.h
+INSTALL	libswscale/libswscale.pc
+INSTALL	libavutil/adler32.h
+INSTALL	libavutil/aes.h
+INSTALL	libavutil/aes_ctr.h
+INSTALL	libavutil/ambient_viewing_environment.h
+INSTALL	libavutil/attributes.h
+INSTALL	libavutil/audio_fifo.h
+INSTALL	libavutil/avassert.h
+INSTALL	libavutil/avstring.h
+INSTALL	libavutil/avutil.h
+INSTALL	libavutil/base64.h
+INSTALL	libavutil/blowfish.h
+INSTALL	libavutil/bprint.h
+INSTALL	libavutil/bswap.h
+INSTALL	libavutil/buffer.h
+INSTALL	libavutil/cast5.h
+INSTALL	libavutil/camellia.h
+INSTALL	libavutil/channel_layout.h
+INSTALL	libavutil/common.h
+INSTALL	libavutil/cpu.h
+INSTALL	libavutil/crc.h
+INSTALL	libavutil/csp.h
+INSTALL	libavutil/des.h
+INSTALL	libavutil/detection_bbox.h
+INSTALL	libavutil/dict.h
+INSTALL	libavutil/display.h
+INSTALL	libavutil/dovi_meta.h
+INSTALL	libavutil/downmix_info.h
+INSTALL	libavutil/encryption_info.h
+INSTALL	libavutil/error.h
+INSTALL	libavutil/eval.h
+INSTALL	libavutil/executor.h
+INSTALL	libavutil/fifo.h
+INSTALL	libavutil/file.h
+INSTALL	libavutil/frame.h
+INSTALL	libavutil/hash.h
+INSTALL	libavutil/hdr_dynamic_metadata.h
+INSTALL	libavutil/hdr_dynamic_vivid_metadata.h
+INSTALL	libavutil/hmac.h
+INSTALL	libavutil/hwcontext.h
+INSTALL	libavutil/hwcontext_cuda.h
+INSTALL	libavutil/hwcontext_d3d11va.h
+INSTALL	libavutil/hwcontext_drm.h
+INSTALL	libavutil/hwcontext_dxva2.h
+INSTALL	libavutil/hwcontext_qsv.h
+INSTALL	libavutil/hwcontext_mediacodec.h
+INSTALL	libavutil/hwcontext_opencl.h
+INSTALL	libavutil/hwcontext_vaapi.h
+INSTALL	libavutil/hwcontext_videotoolbox.h
+INSTALL	libavutil/hwcontext_vdpau.h
+INSTALL	libavutil/hwcontext_vulkan.h
+INSTALL	libavutil/imgutils.h
+INSTALL	libavutil/intfloat.h
+INSTALL	libavutil/intreadwrite.h
+INSTALL	libavutil/lfg.h
+INSTALL	libavutil/log.h
+INSTALL	libavutil/lzo.h
+INSTALL	libavutil/macros.h
+INSTALL	libavutil/mathematics.h
+INSTALL	libavutil/mastering_display_metadata.h
+INSTALL	libavutil/md5.h
+INSTALL	libavutil/mem.h
+INSTALL	libavutil/motion_vector.h
+INSTALL	libavutil/murmur3.h
+INSTALL	libavutil/opt.h
+INSTALL	libavutil/parseutils.h
+INSTALL	libavutil/pixdesc.h
+INSTALL	libavutil/pixelutils.h
+INSTALL	libavutil/pixfmt.h
+INSTALL	libavutil/random_seed.h
+INSTALL	libavutil/rc4.h
+INSTALL	libavutil/rational.h
+INSTALL	libavutil/replaygain.h
+INSTALL	libavutil/ripemd.h
+INSTALL	libavutil/samplefmt.h
+INSTALL	libavutil/sha.h
+INSTALL	libavutil/sha512.h
+INSTALL	libavutil/spherical.h
+INSTALL	libavutil/stereo3d.h
+INSTALL	libavutil/threadmessage.h
+INSTALL	libavutil/time.h
+INSTALL	libavutil/timecode.h
+INSTALL	libavutil/timestamp.h
+INSTALL	libavutil/tree.h
+INSTALL	libavutil/twofish.h
+INSTALL	libavutil/uuid.h
+INSTALL	libavutil/version.h
+INSTALL	libavutil/video_enc_params.h
+INSTALL	libavutil/xtea.h
+INSTALL	libavutil/tea.h
+INSTALL	libavutil/tx.h
+INSTALL	libavutil/film_grain_params.h
+INSTALL	libavutil/video_hint.h
+INSTALL	libavutil/avconfig.h
+INSTALL	libavutil/ffversion.h
+INSTALL	libavutil/libavutil.pc
+STRIP	install-libavfilter-shared
+skipping strip /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/libavfilter.so.9.12.100
+STRIP	install-libavformat-shared
+skipping strip /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/libavformat.so.60.16.100
+INSTALL	install-progs-yes
+INSTALL	ffmpeg
+INSTALL	ffprobe
+make[1]: Leaving directory '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/ffmpeg-6.1.5'
+[7m>>> ffmpeg 6.1.5 Fixing libtool files[27m
+for la in $(find /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib* -name "*.la"); do \
+	cp -a "${la}" "${la}.fixed" && \
+	/usr/bin/sed -i -e "s:/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019:@BASE_DIR@:g" \
+		-e "s:/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot:@STAGING_DIR@:g" \
+		 \
+		-e "s:\(['= ]\)/usr:\\1@STAGING_DIR@/usr:g" \
+		-e "s:\(['= ]\)/lib:\\1@STAGING_DIR@/lib:g" \
+		 \
+		-e "s:@STAGING_DIR@:/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot:g" \
+		-e "s:@BASE_DIR@:/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019:g" \
+		"${la}.fixed" && \
+	if cmp -s "${la}" "${la}.fixed"; then \
+		rm -f "${la}.fixed"; \
+	else \
+		mv "${la}.fixed" "${la}"; \
+	fi || exit 1; \
+done
+[7m>>> ffmpeg 6.1.5 Installing to target[27m
+GIT_DIR=. PATH="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin:/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/sbin:/var/home/bazzite/ljh/.local-build/tools/bin:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0irwKPD:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg08ssPBg:/var/home/bazzite/.codex/packages/standalone/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.local/bin:/home/bazzite/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin"  /usr/bin/make  DESTDIR=/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target install -C /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/ffmpeg-6.1.5/
+make[1]: Entering directory '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/ffmpeg-6.1.5'
+INSTALL	libavdevice/libavdevice.so
+INSTALL	libavfilter/libavfilter.so
+INSTALL	libavformat/libavformat.so
+INSTALL	libavcodec/libavcodec.so
+INSTALL	libswresample/libswresample.so
+INSTALL	libswscale/libswscale.so
+STRIP	install-libavdevice-shared
+skipping strip /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/lib/libavdevice.so.60.3.100
+STRIP	install-libavfilter-shared
+skipping strip /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/lib/libavfilter.so.9.12.100
+STRIP	install-libavformat-shared
+skipping strip /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/lib/libavformat.so.60.16.100
+STRIP	install-libavcodec-shared
+skipping strip /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/lib/libavcodec.so.60.31.102
+STRIP	install-libswresample-shared
+skipping strip /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/lib/libswresample.so.4.12.100
+STRIP	install-libswscale-shared
+skipping strip /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/lib/libswscale.so.7.5.100
+INSTALL	libavutil/libavutil.so
+INSTALL	presets/libvpx-1080p.ffpreset
+INSTALL	presets/libvpx-1080p50_60.ffpreset
+INSTALL	presets/libvpx-360p.ffpreset
+INSTALL	presets/libvpx-720p.ffpreset
+INSTALL	presets/libvpx-720p50_60.ffpreset
+INSTALL	doc/ffprobe.xsd
+INSTALL	doc/examples/avio_http_serve_files.c
+INSTALL	doc/examples/avio_list_dir.c
+INSTALL	doc/examples/avio_read_callback.c
+INSTALL	doc/examples/decode_audio.c
+INSTALL	doc/examples/decode_filter_audio.c
+INSTALL	doc/examples/decode_filter_video.c
+INSTALL	doc/examples/decode_video.c
+INSTALL	doc/examples/demux_decode.c
+INSTALL	doc/examples/encode_audio.c
+INSTALL	doc/examples/encode_video.c
+INSTALL	doc/examples/extract_mvs.c
+INSTALL	doc/examples/filter_audio.c
+INSTALL	doc/examples/hw_decode.c
+INSTALL	doc/examples/mux.c
+INSTALL	doc/examples/qsv_decode.c
+INSTALL	doc/examples/qsv_transcode.c
+INSTALL	doc/examples/remux.c
+INSTALL	doc/examples/resample_audio.c
+INSTALL	doc/examples/scale_video.c
+INSTALL	doc/examples/show_metadata.c
+INSTALL	doc/examples/transcode.c
+INSTALL	doc/examples/transcode_aac.c
+INSTALL	doc/examples/vaapi_encode.c
+INSTALL	doc/examples/vaapi_transcode.c
+INSTALL	doc/examples/README
+INSTALL	doc/examples/Makefile
+INSTALL	libavdevice/avdevice.h
+INSTALL	libavdevice/version.h
+INSTALL	libavdevice/version_major.h
+INSTALL	libavdevice/libavdevice.pc
+INSTALL	libavfilter/avfilter.h
+INSTALL	libavfilter/buffersink.h
+INSTALL	libavfilter/buffersrc.h
+INSTALL	libavfilter/version.h
+INSTALL	libavfilter/version_major.h
+STRIP	install-libavutil-shared
+skipping strip /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/lib/libavutil.so.58.29.100
+INSTALL	doc/examples/avio_http_serve_files.c
+INSTALL	doc/examples/avio_list_dir.c
+INSTALL	doc/examples/avio_read_callback.c
+INSTALL	doc/examples/decode_audio.c
+INSTALL	doc/examples/decode_filter_audio.c
+INSTALL	doc/examples/decode_filter_video.c
+INSTALL	doc/examples/decode_video.c
+INSTALL	doc/examples/demux_decode.c
+INSTALL	doc/examples/encode_audio.c
+INSTALL	doc/examples/encode_video.c
+INSTALL	doc/examples/extract_mvs.c
+INSTALL	doc/examples/filter_audio.c
+INSTALL	doc/examples/hw_decode.c
+INSTALL	doc/examples/mux.c
+INSTALL	doc/examples/qsv_decode.c
+INSTALL	doc/examples/qsv_transcode.c
+INSTALL	doc/examples/remux.c
+INSTALL	doc/examples/resample_audio.c
+INSTALL	doc/examples/scale_video.c
+INSTALL	doc/examples/show_metadata.c
+INSTALL	doc/examples/transcode.c
+INSTALL	doc/examples/transcode_aac.c
+INSTALL	doc/examples/vaapi_encode.c
+INSTALL	doc/examples/vaapi_transcode.c
+INSTALL	doc/examples/README
+INSTALL	doc/examples/Makefile
+INSTALL	libavfilter/libavfilter.pc
+INSTALL	libavformat/avformat.h
+INSTALL	libavformat/avio.h
+INSTALL	libavformat/version.h
+INSTALL	libavformat/version_major.h
+INSTALL	libavformat/libavformat.pc
+INSTALL	libavcodec/ac3_parser.h
+INSTALL	libavcodec/adts_parser.h
+INSTALL	libavcodec/avcodec.h
+INSTALL	libavcodec/avdct.h
+INSTALL	libavcodec/avfft.h
+INSTALL	libavcodec/bsf.h
+INSTALL	libavcodec/codec.h
+INSTALL	libavcodec/codec_desc.h
+INSTALL	libavcodec/codec_id.h
+INSTALL	libavcodec/codec_par.h
+INSTALL	libavcodec/d3d11va.h
+INSTALL	libavcodec/defs.h
+INSTALL	libavcodec/dirac.h
+INSTALL	libavcodec/dv_profile.h
+INSTALL	libavcodec/dxva2.h
+INSTALL	libavcodec/jni.h
+INSTALL	libavcodec/mediacodec.h
+INSTALL	libavcodec/packet.h
+INSTALL	libavcodec/qsv.h
+INSTALL	libavcodec/vdpau.h
+INSTALL	libavcodec/version.h
+INSTALL	libavcodec/version_major.h
+INSTALL	libavcodec/videotoolbox.h
+INSTALL	libavcodec/vorbis_parser.h
+INSTALL	libavcodec/xvmc.h
+INSTALL	libavcodec/libavcodec.pc
+INSTALL	libswresample/swresample.h
+INSTALL	libswresample/version.h
+INSTALL	libswresample/version_major.h
+INSTALL	libswresample/libswresample.pc
+INSTALL	libswscale/swscale.h
+INSTALL	libswscale/version.h
+INSTALL	libswscale/version_major.h
+INSTALL	libswscale/libswscale.pc
+INSTALL	libavutil/adler32.h
+INSTALL	libavutil/aes.h
+INSTALL	libavutil/aes_ctr.h
+INSTALL	libavutil/ambient_viewing_environment.h
+INSTALL	libavutil/attributes.h
+INSTALL	libavutil/audio_fifo.h
+INSTALL	libavutil/avassert.h
+INSTALL	libavutil/avstring.h
+INSTALL	libavutil/avutil.h
+INSTALL	libavutil/base64.h
+INSTALL	libavutil/blowfish.h
+INSTALL	libavutil/bprint.h
+INSTALL	libavutil/bswap.h
+INSTALL	libavutil/buffer.h
+INSTALL	libavutil/cast5.h
+INSTALL	libavutil/camellia.h
+INSTALL	libavutil/channel_layout.h
+INSTALL	libavutil/common.h
+INSTALL	libavutil/cpu.h
+INSTALL	libavutil/crc.h
+INSTALL	libavutil/csp.h
+INSTALL	libavutil/des.h
+INSTALL	libavutil/detection_bbox.h
+INSTALL	libavutil/dict.h
+INSTALL	libavutil/display.h
+INSTALL	libavutil/dovi_meta.h
+INSTALL	libavutil/downmix_info.h
+INSTALL	libavutil/encryption_info.h
+INSTALL	libavutil/error.h
+INSTALL	libavutil/eval.h
+INSTALL	libavutil/executor.h
+INSTALL	libavutil/fifo.h
+INSTALL	libavutil/file.h
+INSTALL	libavutil/frame.h
+INSTALL	libavutil/hash.h
+INSTALL	libavutil/hdr_dynamic_metadata.h
+INSTALL	libavutil/hdr_dynamic_vivid_metadata.h
+INSTALL	libavutil/hmac.h
+INSTALL	libavutil/hwcontext.h
+INSTALL	libavutil/hwcontext_cuda.h
+INSTALL	libavutil/hwcontext_d3d11va.h
+INSTALL	libavutil/hwcontext_drm.h
+INSTALL	libavutil/hwcontext_dxva2.h
+INSTALL	libavutil/hwcontext_qsv.h
+INSTALL	libavutil/hwcontext_mediacodec.h
+INSTALL	libavutil/hwcontext_opencl.h
+INSTALL	libavutil/hwcontext_vaapi.h
+INSTALL	libavutil/hwcontext_videotoolbox.h
+INSTALL	libavutil/hwcontext_vdpau.h
+INSTALL	libavutil/hwcontext_vulkan.h
+INSTALL	libavutil/imgutils.h
+INSTALL	libavutil/intfloat.h
+INSTALL	libavutil/intreadwrite.h
+INSTALL	libavutil/lfg.h
+INSTALL	libavutil/log.h
+INSTALL	libavutil/lzo.h
+INSTALL	libavutil/macros.h
+INSTALL	libavutil/mathematics.h
+INSTALL	libavutil/mastering_display_metadata.h
+INSTALL	libavutil/md5.h
+INSTALL	libavutil/mem.h
+INSTALL	libavutil/motion_vector.h
+INSTALL	libavutil/murmur3.h
+INSTALL	libavutil/opt.h
+INSTALL	libavutil/parseutils.h
+INSTALL	libavutil/pixdesc.h
+INSTALL	libavutil/pixelutils.h
+INSTALL	libavutil/pixfmt.h
+INSTALL	libavutil/random_seed.h
+INSTALL	libavutil/rc4.h
+INSTALL	libavutil/rational.h
+INSTALL	libavutil/replaygain.h
+INSTALL	libavutil/ripemd.h
+INSTALL	libavutil/samplefmt.h
+INSTALL	libavutil/sha.h
+INSTALL	libavutil/sha512.h
+INSTALL	libavutil/spherical.h
+INSTALL	libavutil/stereo3d.h
+INSTALL	libavutil/threadmessage.h
+INSTALL	libavutil/time.h
+INSTALL	libavutil/timecode.h
+INSTALL	libavutil/timestamp.h
+INSTALL	libavutil/tree.h
+INSTALL	libavutil/twofish.h
+INSTALL	libavutil/uuid.h
+INSTALL	libavutil/version.h
+INSTALL	libavutil/video_enc_params.h
+INSTALL	libavutil/xtea.h
+INSTALL	libavutil/tea.h
+INSTALL	libavutil/tx.h
+INSTALL	libavutil/film_grain_params.h
+INSTALL	libavutil/video_hint.h
+INSTALL	libavutil/avconfig.h
+INSTALL	libavutil/ffversion.h
+INSTALL	libavutil/libavutil.pc
+INSTALL	install-progs-yes
+INSTALL	ffmpeg
+INSTALL	ffprobe
+make[1]: Leaving directory '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/ffmpeg-6.1.5'
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/share/ffmpeg/examples
+[7m>>> mebs 0.1.0 Syncing from source dir /var/home/bazzite/ljh/buildroot/../mebs[27m
+rsync -au --chmod=u=rwX,go=rX  --exclude .svn --exclude .git --exclude .hg --exclude .bzr --exclude CVS /var/home/bazzite/ljh/buildroot/../mebs/ /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/mebs-0.1.0
+[7m>>> mebs 0.1.0 Configuring[27m
+[7m>>> mebs 0.1.0 Building[27m
+/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64  -O2 -g0 -D_FORTIFY_SOURCE=1 -Wall -Wextra -Werror -I/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/libdrm /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/mebs-0.1.0/drm_presenter.c  -ldrm -o /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/mebs-0.1.0/mebs-drm
+[7m>>> mebs 0.1.0 Installing to target[27m
+/usr/bin/install -d /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/lib/mebs/mebs
+/usr/bin/install -m 0644 /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/mebs-0.1.0/*.py /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/lib/mebs/mebs/
+/usr/bin/install -D -m 0644 /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/mebs-0.1.0/assets/mebs-logo-mask.png /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/lib/mebs/mebs/assets/mebs-logo-mask.png
+/usr/bin/install -D -m 0644 /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/mebs-0.1.0/assets/logo-provenance.json /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/lib/mebs/mebs/assets/logo-provenance.json
+/usr/bin/install -D -m 0644 /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/mebs-0.1.0/ui/preview.html /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/lib/mebs/mebs/ui/preview.html
+/usr/bin/install -D -m 0755 /var/home/bazzite/ljh/buildroot/package/mebs/mebs-launcher /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/bin/mebs
+/usr/bin/install -D -m 0755 /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/mebs-0.1.0/mebs-drm /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/bin/mebs-drm
+[7m>>>   Finalizing host directory[27m
+[7m>>>   Finalizing target directory[27m
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/src/hare
+mkdir -p /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/etc/meson
+sed -e "s%@TARGET_CFLAGS@%'-D_LARGEFILE_SOURCE', '-D_LARGEFILE64_SOURCE', '-D_FILE_OFFSET_BITS=64', '-O2', '-g0', '-D_FORTIFY_SOURCE=1'@PKG_TARGET_CFLAGS@%g" -e "s%@TARGET_LDFLAGS@%@PKG_TARGET_LDFLAGS@%g" -e "s%@TARGET_CXXFLAGS@%'-D_LARGEFILE_SOURCE', '-D_LARGEFILE64_SOURCE', '-D_FILE_OFFSET_BITS=64', '-O2', '-g0', '-D_FORTIFY_SOURCE=1'@PKG_TARGET_CXXFLAGS@%g" -e "s%@TARGET_FCFLAGS@%'-O2', '-g0'@PKG_TARGET_FCFLAGS@%g"         -e "s%@TARGET_CC@%/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc%g" -e "s%@TARGET_CXX@%/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-g++%g" -e "s%@TARGET_AR@%/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc-ar%g" -e "s%@TARGET_FC@%/bin/false%g" -e "s%@TARGET_STRIP@%/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-strip%g" -e "s%@TARGET_ARCH@%aarch64%g" -e "s%@TARGET_CPU@%cortex-a72%g" -e "s%@TARGET_ENDIAN@%little%g" -e "s%@TARGET_FCFLAGS@%%g" -e "s%@TARGET_CFLAGS@%%g" -e "s%@TARGET_LDFLAGS@%%g" -e "s%@TARGET_CXXFLAGS@%%g" -e "s%@BR2_CMAKE@%/usr/bin/cmake%g" -e "s%@PKGCONF_HOST_BINARY@%/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/pkgconf%g" -e "s%@HOST_DIR@%/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host%g" -e "s%@STAGING_DIR@%/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot%g" -e "s%@STATIC@%false%g" /var/home/bazzite/ljh/vendor/buildroot-2026.08/support/misc/cross-compilation.conf.in > /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/etc/meson/cross-compilation.conf.in
+sed         -e "s%@TARGET_CC@%/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc%g" -e "s%@TARGET_CXX@%/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-g++%g" -e "s%@TARGET_AR@%/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc-ar%g" -e "s%@TARGET_FC@%/bin/false%g" -e "s%@TARGET_STRIP@%/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-strip%g" -e "s%@TARGET_ARCH@%aarch64%g" -e "s%@TARGET_CPU@%cortex-a72%g" -e "s%@TARGET_ENDIAN@%little%g" -e "s%@TARGET_FCFLAGS@%'-O2', '-g0'%g" -e "s%@TARGET_CFLAGS@%'-D_LARGEFILE_SOURCE', '-D_LARGEFILE64_SOURCE', '-D_FILE_OFFSET_BITS=64', '-O2', '-g0', '-D_FORTIFY_SOURCE=1'%g" -e "s%@TARGET_LDFLAGS@%%g" -e "s%@TARGET_CXXFLAGS@%'-D_LARGEFILE_SOURCE', '-D_LARGEFILE64_SOURCE', '-D_FILE_OFFSET_BITS=64', '-O2', '-g0', '-D_FORTIFY_SOURCE=1'%g" -e "s%@BR2_CMAKE@%/usr/bin/cmake%g" -e "s%@PKGCONF_HOST_BINARY@%/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/pkgconf%g" -e "s%@HOST_DIR@%/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host%g" -e "s%@STAGING_DIR@%/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot%g" -e "s%@STATIC@%false%g" /var/home/bazzite/ljh/vendor/buildroot-2026.08/support/misc/cross-compilation.conf.in > /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/etc/meson/cross-compilation.conf
+/usr/bin/sed -i -e '/# GENERIC_SERIAL$/s~^.*#~console::respawn:/sbin/getty -L  console 0 vt100 #~' /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/etc/inittab
+/usr/bin/sed -i -e '/^[^#].*-o remount,rw \/$/s~^~#~' /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/etc/inittab
+if grep -q CONFIG_ASH=y /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/busybox-1.38.0/.config; then grep -qsE '^/bin/ash$' /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/etc/shells || echo "/bin/ash" >> /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/etc/shells; fi
+if grep -q CONFIG_HUSH=y /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/busybox-1.38.0/.config; then grep -qsE '^/bin/hush$' /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/etc/shells || echo "/bin/hush" >> /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/etc/shells; fi
+PYTHONPATH="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/python3.14/" /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/python3.14 /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/python3-3.14.7/Lib/compileall.py -q -b -s /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target -p / /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/lib/python3.14
+find /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/lib/python3.14 -name '*.py'  -print0 | xargs -0 --no-run-if-empty rm -f
+find /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/lib/python3.14 -name '*.opt-1.pyc' -print0 -o -name '*.opt-2.pyc' -print0 | xargs -0 --no-run-if-empty rm -f
+mkdir -p /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/etc
+echo "mebs" > /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/etc/hostname
+/usr/bin/sed -i -e '$a \127.0.1.1\tmebs' -e '/^127.0.1.1/d' /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/etc/hosts
+mkdir -p /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/etc
+echo "Welcome to Buildroot" > /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/etc/issue
+/usr/bin/sed -i -e s,^root:[^:]*:,root::, /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/etc/shadow
+grep -qsE '^/bin/sh$' /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/etc/shells || echo "/bin/sh" >> /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/etc/shells
+if [ -x /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/sbin/swapon -a -x /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/sbin/swapoff ]; then /usr/bin/sed -i -e '/^#.*\/sbin\/swap/s/^#\+[[:blank:]]*//' /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/etc/inittab; else /usr/bin/sed -i -e '/^[^#].*\/sbin\/swap/s/^/#/' /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/etc/inittab; fi
+if test -d /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/lib/modules/`MAKEFLAGS='-j6 --jobserver-auth=fifo:/tmp/GMfifo33965' /usr/bin/make  HOSTCC="/usr/bin/gcc -O2 -isystem /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/include -L/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/lib -Wl,-rpath,/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/lib" ARCH=arm64 KCFLAGS="-Wno-attribute-alias" INSTALL_MOD_PATH=/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target CROSS_COMPILE="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-" WERROR=0 REGENERATE_PARSERS=1 DEPMOD=true INSTALL_MOD_STRIP=1 -C /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/linux-custom --no-print-directory -s kernelrelease 2>/dev/null` && grep -q "CONFIG_MODULES=y" /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/linux-custom/.config; then /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/sbin/depmod -a -b /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target `MAKEFLAGS='-j6 --jobserver-auth=fifo:/tmp/GMfifo33965' /usr/bin/make  HOSTCC="/usr/bin/gcc -O2 -isystem /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/include -L/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/lib -Wl,-rpath,/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/lib" ARCH=arm64 KCFLAGS="-Wno-attribute-alias" INSTALL_MOD_PATH=/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target CROSS_COMPILE="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-" WERROR=0 REGENERATE_PARSERS=1 DEPMOD=true INSTALL_MOD_STRIP=1 -C /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/linux-custom --no-print-directory -s kernelrelease 2>/dev/null`; fi
+printf '%s\n' C en_US locale-archive > /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/locales.nopurge
+for dir in /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/share/locale /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/share/X11/locale /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/lib/locale; do if [ ! -d $dir ]; then continue; fi; for langdir in $dir/*; do if [ -e "${langdir}" ]; then grep -qx "${langdir##*/}" /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/locales.nopurge || rm -rf $langdir; fi done; done
+if [ -d /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/share/X11/locale ]; then for lang in C en_US; do if [ -f /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/share/X11/locale/$lang/XLC_LOCALE ]; then echo "$lang/XLC_LOCALE: $lang"; fi done > /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/share/X11/locale/locale.dir; fi
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/include /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/share/aclocal \
+	/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/lib/pkgconfig /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/share/pkgconfig \
+	/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/lib/cmake /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/share/cmake \
+	/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/lib/rpm /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/doc
+find /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/{lib,share}/ -name '*.cmake' -print0 | xargs -0 rm -f
+find /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/lib/ /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/lib/ /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/libexec/ \
+	\( -name '*.a' -o -name '*.la' -o -name '*.prl' \) -print0 | xargs -0 rm -f
+find: ‘/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/libexec/’: No such file or directory
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/share/gdb
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/share/bash-completion
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/etc/bash_completion.d
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/share/zsh
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/man /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/share/man
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/info /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/share/info
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/doc /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/share/doc
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/share/gtk-doc
+rmdir /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/share 2>/dev/null || true
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/lib/debug /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/lib/debug
+find /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target   -type f \( -perm /111 -o -name '*.so*' \) -not \( -name 'libpthread*.so*' -o -name 'ld-*.so*' -o -name '*.ko' \) -print0 | xargs -0 /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-strip --remove-section=.comment --remove-section=.note 2>/dev/null || true
+find /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target   \( -name 'ld-*.so*' -o -name 'libpthread*.so*' \) -print0 | xargs -0 -r /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/aarch64-buildroot-linux-gnu-strip --remove-section=.comment --remove-section=.note --strip-debug 2>/dev/null || true
+test -f /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/etc/ld.so.conf && \
+	{ echo "ERROR: we shouldn't have a /etc/ld.so.conf file"; exit 1; } || true
+test -d /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/etc/ld.so.conf.d && \
+	{ echo "ERROR: we shouldn't have a /etc/ld.so.conf.d directory"; exit 1; } || true
+mkdir -p /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/etc
+( \
+	echo "NAME=Buildroot"; \
+	echo "VERSION=-gd8e5ac3-dirty"; \
+	echo "ID=buildroot"; \
+	echo "VERSION_ID=2026.08"; \
+	echo "PRETTY_NAME=\"Buildroot 2026.08\"" \
+) >  /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr/lib/os-release
+ln -sf ../usr/lib/os-release /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/etc
+[7m>>>   Sanitizing RPATH in target tree[27m
+PARALLEL_JOBS=13 \
+	PER_PACKAGE_DIR=/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/per-package \
+	/var/home/bazzite/ljh/vendor/buildroot-2026.08/support/scripts/fix-rpath target
+[7m>>>   Sanity check in overlays /var/home/bazzite/ljh/buildroot/board/mebs-pi4-dsi/overlay[27m
+support/scripts/check-merged \
+	-t overlay \
+	 \
+	 \
+	/var/home/bazzite/ljh/buildroot/board/mebs-pi4-dsi/overlay
+[7m>>>   Copying overlay /var/home/bazzite/ljh/buildroot/board/mebs-pi4-dsi/overlay[27m
+[7m>>>   Executing post-build script /var/home/bazzite/ljh/buildroot/board/mebs-pi4-dsi/post-build.sh[27m
+touch /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/usr
+[7m>>>   Generating root filesystems common tables[27m
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs
+mkdir -p /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs
+printf '   \n' >> /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/full_users_table.txt
+printf '   	/bin/busybox                     f 4755 0  0 - - - - -\n\n' > /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/full_devices_table.txt
+cat system/device_table.txt >> /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/full_devices_table.txt
+[7m>>>   Generating filesystem image rootfs.ext2[27m
+mkdir -p /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/images
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2
+mkdir -p /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2
+rsync -auH --exclude=/THIS_IS_NOT_YOUR_ROOT_FILESYSTEM /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/target/ /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2/target
+echo '#!/bin/sh' > /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2/fakeroot
+echo "set -e" >> /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2/fakeroot
+echo "chown -h -R 0:0 /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2/target" >> /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2/fakeroot
+PATH="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin:/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/sbin:/var/home/bazzite/ljh/.local-build/tools/bin:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0irwKPD:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg08ssPBg:/var/home/bazzite/.codex/packages/standalone/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.local/bin:/home/bazzite/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" /var/home/bazzite/ljh/vendor/buildroot-2026.08/support/scripts/mkusers /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/full_users_table.txt /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2/target >> /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2/fakeroot
+echo "/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/makedevs -d /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/full_devices_table.txt /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2/target" >> /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2/fakeroot
+printf '   	rm -rf /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2/target/usr/lib/udev/hwdb.d/ /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2/target/etc/udev/hwdb.d/\n' >> /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2/fakeroot
+echo "find /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2/target/run/ -mindepth 1 -prune -print0 | xargs -0r rm -rf --" >> /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2/fakeroot
+echo "find /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2/target/tmp/ -mindepth 1 -prune -print0 | xargs -0r rm -rf --" >> /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2/fakeroot
+printf '   \n' >> /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2/fakeroot
+printf '   \n' >> /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2/fakeroot
+printf '   	rm -f /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/images/rootfs.ext2\n	/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/sbin/mkfs.ext4 -d /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2/target -N 0 -m 5 -L "rootfs" -I 256 -O ^64bit /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/images/rootfs.ext2 "384M" || { ret=$?; echo "*** Maybe you need to increase the filesystem size (BR2_TARGET_ROOTFS_EXT2_SIZE)" 1>&2; exit $ret; }\n' >> /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2/fakeroot
+chmod a+x /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2/fakeroot
+PATH="/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin:/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/sbin:/var/home/bazzite/ljh/.local-build/tools/bin:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0irwKPD:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg08ssPBg:/var/home/bazzite/.codex/packages/standalone/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.local/bin:/home/bazzite/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" FAKEROOTDONTTRYCHOWN=1 /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/host/bin/fakeroot -- /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2/fakeroot
+rootdir=/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/ext2/target
+table='/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/buildroot-fs/full_devices_table.txt'
+mke2fs 1.47.4 (6-Mar-2025)
+Creating regular file /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/images/rootfs.ext2
+64-bit filesystem support is not enabled.  The larger fields afforded by this feature enable full-strength checksumming.  Pass -O 64bit to rectify.
+Creating filesystem with 393216 1k blocks and 98304 inodes
+Filesystem UUID: 59f0b6cf-8a72-4a88-9934-acf66027b976
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729, 204801, 221185
+
+Allocating group tables:  0/48     done                            
+Writing inode tables:  0/48     done                            
+Creating journal (8192 blocks): done
+Copying files into the device: done
+Writing superblocks and filesystem accounting information:  0/48     done
+
+ln -sf rootfs.ext2 /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/images/rootfs.ext4
+[7m>>>   Executing post-image script /var/home/bazzite/ljh/buildroot/board/mebs-pi4-dsi/post-image.sh[27m
+INFO: cmd: "rm -rf "/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/mebs-genimage.hAM6Pg/work"/*" (stderr):
+INFO: cmd: "mkdir -p "/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/mebs-genimage.hAM6Pg/work"" (stderr):
+INFO: cmd: "cp -a "/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/mebs-genimage.hAM6Pg/root" "/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/mebs-genimage.hAM6Pg/work/root"" (stderr):
+INFO: cmd: "mkdir -p "/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/images"" (stderr):
+INFO: vfat(boot.vfat): cmd: "mkdosfs -F 32  '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/images/boot.vfat'" (stderr):
+INFO: vfat(boot.vfat): adding file 'bcm2711-rpi-4-b.dtb' as 'bcm2711-rpi-4-b.dtb' ...
+INFO: vfat(boot.vfat): cmd: "MTOOLS_SKIP_CHECK=1 mcopy -sp -i '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/images/boot.vfat' '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/images/bcm2711-rpi-4-b.dtb' '::'" (stderr):
+INFO: vfat(boot.vfat): adding file 'rpi-firmware/cmdline.txt' as 'rpi-firmware/cmdline.txt' ...
+INFO: vfat(boot.vfat): cmd: "MTOOLS_SKIP_CHECK=1 mcopy -sp -i '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/images/boot.vfat' '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/images/rpi-firmware/cmdline.txt' '::'" (stderr):
+INFO: vfat(boot.vfat): adding file 'rpi-firmware/config.txt' as 'rpi-firmware/config.txt' ...
+INFO: vfat(boot.vfat): cmd: "MTOOLS_SKIP_CHECK=1 mcopy -sp -i '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/images/boot.vfat' '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/images/rpi-firmware/config.txt' '::'" (stderr):
+INFO: vfat(boot.vfat): adding file 'rpi-firmware/fixup4.dat' as 'rpi-firmware/fixup4.dat' ...
+INFO: vfat(boot.vfat): cmd: "MTOOLS_SKIP_CHECK=1 mcopy -sp -i '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/images/boot.vfat' '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/images/rpi-firmware/fixup4.dat' '::'" (stderr):
+INFO: vfat(boot.vfat): adding file 'rpi-firmware/overlays' as 'rpi-firmware/overlays' ...
+INFO: vfat(boot.vfat): cmd: "MTOOLS_SKIP_CHECK=1 mcopy -sp -i '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/images/boot.vfat' '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/images/rpi-firmware/overlays' '::'" (stderr):
+INFO: vfat(boot.vfat): adding file 'rpi-firmware/start4.elf' as 'rpi-firmware/start4.elf' ...
+INFO: vfat(boot.vfat): cmd: "MTOOLS_SKIP_CHECK=1 mcopy -sp -i '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/images/boot.vfat' '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/images/rpi-firmware/start4.elf' '::'" (stderr):
+INFO: vfat(boot.vfat): adding file 'Image' as 'Image' ...
+INFO: vfat(boot.vfat): cmd: "MTOOLS_SKIP_CHECK=1 mcopy -sp -i '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/images/boot.vfat' '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/images/Image' '::'" (stderr):
+INFO: ext4(mebs-settings.ext4): cmd: "mke2fs -t ext4 -I 256 -E 'root_owner=0:0,lazy_itable_init=0,lazy_journal_init=0' -O '^large_file' -O '^huge_file' -d '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/mebs-genimage.hAM6Pg/work/root'  -L 'MEBS_CONFIG'  '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/images/mebs-settings.ext4' 8192k" (stderr):
+mke2fs 1.47.4 (6-Mar-2025)
+INFO: ext4(mebs-settings.ext4): cmd: "e2fsck -pvfD '/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/images/mebs-settings.ext4'" (stderr):
+INFO: hdimage(sdcard.img): adding primary partition 'boot' (in MBR) from 'boot.vfat' ...
+INFO: hdimage(sdcard.img): adding primary partition 'rootfs' (in MBR) from 'rootfs.ext4' ...
+INFO: hdimage(sdcard.img): adding primary partition 'settings' (in MBR) from 'mebs-settings.ext4' ...
+INFO: hdimage(sdcard.img): adding primary partition '[MBR]' ...
+INFO: hdimage(sdcard.img): writing MBR
+INFO: cmd: "rm -rf "/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/mebs-genimage.hAM6Pg/work"/*" (stderr):
+make: Leaving directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+d30050d498c78e3d206b75d8d5703ca7284f780b58f5157ba59fc48471453c5c  /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/MABS_V3_RPi4.img

@@ -1,0 +1,48 @@
+{
+  "machine": "QEMU virt cortex-a72, 1024 MiB, 2 vCPU; not Pi4B hardware",
+  "metric": "QEMU launch to auto-start MEBS READY plus harness login; 3 cold VM runs per image",
+  "v2": {
+    "image_bytes": 311427072,
+    "image_sha256": "05fcd3f045b961134f2748583de3dcf0b8ed923aa42c1ae48d97bdce5c48bee4",
+    "runs": [
+      {
+        "boot_seconds": 7.864019275999453,
+        "available_kib": 941492,
+        "mebs_rss_kib": 17244
+      },
+      {
+        "boot_seconds": 9.799460039001133,
+        "available_kib": 939152,
+        "mebs_rss_kib": 17216
+      },
+      {
+        "boot_seconds": 7.704097380999883,
+        "available_kib": 941768,
+        "mebs_rss_kib": 17220
+      }
+    ],
+    "mean_boot_seconds": 8.456
+  },
+  "v3": {
+    "image_bytes": 311427072,
+    "image_sha256": "bc16a0331f7a0fbbe4e3acf2e7200d07ee2fb72ee2e75fd0811c0dd79c2e3103",
+    "runs": [
+      {
+        "boot_seconds": 7.886550234994502,
+        "available_kib": 931996,
+        "mebs_rss_kib": 18652
+      },
+      {
+        "boot_seconds": 8.337407097002142,
+        "available_kib": 933940,
+        "mebs_rss_kib": 18768
+      },
+      {
+        "boot_seconds": 8.234540249999554,
+        "available_kib": 936644,
+        "mebs_rss_kib": 18772
+      }
+    ],
+    "mean_boot_seconds": 8.153
+  }
+}

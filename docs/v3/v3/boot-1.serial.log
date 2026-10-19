@@ -1,0 +1,50 @@
+COMMAND qemu-system-aarch64 -M virt -cpu cortex-a72 -m 1024 -smp 2 -nographic -nic none -monitor none -kernel /var/home/bazzite/ljh/output/pi4-v3-atomic-20261019/images/Image -append 'root=/dev/vda2 rootwait ro console=ttyAMA0,115200 loglevel=6' -drive file=/tmp/mebs-v3-boot-0evdl8ph/0/os.qcow2,format=qcow2,if=none,id=os -device virtio-blk-device,drive=os -device qemu-xhci,id=xhci -qmp unix:/tmp/mebs-v3-boot-0evdl8ph/0/qmp.sock,server=on,wait=off
+[    0.000000] Linux version 6.12.61-v8 (bazzite@bazzite) (aarch64-buildroot-linux-gnu-gcc.br_real (Buildroot -g24c30ba-dirty) 15.3.0, GNU ld (GNU Binutils) 2.45.1) #1 SMP PREEMPT Sun Oct 18 23:53:33 KST 2026
+[    0.000000] random: crng init done
+[    0.000000] Kernel command line: root=/dev/vda2 rootwait ro console=ttyAMA0,115200 loglevel=6
+[    0.055737] cacheinfo: Unable to detect cache hierarchy for CPU 0
+[    0.196453] Enabled cp15_barrier support
+[    0.196620] Enabled setend support
+[    0.257720] audit: type=2000 audit(0.228:1): state=initialized audit_enabled=0 res=1
+[    0.343807] SCSI subsystem initialized
+[    0.375428] VFS: Disk quotas dquot_6.6.0
+[    1.467290] Initialise system trusted keyrings
+[    1.475347] NFS: Registering the id_resolver key type
+[    1.476045] Key type id_resolver registered
+[    1.476243] Key type id_legacy registered
+[    1.481601] Key type asymmetric registered
+[    1.481990] Asymmetric key parser 'x509' registered
+[    1.501143] pci-host-generic 4010000000.pcie: Memory resource size exceeds max for 32 bits
+[    1.591940] virtio_blk virtio0: [vda] 608256 512-byte logical blocks (311 MB/297 MiB)
+[    1.687677] Key type dns_resolver registered
+[    1.734020] Loading compiled-in X.509 certificates
+[    1.752409] Key type .fscrypt registered
+[    1.752637] Key type fscrypt-provisioning registered
+Saving 256 bits of creditable seed for next boot
+Starting syslogd: OK
+Starting klogd: OK
+Running sysctl: OK
+Starting network: OK
+Starting crond: OK
+
+Welcome to Buildroot
+mebs login: root
+# stty -echo; export PS1=$(printf 'MEBS_'; printf 'TEST# ')
+MEBS_TEST# MEBS_JSON{"state": "BOOTING"}
+MEBS_TEST# MEBS_JSON{"state": "BOOTING"}
+MEBS_TEST# MEBS_JSON{"state": "BOOTING"}
+MEBS_TEST# MEBS_JSON{"state": "BOOTING"}
+MEBS_TEST# MEBS_JSON{"state": "READY", "target_connected": false, "source_connected": false, "incomplete_jobs": 0, "error": "", "battery_guard": "UNCONFIGURED", "battery_voltage": null, "battery_current_a": null, "battery_power_w": null, "sensor_source": "N/A", "sensor_model": "N/A", "sensor_timestamp": null, "display_battery_source": "SIMULATION", "display_battery_voltage": 7.4, "shutdown_pending": false}
+MEBS_TEST# {'pid1': 'init', 'settings_mounted': True, 'status': '{"state": "READY", "target_connected": false, "source_connected": false, "incomplete_jobs": 0, "error": "", "battery_guard": "UNCONFIGURED", "battery_voltage": null, "battery_current_a": null, "battery_power_w": null, "sensor_source": "N/A", "sensor_model": "N/A", "sensor_timestamp": null, "display_battery_source": "SIMULATION", "display_battery_voltage": 7.4, "shutdown_pending": false}\n', 'uptime': '7.85 3.67\n'}
+MEBS_TEST# FULL_INIT_AUTO_READY wall_seconds=7.887 {'state': 'READY', 'target_connected': False, 'source_connected': False, 'incomplete_jobs': 0, 'error': '', 'battery_guard': 'UNCONFIGURED', 'battery_voltage': None, 'battery_current_a': None, 'battery_power_w': None, 'sensor_source': 'N/A', 'sensor_model': 'N/A', 'sensor_timestamp': None, 'display_battery_source': 'SIMULATION', 'display_battery_voltage': 7.4, 'shutdown_pending': False}
+MEBS_METRICS{"available_kib": 931996, "mebs_rss_kib": 18652}
+MEBS_TEST# /dev/vda2 on / type ext4 (ro,relatime)
+devtmpfs on /dev type devtmpfs (rw,relatime,size=496392k,nr_inodes=124098,mode=755)
+proc on /proc type proc (rw,relatime)
+devpts on /dev/pts type devpts (rw,relatime,gid=5,mode=620,ptmxmode=666)
+tmpfs on /dev/shm type tmpfs (rw,relatime)
+tmpfs on /tmp type tmpfs (rw,relatime)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,relatime,mode=755)
+sysfs on /sys type sysfs (rw,relatime)
+/dev/vda3 on /var/lib/mebs type ext4 (rw,nosuid,nodev,noexec,noatime)
+MEBS_TEST# [    9.089527] reboot: Power down

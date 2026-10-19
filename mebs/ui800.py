@@ -30,6 +30,7 @@ def render(control, now=None):
             # Preserve the working main branch text logotype, do not alter mask.
             text(25, 20, 'MEBS', 32, THEME["ORANGE"])
         text(180, 31, 'MEBS  /  AUTO BACKUP', 12, THEME["MUTED"])
+        text(337, 31, '파일', 15, THEME["ORANGE"])
         cpu = 'N/A' if c.reading.cpu_c is None else f'{c.reading.cpu_c:.0f}°C'
         ram = 'N/A' if c.reading.ram_percent is None else f'{c.reading.ram_percent:.0f}%'
         battery_reading = c.display_battery if c.reading.sensor_source == 'N/A' and c.display_battery else c.reading

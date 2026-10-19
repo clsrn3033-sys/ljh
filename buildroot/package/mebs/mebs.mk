@@ -18,6 +18,10 @@ endef
 MEBS_POST_INSTALL_TARGET_HOOKS += MEBS_INSTALL_DRM
 endif
 
+ifeq ($(BR2_PACKAGE_MEBS_EXPLORER_V3),y)
+MEBS_DEPENDENCIES += ffmpeg
+endif
+
 define MEBS_INSTALL_TARGET_CMDS
 	$(INSTALL) -d $(TARGET_DIR)/usr/lib/mebs/mebs
 	$(INSTALL) -m 0644 $(@D)/*.py $(TARGET_DIR)/usr/lib/mebs/mebs/

@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/var/home/bazzite/ljh/tests/v3/qemu_smoke.py", line 97, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/var/home/bazzite/ljh/tests/v3/qemu_smoke.py", line 75, in main
+    raise RuntimeError('Guest result missing: '+response[-1200:])
+RuntimeError: Guest result missing: 

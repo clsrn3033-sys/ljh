@@ -10,6 +10,7 @@ import os
 from pathlib import Path
 import signal
 import subprocess
+import tempfile
 from threading import Event, Thread
 import time
 
@@ -18,6 +19,19 @@ from .controls import Controls, append_log
 from .devices import Roles
 from .sensors import BatteryGuard, I2C, INA226, INA231, Reading, VirtualINARegisters, cpu_temperature, ram_usage, estimate, validate_addresses, voltage_percent
 from .settings import SettingsStore
+
+
+def publish_status(path, encoded):
+    """Expose either the previous complete status or the next complete status."""
+    path = Path(path)
+    fd, pending = tempfile.mkstemp(prefix='.status-', suffix='.tmp', dir=path.parent)
+    try:
+        with os.fdopen(fd, 'w', encoding='utf-8') as stream:
+            stream.write(encoded + '\n')
+        os.replace(pending, path)
+    finally:
+        if os.path.exists(pending):
+            os.unlink(pending)
 
 
 class ObservedMounts(Mounts):
@@ -261,13 +275,33 @@ def live(config, headless=False):
         c = Controls(SettingsStore(data / 'settings.json'), guard=BatteryGuard(**config.get('battery_thresholds', {})))
         c.notice = restore_rtc(config) or c.notice
         mounts = ObservedMounts(c)
-        worker = Thread(target=Worker(c, stop, mounts).run, name='mebs-backup')
+        backup_worker = Worker(c, stop, mounts)
+        worker = Thread(target=backup_worker.run, name='mebs-backup')
         sensors = Sensors(config, c)
         sensor_thread = Thread(target=sensors.run, args=(stop,), name='mebs-sensors')
         worker.start()
         sensor_thread.start()
-        screen = touch = None
-        last_connect, last_frame, last_status = -10., -10., None
+        screen = touch = explorer_ui = None
+        from .explorer_v3 import ApplianceSession, ExplorerError
+        explorer_session = ApplianceSession(c, backup_worker)
+        def on_touch(start, end, duration):
+            nonlocal explorer_ui
+            if explorer_ui is not None:
+                result = explorer_ui.gesture(start, end, duration)
+                if result in ('closed', 'safe-eject'):
+                    explorer_ui = None
+                    c.notice = '안전 분리 완료' if result == 'safe-eject' else ''
+                return result
+            action = c.gesture(start, end, duration)
+            if action == 'explorer-open':
+                try:
+                    from .ui_explorer_v3 import ExplorerUI
+                    explorer_session.open()
+                    explorer_ui = ExplorerUI(explorer_session)
+                except (ExplorerError, BackupError, OSError, ValueError) as exc:
+                    c.notice = '탐색기: ' + str(exc)
+            return action
+        last_connect, last_frame, last_status, last_explorer_check = -10., -10., None, -10.
         splash_frames = None
         try:
             while not stop.is_set():
@@ -303,7 +337,7 @@ def live(config, headless=False):
                     if touch is None and config.get('touch', {}).get('device'):
                         try:
                             from .touch import Touch
-                            touch = Touch(config['touch']['device'], c.gesture, config['touch'].get('rotation', 0))
+                            touch = Touch(config['touch']['device'], on_touch, config['touch'].get('rotation', 0))
                         except (OSError, ValueError) as exc:
                             c.notice = '터치 연결 실패: ' + str(exc)
                 if touch:
@@ -313,6 +347,13 @@ def live(config, headless=False):
                         touch.close()
                         touch = None
                         c.notice = str(exc)
+                if explorer_ui is not None and now-last_explorer_check >= .5:
+                    last_explorer_check = now
+                    try:
+                        explorer_session.refresh()
+                    except (ExplorerError, BackupError, OSError) as exc:
+                        explorer_ui = None
+                        c.notice = '탐색기: ' + str(exc)
                 if screen and now-last_frame >= 1 / config.get('ui_fps', 30):
                     from .ui800 import render
                     try:
@@ -332,6 +373,9 @@ def live(config, headless=False):
                             except StopIteration:
                                 splash_frames = None
                                 frame = render(c)
+                        elif explorer_ui is not None:
+                            from .ui_explorer_v3_layout import render as render_explorer
+                            frame = render_explorer(explorer_ui)
                         else:
                             frame = render(c)
                         screen.show(frame)
@@ -352,7 +396,7 @@ def live(config, headless=False):
                                   shutdown_pending=c.shutdown_pending)
                 encoded = json.dumps(status, ensure_ascii=True)
                 if encoded != last_status:
-                    Path('/run/mebs/status.json').write_text(encoded+'\n')
+                    publish_status('/run/mebs/status.json', encoded)
                     print(encoded, flush=True)
                     last_status = encoded
                     if status['state'] in ('ERROR', 'CANCELLED', 'SAFE_TO_REMOVE'):
@@ -360,6 +404,11 @@ def live(config, headless=False):
                 stop.wait(.01)
         finally:
             stop.set()
+            if explorer_ui is not None:
+                try:
+                    explorer_session.close()
+                except (BackupError, OSError) as exc:
+                    print('Explorer unmount failed: ' + str(exc), flush=True)
             worker.join()  # no kill while a filesystem write is outstanding
             sensor_thread.join()
             if screen:

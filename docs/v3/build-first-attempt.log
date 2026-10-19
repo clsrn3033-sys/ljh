@@ -1,0 +1,19 @@
+make: Entering directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+  GEN     /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/Makefile
+#
+# configuration written to /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/.config
+#
+make: Leaving directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+make: Entering directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+rm -Rf /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/build/mebs-0.1.0
+make: Leaving directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+make: Entering directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+/usr/bin/make -j1  O=/var/home/bazzite/ljh/output/pi4-v3-800x480-20261019 HOSTCC="/usr/bin/gcc" HOSTCXX="/usr/bin/g++" syncconfig
+make[1]: Entering directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+make[1]: warning: -j1 forced in submake: resetting jobserver mode.
+  GEN     /var/home/bazzite/ljh/output/pi4-v3-800x480-20261019/Makefile
+make[1]: Leaving directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+
+You must install GNU patch
+make: *** [support/dependencies/dependencies.mk:27: dependencies] Error 1
+make: Leaving directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'

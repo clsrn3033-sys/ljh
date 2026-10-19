@@ -1,0 +1,1171 @@
+make: Entering directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+  GEN     /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/Makefile
+#
+# configuration written to /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/.config
+#
+make: Leaving directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+make: Entering directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+rm -Rf /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/mebs-0.1.0
+make: Leaving directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+make: Entering directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+rm -Rf /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python-pillow-12.0.0
+make: Leaving directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+make: Entering directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+/usr/bin/make -j1  O=/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019 HOSTCC="/usr/bin/gcc" HOSTCXX="/usr/bin/g++" syncconfig
+make[1]: Entering directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+make[1]: warning: -j1 forced in submake: resetting jobserver mode.
+  GEN     /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/Makefile
+make[1]: Leaving directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+[7m>>> jpeg-turbo 3.2.0 Downloading[27m
+wget -nd -t 3 --connect-timeout=10 -O '/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/.libjpeg-turbo-3.2.0.tar.gz.bZtro4/output' 'https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/3.2.0/libjpeg-turbo-3.2.0.tar.gz' 
+[0] Downloading 'https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/3.2.0/libjpeg-turbo-3.2.0.tar.gz' ...
+HTTP response 302  [https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/3.2.0/libjpeg-turbo-3.2.0.tar.gz]
+Enqueue https://release-assets.githubusercontent.com/github-production-release-asset/39760454/95af7e28-3a3a-4649-a140-a2af154d0f44?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-19T12%3A14%3A31Z&rscd=attachment%3B+filename%3Dlibjpeg-turbo-3.2.0.tar.gz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-10-19T11%3A13%3A50Z&ske=2026-10-19T12%3A14%3A31Z&sks=b&skv=2018-11-09&sig=LTuA3oFUbj2K%2BETiEoDZ13FebDzgnQ0RLv2RYgiBH9k%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MjQxMDE0MSwibmJmIjoxNzkyNDA5ODQxLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.beakqH3c2hhJ2hF3nYORsEC09qGM0c8XGvdeyHWWIr8&response-content-disposition=attachment%3B%20filename%3Dlibjpeg-turbo-3.2.0.tar.gz&response-content-type=application%2Foctet-stream
+[0] Downloading 'https://release-assets.githubusercontent.com/github-production-release-asset/39760454/95af7e28-3a3a-4649-a140-a2af154d0f44?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-19T12%3A14%3A31Z&rscd=attachment%3B+filename%3Dlibjpeg-turbo-3.2.0.tar.gz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-10-19T11%3A13%3A50Z&ske=2026-10-19T12%3A14%3A31Z&sks=b&skv=2018-11-09&sig=LTuA3oFUbj2K%2BETiEoDZ13FebDzgnQ0RLv2RYgiBH9k%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MjQxMDE0MSwibmJmIjoxNzkyNDA5ODQxLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.beakqH3c2hhJ2hF3nYORsEC09qGM0c8XGvdeyHWWIr8&response-content-disposition=attachment%3B%20filename%3Dlibjpeg-turbo-3.2.0.tar.gz&response-content-type=application%2Foctet-stream' ...
+Saving '/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/.libjpeg-turbo-3.2.0.tar.gz.bZtro4/output'
+HTTP response 200  [https://release-assets.githubusercontent.com/github-production-release-asset/39760454/95af7e28-3a3a-4649-a140-a2af154d0f44?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-19T12%3A14%3A31Z&rscd=attachment%3B+filename%3Dlibjpeg-turbo-3.2.0.tar.gz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-10-19T11%3A13%3A50Z&ske=2026-10-19T12%3A14%3A31Z&sks=b&skv=2018-11-09&sig=LTuA3oFUbj2K%2BETiEoDZ13FebDzgnQ0RLv2RYgiBH9k%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MjQxMDE0MSwibmJmIjoxNzkyNDA5ODQxLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.beakqH3c2hhJ2hF3nYORsEC09qGM0c8XGvdeyHWWIr8&response-content-disposition=attachment%3B%20filename%3Dlibjpeg-turbo-3.2.0.tar.gz&response-content-type=application%2Foctet-stream]
+libjpeg-turbo-3.2.0.tar.gz: OK (sha256: 6f30092cef9fb839779646608f4ee14ae3cbac989c47fa05e841b0841f09878e)
+[7m>>> jpeg-turbo 3.2.0 Extracting[27m
+gzip -d -c /var/home/bazzite/ljh/vendor/buildroot-2026.08/dl/jpeg-turbo/libjpeg-turbo-3.2.0.tar.gz | tar --strip-components=1 -C /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/jpeg-turbo-3.2.0   -xf -
+[7m>>> jpeg-turbo 3.2.0 Patching[27m
+
+Applying 0001-libspng-Really-remove-gamma-correction-code.patch using patch: 
+patching file src/spng/spng.c
+[7m>>> jpeg-turbo 3.2.0 Configuring[27m
+(mkdir -p /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/jpeg-turbo-3.2.0/ && cd /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/jpeg-turbo-3.2.0/ && rm -f CMakeCache.txt && PATH="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin:/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/sbin:/var/home/bazzite/ljh/.local-build/tools/bin:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0irwKPD:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg08ssPBg:/var/home/bazzite/.codex/packages/standalone/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.local/bin:/home/bazzite/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin"   /usr/bin/cmake /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/jpeg-turbo-3.2.0/ -G"Unix Makefiles" -DCMAKE_MAKE_PROGRAM="/usr/bin/make" -DCMAKE_TOOLCHAIN_FILE="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/share/buildroot/toolchainfile.cmake" -DCMAKE_INSTALL_PREFIX="/usr" -DCMAKE_INSTALL_RUNSTATEDIR="/run" -DCMAKE_COLOR_MAKEFILE=OFF -DBUILD_DOC=OFF -DBUILD_DOCS=OFF -DBUILD_EXAMPLE=OFF -DBUILD_EXAMPLES=OFF -DBUILD_TEST=OFF -DBUILD_TESTS=OFF -DBUILD_TESTING=OFF -DBUILD_SHARED_LIBS=ON  -DWITH_JPEG8=ON -DWITH_TESTS=OFF -DENABLE_STATIC=OFF -DENABLE_SHARED=ON -DWITH_SIMD=ON -DCMAKE_POSITION_INDEPENDENT_CODE=ON -DWITH_TOOLS=OFF )
+-- The C compiler identification is GNU 15.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- CMAKE_BUILD_TYPE = Release
+-- VERSION = 3.2.0, BUILD = 20261019
+-- 64-bit build (arm64)
+-- CMAKE_INSTALL_PREFIX = /usr
+-- CMAKE_INSTALL_BINDIR = bin (/usr/bin)
+-- CMAKE_INSTALL_DATAROOTDIR = share (/usr/share)
+-- CMAKE_INSTALL_DOCDIR = share/doc/libjpeg-turbo (/usr/share/doc/libjpeg-turbo)
+-- CMAKE_INSTALL_INCLUDEDIR = include (/usr/include)
+-- CMAKE_INSTALL_LIBDIR = lib (/usr/lib)
+-- CMAKE_INSTALL_MANDIR = share/man (/usr/share/man)
+-- Shared libraries enabled (ENABLE_SHARED = 1)
+-- Static libraries disabled (ENABLE_STATIC = 0)
+-- Arithmetic decoding support enabled (WITH_ARITH_DEC = 1)
+-- Arithmetic encoding support enabled (WITH_ARITH_ENC = 1)
+-- TurboJPEG API library enabled (WITH_TURBOJPEG = 1)
+-- TurboJPEG Java Native Access interfaces (TurboJPEG/JNA) disabled
+   (WITH_JNA = )
+-- Command-line tools disabled (WITH_TOOLS = 0)
+-- Regression tests disabled (WITH_TESTS = 0)
+-- Emulating libjpeg API/ABI v8.0 (WITH_JPEG7 = 0, WITH_JPEG8 = 1)
+-- libjpeg API shared library version = 8.3.2
+-- Compiler flags = -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1  -DNDEBUG
+-- Linker flags =  
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of size_t
+-- Check size of size_t - done
+-- Check size of unsigned long
+-- Check size of unsigned long - done
+-- Performing Test HAVE_BUILTIN_CTZL
+-- Performing Test HAVE_BUILTIN_CTZL - Success
+-- Performing Test HIDDEN_WORKS
+-- Performing Test HIDDEN_WORKS - Success
+-- HIDDEN = __attribute__((visibility("hidden")))
+-- Performing Test INLINE_WORKS
+-- Performing Test INLINE_WORKS - Success
+-- INLINE = __inline__ __attribute__((always_inline)) (FORCE_INLINE = 1)
+-- Performing Test HAVE_THREAD_LOCAL
+-- Performing Test HAVE_THREAD_LOCAL - Success
+-- THREAD_LOCAL = __thread
+-- Performing Test HAVE_VERSION_SCRIPT
+-- Performing Test HAVE_VERSION_SCRIPT - Success
+-- Linker supports GNU-style version scripts
+-- CMAKE_EXECUTABLE_SUFFIX = 
+-- Performing Test HAVE_VLD1_S16_X3
+-- Performing Test HAVE_VLD1_S16_X3 - Success
+-- Performing Test HAVE_VLD1_U16_X2
+-- Performing Test HAVE_VLD1_U16_X2 - Success
+-- Performing Test HAVE_VLD1Q_U8_X4
+-- Performing Test HAVE_VLD1Q_U8_X4 - Success
+-- SIMD extensions: ARM64 (WITH_SIMD = 1)
+-- System-supplied libspng disabled (WITH_SYSTEM_SPNG = 0)
+-- System-supplied zlib disabled (WITH_SYSTEM_ZLIB = 0)
+-- RPM architecture = aarch64, DEB architecture = arm64
+-- Configuring done (2.4s)
+-- Generating done (0.1s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    BUILD_DOC
+    BUILD_DOCS
+    BUILD_EXAMPLE
+    BUILD_EXAMPLES
+    BUILD_TEST
+    BUILD_TESTING
+    BUILD_TESTS
+    CMAKE_INSTALL_RUNSTATEDIR
+
+
+-- Build files have been written to: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/jpeg-turbo-3.2.0
+[7m>>> jpeg-turbo 3.2.0 Building[27m
+GIT_DIR=. PATH="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin:/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/sbin:/var/home/bazzite/ljh/.local-build/tools/bin:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0irwKPD:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg08ssPBg:/var/home/bazzite/.codex/packages/standalone/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.local/bin:/home/bazzite/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin"  /usr/bin/cmake --build /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/jpeg-turbo-3.2.0/ -j13 -- 
+make[1]: Entering directory '/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/jpeg-turbo-3.2.0'
+make[1]: warning: -j13 forced in submake: resetting jobserver mode.
+[  2%] Building C object sharedlib/spng/CMakeFiles/zlib.dir/__/__/src/spng/zlib/crc32.c.o
+[  2%] Building C object sharedlib/spng/CMakeFiles/spng.dir/__/__/src/spng/spng.c.o
+[  1%] Building C object sharedlib/spng/CMakeFiles/zlib.dir/__/__/src/spng/zlib/adler32.c.o
+[  2%] Building C object src/spng/CMakeFiles/spng-static.dir/spng.c.o
+[  2%] Building C object sharedlib/spng/CMakeFiles/zlib.dir/__/__/src/spng/zlib/inffast.c.o
+[  2%] Building C object src/spng/CMakeFiles/zlib-static.dir/zlib/adler32.c.o
+[  3%] Building C object simd/CMakeFiles/simd.dir/arm/jccolor-neon.c.o
+[  5%] Building C object sharedlib/spng/CMakeFiles/zlib.dir/__/__/src/spng/zlib/inflate.c.o
+[  5%] Building C object simd/CMakeFiles/simd.dir/arm/jcgray-neon.c.o
+[  5%] Building C object simd/CMakeFiles/simd.dir/arm/aarch64/jchuff-neon.c.o
+[  5%] Building C object src/spng/CMakeFiles/zlib-static.dir/zlib/compress.c.o
+[  5%] Building C object sharedlib/spng/CMakeFiles/zlib.dir/__/__/src/spng/zlib/compress.c.o
+[  5%] Building C object sharedlib/spng/CMakeFiles/zlib.dir/__/__/src/spng/zlib/deflate.c.o
+[  6%] Building C object simd/CMakeFiles/simd.dir/arm/jcphuff-neon.c.o
+[  6%] Building C object sharedlib/spng/CMakeFiles/zlib.dir/__/__/src/spng/zlib/inftrees.c.o
+[  6%] Building C object src/spng/CMakeFiles/zlib-static.dir/zlib/crc32.c.o
+[  6%] Building C object simd/CMakeFiles/simd.dir/arm/jcsample-neon.c.o
+[  7%] Building C object sharedlib/spng/CMakeFiles/zlib.dir/__/__/src/spng/zlib/trees.c.o
+[  7%] Building C object simd/CMakeFiles/simd.dir/arm/jdcolor-neon.c.o
+[  8%] Building C object simd/CMakeFiles/simd.dir/arm/jdmerge-neon.c.o
+[  9%] Building C object src/spng/CMakeFiles/zlib-static.dir/zlib/deflate.c.o
+[  9%] Building C object sharedlib/spng/CMakeFiles/zlib.dir/__/__/src/spng/zlib/zutil.c.o
+[  9%] Building C object src/spng/CMakeFiles/zlib-static.dir/zlib/inffast.c.o
+[  9%] Building C object simd/CMakeFiles/simd.dir/arm/jdsample-neon.c.o
+[  9%] Building C object src/spng/CMakeFiles/zlib-static.dir/zlib/inflate.c.o
+[ 10%] Building C object src/spng/CMakeFiles/zlib-static.dir/zlib/inftrees.c.o
+[ 11%] Building C object simd/CMakeFiles/simd.dir/arm/jfdctfst-neon.c.o
+[ 11%] Building C object src/spng/CMakeFiles/zlib-static.dir/zlib/trees.c.o
+[ 12%] Building C object src/spng/CMakeFiles/zlib-static.dir/zlib/zutil.c.o
+[ 12%] Building C object simd/CMakeFiles/simd.dir/arm/jfdctint-neon.c.o
+[ 12%] Building C object simd/CMakeFiles/simd.dir/arm/jidctfst-neon.c.o
+[ 12%] Built target zlib
+[ 12%] Building C object simd/CMakeFiles/simd.dir/arm/jidctred-neon.c.o
+[ 13%] Building C object simd/CMakeFiles/simd.dir/arm/jidctint-neon.c.o
+[ 13%] Building C object simd/CMakeFiles/simd.dir/arm/jquanti-neon.c.o
+[ 14%] Building C object simd/CMakeFiles/simd.dir/arm/aarch64/jsimdcpu.c.o
+[ 14%] Building C object simd/CMakeFiles/simd.dir/jsimd.c.o
+[ 14%] Built target zlib-static
+[ 14%] Built target simd
+[ 15%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jcapistd-12.c.o
+[ 14%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jcapimin.c.o
+[ 16%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jccoefct-12.c.o
+[ 16%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jcapistd-8.c.o
+[ 16%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jccoefct-8.c.o
+[ 15%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jcapistd-16.c.o
+[ 16%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jccolor-8.c.o
+[ 17%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jccolor-12.c.o
+[ 17%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jccolor-16.c.o
+[ 17%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jcdctmgr-8.c.o
+[ 18%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jcdctmgr-12.c.o
+[ 18%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jcdiffct-8.c.o
+[ 19%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jcdiffct-12.c.o
+[ 19%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jcdiffct-16.c.o
+[ 19%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jchuff.c.o
+[ 20%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jcicc.c.o
+[ 20%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jcinit.c.o
+[ 20%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jclhuff.c.o
+[ 21%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jclossls-8.c.o
+[ 21%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jclossls-12.c.o
+[ 22%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jclossls-16.c.o
+[ 22%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jcmainct-8.c.o
+[ 22%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jcmainct-12.c.o
+[ 23%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jcmainct-16.c.o
+[ 23%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jcmarker.c.o
+[ 23%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jcomapi.c.o
+[ 24%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jcmaster.c.o
+[ 24%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jcparam.c.o
+[ 25%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jcphuff.c.o
+[ 25%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jcprepct-8.c.o
+[ 26%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jcprepct-12.c.o
+[ 26%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jcprepct-16.c.o
+[ 26%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jcsample-8.c.o
+[ 27%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jcsample-12.c.o
+[ 27%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jcsample-16.c.o
+[ 27%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jctrans.c.o
+[ 28%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jdapimin.c.o
+[ 28%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jdapistd-8.c.o
+[ 29%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jdapistd-12.c.o
+[ 29%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jdapistd-16.c.o
+[ 29%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jdatadst.c.o
+[ 30%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jdatasrc.c.o
+[ 30%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jdcoefct-8.c.o
+[ 31%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jdcoefct-12.c.o
+[ 31%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jdcolor-8.c.o
+[ 31%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jdcolor-12.c.o
+[ 32%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jdcolor-16.c.o
+[ 32%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jddctmgr-8.c.o
+[ 32%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jddctmgr-12.c.o
+[ 33%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jddiffct-8.c.o
+[ 33%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jddiffct-12.c.o
+[ 34%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jddiffct-16.c.o
+[ 34%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jdhuff.c.o
+[ 34%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jdicc.c.o
+[ 35%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jdinput.c.o
+[ 35%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jdlhuff.c.o
+[ 36%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jdlossls-8.c.o
+[ 36%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jdlossls-12.c.o
+[ 36%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jdlossls-16.c.o
+[ 37%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jdmainct-8.c.o
+[ 37%] Built target spng-static
+[ 37%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jdmainct-12.c.o
+[ 37%] Building C object CMakeFiles/turbojpeg.dir/src/jcapimin.c.o
+[ 38%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jdmainct-16.c.o
+[ 39%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jcapistd-8.c.o
+[ 39%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jcapistd-12.c.o
+[ 39%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jdmarker.c.o
+[ 39%] Built target spng
+[ 40%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jdmerge-8.c.o
+[ 40%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jdmaster.c.o
+[ 40%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jdmerge-12.c.o
+[ 41%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jcapistd-16.c.o
+[ 41%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jdphuff.c.o
+[ 41%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jccoefct-8.c.o
+[ 42%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jdpostct-8.c.o
+[ 42%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jccoefct-12.c.o
+[ 43%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jccolor-8.c.o
+[ 43%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jdpostct-12.c.o
+[ 43%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jccolor-12.c.o
+[ 44%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jccolor-16.c.o
+[ 45%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jdpostct-16.c.o
+[ 45%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jdsample-8.c.o
+[ 45%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jdsample-12.c.o
+[ 45%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jdtrans.c.o
+[ 46%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jdsample-16.c.o
+[ 46%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jcdctmgr-8.c.o
+[ 46%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jcdctmgr-12.c.o
+[ 47%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jerror.c.o
+[ 48%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jcdiffct-8.c.o
+[ 48%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jfdctflt.c.o
+[ 48%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jcdiffct-12.c.o
+[ 49%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jfdctfst-12.c.o
+[ 49%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jfdctfst-8.c.o
+[ 49%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jcdiffct-16.c.o
+[ 49%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jfdctint-8.c.o
+[ 50%] Building C object CMakeFiles/turbojpeg.dir/src/jchuff.c.o
+[ 50%] Building C object CMakeFiles/turbojpeg.dir/src/jcicc.c.o
+[ 52%] Building C object CMakeFiles/turbojpeg.dir/src/jcinit.c.o
+[ 51%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jfdctint-12.c.o
+[ 52%] Building C object CMakeFiles/turbojpeg.dir/src/jclhuff.c.o
+[ 52%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jidctflt-8.c.o
+[ 52%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jclossls-8.c.o
+[ 52%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jidctflt-12.c.o
+[ 53%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jidctfst-8.c.o
+[ 54%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jclossls-16.c.o
+[ 54%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jclossls-12.c.o
+[ 54%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jidctfst-12.c.o
+[ 54%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jidctint-8.c.o
+[ 55%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jidctint-12.c.o
+[ 55%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jidctred-8.c.o
+[ 56%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jidctred-12.c.o
+[ 56%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jmemmgr.c.o
+[ 57%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jcmainct-8.c.o
+[ 57%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jmemnobs.c.o
+[ 57%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jcmainct-12.c.o
+[ 57%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jcmainct-16.c.o
+[ 58%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jpeg_nbits.c.o
+[ 58%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jquant1-8.c.o
+[ 59%] Building C object CMakeFiles/turbojpeg.dir/src/jcmarker.c.o
+[ 59%] Building C object CMakeFiles/turbojpeg.dir/src/jcmaster.c.o
+[ 59%] Building C object CMakeFiles/turbojpeg.dir/src/jcomapi.c.o
+[ 60%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jquant1-12.c.o
+[ 60%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jquant2-8.c.o
+[ 60%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jquant2-12.c.o
+[ 61%] Building C object CMakeFiles/turbojpeg.dir/src/jcparam.c.o
+[ 62%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jutils-8.c.o
+[ 62%] Building C object CMakeFiles/turbojpeg.dir/src/jcphuff.c.o
+[ 62%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jutils-12.c.o
+[ 63%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jcprepct-8.c.o
+[ 63%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/wrapper/jutils-16.c.o
+[ 63%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jcprepct-12.c.o
+[ 64%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jaricom.c.o
+[ 64%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jcprepct-16.c.o
+[ 65%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jcsample-8.c.o
+[ 65%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jcarith.c.o
+[ 66%] Building C object sharedlib/CMakeFiles/jpeg.dir/__/src/jdarith.c.o
+[ 67%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jcsample-16.c.o
+[ 67%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jcsample-12.c.o
+[ 67%] Building C object CMakeFiles/turbojpeg.dir/src/jdapimin.c.o
+[ 67%] Building C object CMakeFiles/turbojpeg.dir/src/jctrans.c.o
+[ 68%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jdapistd-8.c.o
+[ 68%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jdapistd-12.c.o
+[ 69%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jdapistd-16.c.o
+[ 69%] Building C object CMakeFiles/turbojpeg.dir/src/jdatadst.c.o
+[ 69%] Building C object CMakeFiles/turbojpeg.dir/src/jdatasrc.c.o
+[ 70%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jdcoefct-8.c.o
+[ 70%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jdcoefct-12.c.o
+[ 70%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jdcolor-8.c.o
+[ 71%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jdcolor-12.c.o
+[ 71%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jdcolor-16.c.o
+[ 72%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jddctmgr-8.c.o
+[ 72%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jddctmgr-12.c.o
+[ 72%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jddiffct-8.c.o
+[ 73%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jddiffct-12.c.o
+[ 73%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jddiffct-16.c.o
+[ 74%] Building C object CMakeFiles/turbojpeg.dir/src/jdhuff.c.o
+[ 74%] Building C object CMakeFiles/turbojpeg.dir/src/jdicc.c.o
+[ 74%] Building C object CMakeFiles/turbojpeg.dir/src/jdinput.c.o
+[ 74%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jdlossls-8.c.o
+[ 75%] Building C object CMakeFiles/turbojpeg.dir/src/jdlhuff.c.o
+[ 75%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jdlossls-12.c.o
+[ 76%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jdlossls-16.c.o
+[ 76%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jdmainct-8.c.o
+[ 77%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jdmainct-12.c.o
+[ 77%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jdmainct-16.c.o
+[ 77%] Building C object CMakeFiles/turbojpeg.dir/src/jdmarker.c.o
+[ 77%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jdmerge-8.c.o
+[ 78%] Building C object CMakeFiles/turbojpeg.dir/src/jdmaster.c.o
+[ 79%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jdmerge-12.c.o
+[ 79%] Building C object CMakeFiles/turbojpeg.dir/src/jdphuff.c.o
+[ 79%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jdpostct-8.c.o
+[ 80%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jdpostct-12.c.o
+[ 80%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jdpostct-16.c.o
+[ 81%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jdsample-8.c.o
+[ 81%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jdsample-12.c.o
+[ 81%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jdsample-16.c.o
+[ 82%] Building C object CMakeFiles/turbojpeg.dir/src/jdtrans.c.o
+[ 82%] Building C object CMakeFiles/turbojpeg.dir/src/jerror.c.o
+[ 82%] Building C object CMakeFiles/turbojpeg.dir/src/jfdctflt.c.o
+[ 83%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jfdctfst-8.c.o
+[ 83%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jfdctfst-12.c.o
+[ 84%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jfdctint-8.c.o
+[ 84%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jfdctint-12.c.o
+[ 84%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jidctflt-8.c.o
+[ 85%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jidctflt-12.c.o
+[ 85%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jidctfst-8.c.o
+[ 86%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jidctfst-12.c.o
+[ 86%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jidctint-8.c.o
+[ 86%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jidctint-12.c.o
+[ 87%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jidctred-8.c.o
+[ 87%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jidctred-12.c.o
+[ 88%] Building C object CMakeFiles/turbojpeg.dir/src/jmemmgr.c.o
+[ 88%] Building C object CMakeFiles/turbojpeg.dir/src/jmemnobs.c.o
+[ 88%] Building C object CMakeFiles/turbojpeg.dir/src/jpeg_nbits.c.o
+[ 89%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jquant1-8.c.o
+[ 89%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jquant1-12.c.o
+[ 89%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jquant2-8.c.o
+[ 90%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jquant2-12.c.o
+[ 90%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jutils-8.c.o
+[ 91%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jutils-12.c.o
+[ 91%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/jutils-16.c.o
+[ 91%] Building C object CMakeFiles/turbojpeg.dir/src/jaricom.c.o
+[ 92%] Building C object CMakeFiles/turbojpeg.dir/src/jcarith.c.o
+[ 92%] Building C object CMakeFiles/turbojpeg.dir/src/jdarith.c.o
+[ 93%] Building C object CMakeFiles/turbojpeg.dir/src/turbojpeg.c.o
+[ 93%] Building C object CMakeFiles/turbojpeg.dir/src/transupp.c.o
+[ 93%] Building C object CMakeFiles/turbojpeg.dir/src/jdatadst-tj.c.o
+[ 94%] Building C object CMakeFiles/turbojpeg.dir/src/rdbmp.c.o
+[ 94%] Building C object CMakeFiles/turbojpeg.dir/src/jdatasrc-tj.c.o
+[ 94%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/rdpng-8.c.o
+[ 95%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/rdpng-12.c.o
+[ 95%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/rdpng-16.c.o
+[ 96%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/rdppm-8.c.o
+[ 96%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/rdppm-12.c.o
+[ 96%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/rdppm-16.c.o
+[ 97%] Building C object CMakeFiles/turbojpeg.dir/src/wrbmp.c.o
+[ 97%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/wrpng-8.c.o
+[ 98%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/wrpng-12.c.o
+[ 98%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/wrpng-16.c.o
+[ 98%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/wrppm-8.c.o
+[ 99%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/wrppm-12.c.o
+[ 99%] Building C object CMakeFiles/turbojpeg.dir/src/wrapper/wrppm-16.c.o
+[ 99%] Linking C shared library ../libjpeg.so
+[ 99%] Built target jpeg
+[100%] Linking C shared library libturbojpeg.so
+[100%] Built target turbojpeg
+make[1]: Leaving directory '/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/jpeg-turbo-3.2.0'
+[7m>>> jpeg-turbo 3.2.0 Installing to staging directory[27m
+GIT_DIR=. PATH="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin:/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/sbin:/var/home/bazzite/ljh/.local-build/tools/bin:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0irwKPD:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg08ssPBg:/var/home/bazzite/.codex/packages/standalone/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.local/bin:/home/bazzite/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin"  DESTDIR=/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot /usr/bin/cmake --install /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/jpeg-turbo-3.2.0/ 
+-- Install configuration: "Release"
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/libjpeg.so.8.3.2
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/libjpeg.so.8
+-- Set non-toolchain portion of runtime path of "/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/libjpeg.so.8.3.2" to "/usr/lib"
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/libjpeg.so
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/libturbojpeg.so.0.5.0
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/libturbojpeg.so.0
+-- Set non-toolchain portion of runtime path of "/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/libturbojpeg.so.0.5.0" to "/usr/lib"
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/libturbojpeg.so
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/turbojpeg.h
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/share/doc/libjpeg-turbo/README.ijg
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/share/doc/libjpeg-turbo/README.md
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/share/doc/libjpeg-turbo/example.c
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/share/doc/libjpeg-turbo/libjpeg.txt
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/share/doc/libjpeg-turbo/structure.txt
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/share/doc/libjpeg-turbo/usage.txt
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/share/doc/libjpeg-turbo/wizard.txt
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/share/doc/libjpeg-turbo/LICENSE.md
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/share/doc/libjpeg-turbo/tjcomp.c
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/share/doc/libjpeg-turbo/tjdecomp.c
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/share/doc/libjpeg-turbo/tjtran.c
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/pkgconfig/libjpeg.pc
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/pkgconfig/libturbojpeg.pc
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/cmake/libjpeg-turbo/libjpeg-turboConfig.cmake
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/cmake/libjpeg-turbo/libjpeg-turboConfigVersion.cmake
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/cmake/libjpeg-turbo/libjpeg-turboTargets.cmake
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/cmake/libjpeg-turbo/libjpeg-turboTargets-release.cmake
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/jconfig.h
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/jerror.h
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/jmorecfg.h
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/jpeglib.h
+[7m>>> jpeg-turbo 3.2.0 Fixing libtool files[27m
+for la in $(find /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib* -name "*.la"); do \
+	cp -a "${la}" "${la}.fixed" && \
+	/usr/bin/sed -i -e "s:/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019:@BASE_DIR@:g" \
+		-e "s:/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot:@STAGING_DIR@:g" \
+		 \
+		-e "s:\(['= ]\)/usr:\\1@STAGING_DIR@/usr:g" \
+		-e "s:\(['= ]\)/lib:\\1@STAGING_DIR@/lib:g" \
+		 \
+		-e "s:@STAGING_DIR@:/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot:g" \
+		-e "s:@BASE_DIR@:/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019:g" \
+		"${la}.fixed" && \
+	if cmp -s "${la}" "${la}.fixed"; then \
+		rm -f "${la}.fixed"; \
+	else \
+		mv "${la}.fixed" "${la}"; \
+	fi || exit 1; \
+done
+[7m>>> jpeg-turbo 3.2.0 Installing to target[27m
+GIT_DIR=. PATH="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin:/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/sbin:/var/home/bazzite/ljh/.local-build/tools/bin:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0irwKPD:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg08ssPBg:/var/home/bazzite/.codex/packages/standalone/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.local/bin:/home/bazzite/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin"  DESTDIR=/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target /usr/bin/cmake --install /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/jpeg-turbo-3.2.0/ 
+-- Install configuration: "Release"
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/libjpeg.so.8.3.2
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/libjpeg.so.8
+-- Set non-toolchain portion of runtime path of "/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/libjpeg.so.8.3.2" to "/usr/lib"
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/libjpeg.so
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/libturbojpeg.so.0.5.0
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/libturbojpeg.so.0
+-- Set non-toolchain portion of runtime path of "/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/libturbojpeg.so.0.5.0" to "/usr/lib"
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/libturbojpeg.so
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/include/turbojpeg.h
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/doc/libjpeg-turbo/README.ijg
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/doc/libjpeg-turbo/README.md
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/doc/libjpeg-turbo/example.c
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/doc/libjpeg-turbo/libjpeg.txt
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/doc/libjpeg-turbo/structure.txt
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/doc/libjpeg-turbo/usage.txt
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/doc/libjpeg-turbo/wizard.txt
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/doc/libjpeg-turbo/LICENSE.md
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/doc/libjpeg-turbo/tjcomp.c
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/doc/libjpeg-turbo/tjdecomp.c
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/doc/libjpeg-turbo/tjtran.c
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/pkgconfig/libjpeg.pc
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/pkgconfig/libturbojpeg.pc
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/cmake/libjpeg-turbo/libjpeg-turboConfig.cmake
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/cmake/libjpeg-turbo/libjpeg-turboConfigVersion.cmake
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/cmake/libjpeg-turbo/libjpeg-turboTargets.cmake
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/cmake/libjpeg-turbo/libjpeg-turboTargets-release.cmake
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/include/jconfig.h
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/include/jerror.h
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/include/jmorecfg.h
+-- Installing: /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/include/jpeglib.h
+[7m>>> jpeg  Extracting[27m
+[7m>>> jpeg  Patching[27m
+[7m>>> jpeg  Configuring[27m
+[7m>>> jpeg  Building[27m
+[7m>>> jpeg  Installing to target[27m
+pillow-12.0.0.tar.gz: OK (md5: a7432f8c473441996d72efdefbc49d40)
+pillow-12.0.0.tar.gz: OK (sha256: 87d4f8125c9988bfbed67af47dd7a953e2fc7b0cc1e7800ec6d2080d490bb353)
+[7m>>> python-pillow 12.0.0 Extracting[27m
+gzip -d -c /var/home/bazzite/ljh/vendor/buildroot-2026.08/dl/python-pillow/pillow-12.0.0.tar.gz | tar --strip-components=1 -C /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python-pillow-12.0.0   -xf -
+[7m>>> python-pillow 12.0.0 Patching[27m
+[7m>>> python-pillow 12.0.0 Configuring[27m
+[7m>>> python-pillow 12.0.0 Building[27m
+(cd /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python-pillow-12.0.0//; _PYTHON_HOST_PLATFORM="linux-aarch64" _PYTHON_PROJECT_BASE="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7" _PYTHON_SYSCONFIGDATA_NAME="`{ [ -e /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/python3.14//_sysconfigdata__linux_*.py ] && basename /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/python3.14//_sysconfigdata__linux_*.py .py; } || true`" PATH="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin:/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/sbin:/var/home/bazzite/ljh/.local-build/tools/bin:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0irwKPD:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg08ssPBg:/var/home/bazzite/.codex/packages/standalone/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.local/bin:/home/bazzite/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" GIT_DIR=. PATH="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin:/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/sbin:/var/home/bazzite/ljh/.local-build/tools/bin:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0irwKPD:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg08ssPBg:/var/home/bazzite/.codex/packages/standalone/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.local/bin:/home/bazzite/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" AR="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc-ar" AS="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-as" LD="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-ld" NM="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc-nm" CC="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc" GCC="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc" CPP="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-cpp" CXX="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-g++" FC="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gfortran" F77="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gfortran" RANLIB="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc-ranlib" READELF="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-readelf" STRIP="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-strip" OBJCOPY="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-objcopy" OBJDUMP="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-objdump" AR_FOR_BUILD="/usr/bin/ar" AS_FOR_BUILD="/usr/bin/as" CC_FOR_BUILD="/usr/bin/gcc" GCC_FOR_BUILD="/usr/bin/gcc" CXX_FOR_BUILD="/usr/bin/g++" LD_FOR_BUILD="/usr/bin/ld" CPPFLAGS_FOR_BUILD="-I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include" CFLAGS_FOR_BUILD="-O2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include" CXXFLAGS_FOR_BUILD="-O2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include" LDFLAGS_FOR_BUILD="-L/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/lib -Wl,-rpath,/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/lib" FCFLAGS_FOR_BUILD="" DEFAULT_ASSEMBLER="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-as" DEFAULT_LINKER="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-ld" CPPFLAGS="-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64" CFLAGS="-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64  -O2 -g0 -D_FORTIFY_SOURCE=1" CXXFLAGS="-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64  -O2 -g0 -D_FORTIFY_SOURCE=1" LDFLAGS="" FCFLAGS=" -O2 -g0" FFLAGS=" -O2 -g0" PKG_CONFIG="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/pkg-config" STAGING_DIR="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot" INTLTOOL_PERL=/usr/bin/perl PYTHONPATH="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/python3.14/" PYTHONNOUSERSITE=1  /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/python3 -m build -n -w --skip-dependency-check -Cplatform-guessing=disable -Cimagequant=disable -Craqm=disable -Cfreetype=enable -Cjpeg=enable -Clcms=disable -Clibavif=disable -Cxcb=disable -Cjpeg2000=disable -Ctiff=disable -Cwebp=disable -Czlib=enable)
+* Building wheel...
+running bdist_wheel
+running build
+running build_py
+creating build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/AvifImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/BdfFontFile.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/BlpImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/BmpImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/BufrStubImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ContainerIO.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/CurImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/DcxImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/DdsImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/EpsImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ExifTags.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/FitsImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/FliImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/FontFile.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/FpxImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/FtexImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/GbrImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/GdImageFile.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/GifImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/GimpGradientFile.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/GimpPaletteFile.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/GribStubImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/Hdf5StubImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/IcnsImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/IcoImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/Image.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImageChops.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImageCms.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImageColor.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImageDraw.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImageDraw2.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImageEnhance.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImageFile.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImageFilter.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImageFont.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImageGrab.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImageMath.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImageMode.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImageMorph.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImageOps.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImagePalette.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImagePath.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImageQt.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImageSequence.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImageShow.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImageStat.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImageText.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImageTk.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImageTransform.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImageWin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/ImtImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/IptcImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/Jpeg2KImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/JpegImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/JpegPresets.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/McIdasImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/MicImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/MpegImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/MpoImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/MspImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/PSDraw.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/PaletteFile.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/PalmImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/PcdImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/PcfFontFile.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/PcxImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/PdfImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/PdfParser.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/PixarImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/PngImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/PpmImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/PsdImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/QoiImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/SgiImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/SpiderImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/SunImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/TarIO.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/TgaImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/TiffImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/TiffTags.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/WalImageFile.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/WebPImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/WmfImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/XVThumbImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/XbmImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/XpmImagePlugin.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/__init__.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/__main__.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/_binary.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/_deprecate.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/_tkinter_finder.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/_typing.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/_util.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/_version.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/features.py -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/report.py -> build/lib.linux-aarch64-cpython-314/PIL
+running egg_info
+writing src/pillow.egg-info/PKG-INFO
+writing dependency_links to src/pillow.egg-info/dependency_links.txt
+writing requirements to src/pillow.egg-info/requires.txt
+writing top-level names to src/pillow.egg-info/top_level.txt
+reading manifest file 'src/pillow.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no files found matching '*.c'
+warning: no files found matching '*.h'
+warning: no files found matching '*.sh'
+warning: no files found matching '*.txt'
+warning: no files found matching '.flake8'
+warning: no previously-included files found matching '.clang-format'
+warning: no previously-included files found matching '.coveragerc'
+warning: no previously-included files found matching '.editorconfig'
+warning: no previously-included files found matching '.readthedocs.yml'
+warning: no previously-included files found matching 'codecov.yml'
+warning: no previously-included files found matching 'renovate.json'
+warning: no previously-included files found matching 'Tests/images/README.md'
+warning: no previously-included files found matching 'Tests/images/crash*.tif'
+warning: no previously-included files found matching 'Tests/images/string_dimension.tiff'
+warning: no previously-included files matching '.git*' found anywhere in distribution
+warning: no previously-included files matching '*.so' found anywhere in distribution
+no previously-included directories found matching '.ci'
+no previously-included directories found matching 'wheels'
+no previously-included directories found matching 'winbuild/build'
+no previously-included directories found matching 'winbuild/depends'
+no previously-included directories found matching 'Tests/errors'
+no previously-included directories found matching 'Tests/images/jpeg2000'
+no previously-included directories found matching 'Tests/images/msp'
+no previously-included directories found matching 'Tests/images/picins'
+no previously-included directories found matching 'Tests/images/sunraster'
+no previously-included directories found matching 'Tests/test-images'
+adding license file 'LICENSE'
+writing manifest file 'src/pillow.egg-info/SOURCES.txt'
+copying src/PIL/_avif.pyi -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/_imaging.pyi -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/_imagingcms.pyi -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/_imagingft.pyi -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/_imagingmath.pyi -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/_imagingmorph.pyi -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/_imagingtk.pyi -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/_webp.pyi -> build/lib.linux-aarch64-cpython-314/PIL
+copying src/PIL/py.typed -> build/lib.linux-aarch64-cpython-314/PIL
+running build_clib
+building 'pil_imaging_mode' library
+creating build/temp.linux-aarch64-cpython-314/src/libImaging
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -c src/libImaging/Mode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Mode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc-ar rcs build/temp.linux-aarch64-cpython-314/libpil_imaging_mode.a build/temp.linux-aarch64-cpython-314/src/libImaging/Mode.o
+running build_ext
+building 'PIL._imaging' extension
+building 'PIL._imagingmorph' extension
+building 'PIL._imagingft' extension
+building 'PIL._imagingmath' extension
+building 'PIL._imagingtk' extension
+creating build/temp.linux-aarch64-cpython-314/src/Tk
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/_imagingmorph.c -o build/temp.linux-aarch64-cpython-314/src/_imagingmorph.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/display.c -o build/temp.linux-aarch64-cpython-314/src/display.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/BcnEncode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/BcnEncode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/decode.c -o build/temp.linux-aarch64-cpython-314/src/decode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/_imaging.c -o build/temp.linux-aarch64-cpython-314/src/_imaging.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/encode.c -o build/temp.linux-aarch64-cpython-314/src/encode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/AlphaComposite.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/AlphaComposite.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Arrow.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Arrow.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Bands.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Bands.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Blend.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Blend.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Access.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Access.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/BitDecode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/BitDecode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/BcnDecode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/BcnDecode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/_imagingmath.c -o build/temp.linux-aarch64-cpython-314/src/_imagingmath.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/_imagingft.c -o build/temp.linux-aarch64-cpython-314/src/_imagingft.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/Tk/tkImaging.c -o build/temp.linux-aarch64-cpython-314/src/Tk/tkImaging.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/_imagingtk.c -o build/temp.linux-aarch64-cpython-314/src/_imagingtk.o
+In file included from /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include/Python.h:14,
+                 from src/libImaging/ImPlatform.h:11,
+                 from src/libImaging/Imaging.h:13,
+                 from src/libImaging/Arrow.c:3:
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/pyconfig.h:2047:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 2047 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/libc-header-start.h:33,
+                 from /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/stdint.h:26,
+                 from /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/lib/gcc/aarch64-buildroot-linux-gnu/15.3.0/include/stdint.h:11,
+                 from src/libImaging/Arrow.h:1,
+                 from src/libImaging/Arrow.c:2:
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+src/libImaging/Arrow.c: In function ‘export_imaging_schema’:
+src/libImaging/Arrow.c:224:74: warning: passing argument 3 of ‘export_named_type’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+  224 |         schema->children[0], im->arrow_band_format, getModeData(im->mode)->name
+      |                                                     ~~~~~~~~~~~~~~~~~~~~~^~~~~~
+src/libImaging/Arrow.c:152:67: note: expected ‘char *’ but argument is of type ‘const char *’
+  152 | export_named_type(struct ArrowSchema *schema, char *format, char *name) {
+      |                                                             ~~~~~~^~~~
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/BoxBlur.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/BoxBlur.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Chops.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Chops.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/ColorLUT.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/ColorLUT.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Convert.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Convert.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/ConvertYCbCr.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/ConvertYCbCr.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Copy.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Copy.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -shared -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 build/temp.linux-aarch64-cpython-314/src/_imagingmorph.o -L/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib -L/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/lib -L. -Lbuild/temp.linux-aarch64-cpython-314 -lpil_imaging_mode -o build/lib.linux-aarch64-cpython-314/PIL/_imagingmorph.cpython-314-aarch64-linux-gnu.so
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -shared -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 build/temp.linux-aarch64-cpython-314/src/Tk/tkImaging.o build/temp.linux-aarch64-cpython-314/src/_imagingtk.o -L/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib -L/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/lib -L. -Lbuild/temp.linux-aarch64-cpython-314 -lpil_imaging_mode -o build/lib.linux-aarch64-cpython-314/PIL/_imagingtk.cpython-314-aarch64-linux-gnu.so
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Crop.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Crop.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Dib.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Dib.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Draw.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Draw.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Effects.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Effects.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/EpsEncode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/EpsEncode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/File.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/File.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Fill.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Fill.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Filter.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Filter.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/FliDecode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/FliDecode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -shared -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 build/temp.linux-aarch64-cpython-314/src/_imagingmath.o -L/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib -L/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/lib -L. -Lbuild/temp.linux-aarch64-cpython-314 -lpil_imaging_mode -o build/lib.linux-aarch64-cpython-314/PIL/_imagingmath.cpython-314-aarch64-linux-gnu.so
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Geometry.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Geometry.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/GetBBox.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/GetBBox.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/GifDecode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/GifDecode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/GifEncode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/GifEncode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/HexDecode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/HexDecode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Histo.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Histo.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Jpeg2KDecode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Jpeg2KDecode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Jpeg2KEncode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Jpeg2KEncode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -shared -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 build/temp.linux-aarch64-cpython-314/src/_imagingft.o -L/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib -L/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/lib -L. -Lbuild/temp.linux-aarch64-cpython-314 -lpil_imaging_mode -lfreetype -lpil_imaging_mode -o build/lib.linux-aarch64-cpython-314/PIL/_imagingft.cpython-314-aarch64-linux-gnu.so
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/JpegDecode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/JpegDecode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/JpegEncode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/JpegEncode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Matrix.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Matrix.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/ModeFilter.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/ModeFilter.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Negative.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Negative.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Offset.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Offset.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Pack.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Pack.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/PackDecode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/PackDecode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Palette.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Palette.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Paste.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Paste.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/PcdDecode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/PcdDecode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/PcxDecode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/PcxDecode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/PcxEncode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/PcxEncode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Point.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Point.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Quant.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Quant.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/QuantHash.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/QuantHash.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/QuantHeap.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/QuantHeap.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/QuantOctree.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/QuantOctree.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/QuantPngQuant.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/QuantPngQuant.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/RankFilter.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/RankFilter.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/RawDecode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/RawDecode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/RawEncode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/RawEncode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Reduce.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Reduce.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Resample.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Resample.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/SgiRleDecode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/SgiRleDecode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Storage.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Storage.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/SunRleDecode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/SunRleDecode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/TgaRleDecode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/TgaRleDecode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/TgaRleEncode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/TgaRleEncode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/TiffDecode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/TiffDecode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/Unpack.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/Unpack.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/UnpackYCC.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/UnpackYCC.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/UnsharpMask.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/UnsharpMask.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/XbmDecode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/XbmDecode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/XbmEncode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/XbmEncode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/ZipDecode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/ZipDecode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/ZipEncode.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/ZipEncode.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/libImaging/codec_fd.c -o build/temp.linux-aarch64-cpython-314/src/libImaging/codec_fd.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/map.c -o build/temp.linux-aarch64-cpython-314/src/map.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/outline.c -o build/temp.linux-aarch64-cpython-314/src/outline.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -DPILLOW_VERSION=\"12.0.0\" -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/freetype2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Include -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7 -c src/path.c -o build/temp.linux-aarch64-cpython-314/src/path.o
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -shared -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 build/temp.linux-aarch64-cpython-314/src/_imaging.o build/temp.linux-aarch64-cpython-314/src/decode.o build/temp.linux-aarch64-cpython-314/src/display.o build/temp.linux-aarch64-cpython-314/src/encode.o build/temp.linux-aarch64-cpython-314/src/libImaging/Access.o build/temp.linux-aarch64-cpython-314/src/libImaging/AlphaComposite.o build/temp.linux-aarch64-cpython-314/src/libImaging/Arrow.o build/temp.linux-aarch64-cpython-314/src/libImaging/Bands.o build/temp.linux-aarch64-cpython-314/src/libImaging/BcnDecode.o build/temp.linux-aarch64-cpython-314/src/libImaging/BcnEncode.o build/temp.linux-aarch64-cpython-314/src/libImaging/BitDecode.o build/temp.linux-aarch64-cpython-314/src/libImaging/Blend.o build/temp.linux-aarch64-cpython-314/src/libImaging/BoxBlur.o build/temp.linux-aarch64-cpython-314/src/libImaging/Chops.o build/temp.linux-aarch64-cpython-314/src/libImaging/ColorLUT.o build/temp.linux-aarch64-cpython-314/src/libImaging/Convert.o build/temp.linux-aarch64-cpython-314/src/libImaging/ConvertYCbCr.o build/temp.linux-aarch64-cpython-314/src/libImaging/Copy.o build/temp.linux-aarch64-cpython-314/src/libImaging/Crop.o build/temp.linux-aarch64-cpython-314/src/libImaging/Dib.o build/temp.linux-aarch64-cpython-314/src/libImaging/Draw.o build/temp.linux-aarch64-cpython-314/src/libImaging/Effects.o build/temp.linux-aarch64-cpython-314/src/libImaging/EpsEncode.o build/temp.linux-aarch64-cpython-314/src/libImaging/File.o build/temp.linux-aarch64-cpython-314/src/libImaging/Fill.o build/temp.linux-aarch64-cpython-314/src/libImaging/Filter.o build/temp.linux-aarch64-cpython-314/src/libImaging/FliDecode.o build/temp.linux-aarch64-cpython-314/src/libImaging/Geometry.o build/temp.linux-aarch64-cpython-314/src/libImaging/GetBBox.o build/temp.linux-aarch64-cpython-314/src/libImaging/GifDecode.o build/temp.linux-aarch64-cpython-314/src/libImaging/GifEncode.o build/temp.linux-aarch64-cpython-314/src/libImaging/HexDecode.o build/temp.linux-aarch64-cpython-314/src/libImaging/Histo.o build/temp.linux-aarch64-cpython-314/src/libImaging/Jpeg2KDecode.o build/temp.linux-aarch64-cpython-314/src/libImaging/Jpeg2KEncode.o build/temp.linux-aarch64-cpython-314/src/libImaging/JpegDecode.o build/temp.linux-aarch64-cpython-314/src/libImaging/JpegEncode.o build/temp.linux-aarch64-cpython-314/src/libImaging/Matrix.o build/temp.linux-aarch64-cpython-314/src/libImaging/ModeFilter.o build/temp.linux-aarch64-cpython-314/src/libImaging/Negative.o build/temp.linux-aarch64-cpython-314/src/libImaging/Offset.o build/temp.linux-aarch64-cpython-314/src/libImaging/Pack.o build/temp.linux-aarch64-cpython-314/src/libImaging/PackDecode.o build/temp.linux-aarch64-cpython-314/src/libImaging/Palette.o build/temp.linux-aarch64-cpython-314/src/libImaging/Paste.o build/temp.linux-aarch64-cpython-314/src/libImaging/PcdDecode.o build/temp.linux-aarch64-cpython-314/src/libImaging/PcxDecode.o build/temp.linux-aarch64-cpython-314/src/libImaging/PcxEncode.o build/temp.linux-aarch64-cpython-314/src/libImaging/Point.o build/temp.linux-aarch64-cpython-314/src/libImaging/Quant.o build/temp.linux-aarch64-cpython-314/src/libImaging/QuantHash.o build/temp.linux-aarch64-cpython-314/src/libImaging/QuantHeap.o build/temp.linux-aarch64-cpython-314/src/libImaging/QuantOctree.o build/temp.linux-aarch64-cpython-314/src/libImaging/QuantPngQuant.o build/temp.linux-aarch64-cpython-314/src/libImaging/RankFilter.o build/temp.linux-aarch64-cpython-314/src/libImaging/RawDecode.o build/temp.linux-aarch64-cpython-314/src/libImaging/RawEncode.o build/temp.linux-aarch64-cpython-314/src/libImaging/Reduce.o build/temp.linux-aarch64-cpython-314/src/libImaging/Resample.o build/temp.linux-aarch64-cpython-314/src/libImaging/SgiRleDecode.o build/temp.linux-aarch64-cpython-314/src/libImaging/Storage.o build/temp.linux-aarch64-cpython-314/src/libImaging/SunRleDecode.o build/temp.linux-aarch64-cpython-314/src/libImaging/TgaRleDecode.o build/temp.linux-aarch64-cpython-314/src/libImaging/TgaRleEncode.o build/temp.linux-aarch64-cpython-314/src/libImaging/TiffDecode.o build/temp.linux-aarch64-cpython-314/src/libImaging/Unpack.o build/temp.linux-aarch64-cpython-314/src/libImaging/UnpackYCC.o build/temp.linux-aarch64-cpython-314/src/libImaging/UnsharpMask.o build/temp.linux-aarch64-cpython-314/src/libImaging/XbmDecode.o build/temp.linux-aarch64-cpython-314/src/libImaging/XbmEncode.o build/temp.linux-aarch64-cpython-314/src/libImaging/ZipDecode.o build/temp.linux-aarch64-cpython-314/src/libImaging/ZipEncode.o build/temp.linux-aarch64-cpython-314/src/libImaging/codec_fd.o build/temp.linux-aarch64-cpython-314/src/map.o build/temp.linux-aarch64-cpython-314/src/outline.o build/temp.linux-aarch64-cpython-314/src/path.o -L/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib -L/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/lib -L. -Lbuild/temp.linux-aarch64-cpython-314 -lpil_imaging_mode -ljpeg -lz -lpil_imaging_mode -o build/lib.linux-aarch64-cpython-314/PIL/_imaging.cpython-314-aarch64-linux-gnu.so
+--------------------------------------------------------------------
+PIL SETUP SUMMARY
+--------------------------------------------------------------------
+version      Pillow 12.0.0
+platform     linux 3.14.7 (main, Oct 18 2026, 23:23:17)
+             [GCC 15.2.1 20260123 (Red Hat 15.2.1-7)]
+--------------------------------------------------------------------
+--- JPEG support available
+*** OPENJPEG (JPEG2000) support not available
+--- ZLIB (PNG/ZIP) support available
+*** LIBIMAGEQUANT support not available
+*** LIBTIFF support not available
+--- FREETYPE2 support available
+*** RAQM (Text shaping) support not available
+*** LITTLECMS2 support not available
+*** WEBP support not available
+*** XCB (X protocol) support not available
+*** LIBAVIF support not available
+--------------------------------------------------------------------
+To add a missing option, make sure you have the required
+library and headers.
+See https://pillow.readthedocs.io/en/latest/installation.html#building-from-source
+
+To check the build, run the selftest.py script.
+
+installing to build/bdist.linux-aarch64/wheel
+running install
+running install_lib
+creating build/bdist.linux-aarch64/wheel
+creating build/bdist.linux-aarch64/wheel/PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/AvifImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/BdfFontFile.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/BlpImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/BmpImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/BufrStubImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ContainerIO.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/CurImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/DcxImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/DdsImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/EpsImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ExifTags.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/FitsImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/FliImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/FontFile.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/FpxImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/FtexImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/GbrImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/GdImageFile.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/GifImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/GimpGradientFile.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/GimpPaletteFile.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/GribStubImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/Hdf5StubImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/IcnsImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/IcoImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/Image.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImageChops.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImageCms.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImageColor.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImageDraw.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImageDraw2.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImageEnhance.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImageFile.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImageFilter.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImageFont.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImageGrab.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImageMath.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImageMode.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImageMorph.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImageOps.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImagePalette.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImagePath.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImageQt.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImageSequence.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImageShow.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImageStat.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImageText.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImageTk.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImageTransform.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImageWin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/ImtImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/IptcImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/Jpeg2KImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/JpegImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/JpegPresets.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/McIdasImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/MicImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/MpegImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/MpoImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/MspImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/PSDraw.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/PaletteFile.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/PalmImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/PcdImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/PcfFontFile.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/PcxImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/PdfImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/PdfParser.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/PixarImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/PngImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/PpmImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/PsdImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/QoiImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/SgiImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/SpiderImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/SunImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/TarIO.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/TgaImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/TiffImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/TiffTags.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/WalImageFile.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/WebPImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/WmfImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/XVThumbImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/XbmImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/XpmImagePlugin.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/__init__.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/__main__.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/_binary.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/_deprecate.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/_tkinter_finder.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/_typing.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/_util.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/_version.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/features.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/report.py -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/_avif.pyi -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/_imaging.pyi -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/_imagingcms.pyi -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/_imagingft.pyi -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/_imagingmath.pyi -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/_imagingmorph.pyi -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/_imagingtk.pyi -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/_webp.pyi -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/py.typed -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/_imagingmorph.cpython-314-aarch64-linux-gnu.so -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/_imagingtk.cpython-314-aarch64-linux-gnu.so -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/_imagingmath.cpython-314-aarch64-linux-gnu.so -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/_imagingft.cpython-314-aarch64-linux-gnu.so -> build/bdist.linux-aarch64/wheel/./PIL
+copying build/lib.linux-aarch64-cpython-314/PIL/_imaging.cpython-314-aarch64-linux-gnu.so -> build/bdist.linux-aarch64/wheel/./PIL
+running install_egg_info
+Copying src/pillow.egg-info to build/bdist.linux-aarch64/wheel/./pillow-12.0.0-py3.14.egg-info
+running install_scripts
+creating build/bdist.linux-aarch64/wheel/pillow-12.0.0.dist-info/WHEEL
+creating '/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python-pillow-12.0.0/dist/.tmp-v7akpcnb/pillow-12.0.0-cp314-cp314-linux_aarch64.whl' and adding 'build/bdist.linux-aarch64/wheel' to it
+adding 'PIL/AvifImagePlugin.py'
+adding 'PIL/BdfFontFile.py'
+adding 'PIL/BlpImagePlugin.py'
+adding 'PIL/BmpImagePlugin.py'
+adding 'PIL/BufrStubImagePlugin.py'
+adding 'PIL/ContainerIO.py'
+adding 'PIL/CurImagePlugin.py'
+adding 'PIL/DcxImagePlugin.py'
+adding 'PIL/DdsImagePlugin.py'
+adding 'PIL/EpsImagePlugin.py'
+adding 'PIL/ExifTags.py'
+adding 'PIL/FitsImagePlugin.py'
+adding 'PIL/FliImagePlugin.py'
+adding 'PIL/FontFile.py'
+adding 'PIL/FpxImagePlugin.py'
+adding 'PIL/FtexImagePlugin.py'
+adding 'PIL/GbrImagePlugin.py'
+adding 'PIL/GdImageFile.py'
+adding 'PIL/GifImagePlugin.py'
+adding 'PIL/GimpGradientFile.py'
+adding 'PIL/GimpPaletteFile.py'
+adding 'PIL/GribStubImagePlugin.py'
+adding 'PIL/Hdf5StubImagePlugin.py'
+adding 'PIL/IcnsImagePlugin.py'
+adding 'PIL/IcoImagePlugin.py'
+adding 'PIL/ImImagePlugin.py'
+adding 'PIL/Image.py'
+adding 'PIL/ImageChops.py'
+adding 'PIL/ImageCms.py'
+adding 'PIL/ImageColor.py'
+adding 'PIL/ImageDraw.py'
+adding 'PIL/ImageDraw2.py'
+adding 'PIL/ImageEnhance.py'
+adding 'PIL/ImageFile.py'
+adding 'PIL/ImageFilter.py'
+adding 'PIL/ImageFont.py'
+adding 'PIL/ImageGrab.py'
+adding 'PIL/ImageMath.py'
+adding 'PIL/ImageMode.py'
+adding 'PIL/ImageMorph.py'
+adding 'PIL/ImageOps.py'
+adding 'PIL/ImagePalette.py'
+adding 'PIL/ImagePath.py'
+adding 'PIL/ImageQt.py'
+adding 'PIL/ImageSequence.py'
+adding 'PIL/ImageShow.py'
+adding 'PIL/ImageStat.py'
+adding 'PIL/ImageText.py'
+adding 'PIL/ImageTk.py'
+adding 'PIL/ImageTransform.py'
+adding 'PIL/ImageWin.py'
+adding 'PIL/ImtImagePlugin.py'
+adding 'PIL/IptcImagePlugin.py'
+adding 'PIL/Jpeg2KImagePlugin.py'
+adding 'PIL/JpegImagePlugin.py'
+adding 'PIL/JpegPresets.py'
+adding 'PIL/McIdasImagePlugin.py'
+adding 'PIL/MicImagePlugin.py'
+adding 'PIL/MpegImagePlugin.py'
+adding 'PIL/MpoImagePlugin.py'
+adding 'PIL/MspImagePlugin.py'
+adding 'PIL/PSDraw.py'
+adding 'PIL/PaletteFile.py'
+adding 'PIL/PalmImagePlugin.py'
+adding 'PIL/PcdImagePlugin.py'
+adding 'PIL/PcfFontFile.py'
+adding 'PIL/PcxImagePlugin.py'
+adding 'PIL/PdfImagePlugin.py'
+adding 'PIL/PdfParser.py'
+adding 'PIL/PixarImagePlugin.py'
+adding 'PIL/PngImagePlugin.py'
+adding 'PIL/PpmImagePlugin.py'
+adding 'PIL/PsdImagePlugin.py'
+adding 'PIL/QoiImagePlugin.py'
+adding 'PIL/SgiImagePlugin.py'
+adding 'PIL/SpiderImagePlugin.py'
+adding 'PIL/SunImagePlugin.py'
+adding 'PIL/TarIO.py'
+adding 'PIL/TgaImagePlugin.py'
+adding 'PIL/TiffImagePlugin.py'
+adding 'PIL/TiffTags.py'
+adding 'PIL/WalImageFile.py'
+adding 'PIL/WebPImagePlugin.py'
+adding 'PIL/WmfImagePlugin.py'
+adding 'PIL/XVThumbImagePlugin.py'
+adding 'PIL/XbmImagePlugin.py'
+adding 'PIL/XpmImagePlugin.py'
+adding 'PIL/__init__.py'
+adding 'PIL/__main__.py'
+adding 'PIL/_avif.pyi'
+adding 'PIL/_binary.py'
+adding 'PIL/_deprecate.py'
+adding 'PIL/_imaging.cpython-314-aarch64-linux-gnu.so'
+adding 'PIL/_imaging.pyi'
+adding 'PIL/_imagingcms.pyi'
+adding 'PIL/_imagingft.cpython-314-aarch64-linux-gnu.so'
+adding 'PIL/_imagingft.pyi'
+adding 'PIL/_imagingmath.cpython-314-aarch64-linux-gnu.so'
+adding 'PIL/_imagingmath.pyi'
+adding 'PIL/_imagingmorph.cpython-314-aarch64-linux-gnu.so'
+adding 'PIL/_imagingmorph.pyi'
+adding 'PIL/_imagingtk.cpython-314-aarch64-linux-gnu.so'
+adding 'PIL/_imagingtk.pyi'
+adding 'PIL/_tkinter_finder.py'
+adding 'PIL/_typing.py'
+adding 'PIL/_util.py'
+adding 'PIL/_version.py'
+adding 'PIL/_webp.pyi'
+adding 'PIL/features.py'
+adding 'PIL/py.typed'
+adding 'PIL/report.py'
+adding 'pillow-12.0.0.dist-info/licenses/LICENSE'
+adding 'pillow-12.0.0.dist-info/METADATA'
+adding 'pillow-12.0.0.dist-info/WHEEL'
+adding 'pillow-12.0.0.dist-info/top_level.txt'
+adding 'pillow-12.0.0.dist-info/zip-safe'
+adding 'pillow-12.0.0.dist-info/RECORD'
+removing build/bdist.linux-aarch64/wheel
+Successfully built pillow-12.0.0-cp314-cp314-linux_aarch64.whl
+[7m>>> python-pillow 12.0.0 Installing to target[27m
+(cd /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python-pillow-12.0.0//; _PYTHON_HOST_PLATFORM="linux-aarch64" _PYTHON_PROJECT_BASE="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7" _PYTHON_SYSCONFIGDATA_NAME="`{ [ -e /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/python3.14//_sysconfigdata__linux_*.py ] && basename /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/python3.14//_sysconfigdata__linux_*.py .py; } || true`" PATH="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin:/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/sbin:/var/home/bazzite/ljh/.local-build/tools/bin:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0irwKPD:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg08ssPBg:/var/home/bazzite/.codex/packages/standalone/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.local/bin:/home/bazzite/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" GIT_DIR=. PATH="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin:/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/sbin:/var/home/bazzite/ljh/.local-build/tools/bin:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0irwKPD:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg08ssPBg:/var/home/bazzite/.codex/packages/standalone/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.local/bin:/home/bazzite/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" AR="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc-ar" AS="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-as" LD="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-ld" NM="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc-nm" CC="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc" GCC="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc" CPP="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-cpp" CXX="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-g++" FC="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gfortran" F77="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gfortran" RANLIB="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc-ranlib" READELF="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-readelf" STRIP="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-strip" OBJCOPY="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-objcopy" OBJDUMP="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-objdump" AR_FOR_BUILD="/usr/bin/ar" AS_FOR_BUILD="/usr/bin/as" CC_FOR_BUILD="/usr/bin/gcc" GCC_FOR_BUILD="/usr/bin/gcc" CXX_FOR_BUILD="/usr/bin/g++" LD_FOR_BUILD="/usr/bin/ld" CPPFLAGS_FOR_BUILD="-I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include" CFLAGS_FOR_BUILD="-O2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include" CXXFLAGS_FOR_BUILD="-O2 -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include" LDFLAGS_FOR_BUILD="-L/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/lib -Wl,-rpath,/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/lib" FCFLAGS_FOR_BUILD="" DEFAULT_ASSEMBLER="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-as" DEFAULT_LINKER="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-ld" CPPFLAGS="-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64" CFLAGS="-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64  -O2 -g0 -D_FORTIFY_SOURCE=1" CXXFLAGS="-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64  -O2 -g0 -D_FORTIFY_SOURCE=1" LDFLAGS="" FCFLAGS=" -O2 -g0" FFLAGS=" -O2 -g0" PKG_CONFIG="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/pkg-config" STAGING_DIR="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot" INTLTOOL_PERL=/usr/bin/perl PYTHONPATH="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/python3.14/" PYTHONNOUSERSITE=1  /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/python3 /var/home/bazzite/ljh/vendor/buildroot-2026.08/support/scripts/pyinstaller.py dist/* --interpreter=/usr/bin/python --script-kind=posix --purelib=/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/python3.14/site-packages --headers=/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/include/python3.14 --scripts=/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/bin --data=/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target )
+[7m>>> mebs 0.1.0 Syncing from source dir /var/home/bazzite/ljh/buildroot/../mebs[27m
+rsync -au --chmod=u=rwX,go=rX  --exclude .svn --exclude .git --exclude .hg --exclude .bzr --exclude CVS /var/home/bazzite/ljh/buildroot/../mebs/ /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/mebs-0.1.0
+[7m>>> mebs 0.1.0 Configuring[27m
+[7m>>> mebs 0.1.0 Building[27m
+/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64  -O2 -g0 -D_FORTIFY_SOURCE=1 -Wall -Wextra -Werror -I/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/libdrm /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/mebs-0.1.0/drm_presenter.c  -ldrm -o /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/mebs-0.1.0/mebs-drm
+[7m>>> mebs 0.1.0 Installing to target[27m
+/usr/bin/install -d /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/mebs/mebs
+/usr/bin/install -m 0644 /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/mebs-0.1.0/*.py /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/mebs/mebs/
+/usr/bin/install -D -m 0644 /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/mebs-0.1.0/assets/mebs-logo-mask.png /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/mebs/mebs/assets/mebs-logo-mask.png
+/usr/bin/install -D -m 0644 /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/mebs-0.1.0/assets/logo-provenance.json /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/mebs/mebs/assets/logo-provenance.json
+/usr/bin/install -D -m 0644 /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/mebs-0.1.0/ui/preview.html /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/mebs/mebs/ui/preview.html
+/usr/bin/install -D -m 0755 /var/home/bazzite/ljh/buildroot/package/mebs/mebs-launcher /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/bin/mebs
+/usr/bin/install -D -m 0755 /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/mebs-0.1.0/mebs-drm /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/bin/mebs-drm
+[7m>>>   Finalizing host directory[27m
+[7m>>>   Finalizing target directory[27m
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/src/hare
+mkdir -p /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/etc/meson
+sed -e "s%@TARGET_CFLAGS@%'-D_LARGEFILE_SOURCE', '-D_LARGEFILE64_SOURCE', '-D_FILE_OFFSET_BITS=64', '-O2', '-g0', '-D_FORTIFY_SOURCE=1'@PKG_TARGET_CFLAGS@%g" -e "s%@TARGET_LDFLAGS@%@PKG_TARGET_LDFLAGS@%g" -e "s%@TARGET_CXXFLAGS@%'-D_LARGEFILE_SOURCE', '-D_LARGEFILE64_SOURCE', '-D_FILE_OFFSET_BITS=64', '-O2', '-g0', '-D_FORTIFY_SOURCE=1'@PKG_TARGET_CXXFLAGS@%g" -e "s%@TARGET_FCFLAGS@%'-O2', '-g0'@PKG_TARGET_FCFLAGS@%g"         -e "s%@TARGET_CC@%/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc%g" -e "s%@TARGET_CXX@%/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-g++%g" -e "s%@TARGET_AR@%/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc-ar%g" -e "s%@TARGET_FC@%/bin/false%g" -e "s%@TARGET_STRIP@%/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-strip%g" -e "s%@TARGET_ARCH@%aarch64%g" -e "s%@TARGET_CPU@%cortex-a72%g" -e "s%@TARGET_ENDIAN@%little%g" -e "s%@TARGET_FCFLAGS@%%g" -e "s%@TARGET_CFLAGS@%%g" -e "s%@TARGET_LDFLAGS@%%g" -e "s%@TARGET_CXXFLAGS@%%g" -e "s%@BR2_CMAKE@%/usr/bin/cmake%g" -e "s%@PKGCONF_HOST_BINARY@%/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/pkgconf%g" -e "s%@HOST_DIR@%/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host%g" -e "s%@STAGING_DIR@%/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot%g" -e "s%@STATIC@%false%g" /var/home/bazzite/ljh/vendor/buildroot-2026.08/support/misc/cross-compilation.conf.in > /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/etc/meson/cross-compilation.conf.in
+sed         -e "s%@TARGET_CC@%/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc%g" -e "s%@TARGET_CXX@%/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-g++%g" -e "s%@TARGET_AR@%/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-gcc-ar%g" -e "s%@TARGET_FC@%/bin/false%g" -e "s%@TARGET_STRIP@%/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-strip%g" -e "s%@TARGET_ARCH@%aarch64%g" -e "s%@TARGET_CPU@%cortex-a72%g" -e "s%@TARGET_ENDIAN@%little%g" -e "s%@TARGET_FCFLAGS@%'-O2', '-g0'%g" -e "s%@TARGET_CFLAGS@%'-D_LARGEFILE_SOURCE', '-D_LARGEFILE64_SOURCE', '-D_FILE_OFFSET_BITS=64', '-O2', '-g0', '-D_FORTIFY_SOURCE=1'%g" -e "s%@TARGET_LDFLAGS@%%g" -e "s%@TARGET_CXXFLAGS@%'-D_LARGEFILE_SOURCE', '-D_LARGEFILE64_SOURCE', '-D_FILE_OFFSET_BITS=64', '-O2', '-g0', '-D_FORTIFY_SOURCE=1'%g" -e "s%@BR2_CMAKE@%/usr/bin/cmake%g" -e "s%@PKGCONF_HOST_BINARY@%/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/pkgconf%g" -e "s%@HOST_DIR@%/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host%g" -e "s%@STAGING_DIR@%/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot%g" -e "s%@STATIC@%false%g" /var/home/bazzite/ljh/vendor/buildroot-2026.08/support/misc/cross-compilation.conf.in > /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/etc/meson/cross-compilation.conf
+/usr/bin/sed -i -e '/# GENERIC_SERIAL$/s~^.*#~console::respawn:/sbin/getty -L  console 0 vt100 #~' /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/etc/inittab
+/usr/bin/sed -i -e '/^[^#].*-o remount,rw \/$/s~^~#~' /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/etc/inittab
+if grep -q CONFIG_ASH=y /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/busybox-1.38.0/.config; then grep -qsE '^/bin/ash$' /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/etc/shells || echo "/bin/ash" >> /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/etc/shells; fi
+if grep -q CONFIG_HUSH=y /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/busybox-1.38.0/.config; then grep -qsE '^/bin/hush$' /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/etc/shells || echo "/bin/hush" >> /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/etc/shells; fi
+PYTHONPATH="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/python3.14/" /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/python3.14 /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/python3-3.14.7/Lib/compileall.py -q -b -s /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target -p / /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/python3.14
+find /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/python3.14 -name '*.py'  -print0 | xargs -0 --no-run-if-empty rm -f
+find /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/python3.14 -name '*.opt-1.pyc' -print0 -o -name '*.opt-2.pyc' -print0 | xargs -0 --no-run-if-empty rm -f
+mkdir -p /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/etc
+echo "mebs" > /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/etc/hostname
+/usr/bin/sed -i -e '$a \127.0.1.1\tmebs' -e '/^127.0.1.1/d' /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/etc/hosts
+mkdir -p /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/etc
+echo "Welcome to Buildroot" > /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/etc/issue
+/usr/bin/sed -i -e s,^root:[^:]*:,root::, /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/etc/shadow
+grep -qsE '^/bin/sh$' /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/etc/shells || echo "/bin/sh" >> /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/etc/shells
+if [ -x /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/sbin/swapon -a -x /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/sbin/swapoff ]; then /usr/bin/sed -i -e '/^#.*\/sbin\/swap/s/^#\+[[:blank:]]*//' /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/etc/inittab; else /usr/bin/sed -i -e '/^[^#].*\/sbin\/swap/s/^/#/' /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/etc/inittab; fi
+if test -d /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/lib/modules/`MAKEFLAGS='-j6 --jobserver-auth=fifo:/tmp/GMfifo92857' /usr/bin/make  HOSTCC="/usr/bin/gcc -O2 -isystem /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -L/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/lib -Wl,-rpath,/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/lib" ARCH=arm64 KCFLAGS="-Wno-attribute-alias" INSTALL_MOD_PATH=/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target CROSS_COMPILE="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-" WERROR=0 REGENERATE_PARSERS=1 DEPMOD=true INSTALL_MOD_STRIP=1 -C /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/linux-custom --no-print-directory -s kernelrelease 2>/dev/null` && grep -q "CONFIG_MODULES=y" /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/linux-custom/.config; then /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/sbin/depmod -a -b /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target `MAKEFLAGS='-j6 --jobserver-auth=fifo:/tmp/GMfifo92857' /usr/bin/make  HOSTCC="/usr/bin/gcc -O2 -isystem /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/include -L/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/lib -Wl,-rpath,/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/lib" ARCH=arm64 KCFLAGS="-Wno-attribute-alias" INSTALL_MOD_PATH=/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target CROSS_COMPILE="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-" WERROR=0 REGENERATE_PARSERS=1 DEPMOD=true INSTALL_MOD_STRIP=1 -C /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/linux-custom --no-print-directory -s kernelrelease 2>/dev/null`; fi
+printf '%s\n' C en_US locale-archive > /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/locales.nopurge
+for dir in /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/locale /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/X11/locale /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/locale; do if [ ! -d $dir ]; then continue; fi; for langdir in $dir/*; do if [ -e "${langdir}" ]; then grep -qx "${langdir##*/}" /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/locales.nopurge || rm -rf $langdir; fi done; done
+if [ -d /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/X11/locale ]; then for lang in C en_US; do if [ -f /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/X11/locale/$lang/XLC_LOCALE ]; then echo "$lang/XLC_LOCALE: $lang"; fi done > /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/X11/locale/locale.dir; fi
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/include /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/aclocal \
+	/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/pkgconfig /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/pkgconfig \
+	/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/cmake /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/cmake \
+	/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/rpm /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/doc
+find /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/{lib,share}/ -name '*.cmake' -print0 | xargs -0 rm -f
+find /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/lib/ /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/ /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/libexec/ \
+	\( -name '*.a' -o -name '*.la' -o -name '*.prl' \) -print0 | xargs -0 rm -f
+find: ‘/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/libexec/’: No such file or directory
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/gdb
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/bash-completion
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/etc/bash_completion.d
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/zsh
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/man /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/man
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/info /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/info
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/doc /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/doc
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share/gtk-doc
+rmdir /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/share 2>/dev/null || true
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/lib/debug /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/debug
+find /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target   -type f \( -perm /111 -o -name '*.so*' \) -not \( -name 'libpthread*.so*' -o -name 'ld-*.so*' -o -name '*.ko' \) -print0 | xargs -0 /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-strip --remove-section=.comment --remove-section=.note 2>/dev/null || true
+find /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target   \( -name 'ld-*.so*' -o -name 'libpthread*.so*' \) -print0 | xargs -0 -r /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/aarch64-buildroot-linux-gnu-strip --remove-section=.comment --remove-section=.note --strip-debug 2>/dev/null || true
+test -f /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/etc/ld.so.conf && \
+	{ echo "ERROR: we shouldn't have a /etc/ld.so.conf file"; exit 1; } || true
+test -d /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/etc/ld.so.conf.d && \
+	{ echo "ERROR: we shouldn't have a /etc/ld.so.conf.d directory"; exit 1; } || true
+mkdir -p /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/etc
+( \
+	echo "NAME=Buildroot"; \
+	echo "VERSION=-gd8e5ac3-dirty"; \
+	echo "ID=buildroot"; \
+	echo "VERSION_ID=2026.08"; \
+	echo "PRETTY_NAME=\"Buildroot 2026.08\"" \
+) >  /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr/lib/os-release
+ln -sf ../usr/lib/os-release /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/etc
+[7m>>>   Sanitizing RPATH in target tree[27m
+PARALLEL_JOBS=13 \
+	PER_PACKAGE_DIR=/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/per-package \
+	/var/home/bazzite/ljh/vendor/buildroot-2026.08/support/scripts/fix-rpath target
+[7m>>>   Sanity check in overlays /var/home/bazzite/ljh/buildroot/board/mebs-pi4-dsi/overlay[27m
+support/scripts/check-merged \
+	-t overlay \
+	 \
+	 \
+	/var/home/bazzite/ljh/buildroot/board/mebs-pi4-dsi/overlay
+[7m>>>   Copying overlay /var/home/bazzite/ljh/buildroot/board/mebs-pi4-dsi/overlay[27m
+[7m>>>   Executing post-build script /var/home/bazzite/ljh/buildroot/board/mebs-pi4-dsi/post-build.sh[27m
+touch /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/usr
+[7m>>>   Generating root filesystems common tables[27m
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs
+mkdir -p /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs
+printf '   \n' >> /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/full_users_table.txt
+printf '   	/bin/busybox                     f 4755 0  0 - - - - -\n\n' > /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/full_devices_table.txt
+cat system/device_table.txt >> /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/full_devices_table.txt
+[7m>>>   Generating filesystem image rootfs.ext2[27m
+mkdir -p /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/images
+rm -rf /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2
+mkdir -p /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2
+rsync -auH --exclude=/THIS_IS_NOT_YOUR_ROOT_FILESYSTEM /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/target/ /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2/target
+echo '#!/bin/sh' > /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2/fakeroot
+echo "set -e" >> /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2/fakeroot
+echo "chown -h -R 0:0 /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2/target" >> /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2/fakeroot
+PATH="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin:/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/sbin:/var/home/bazzite/ljh/.local-build/tools/bin:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0irwKPD:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg08ssPBg:/var/home/bazzite/.codex/packages/standalone/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.local/bin:/home/bazzite/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" /var/home/bazzite/ljh/vendor/buildroot-2026.08/support/scripts/mkusers /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/full_users_table.txt /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2/target >> /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2/fakeroot
+echo "/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/makedevs -d /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/full_devices_table.txt /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2/target" >> /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2/fakeroot
+printf '   	rm -rf /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2/target/usr/lib/udev/hwdb.d/ /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2/target/etc/udev/hwdb.d/\n' >> /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2/fakeroot
+echo "find /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2/target/run/ -mindepth 1 -prune -print0 | xargs -0r rm -rf --" >> /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2/fakeroot
+echo "find /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2/target/tmp/ -mindepth 1 -prune -print0 | xargs -0r rm -rf --" >> /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2/fakeroot
+printf '   \n' >> /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2/fakeroot
+printf '   \n' >> /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2/fakeroot
+printf '   	rm -f /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/images/rootfs.ext2\n	/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/sbin/mkfs.ext4 -d /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2/target -N 0 -m 5 -L "rootfs" -I 256 -O ^64bit /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/images/rootfs.ext2 "192M" || { ret=$?; echo "*** Maybe you need to increase the filesystem size (BR2_TARGET_ROOTFS_EXT2_SIZE)" 1>&2; exit $ret; }\n' >> /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2/fakeroot
+chmod a+x /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2/fakeroot
+PATH="/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin:/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/sbin:/var/home/bazzite/ljh/.local-build/tools/bin:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg0irwKPD:/var/home/bazzite/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.codex/tmp/arg0-linux/codex-arg08ssPBg:/var/home/bazzite/.codex/packages/standalone/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/bazzite/.local/bin:/home/bazzite/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" FAKEROOTDONTTRYCHOWN=1 /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/host/bin/fakeroot -- /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2/fakeroot
+rootdir=/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/ext2/target
+table='/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/buildroot-fs/full_devices_table.txt'
+mke2fs 1.47.4 (6-Mar-2025)
+Creating regular file /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/images/rootfs.ext2
+64-bit filesystem support is not enabled.  The larger fields afforded by this feature enable full-strength checksumming.  Pass -O 64bit to rectify.
+Creating filesystem with 196608 1k blocks and 49152 inodes
+Filesystem UUID: 517a3ed5-8944-4e5e-8f3c-b960aede6d69
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/24     done                            
+Writing inode tables:  0/24     done                            
+Creating journal (4096 blocks): done
+Copying files into the device: done
+Writing superblocks and filesystem accounting information:  0/24     done
+
+ln -sf rootfs.ext2 /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/images/rootfs.ext4
+[7m>>>   Executing post-image script /var/home/bazzite/ljh/buildroot/board/mebs-pi4-dsi/post-image.sh[27m
+INFO: cmd: "rm -rf "/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/mebs-genimage.p2QqAn/work"/*" (stderr):
+INFO: cmd: "mkdir -p "/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/mebs-genimage.p2QqAn/work"" (stderr):
+INFO: cmd: "cp -a "/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/mebs-genimage.p2QqAn/root" "/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/mebs-genimage.p2QqAn/work/root"" (stderr):
+INFO: cmd: "mkdir -p "/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/images"" (stderr):
+INFO: vfat(boot.vfat): cmd: "mkdosfs -F 32  '/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/images/boot.vfat'" (stderr):
+INFO: vfat(boot.vfat): adding file 'bcm2711-rpi-4-b.dtb' as 'bcm2711-rpi-4-b.dtb' ...
+INFO: vfat(boot.vfat): cmd: "MTOOLS_SKIP_CHECK=1 mcopy -sp -i '/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/images/boot.vfat' '/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/images/bcm2711-rpi-4-b.dtb' '::'" (stderr):
+INFO: vfat(boot.vfat): adding file 'rpi-firmware/cmdline.txt' as 'rpi-firmware/cmdline.txt' ...
+INFO: vfat(boot.vfat): cmd: "MTOOLS_SKIP_CHECK=1 mcopy -sp -i '/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/images/boot.vfat' '/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/images/rpi-firmware/cmdline.txt' '::'" (stderr):
+INFO: vfat(boot.vfat): adding file 'rpi-firmware/config.txt' as 'rpi-firmware/config.txt' ...
+INFO: vfat(boot.vfat): cmd: "MTOOLS_SKIP_CHECK=1 mcopy -sp -i '/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/images/boot.vfat' '/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/images/rpi-firmware/config.txt' '::'" (stderr):
+INFO: vfat(boot.vfat): adding file 'rpi-firmware/fixup4.dat' as 'rpi-firmware/fixup4.dat' ...
+INFO: vfat(boot.vfat): cmd: "MTOOLS_SKIP_CHECK=1 mcopy -sp -i '/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/images/boot.vfat' '/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/images/rpi-firmware/fixup4.dat' '::'" (stderr):
+INFO: vfat(boot.vfat): adding file 'rpi-firmware/overlays' as 'rpi-firmware/overlays' ...
+INFO: vfat(boot.vfat): cmd: "MTOOLS_SKIP_CHECK=1 mcopy -sp -i '/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/images/boot.vfat' '/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/images/rpi-firmware/overlays' '::'" (stderr):
+INFO: vfat(boot.vfat): adding file 'rpi-firmware/start4.elf' as 'rpi-firmware/start4.elf' ...
+INFO: vfat(boot.vfat): cmd: "MTOOLS_SKIP_CHECK=1 mcopy -sp -i '/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/images/boot.vfat' '/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/images/rpi-firmware/start4.elf' '::'" (stderr):
+INFO: vfat(boot.vfat): adding file 'Image' as 'Image' ...
+INFO: vfat(boot.vfat): cmd: "MTOOLS_SKIP_CHECK=1 mcopy -sp -i '/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/images/boot.vfat' '/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/images/Image' '::'" (stderr):
+INFO: ext4(mebs-settings.ext4): cmd: "mke2fs -t ext4 -I 256 -E 'root_owner=0:0,lazy_itable_init=0,lazy_journal_init=0' -O '^large_file' -O '^huge_file' -d '/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/mebs-genimage.p2QqAn/work/root'  -L 'MEBS_CONFIG'  '/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/images/mebs-settings.ext4' 8192k" (stderr):
+mke2fs 1.47.4 (6-Mar-2025)
+INFO: ext4(mebs-settings.ext4): cmd: "e2fsck -pvfD '/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/images/mebs-settings.ext4'" (stderr):
+INFO: hdimage(sdcard.img): adding primary partition 'boot' (in MBR) from 'boot.vfat' ...
+INFO: hdimage(sdcard.img): adding primary partition 'rootfs' (in MBR) from 'rootfs.ext4' ...
+INFO: hdimage(sdcard.img): adding primary partition 'settings' (in MBR) from 'mebs-settings.ext4' ...
+INFO: hdimage(sdcard.img): adding primary partition '[MBR]' ...
+INFO: hdimage(sdcard.img): writing MBR
+INFO: cmd: "rm -rf "/var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/build/mebs-genimage.p2QqAn/work"/*" (stderr):
+make: Leaving directory '/var/home/bazzite/ljh/vendor/buildroot-2026.08'
+4e2511d82fa748e57760b9b383e5b5f0b0ce2b30d216a16fd9f66e4d2ee33570  /var/home/bazzite/ljh/output/pi4-v3-jpeg-20261019/MABS_V3_RPi4.img

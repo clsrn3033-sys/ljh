@@ -30,3 +30,16 @@ config BR2_PACKAGE_MEBS_CONTROLS
       Additive display-independent backup worker, sensor and settings runtime.
       Only the separate DSI test board profile starts this runtime by default.
       Requires a verified panel configuration before enabling live DSI output.
+
+config BR2_PACKAGE_MEBS_EXPLORER_V3
+    bool "MEBS V3 on-demand file explorer and video inspection"
+    depends on BR2_PACKAGE_MEBS_CONTROLS
+    select BR2_PACKAGE_FFMPEG
+    select BR2_PACKAGE_FFMPEG_FFMPEG
+    select BR2_PACKAGE_FFMPEG_FFPROBE
+    select BR2_PACKAGE_FFMPEG_SWSCALE
+    select BR2_PACKAGE_JPEG
+    help
+      File browser, JPEG/image preview, best-effort RAW thumbnail and
+      FFprobe/FFmpeg video inspection. No desktop or FFplay is installed.
+      Playback is software-only until Pi4 hardware decoding is verified.
