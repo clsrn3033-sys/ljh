@@ -313,6 +313,20 @@ def test(case, images, os_image, temp, logs, screenshots):
             guest.shell('umount /run/inspect')
             if case=='T01':
                 guest.capture(screenshots/'T01-guest-safe-to-remove.png')
+            if case=='T13':
+                # The VM has no configured touchscreen. Exercise the normal
+                # guest OS shutdown and next boot, not the button/fade path.
+                overlay = guest.overlay
+                guest.child.sendline('poweroff')
+                guest.child.expect('Power down', timeout=30)
+                guest.child.expect(pexpect.EOF, timeout=30)
+                old_events = guest.events[:]
+                guest.close()
+                guest = Guest(images, os_image, folder, logs, case+'-reboot', overlay=overlay)
+                guest.events = old_events + guest.events
+                restarted = guest.status()
+                assert restarted['state'] == 'READY' and not restarted['source_connected'] and not restarted['target_connected'], restarted
+                result.update(detail='Guest normal OS poweroff reached Power down; persistent OS rebooted to READY without USB', reboot_state=restarted, reboot_seconds=guest.boot_seconds)
             if case=='T02':
                 guest.detach('source'); guest.detach('target')
                 guest.wait({'READY'}, tolerate_errors=True)
@@ -340,8 +354,12 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--images',type=Path,default=ROOT/'output/pi4-v2-recovery-v4-20261019/images')
     parser.add_argument('--prepared-os',type=Path,help='separate QEMU raw image with vda3 fstab adaptation')
-    parser.add_argument('--cases',default='T01,T02,T03,T04,T05,T06,T07,T08,T09,T10,T11')
+    parser.add_argument('--cases',default='T01,T02,T03,T04,T05,T06,T07,T08,T09,T10,T11,T12')
     args=parser.parse_args()
+    cases = [case.strip() for case in args.cases.split(',')]
+    supported = {f'T{number:02d}' for number in range(1, 14)}
+    if not cases or any(case not in supported for case in cases) or len(cases) != len(set(cases)):
+        parser.error('--cases must be unique IDs from T01 through T13')
     images=args.images.resolve()
     stamp=time.strftime('%Y%m%d-%H%M%S')
     evidence=HERE/'runs'/stamp
@@ -354,19 +372,22 @@ def main():
         os_image=args.prepared_os.resolve() if args.prepared_os else prepare_os(images,temp)
         if not os_image.is_file() or os_image.is_block_device():
             raise SystemExit('Prepared OS must be a regular image file')
-        for case in args.cases.split(','):
+        for case in cases:
             started=time.monotonic()
-            try:
-                result=test(case,images,os_image,temp,logs,screenshots)
-            except AssertionError as exc:
-                result={'id':case,'status':'FAIL','executed':True,'error':repr(exc)}
-            except Exception as exc:
-                result={'id':case,'status':'BLOCKED','executed':True,'error':repr(exc)}
+            if case == 'T12':
+                result={'id':'T12','status':'BLOCKED','executed':False,
+                        'detail':'Shipped V2 has no manual formatter or format-approval UI. No SD format executed.'}
+            else:
+                try:
+                    result=test(case,images,os_image,temp,logs,screenshots)
+                except AssertionError as exc:
+                    result={'id':case,'status':'FAIL','executed':True,'error':repr(exc)}
+                except Exception as exc:
+                    result={'id':case,'status':'BLOCKED','executed':True,'error':repr(exc)}
             result['elapsed_seconds']=round(time.monotonic()-started,3)
             results.append(result)
             (evidence/'results.json').write_text(json.dumps(results,ensure_ascii=False,indent=2))
             print(json.dumps(result,ensure_ascii=False),flush=True)
-        results.append({'id':'T12','status':'BLOCKED','executed':False,'detail':'Shipped V2 has no manual formatter or format-approval UI. No SD format executed.'})
     assert sha(images/'sdcard.img')==original_hash, 'Original image changed'
     (evidence/'results.json').write_text(json.dumps(results,ensure_ascii=False,indent=2))
     (evidence/'environment.json').write_text(json.dumps({'image':str(images/'sdcard.img'),'sha256':original_hash,'original_unchanged':True,'qemu':command('qemu-system-aarch64','--version').splitlines()[0],'adaptation':'test copy fstab mmcblk0p3 -> vda3 only','machine':'virt / cortex-a72 / 1024MiB / 2 vCPU','hardware_tested':False},indent=2))

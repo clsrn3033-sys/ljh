@@ -1,0 +1,15 @@
+{
+  "partition_count": 3,
+  "partition_types": [
+    "c",
+    "83",
+    "83"
+  ],
+  "required_boot_files_missing": [],
+  "installed_python_matches_source": {
+    "runtime800.py": true,
+    "controls.py": true,
+    "boot_animation.py": true
+  },
+  "image_bytes": 311427072
+}

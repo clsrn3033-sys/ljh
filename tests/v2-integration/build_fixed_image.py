@@ -52,6 +52,7 @@ def main():
         '/usr/lib/mebs/mebs/gpio_virtual.py':ROOT/'mebs/gpio_virtual.py',
         '/usr/lib/mebs/mebs/hardware_profile.py':ROOT/'mebs/hardware_profile.py',
         '/usr/lib/mebs/mebs/ui800.py':ROOT/'mebs/ui800.py',
+        '/usr/lib/mebs/mebs/boot_animation.py':ROOT/'mebs/boot_animation.py',
         '/etc/mebs/hardware.json':ROOT/'buildroot/board/mebs-pi4-dsi/overlay/etc/mebs/hardware.json',
         '/etc/mebs/gpio_pinmap.json':ROOT/'buildroot/board/mebs-pi4-dsi/overlay/etc/mebs/gpio_pinmap.json',
         '/etc/default/seedrng':ROOT/'buildroot/board/mebs-pi4-dsi/overlay/etc/default/seedrng',

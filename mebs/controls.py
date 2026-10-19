@@ -89,6 +89,7 @@ class Controls:
                 return
             self.confirm_power = False
             self.shutdown_pending = True
+            self.screen_off = False
             self.shutdown_requires_safe = self.worker_active
             self.notice = '백업 성공·안전 분리 후 종료 예약' if self.worker_active else '안전 종료 준비'
 
@@ -120,7 +121,8 @@ class Controls:
     def tick(self):
         with self.lock:
             now = self.clock()
-            if (self.state.get('state') not in ('ERROR', 'CANCELLED', 'AMBIGUOUS') and self.settings.screen_timeout
+            if (not self.shutdown_pending and not self.shutting_down
+                    and self.state.get('state') not in ('ERROR', 'CANCELLED', 'AMBIGUOUS') and self.settings.screen_timeout
                     and now - self.last_touch >= self.settings.screen_timeout):
                 self.screen_off = True
             self.effective_brightness = self.settings.brightness

@@ -1,0 +1,42 @@
+{
+  "mode": "HOST SIMULATION / REAL TEMPORARY FILE COPY",
+  "hardware_tested": false,
+  "os_poweroff_executed": false,
+  "source_sha256": {
+    "DCIM/photo.JPG": "394422ed083335b21241cad11821c235e185c22d3119bd2c12d295fce438de38",
+    "DCIM/clip.MP4": "db791a570b7e9a36df2376b987776cc183fc077575239c3c3c13509e40b04ccd",
+    "DCIM/clip.XML": "2482077c4ee0500768335dee611ea418b5d32299c4abdf04020956134abd8c39"
+  },
+  "destination_sha256": {
+    "DCIM/photo.JPG": "394422ed083335b21241cad11821c235e185c22d3119bd2c12d295fce438de38",
+    "DCIM/clip.MP4": "db791a570b7e9a36df2376b987776cc183fc077575239c3c3c13509e40b04ccd",
+    "DCIM/clip.XML": "2482077c4ee0500768335dee611ea418b5d32299c4abdf04020956134abd8c39"
+  },
+  "backup_state": "SAFE_TO_REMOVE",
+  "safe_to_remove": true,
+  "queued_during_copy": true,
+  "shutdown_order": [
+    "sync",
+    "log",
+    "sync",
+    "fade",
+    "poweroff simulated"
+  ],
+  "restarted_ready": true,
+  "phases": [
+    "BOOT_LOADING",
+    "BACKUP_READY",
+    "STORAGE_READY",
+    "SD_READY",
+    "COPYING",
+    "POWER_CONFIRM_DURING_COPY",
+    "SHUTDOWN_QUEUED",
+    "VERIFYING",
+    "UNMOUNTING",
+    "SAFE_TO_REMOVE",
+    "SHUTDOWN_FADE",
+    "POWER_OFF",
+    "REBOOT_LOADING",
+    "REBOOT_READY"
+  ]
+}

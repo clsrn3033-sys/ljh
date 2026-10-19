@@ -214,6 +214,33 @@ def restore_rtc(config):
         return 'RTC 복원 실패: ' + str(exc)
 
 
+def show_shutdown(screen, *, fps=15, sleeper=time.sleep):
+    """Display-only fade; callers must finish backup/unmount/sync first."""
+    if screen is None:
+        return
+    if not 1 <= fps <= 60:
+        raise ValueError('shutdown fps must be 1..60')
+    from PIL import Image
+    from .boot_animation import render as boot_render, shutdown_frames
+    full = boot_render(0, state='shutdown').resize((800, 450), Image.Resampling.LANCZOS)
+    full_frame = Image.new('RGB', (800, 480), 'black')
+    full_frame.paste(full, (0, 15))
+    black = Image.new('RGB', (800, 480), 'black')
+    for opacity in shutdown_frames():
+        screen.show(Image.blend(black, full_frame, opacity))
+        if opacity:
+            sleeper(1 / fps)
+
+
+def poweroff_after_fade(screen, poweroff, report=print):
+    """A missing/broken screen cannot block a completed safe shutdown."""
+    try:
+        show_shutdown(screen)
+    except Exception as exc:
+        report('Shutdown display unavailable: ' + str(exc))
+    poweroff()
+
+
 def live(config, headless=False):
     if os.geteuid() != 0 or not Path('/etc/mebs/appliance').is_file():
         raise BackupError('Live mode requires the dedicated MEBS image')
@@ -253,7 +280,11 @@ def live(config, headless=False):
                         sync_filesystem(data)
                         os.sync()
                     def poweroff():
-                        subprocess.run(['/sbin/poweroff'], check=True, timeout=10)
+                        # Only reached after the job has completed, all mounts
+                        # are closed and both metadata flushes have succeeded.
+                        poweroff_after_fade(screen,
+                                            lambda: subprocess.run(['/sbin/poweroff'], check=True, timeout=10),
+                                            lambda message: print(message, flush=True))
                         stop.set()
                     c.perform_shutdown(flush, lambda s: append_log(data/'events.jsonl', s), poweroff)
                 if not headless and now-last_connect >= 2:

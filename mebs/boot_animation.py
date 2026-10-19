@@ -95,6 +95,8 @@ def render(percent=0, *, opacity=1.0, state="boot", caption="Initializing system
     if state == "ready":
         centered(d, 515, "BACKUP READY", font(30), (230, 249, 255, 255), spacing=3)
         centered(d, 561, "Connect external storage to begin", font(16), (130, 174, 206, 255))
+    elif state == "shutdown":
+        centered(d, 535, "Shutting down safely...", font(24), (247, 249, 252, 255))
     else:
         label = "Initialization failed" if state == "error" else caption
         centered(d, 516, label, font(24), (255, 162, 156, 255) if state == "error" else (247, 249, 252, 255))
@@ -146,6 +148,14 @@ def checks(display_ready=True, root=Path("/")):
 def easing(t):
     t = max(0., min(1., float(t)))
     return t * t * (3 - 2 * t)
+
+
+def shutdown_frames(steps=8):
+    """Fade the approved logo to black after storage has been safely flushed."""
+    if steps < 1:
+        raise ValueError("Expected a positive frame count")
+    for n in range(steps + 1):
+        yield 1.0 - easing(n / steps)
 
 
 def frames(results, *, steps=5, delay_stage=None):
