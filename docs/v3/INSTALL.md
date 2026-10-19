@@ -2,12 +2,12 @@
 
 이 문서는 현 단계 이미지의 **실기기 검증 절차**다. DSI 패널·터치 컨트롤러 모델은 아직 확인되지 않았고, `config.txt`가 특정 패널 오버레이를 강제로 선택하지 않는다. 따라서 ARM64 Buildroot 이미지의 로컬 빌드 성공을 DSI 화면·터치·실물 USB 백업 성공으로 해석하지 않는다.
 
-1. 저장소의 [V3 시험 보고서](TEST_REPORT.md)에서 이미지 경로·SHA-256·현재 실패 항목을 먼저 확인한다. 새 microSD 카드와 안정적인 5V 전원, Raspberry Pi 4B, 가능하면 micro-HDMI 모니터와 UART 로그 수집 장치를 준비한다. 기존 V2 카드/사용자 데이터는 보존한다.
+1. 저장소의 [V3 성능 모드 보고서](PERFORMANCE_REPORT.md)에서 최신 **1.5GHz 기본 이미지** 경로·SHA-256·실물 미검증 항목을 먼저 확인한다. 새 microSD 카드와 안정적인 5V 전원, Raspberry Pi 4B, 가능하면 micro-HDMI 모니터와 UART 로그 수집 장치를 준비한다. 기존 V2 카드/사용자 데이터는 보존한다. 1.8/2.0GHz `UNVALIDATED` 후보는 현장용으로 기록하지 않는다.
 2. Linux PC에서 `lsblk -o NAME,SIZE,MODEL,TRAN,MOUNTPOINTS`로 **새 카드 전체 장치**를 확인한다. 카드의 자동 마운트 파티션을 해제한 뒤 아래 예시의 `/dev/sdX`를 정확한 카드 장치로 바꿔 기록한다. 이 명령은 선택한 카드의 내용을 덮어쓴다. Codex는 호스트의 실제 저장장치에 이 명령을 실행하지 않았다.
 
    ```bash
-   sha256sum output/pi4-v3-atomic-20261019/MABS_V3_RPi4.img
-   sudo dd if=output/pi4-v3-atomic-20261019/MABS_V3_RPi4.img of=/dev/sdX bs=4M status=progress conv=fsync
+   sha256sum output/pi4-v3-performance-lock-20261019/MABS_V3_RPi4.img
+   sudo dd if=output/pi4-v3-performance-lock-20261019/MABS_V3_RPi4.img of=/dev/sdX bs=4M status=progress conv=fsync
    sync
    ```
 

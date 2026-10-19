@@ -26,6 +26,10 @@ class ExplorerUI:
         self._entries = None
         self._entries_at = 0
 
+    @property
+    def video_active(self):
+        return bool(self.player and self.player.process and self.player.process.poll() is None)
+
     def entries(self):
         now = time.monotonic()
         if self._entries is None or now-self._entries_at > .5:

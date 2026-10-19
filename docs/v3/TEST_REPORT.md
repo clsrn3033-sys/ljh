@@ -1,8 +1,10 @@
-# MEBS V3 시험 결과 — 2026-10-19
+# MEBS V3 탐색기 기준 시험 결과 — 2026-10-19
+
+이 문서는 성능 모드 추가 전 V3 탐색기 기준 이미지의 시험 기록이다. 이후 생성한 이미지와 성능 모드의 결과는 [PERFORMANCE_REPORT.md](PERFORMANCE_REPORT.md)를 따른다.
 
 ## 판정
 
-최종 로컬 산출물은 `output/pi4-v3-atomic-20261019/MABS_V3_RPi4.img` (311,427,072바이트, SHA-256 `bc16a0331f7a0fbbe4e3acf2e7200d07ee2fb72ee2e75fd0811c0dd79c2e3103`)이다. Buildroot 2026.08 소스에서 BC250 Bazzite 호스트로 직접 빌드했다. ARM64 QEMU `virt`에서 MEBS 자동 실행, 가상 ext4 대상·vfat 원본의 실제 파일 백업·SHA-256 검증, V3 탐색기 작업이 **PASS**했다. 이는 Raspberry Pi 4B 하드웨어 부팅·DSI 터치 성공을 뜻하지 않는다.
+이 기준 시험의 로컬 산출물은 `output/pi4-v3-atomic-20261019/MABS_V3_RPi4.img` (311,427,072바이트, SHA-256 `bc16a0331f7a0fbbe4e3acf2e7200d07ee2fb72ee2e75fd0811c0dd79c2e3103`)이다. Buildroot 2026.08 소스에서 BC250 Bazzite 호스트로 직접 빌드했다. ARM64 QEMU `virt`에서 MEBS 자동 실행, 가상 ext4 대상·vfat 원본의 실제 파일 백업·SHA-256 검증, V3 탐색기 작업이 **PASS**했다. 이는 Raspberry Pi 4B 하드웨어 부팅·DSI 터치 성공을 뜻하지 않는다.
 
 | 항목 | 결과 | 근거 |
 |---|---|---|

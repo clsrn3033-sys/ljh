@@ -8,7 +8,8 @@ import subprocess
 
 ROOT=Path(__file__).resolve().parents[2]
 MODULES=('appliance.py','backup.py','controls.py','runtime800.py','ui800.py',
-         'explorer_v3.py','ui_explorer_v3.py','ui_explorer_v3_layout.py')
+         'explorer_v3.py','ui_explorer_v3.py','ui_explorer_v3_layout.py',
+         'performance.py','performance_validate.py')
 
 
 def run(*args):
@@ -22,7 +23,7 @@ def sha(path):
 
 def main():
     p=argparse.ArgumentParser()
-    p.add_argument('--output-dir',type=Path,default=ROOT/'output/pi4-v3-atomic-20261019')
+    p.add_argument('--output-dir',type=Path,default=ROOT/'output/pi4-v3-performance-lock-20261019')
     p.add_argument('--report',type=Path,default=ROOT/'docs/v3/image-validation.json')
     args=p.parse_args()
     out=args.output_dir.resolve(); image=out/'MABS_V3_RPi4.img'; images=out/'images'
@@ -40,6 +41,9 @@ def main():
     config=run('mtype','-i',boot,'::config.txt').decode()
     cmdline=run('mtype','-i',boot,'::cmdline.txt').decode()
     assert 'arm_64bit=1' in config and 'kernel=Image' in config
+    assert 'arm_freq=1500' in config.splitlines() and 'arm_boost=0' in config.splitlines()
+    assert not any(line.startswith(('over_voltage=', 'force_turbo='))
+                   for line in config.splitlines()), 'Default image must not enable overclocking'
     assert 'root=/dev/mmcblk0p2' in cmdline
     fsck=subprocess.run(['e2fsck','-fn',str(root)],capture_output=True,text=True)
     assert fsck.returncode==0, fsck.stdout[-1200:]+fsck.stderr[-1200:]

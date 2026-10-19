@@ -17,7 +17,7 @@
 
 [800×480 실제 렌더 미리보기](explorer-preview.png)는 가상 디렉터리 데이터로 만든 **SIMULATION** 화면이다. 실제 Pi4 DSI 화면으로 확인한 결과가 아니다.
 
-현재 최종 로컬 이미지: `output/pi4-v3-atomic-20261019/MABS_V3_RPi4.img`, SHA-256 `bc16a0331f7a0fbbe4e3acf2e7200d07ee2fb72ee2e75fd0811c0dd79c2e3103`. [QEMU 게스트에서 실행한 UI 캡처](qemu-explorer.png)는 가상 값으로 렌더한 화면이다. Pi4 실물 부팅·DSI 터치는 미검증이다.
+현재 최종 로컬 기본 이미지: `output/pi4-v3-performance-lock-20261019/MABS_V3_RPi4.img`, SHA-256 `d847f948b632bc973c0c028ce7d5e5db244f8e5edd8c7969ebc29dc695c35287`. 기본 부팅 상한은 1.5GHz다. [성능 모드·실물 검증 안내](PERFORMANCE_REPORT.md)를 참조한다. [QEMU 게스트에서 실행한 UI 캡처](performance-qemu-final/qemu-explorer.png)는 가상 값으로 렌더한 화면이다. Pi4 실물 부팅·DSI 터치는 미검증이다.
 
 ## 로컬 실행
 
@@ -33,8 +33,8 @@ bash scripts/pi4-v3-image.sh  # 새 출력 경로가 필요하면 MEBS_V3_BUILD_
 
 ```bash
 python3 tests/v3/inspect_image.py
-python3 tests/v3/qemu_smoke.py --images output/pi4-v3-atomic-20261019/images
-python3 tests/v3/compare_boot.py --v3 output/pi4-v3-atomic-20261019/images
+python3 tests/v3/qemu_smoke.py --images output/pi4-v3-performance-lock-20261019/images
+python3 tests/v3/compare_boot.py --v3 output/pi4-v3-performance-lock-20261019/images
 ```
 
 QEMU `virt`는 Pi4 보드/DSI/USB 전원/터치를 완전히 에뮬레이션하지 않는다. 위 명령은 가상 USB 이미지 및 ARM64 소프트웨어 시험이다. 상세 결과는 [V3 시험 보고서](TEST_REPORT.md), 코덱 정책은 [코덱 보고서](CODEC_REPORT.md), 실물 설치 준비는 [설치 안내](INSTALL.md)를 참조한다.

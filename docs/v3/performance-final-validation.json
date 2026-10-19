@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "physical_hardware_tested": false,
+  "image": "/var/home/bazzite/ljh/output/pi4-v3-performance-lock-20261019/MABS_V3_RPi4.img",
+  "size_bytes": 311427072,
+  "sha256": "d847f948b632bc973c0c028ce7d5e5db244f8e5edd8c7969ebc29dc695c35287",
+  "base_v2_sha256": "05fcd3f045b961134f2748583de3dcf0b8ed923aa42c1ae48d97bdce5c48bee4",
+  "partitions": [
+    {
+      "node": "/var/home/bazzite/ljh/output/pi4-v3-performance-lock-20261019/MABS_V3_RPi4.img1",
+      "start": 2048,
+      "size": 196608,
+      "type": "c",
+      "bootable": true
+    },
+    {
+      "node": "/var/home/bazzite/ljh/output/pi4-v3-performance-lock-20261019/MABS_V3_RPi4.img2",
+      "start": 198656,
+      "size": 393216,
+      "type": "83"
+    },
+    {
+      "node": "/var/home/bazzite/ljh/output/pi4-v3-performance-lock-20261019/MABS_V3_RPi4.img3",
+      "start": 591872,
+      "size": 16384,
+      "type": "83"
+    }
+  ],
+  "boot_files": "start4.elf fixup4.dat config.txt cmdline.txt Image bcm2711-rpi-4-b.dtb",
+  "rootfs_fsck": "PASS",
+  "source_module_sha256": {
+    "appliance.py": "084864fd3e3b6a1cd793d5da88fff3b145dc5e53ce9f4eacb3f09256aa892350",
+    "backup.py": "bfcefdeb495bef21c96fd4725d71917e0813024b1261a514ed314ad4d9634a93",
+    "controls.py": "2884e6cf0b9ee95efb48950143ac1f34300a33280d9319721237cdeba2f547df",
+    "runtime800.py": "675a96e6891c7601eaa26d65331a4fa71fddc40b7c7762cbfc29ed565e3fe4cc",
+    "ui800.py": "aeda83e47a14d2463d21047c6ea7c4fc15581bb5c4fd8177f6c848b0ae527bcd",
+    "explorer_v3.py": "4c8489fefad2d97c803f0c6abe52b61bd5fa18f7f3740056ed916d86c73bdfec",
+    "ui_explorer_v3.py": "ae26dd30ce890496b4d87156572788ca6f6107951be8ae1e441d1f4b150ffb5f",
+    "ui_explorer_v3_layout.py": "27acc599bac9446f9a784e9a68ec808886553dbba2e341959ce51f1cecb6619d",
+    "performance.py": "3ee640fc75db3589a28d3b56b4b3a2e537656ee800ca4de52be3e88dbe8096aa",
+    "performance_validate.py": "8537bae4dcb27bedb000187f759dc47cd3ab24296e3d5787ab6e46f620ce2c52"
+  },
+  "ffprobe_ffmpeg": "ARM64 ELF present",
+  "pi_boot": "HARDWARE NOT TESTED",
+  "dsi_touch": "HARDWARE NOT TESTED"
+}

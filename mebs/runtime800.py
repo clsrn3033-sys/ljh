@@ -19,6 +19,7 @@ from .controls import Controls, append_log
 from .devices import Roles
 from .sensors import BatteryGuard, I2C, INA226, INA231, Reading, VirtualINARegisters, cpu_temperature, ram_usage, estimate, validate_addresses, voltage_percent
 from .settings import SettingsStore
+from .performance import ClockPolicy
 
 
 def publish_status(path, encoded):
@@ -56,13 +57,14 @@ class ObservedMounts(Mounts):
 
 class Worker:
     def __init__(self, control, stop, mounts, current=inventory, job=run_job,
-                 sleeper=time.sleep, inspect_pending=None):
+                 sleeper=time.sleep, inspect_pending=None, performance=None):
         self.c, self.stop, self.mounts = control, stop, mounts
         self.current, self.job, self.sleep = current, job, sleeper
         self.roles, self.latched = Roles(), False
         self.inspect_pending = inspect_pending or getattr(mounts, 'inspect_pending', lambda _: [])
         self.inspected_target = None
         self.pending_count = 0
+        self.performance = performance
 
     def once(self):
         try:
@@ -78,6 +80,8 @@ class Worker:
             if assigned['state'] == 'ROLES_ASSIGNED':
                 if not self.c.begin_job():
                     return  # retry after valid voltage; do not latch unstarted job
+                if self.performance is not None:
+                    self.performance.tick(backup=True)
                 self.latched = True
                 try:
                     self.sleep(1)  # allow partition enumeration; then revalidate
@@ -274,8 +278,10 @@ def live(config, headless=False):
             raise BackupError('OS-owned settings partition is not mounted')
         c = Controls(SettingsStore(data / 'settings.json'), guard=BatteryGuard(**config.get('battery_thresholds', {})))
         c.notice = restore_rtc(config) or c.notice
+        performance = ClockPolicy(validation=data/'performance-validation.json')
+        performance.tick(backup=True)  # startup is always the stability mode
         mounts = ObservedMounts(c)
-        backup_worker = Worker(c, stop, mounts)
+        backup_worker = Worker(c, stop, mounts, performance=performance)
         worker = Thread(target=backup_worker.run, name='mebs-backup')
         sensors = Sensors(config, c)
         sensor_thread = Thread(target=sensors.run, args=(stop,), name='mebs-sensors')
@@ -291,6 +297,7 @@ def live(config, headless=False):
                 if result in ('closed', 'safe-eject'):
                     explorer_ui = None
                     c.notice = '안전 분리 완료' if result == 'safe-eject' else ''
+                    performance.tick()
                 return result
             action = c.gesture(start, end, duration)
             if action == 'explorer-open':
@@ -301,7 +308,7 @@ def live(config, headless=False):
                 except (ExplorerError, BackupError, OSError, ValueError) as exc:
                     c.notice = '탐색기: ' + str(exc)
             return action
-        last_connect, last_frame, last_status, last_explorer_check = -10., -10., None, -10.
+        last_connect, last_frame, last_status, last_explorer_check, last_perf_check = -10., -10., None, -10., -10.
         splash_frames = None
         try:
             while not stop.is_set():
@@ -354,6 +361,12 @@ def live(config, headless=False):
                     except (ExplorerError, BackupError, OSError) as exc:
                         explorer_ui = None
                         c.notice = '탐색기: ' + str(exc)
+                        performance.tick()
+                if now-last_perf_check >= 1:
+                    last_perf_check = now
+                    performance.tick(explorer=explorer_ui is not None,
+                                     video=explorer_ui is not None and explorer_ui.video_active,
+                                     backup=c.worker_active)
                 if screen and now-last_frame >= 1 / config.get('ui_fps', 30):
                     from .ui800 import render
                     try:
@@ -393,7 +406,8 @@ def live(config, headless=False):
                                   sensor_model=c.reading.sensor_model, sensor_timestamp=c.reading.sampled_utc,
                                   display_battery_source=c.display_battery.sensor_source if c.display_battery else 'N/A',
                                   display_battery_voltage=c.display_battery.voltage if c.display_battery else None,
-                                  shutdown_pending=c.shutdown_pending)
+                                  shutdown_pending=c.shutdown_pending,
+                                  performance=performance.state)
                 encoded = json.dumps(status, ensure_ascii=True)
                 if encoded != last_status:
                     publish_status('/run/mebs/status.json', encoded)
@@ -404,6 +418,7 @@ def live(config, headless=False):
                 stop.wait(.01)
         finally:
             stop.set()
+            performance.tick(backup=True)
             if explorer_ui is not None:
                 try:
                     explorer_session.close()

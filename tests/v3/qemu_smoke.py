@@ -17,7 +17,7 @@ spec.loader.exec_module(v2)
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--images', type=Path, default=ROOT/'output/pi4-v3-atomic-20261019/images')
+    parser.add_argument('--images', type=Path, default=ROOT/'output/pi4-v3-performance-lock-20261019/images')
     parser.add_argument('--output', type=Path, default=ROOT/'docs/v3')
     args = parser.parse_args()
     output = args.output.resolve(); output.mkdir(parents=True, exist_ok=True)
@@ -43,6 +43,8 @@ def main():
             record['backup'] = {'storage_ready':storage['state'],
                                 'complete':finished['state'],'files':finished.get('verified_files'),
                                 'safe_to_remove':finished.get('safe_to_remove')}
+            record['performance'] = finished.get('performance')
+            assert record['performance']['mode'] in ('BASE', 'UNAVAILABLE')
             assert finished.get('safe_to_remove') is True
             guest.py("import pathlib,subprocess; pathlib.Path('/run/v3-source').mkdir(exist_ok=True); pathlib.Path('/run/v3-target').mkdir(exist_ok=True); subprocess.run(['mount','-t','vfat','-o','ro,utf8=1','/dev/sdb','/run/v3-source'],check=True); subprocess.run(['mount','-t','ext4','-o','rw','/dev/sda','/run/v3-target'],check=True)")
             code = """import base64,hashlib,io,json,pathlib,types

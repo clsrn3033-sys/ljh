@@ -2,6 +2,7 @@
 >
 > [V3 개발 및 검증 기록](docs/v3/README.md)을 먼저 읽으세요. V2는 `feature/mebs-v2-pi4b-800x480-20261018`, V1은 `preserve/mebs-v1-github-20261018` 브랜치에 남겨 두었습니다. V3 브랜치에서만 구 `ver 1/` 자료를 삭제했습니다.
 > 확정 화면은 800×480 검정·청록색이며, 제작자 표기는 **Produced by 이정헌**입니다. 아래 오래된 단계별 기록보다 V3 기록과 실제 테스트 결과를 우선하세요.
+> 최신 V3 기본 이미지는 1.5GHz로 제한됩니다. 탐색기 1.8GHz·영상 2.0GHz는 실물 안정성 검증 전까지 꺼져 있으며, 자세한 내용은 [성능 모드 시험 기록](docs/v3/PERFORMANCE_REPORT.md)에 있습니다.
 
 # MEBS Auto Backup System
 

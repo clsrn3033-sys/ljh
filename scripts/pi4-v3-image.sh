@@ -3,7 +3,7 @@
 # Never modify V2 outputs or physical media. All new packages build from source.
 set -euo pipefail
 repo=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
-base=${MEBS_V2_BUILD_OUTPUT:-$repo/output/pi4-v2-dsi-800x480-20261018}
+base=${MEBS_BASE_BUILD_OUTPUT:-${MEBS_V2_BUILD_OUTPUT:-$repo/output/pi4-v2-dsi-800x480-20261018}}
 result=${MEBS_V3_BUILD_OUTPUT:-$repo/output/pi4-v3-800x480-20261019}
 buildroot=$repo/vendor/buildroot-2026.08
 export PATH="$repo/.local-build/tools/bin:$PATH"
@@ -33,6 +33,9 @@ make -C "$buildroot" O="$result" BR2_EXTERNAL="$repo/buildroot" olddefconfig
 grep -qx 'BR2_PACKAGE_MEBS_EXPLORER_V3=y' "$result/.config"
 grep -qx 'BR2_PACKAGE_FFMPEG_FFPROBE=y' "$result/.config"
 make -C "$buildroot" O="$result" BR2_EXTERNAL="$repo/buildroot" mebs-dirclean
+# The Pi boot FAT is built from board/config.txt, which may change without a
+# Kconfig symbol change. Reinstall it into the new output before genimage.
+make -C "$buildroot" O="$result" BR2_EXTERNAL="$repo/buildroot" rpi-firmware-reinstall
 # Pillow was already built without JPEG in V2; enabling the library alone
 # would leave its native extension unable to decode the camera JPG files.
 make -C "$buildroot" O="$result" BR2_EXTERNAL="$repo/buildroot" python-pillow-dirclean

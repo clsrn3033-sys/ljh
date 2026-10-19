@@ -1,0 +1,56 @@
+{
+  "machine": "QEMU virt cortex-a72; not Raspberry Pi 4B hardware",
+  "image": "/var/home/bazzite/ljh/output/pi4-v3-performance-20261019/images/sdcard.img",
+  "image_sha256": "f7938577af785691d2b4186d952e9c7ac9847cca4cbd1bff316ec2378cc603c0",
+  "hardware_tested": false,
+  "status": "PASS",
+  "backup": {
+    "storage_ready": "WAITING_SOURCE",
+    "complete": "SAFE_TO_REMOVE",
+    "files": 10,
+    "safe_to_remove": true
+  },
+  "performance": {
+    "mode": "UNAVAILABLE",
+    "limit_khz": null,
+    "reason": "cpufreq policy unavailable or cannot cap at 1.5GHz",
+    "temperature_c": null,
+    "throttled_mask": null
+  },
+  "explorer": {
+    "rows": [
+      "same.bin",
+      "사진 01.JPG"
+    ],
+    "photo_size": [
+      32,
+      24
+    ],
+    "video": {
+      "codec": "mpeg4",
+      "profile": "Simple Profile",
+      "width": 32,
+      "height": 24,
+      "pix_fmt": "yuv420p",
+      "bit_depth": 8,
+      "frame_rate": "25/1",
+      "bit_rate": "3360",
+      "software_preview": false,
+      "hardware_acceleration": "NOT TESTED",
+      "reason": "이 영상은 현재 미리보기/재생 제한: 정보만 표시"
+    },
+    "video_thumbnail_size": [
+      240,
+      180
+    ],
+    "copy_hash": "c04e52d306f6e7c317d7de48061ad12bfe5bf46360090223b9ec5781c47b5d43",
+    "copy_bytes": 645,
+    "moved_to": "/run/v3-target/MEBS_FILES/Archive/사진 01.JPG",
+    "original_workspace_file_exists": false,
+    "archive_file_exists": false,
+    "backup_verified_files": 10
+  },
+  "qemu_boot_seconds": 8.440602515998762,
+  "source_image_unchanged": true,
+  "os_image_unchanged": true
+}
