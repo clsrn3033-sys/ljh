@@ -1,0 +1,12 @@
+test_both_models_eleven_voltage_steps_and_power (test_v2_ina_gpio.INARegisterTests.test_both_models_eleven_voltage_steps_and_power) ... ok
+test_disconnect_nack_stale_invalid_and_recovery (test_v2_ina_gpio.INARegisterTests.test_disconnect_nack_stale_invalid_and_recovery) ... ok
+test_model_checks_and_calibration (test_v2_ina_gpio.INARegisterTests.test_model_checks_and_calibration) ... ok
+test_real_vs_simulation_and_no_device_open (test_v2_ina_gpio.INARegisterTests.test_real_vs_simulation_and_no_device_open) ... ok
+test_gpio_mapping_collision_and_isolated_bus (test_v2_ina_gpio.PinAndGuardTests.test_gpio_mapping_collision_and_isolated_bus) ... ok
+test_low_voltage_and_stale_measurement_fail_closed (test_v2_ina_gpio.PinAndGuardTests.test_low_voltage_and_stale_measurement_fail_closed) ... ok
+test_real_profile_requires_confirmed_module_and_pack_path (test_v2_ina_gpio.PinAndGuardTests.test_real_profile_requires_confirmed_module_and_pack_path) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.104s
+
+OK

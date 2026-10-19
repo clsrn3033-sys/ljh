@@ -8,7 +8,8 @@ import fcntl
 import math
 import os
 from pathlib import Path
-import struct
+
+from .ina import INA226, INA231, BatteryMeasurement, SensorError, VirtualINARegisters
 
 
 @dataclass
@@ -17,6 +18,11 @@ class Reading:
     ram_percent: float | None = None
     voltage: float | None = None
     current_a: float | None = None
+    power_w: float | None = None
+    sensor_source: str = 'N/A'
+    sensor_model: str = 'N/A'
+    sampled_utc: str | None = None
+    sampled_monotonic: float | None = None
     percent: float | None = None
     runtime_hours: float | None = None
     error: str = ''
@@ -51,23 +57,6 @@ class I2C:
         os.close(self.fd)
 
 
-class INA226:
-    def __init__(self, bus, shunt_ohms=None, polarity=1):
-        if shunt_ohms is not None and (not math.isfinite(shunt_ohms) or shunt_ohms <= 0):
-            raise ValueError('positive measured shunt resistance required')
-        if polarity not in (-1, 1):
-            raise ValueError('invalid current polarity')
-        self.bus, self.shunt, self.polarity = bus, shunt_ohms, polarity
-        if bus.register(0xfe) != b'TI' or int.from_bytes(bus.register(0xff), 'big') & 0xfff0 != 0x2260:
-            raise ValueError('INA226 identification mismatch')
-
-    def read(self):
-        voltage = int.from_bytes(self.bus.register(2), 'big') * .00125
-        shunt_v = struct.unpack('>h', self.bus.register(1))[0] * .0000025
-        # Never assume common R100/R010 markings or program an unknown calibration.
-        return voltage, (self.polarity * shunt_v / self.shunt if self.shunt else None)
-
-
 def estimate(voltage, current, curve, capacity_ah):
     """User-calibrated OCV estimate. Under-load voltage makes this approximate."""
     if not curve or not capacity_ah or capacity_ah <= 0:
@@ -86,8 +75,9 @@ def estimate(voltage, current, curve, capacity_ah):
 
 class BatteryGuard:
     def __init__(self, warn=None, block=None):
-        if (warn is None) != (block is None) or (warn is not None and not 0 < block < warn):
-            raise ValueError('both validated battery thresholds required: 0 < block < warn')
+        if (warn is not None and block is None) or (block is not None and
+                (not 0 < block or warn is not None and not block < warn)):
+            raise ValueError('validated threshold required: 0 < block < optional warn')
         self.warn, self.block = warn, block
 
     def status(self, voltage):
@@ -95,7 +85,7 @@ class BatteryGuard:
             return 'UNCONFIGURED'
         if voltage is None or not math.isfinite(voltage):
             return 'UNKNOWN'  # configured protection fails closed on missing measurement
-        return 'BLOCK' if voltage <= self.block else 'WARN' if voltage <= self.warn else 'OK'
+        return 'BLOCK' if voltage <= self.block else 'WARN' if self.warn is not None and voltage <= self.warn else 'OK'
 
     def allows_start(self, voltage):
         return self.status(voltage) in ('OK', 'WARN', 'UNCONFIGURED')
@@ -122,7 +112,7 @@ def ram_usage(path='/proc/meminfo'):
 
 def validate_addresses(config):
     used = []
-    for name, default in [('ina226', 0x40), ('ds3231', 0x68)]:
+    for name, default in [('ina226', 0x40), ('ina231', 0x40), ('ds3231', 0x68)]:
         item = config.get(name, {})
         if item.get('enabled', False):
             address = item.get('address', default)

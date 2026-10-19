@@ -1,0 +1,81 @@
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 475
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 479
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 491
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 483
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 481
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 493
+debugfs 1.47.3 (8-Jul-2025)
+rm: File not found by ext2_lookup while trying to resolve filename
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 1362
+debugfs 1.47.3 (8-Jul-2025)
+rm: File not found by ext2_lookup while trying to resolve filename
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 1363
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 485
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 499
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 124
+debugfs 1.47.3 (8-Jul-2025)
+rm: File not found by ext2_lookup while trying to resolve filename
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 1364
+debugfs 1.47.3 (8-Jul-2025)
+
+debugfs 1.47.3 (8-Jul-2025)
+Allocated inode: 1361
+e2fsck 1.47.3 (8-Jul-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+rootfs: 1364/49152 files (1.2% non-contiguous), 73881/196608 blocks
+{
+  "base_image": "/var/home/bazzite/ljh/output/pi4-v2-recovery-v4-20261019/images/sdcard.img",
+  "base_sha256": "90cf0debeb8e2405224de9ad99c0ba80a23932bbf917d70f22c7936f6db68f27",
+  "fixed_sha256": "5be3d88e1106d4631cb3af74fbd7a4e30d9b69fe0cb62605c579ab0d5cf76081",
+  "changed_files": {
+    "/usr/lib/mebs/mebs/appliance.py": "084864fd3e3b6a1cd793d5da88fff3b145dc5e53ce9f4eacb3f09256aa892350",
+    "/usr/lib/mebs/mebs/backup.py": "bfcefdeb495bef21c96fd4725d71917e0813024b1261a514ed314ad4d9634a93",
+    "/usr/lib/mebs/mebs/runtime800.py": "f57eb759274bb9bad7963c197170d217ac1607456378b187a15d6d6e49e5c0fd",
+    "/usr/lib/mebs/mebs/display.py": "5c3b6064728530523e489dcdd482d38dad402a39cdd48582f2033071700777d7",
+    "/usr/lib/mebs/mebs/controls.py": "069928722cc3f7955bc5a584832455153338da1dbde348eb868db60c76acff54",
+    "/usr/lib/mebs/mebs/sensors.py": "a0c5f3cd83df25d43fa24a6c1ee7de9d66827f3743082eab2850166dc067deae",
+    "/usr/lib/mebs/mebs/ina.py": "7e4951a5a6ea05b7ad1c6736becaa459bca323457cb3f807ee07f21ef7806fdc",
+    "/usr/lib/mebs/mebs/gpio_virtual.py": "99be5c3359cbe9d949615751c5664d88f31ac0be8f5d7cc71e6690f860c48ddc",
+    "/usr/lib/mebs/mebs/hardware_profile.py": "09b98b3463a6a85e14bc687c86ec82d0d0480c5a2d4c878422eb7f49f41b7f3b",
+    "/usr/lib/mebs/mebs/ui800.py": "f1f1344ec6687342917d26cb58b9e4ab62c862d1a7daa5487a705ca53b1b878f",
+    "/etc/mebs/hardware.json": "715d60724a584ab35f67a2431ac10a4cd26ee92713734e0c885b54c304180458",
+    "/etc/mebs/gpio_pinmap.json": "3c82293011209ae6d02f0de77d1670d31b0805d8d5b976954cd15dbd26f1ce86",
+    "/etc/default/seedrng": "2efb91797389deb0ec365ac240bc74cbbe38373b4f7a84e2d3c36add60ebcff7"
+  },
+  "method": "Python source and seedrng configuration update in new copy of locally built Buildroot image; kernel/firmware unchanged; no QEMU fstab change",
+  "physical_hardware_tested": false
+}

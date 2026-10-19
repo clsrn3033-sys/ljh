@@ -1,0 +1,17 @@
+IMAGE /var/home/bazzite/ljh/output/pi4-v2-ina-v1-20261019/images/sdcard.img BYTES 311427072 SHA256 5be3d88e1106d4631cb3af74fbd7a4e30d9b69fe0cb62605c579ab0d5cf76081
+PARTITIONS [{"node": "output/pi4-v2-ina-v1-20261019/images/sdcard.img1", "start": 2048, "size": 196608, "type": "c", "bootable": true}, {"node": "output/pi4-v2-ina-v1-20261019/images/sdcard.img2", "start": 198656, "size": 393216, "type": "83"}, {"node": "output/pi4-v2-ina-v1-20261019/images/sdcard.img3", "start": 591872, "size": 16384, "type": "83"}]
+ROOTFS /usr/lib/mebs/mebs/ina.py 6437 7e4951a5a6ea05b7ad1c6736becaa459bca323457cb3f807ee07f21ef7806fdc
+ROOTFS /usr/lib/mebs/mebs/gpio_virtual.py 3706 99be5c3359cbe9d949615751c5664d88f31ac0be8f5d7cc71e6690f860c48ddc
+ROOTFS /usr/lib/mebs/mebs/runtime800.py 16964 f57eb759274bb9bad7963c197170d217ac1607456378b187a15d6d6e49e5c0fd
+ROOTFS /usr/lib/mebs/mebs/hardware_profile.py 3461 09b98b3463a6a85e14bc687c86ec82d0d0480c5a2d4c878422eb7f49f41b7f3b
+ROOTFS /etc/mebs/hardware.json 1419 715d60724a584ab35f67a2431ac10a4cd26ee92713734e0c885b54c304180458
+ROOTFS /etc/mebs/gpio_pinmap.json 12427 3c82293011209ae6d02f0de77d1670d31b0805d8d5b976954cd15dbd26f1ce86
+ROOTFS /etc/init.d/S50mebs 714 69895ea88a37a69622d93b12796277ae1db0c7867fe22b4f7b2654e7bfeb1a48
+BOOT ::config.txt FOUND
+BOOT ::cmdline.txt FOUND
+BOOT ::start4.elf FOUND
+BOOT ::fixup4.dat FOUND
+BOOT ::Image FOUND
+BOOT ::bcm2711-rpi-4-b.dtb FOUND
+I2C_CONFIG True
+I2C_KERNEL True

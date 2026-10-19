@@ -1,0 +1,9 @@
+{
+  "image": "/var/home/bazzite/ljh/output/pi4-v2-ina-v1-20261019/images/sdcard.img",
+  "sha256": "5be3d88e1106d4631cb3af74fbd7a4e30d9b69fe0cb62605c579ab0d5cf76081",
+  "original_unchanged": true,
+  "qemu": "QEMU emulator version 10.1.5 (qemu-10.1.5-1.fc43)",
+  "adaptation": "test copy fstab mmcblk0p3 -> vda3 only",
+  "machine": "virt / cortex-a72 / 1024MiB / 2 vCPU",
+  "hardware_tested": false
+}

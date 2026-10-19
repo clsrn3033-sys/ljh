@@ -46,7 +46,12 @@ def main():
         '/usr/lib/mebs/mebs/display.py':ROOT/'mebs/display.py',
         '/usr/lib/mebs/mebs/controls.py':ROOT/'mebs/controls.py',
         '/usr/lib/mebs/mebs/sensors.py':ROOT/'mebs/sensors.py',
+        '/usr/lib/mebs/mebs/ina.py':ROOT/'mebs/ina.py',
+        '/usr/lib/mebs/mebs/gpio_virtual.py':ROOT/'mebs/gpio_virtual.py',
+        '/usr/lib/mebs/mebs/hardware_profile.py':ROOT/'mebs/hardware_profile.py',
         '/usr/lib/mebs/mebs/ui800.py':ROOT/'mebs/ui800.py',
+        '/etc/mebs/hardware.json':ROOT/'buildroot/board/mebs-pi4-dsi/overlay/etc/mebs/hardware.json',
+        '/etc/mebs/gpio_pinmap.json':ROOT/'buildroot/board/mebs-pi4-dsi/overlay/etc/mebs/gpio_pinmap.json',
         '/etc/default/seedrng':ROOT/'buildroot/board/mebs-pi4-dsi/overlay/etc/default/seedrng',
     }
     default_dir=subprocess.check_output(['debugfs','-R','stat /etc/default',str(filesystem)],stderr=subprocess.DEVNULL)

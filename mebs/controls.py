@@ -50,12 +50,25 @@ class Controls:
         with self.lock:
             if self.shutting_down or self.shutdown_pending or self.worker_active:
                 return False
-            if not self.guard.allows_start(self.reading.voltage):
+            if self.battery_status() in ('BLOCK', 'UNKNOWN'):
                 self.notice = '배터리 보호: 전압 측정/충전 상태를 확인하세요.'
                 self.screen_off = False
                 return False
             self.worker_active = True
             return True
+
+    def battery_status(self):
+        """Fail closed when configured pack protection loses fresh telemetry."""
+        with self.lock:
+            if self.guard.block is None:
+                return 'UNCONFIGURED'
+            stamp = self.reading.sampled_monotonic
+            if stamp is None or self.clock() - stamp > 2.5 or stamp > self.clock() + 1:
+                return 'UNKNOWN'
+            return self.guard.status(self.reading.voltage)
+
+    def battery_stop_required(self):
+        return self.battery_status() in ('BLOCK', 'UNKNOWN')
 
     def finish_job(self, state):
         with self.lock:
@@ -110,7 +123,7 @@ class Controls:
             self.effective_brightness = self.settings.brightness
             if self.settings.night_mode:
                 self.effective_brightness = min(30, self.effective_brightness)
-            status = self.guard.status(self.reading.voltage)
+            status = self.battery_status()
             if status in ('BLOCK', 'UNKNOWN', 'WARN'):
                 self.notice = '배터리 보호: ' + status
                 self.screen_off = False

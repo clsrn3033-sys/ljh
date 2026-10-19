@@ -10,30 +10,42 @@ def positive(value, name):
 
 def validate_runtime(config):
     validate_addresses(config)
-    devices = [name for name in ('ina226','ds3231') if config.get(name,{}).get('enabled')]
+    mode = config.get('sensor_mode', 'REAL')
+    if mode not in ('REAL', 'SIMULATION') or mode == 'SIMULATION' and config.get('simulation_explicit') is not True:
+        raise ValueError('SIMULATION requires explicit test configuration')
+    monitors = [name for name in ('ina226', 'ina231') if config.get(name, {}).get('enabled')]
+    if len(monitors) > 1:
+        raise ValueError('Only one battery monitor may own the pack I2C role')
+    devices = monitors + [name for name in ('ds3231',) if config.get(name,{}).get('enabled')]
     if config.get('bh1750', {}).get('enabled'):
         raise ValueError('BH1750 ambient sensor is not supported in V2')
-    if devices and config.get('i2c_logic_3v3_confirmed') is not True:
+    if devices and mode == 'REAL' and config.get('i2c_logic_3v3_confirmed') is not True:
         raise ValueError('Confirm 3.3V I2C supply/pullups before enabling sensors')
-    ina = config.get('ina226',{})
+    if config.get('ina231', {}).get('enabled') and mode == 'REAL' and config['ina231'].get('model_confirmed') is not True:
+        raise ValueError('INA231 package/model confirmation required; no device-ID register exists')
+    ina = config.get(monitors[0], {}) if monitors else {}
     if ina.get('enabled') and ina.get('shunt_ohms') is not None:
-        positive(ina['shunt_ohms'],'INA226 shunt')
-        positive(ina.get('shunt_power_w'),'INA226 shunt rating')
-        positive(ina.get('max_current_a'),'INA226 maximum current')
+        positive(ina['shunt_ohms'],'INA shunt')
+        positive(ina.get('shunt_power_w'),'INA shunt rating')
+        positive(ina.get('max_current_a'),'INA maximum current')
         if ina['max_current_a']**2*ina['shunt_ohms'] > ina['shunt_power_w']:
             raise ValueError('I squared R exceeds shunt rating')
         if ina['max_current_a']*ina['shunt_ohms'] > .08192:
-            raise ValueError('Shunt voltage exceeds INA226 measurement range')
+            raise ValueError('Shunt voltage exceeds INA measurement range')
     thresholds = config.get('battery_thresholds',{})
     warn, block = thresholds.get('warn'), thresholds.get('block')
     if warn is not None or block is not None:
-        if config.get('battery_bms_confirmed') is not True:
+        if mode == 'REAL' and config.get('battery_bms_confirmed') is not True:
             raise ValueError('Battery/BMS specifications are required for protection thresholds')
-        positive(warn,'battery warning');positive(block,'battery block')
-        if not block < warn:
+        positive(block,'battery block')
+        if warn is not None:
+            positive(warn,'battery warning')
+        if warn is not None and not block < warn:
             raise ValueError('battery block must be below warning')
-        if not ina.get('enabled'):
-            raise ValueError('Battery protection requires INA226 measurements')
+        if not monitors or ina.get('shunt_ohms') is None:
+            raise ValueError('Battery protection requires calibrated INA measurements')
+        if mode == 'REAL' and config.get('battery_pack_vbus_confirmed') is not True:
+            raise ValueError('Confirm that INA VBUS measures the 2S pack, not the 5V rail')
     display = config.get('display',{})
     if config.get('touch',{}).get('device') and display.get('touch_controller_confirmed') is not True:
         raise ValueError('Identify touch controller and evdev mapping before enabling touch')

@@ -5,6 +5,7 @@ import os
 from pathlib import Path
 from threading import Event, Thread
 import tempfile
+import time
 import unittest
 from unittest import mock
 
@@ -159,10 +160,12 @@ class ControlsTests(unittest.TestCase):
         self.c.reading.voltage = 6.7
         self.assertFalse(self.c.begin_job())
         self.c.reading.voltage = 7.5
+        self.c.reading.sampled_monotonic = self.now
         self.assertTrue(self.c.begin_job())
         self.c.reading.voltage = 6.7
         self.c.tick()
-        self.assertTrue(self.c.worker_active)  # no immediate power loss/copy interruption
+        self.assertTrue(self.c.worker_active)  # worker cancellation is cooperative
+        self.assertTrue(self.c.battery_stop_required())
 
     def test_no_gpio_cutoff(self):
         with self.assertRaises(NotImplementedError):
@@ -315,6 +318,22 @@ class WorkerIntegrationTests(unittest.TestCase):
                 self.assertEqual(result['state'], 'ERROR')
                 self.assertFalse(result['safe_to_remove'])
                 self.assertTrue((self.src/'clip.mov').is_file())
+
+    def test_low_voltage_mid_copy_cancels_and_preserves_source(self):
+        self.c.guard = BatteryGuard(block=6.4)
+        self.c.reading = Reading(voltage=7.4, sampled_monotonic=time.monotonic())
+        original = self.c.update
+        def update(state):
+            original(state)
+            if state['state'] == 'COPYING' and state.get('copied_bytes', 0):
+                self.c.reading = Reading(voltage=6.4, sampled_monotonic=time.monotonic())
+        self.c.update = update
+        self.arm()
+        self.worker.once()
+        self.assertEqual(self.c.state['state'], 'CANCELLED')
+        self.assertFalse(self.c.state['safe_to_remove'])
+        self.assertEqual((self.src/'camera.xml').read_bytes(), b'<metadata>preserve</metadata>')
+        self.assertTrue((self.src/'clip.mov').is_file())
 
     def test_capacity_reports_real_bytes_and_no_format_when_short(self):
         values = capacity(self.src, self.dst)

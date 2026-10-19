@@ -16,7 +16,7 @@ import time
 from .appliance import BackupError, Mounts, display_paths, inventory, run_job, sync_filesystem
 from .controls import Controls, append_log
 from .devices import Roles
-from .sensors import BatteryGuard, I2C, INA226, Reading, cpu_temperature, ram_usage, estimate, validate_addresses
+from .sensors import BatteryGuard, I2C, INA226, INA231, Reading, cpu_temperature, ram_usage, estimate, validate_addresses
 from .settings import SettingsStore
 
 
@@ -71,7 +71,8 @@ class Worker:
                     if set(fresh) != set(ids):
                         raise BackupError('장치 연결이 변경되었습니다. 다시 연결하세요.')
                     result = self.job(fresh[assigned['source']], fresh[assigned['target']],
-                                      self.c.update, self.stop.is_set, self.mounts, current=self.current)
+                                      self.c.update, lambda: self.stop.is_set() or self.c.battery_stop_required(),
+                                      self.mounts, current=self.current)
                 except Exception as exc:
                     result = dict(state='ERROR', error=str(exc), safe_to_remove=False)
                 finally:
@@ -114,20 +115,33 @@ class Worker:
 
 
 class Sensors:
-    def __init__(self, config, control):
+    def __init__(self, config, control, bus_factory=None):
         validate_addresses(config)
         self.config, self.c = config, control
         self.handles = []
         self.ina = None
         self.init_errors = []
-        for name, address, factory in [('ina226', 0x40, INA226)]:
+        mode = config.get('sensor_mode', 'REAL')
+        if mode == 'SIMULATION' and config.get('simulation_explicit') is not True:
+            raise ValueError('Simulation requires explicit test configuration')
+        for name, address, factory in [('ina226', 0x40, INA226), ('ina231', 0x40, INA231)]:
             item = config.get(name, {})
             if not item.get('enabled'):
                 continue
             try:
-                bus = I2C(config.get('i2c_bus', '/dev/i2c-1'), item.get('address', address))
-                self.handles.append(bus)
-                self.ina = factory(bus, item.get('shunt_ohms'), item.get('discharge_polarity', 1))
+                if mode == 'SIMULATION':
+                    if bus_factory is None:
+                        raise ValueError('Simulation requires injected virtual I2C bus')
+                    bus = bus_factory(name, item.get('address', address))
+                    if not getattr(bus, 'simulation', False):
+                        raise ValueError('Simulation bus must be explicitly virtual')
+                else:
+                    bus = I2C(config.get('i2c_bus', '/dev/i2c-1'), item.get('address', address))
+                    self.handles.append(bus)
+                self.ina = factory(bus, item.get('shunt_ohms'), item.get('discharge_polarity', 1),
+                                   model_confirmed=item.get('model_confirmed', False),
+                                   max_current_a=item.get('max_current_a'),
+                                   program_calibration=item.get('program_calibration', False))
             except (OSError, ValueError) as exc:
                 self.init_errors.append(name + ': ' + str(exc))
 
@@ -136,7 +150,7 @@ class Sensors:
         errors = list(self.init_errors)
         for name, operation in [('CPU', lambda: setattr(r, 'cpu_c', cpu_temperature())),
                                 ('RAM', lambda: setattr(r, 'ram_percent', ram_usage())),
-                                ('INA226', lambda: self._battery(r))]:
+                                ('INA', lambda: self._battery(r))]:
             try:
                 operation()
             except (OSError, ValueError) as exc:
@@ -147,9 +161,12 @@ class Sensors:
 
     def _battery(self, r):
         if self.ina:
-            r.voltage, r.current_a = self.ina.read()
-            item = self.config.get('ina226', {})
-            r.percent, r.runtime_hours = estimate(r.voltage, r.current_a, item.get('ocv_curve'), item.get('capacity_ah'))
+            measurement = self.ina.sample()
+            if measurement.source != self.config.get('sensor_mode', 'REAL'):
+                raise ValueError('sensor mode/source mismatch')
+            r.voltage, r.current_a, r.power_w = measurement.voltage, measurement.current_a, measurement.power_w
+            r.sensor_source, r.sensor_model = measurement.source, measurement.model
+            r.sampled_utc, r.sampled_monotonic = measurement.timestamp_utc, measurement.sampled_monotonic
 
     def run(self, stop):
         try:
@@ -274,7 +291,11 @@ def live(config, headless=False):
                         c.notice = '화면 연결 실패: ' + str(exc)
                     last_frame = now
                 with c.lock:
-                    status = dict(c.state, battery_guard=c.guard.status(c.reading.voltage), shutdown_pending=c.shutdown_pending)
+                    status = dict(c.state, battery_guard=c.battery_status(),
+                                  battery_voltage=c.reading.voltage, battery_current_a=c.reading.current_a,
+                                  battery_power_w=c.reading.power_w, sensor_source=c.reading.sensor_source,
+                                  sensor_model=c.reading.sensor_model, sensor_timestamp=c.reading.sampled_utc,
+                                  shutdown_pending=c.shutdown_pending)
                 encoded = json.dumps(status, ensure_ascii=True)
                 if encoded != last_status:
                     Path('/run/mebs/status.json').write_text(encoded+'\n')

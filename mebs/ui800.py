@@ -32,7 +32,7 @@ def render(control, now=None):
         text(180, 31, 'MEBS  /  AUTO BACKUP', 12, THEME["MUTED"])
         cpu = 'N/A' if c.reading.cpu_c is None else f'{c.reading.cpu_c:.0f}°C'
         ram = 'N/A' if c.reading.ram_percent is None else f'{c.reading.ram_percent:.0f}%'
-        battery = 'N/A' if c.reading.percent is None else f'~{c.reading.percent:.0f}%'
+        battery = 'N/A' if c.reading.voltage is None else f'{c.reading.voltage:.2f}V'
         text(399, 32, f'CPU {cpu}  RAM {ram}  BAT {battery}', 12)
         text(616, 28, (now or datetime.now()).strftime('%H:%M'), 18)
         text(717, 28, '설정', 17, THEME["ORANGE"])
@@ -49,8 +49,9 @@ def render(control, now=None):
             draw.rounded_rectangle((708, 8, 792, 70), 10, fill=THEME["EDGE"])
             text(722, 27, '전원', 20, THEME["ORANGE"])
             value = lambda v, unit: 'N/A' if v is None else f'{v:.2f}{unit}'
-            text(25, 82, f"CPU {cpu}    RAM {ram}    {value(c.reading.voltage, 'V')}    {value(c.reading.current_a, 'A')}    BAT {battery}", 15)
-            text(25, 106, ('STORAGE READY' if c.state.get('target_connected') else 'STORAGE WAIT') + '  /  ' + ('SD READY' if c.state.get('source_connected') else 'SD WAIT') + ('  /  예상 ~%.1fh' % c.reading.runtime_hours if c.reading.runtime_hours is not None else ''), 11, THEME["MUTED"])
+            text(25, 82, f"CPU {cpu}  RAM {ram}  BAT {battery}  {value(c.reading.current_a, 'A')}  {value(c.reading.power_w, 'W')}  {c.reading.sensor_source}", 15)
+            direction = 'CHARGING' if c.reading.current_a is not None and c.reading.current_a < -.01 else 'DISCHARGING' if c.reading.current_a is not None and c.reading.current_a > .01 else 'IDLE' if c.reading.current_a is not None else 'N/A'
+            text(25, 106, ('STORAGE READY' if c.state.get('target_connected') else 'STORAGE WAIT') + '  /  ' + ('SD READY' if c.state.get('source_connected') else 'SD WAIT') + f'  /  {c.reading.sensor_model} {direction}  /  {c.battery_status()}', 11, THEME["MUTED"])
             draw.rounded_rectangle((50, 124, 750, 150), 10, fill=THEME["EDGE"])
             end = 50 + int(c.settings.brightness * 7)
             draw.rounded_rectangle((50, 124, max(60, end), 150), 10, fill=THEME["ORANGE"])
