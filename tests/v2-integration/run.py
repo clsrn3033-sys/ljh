@@ -242,7 +242,7 @@ def test(case, images, os_image, temp, logs, screenshots):
     folder = temp/case
     folder.mkdir()
     target, source, expected, dirs, existing = fixtures(folder, empty=case=='T10',
-        large=case in {'T04','T05','T06'}, short=case=='T03', bad_target=case=='T09')
+        large=case in {'T04','T05','T06','T14'}, short=case=='T03', bad_target=case=='T09')
     source_hash = sha(source)
     (logs/f'{case}.fixture.json').write_text(json.dumps({'files':expected,'directories':dirs,'source_image_sha256':source_hash,'existing_target':existing},ensure_ascii=False,indent=2))
     guest = None
@@ -261,7 +261,44 @@ def test(case, images, os_image, temp, logs, screenshots):
             result.update(status='PASS', detail='Invalid destination rejected when first inserted, before the camera source was connected')
             return result
         guest.wait({'WAITING_SOURCE'})
-        sd = guest.attach(source, 'source', readonly=True, throttle=case in {'T04','T05','T06'})
+        sd = guest.attach(source, 'source', readonly=True, throttle=case in {'T04','T05','T06','T14'})
+        if case == 'T14':
+            deadline = time.monotonic() + 60
+            while True:
+                active = guest.status()
+                if active.get('state') == 'COPYING' and active.get('copied_bytes', 0) >= 1048576:
+                    break
+                if active.get('state') in {'ERROR', 'CANCELLED', 'SAFE_TO_REMOVE'} or time.monotonic() >= deadline:
+                    raise AssertionError('Copy did not remain active before normal shutdown: '+str(active))
+                time.sleep(.1)
+            overlay = guest.overlay
+            guest.child.sendline('poweroff')
+            guest.child.expect('Power down', timeout=90)
+            guest.child.expect(pexpect.EOF, timeout=30)
+            old_events = guest.events[:]
+            guest.close()
+            guest = Guest(images, os_image, folder, logs, case+'-reboot', overlay=overlay)
+            guest.events = old_events + guest.events
+            guest.attach(target, 'target')
+            recovered = guest.wait({'RECOVERY_REQUIRED','ERROR'}, 40)
+            if recovered['state'] == 'RECOVERY_REQUIRED':
+                guest.capture(screenshots/'T14-guest-recovery-required.png')
+            guest.inspect_target()
+            pending = guest.json("[p.name for p in __import__('pathlib').Path('/run/inspect').glob('.mebs-pending-*')]")
+            guest.shell('umount /run/inspect')
+            assert recovered['state'] == 'RECOVERY_REQUIRED' and pending and not recovered.get('safe_to_remove'), recovered
+            guest.attach(source, 'source', readonly=True)
+            retried = guest.wait({'SAFE_TO_REMOVE','ERROR'}, 180)
+            assert retried['state'] == 'SAFE_TO_REMOVE' and retried.get('safe_to_remove'), retried
+            guest.inspect_target()
+            jobs = guest.manifests()
+            assert len(jobs) == 1 and jobs[0]['files'] == expected, jobs
+            guest.shell('umount /run/inspect')
+            guest.capture(screenshots/'T14-guest-retry-safe-to-remove.png')
+            result.update(status='PASS', state=recovered, retry_state=retried, pending=pending,
+                          detail='Normal shutdown during active copy left pending job; reboot warned; reconnected source completed a new verified backup',
+                          reboot_seconds=guest.boot_seconds)
+            return result
         if case in {'T04','T05','T06'}:
             guest.wait({'COPYING'}, 90)
             if case=='T06':
@@ -357,9 +394,9 @@ def main():
     parser.add_argument('--cases',default='T01,T02,T03,T04,T05,T06,T07,T08,T09,T10,T11,T12')
     args=parser.parse_args()
     cases = [case.strip() for case in args.cases.split(',')]
-    supported = {f'T{number:02d}' for number in range(1, 14)}
+    supported = {f'T{number:02d}' for number in range(1, 15)}
     if not cases or any(case not in supported for case in cases) or len(cases) != len(set(cases)):
-        parser.error('--cases must be unique IDs from T01 through T13')
+        parser.error('--cases must be unique IDs from T01 through T14')
     images=args.images.resolve()
     stamp=time.strftime('%Y%m%d-%H%M%S')
     evidence=HERE/'runs'/stamp

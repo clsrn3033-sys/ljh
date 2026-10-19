@@ -1,0 +1,10 @@
+{
+  "partitions": 3,
+  "required_boot_files_missing": [],
+  "controls_installed_matches_source": true,
+  "raw_sha256": "05fcd3f045b961134f2748583de3dcf0b8ed923aa42c1ae48d97bdce5c48bee4",
+  "archive_sha256": "82a3121bff86702b891501b54a45041193a9e8dc6ac9a801085e95e0fb2a3138",
+  "raw_bytes": 311427072,
+  "archive_bytes": 38210547,
+  "hardware_tested": false
+}

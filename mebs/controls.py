@@ -31,11 +31,17 @@ class Controls:
 
     def update(self, state):
         with self.lock:
+            previous = self.state
             self.state = dict({k: v for k, v in self.state.items() if k in ('free_bytes', 'needed_bytes')}, **state)
             if state.get('state') in ('ERROR', 'CANCELLED', 'AMBIGUOUS', 'RECOVERY_REQUIRED'):
                 self.screen_off = False
                 self.shutdown_pending = False  # failed job never triggers queued shutdown
                 self.notice = state.get('error', '장치 연결을 확인하세요.')
+            elif (previous.get('state') in ('ERROR', 'CANCELLED', 'AMBIGUOUS', 'RECOVERY_REQUIRED')
+                  and self.notice == previous.get('error', '장치 연결을 확인하세요.')):
+                # A recovered device must not keep showing the old failure.
+                # Other notices (battery, display, settings) remain intact.
+                self.notice = ''
 
     def configure(self, **changes):
         candidate = replace(self.settings, **changes)

@@ -143,6 +143,57 @@ class PowerCycleTests(unittest.TestCase):
         self.assertIn('poweroff failed', c.notice)
         self.assertFalse(c.screen_off)
 
+    def test_reconnect_after_bad_destination_clears_stale_error_message(self):
+        c = self.control
+        mounts = FakeMounts(self.source, self.target)
+        mounts.mounted = []
+        devices = []
+        worker = Worker(c, Event(), mounts, current=lambda: list(devices), sleeper=lambda _: None)
+        worker.once()
+        invalid = disk('sda', 'ntfs')
+        sd = disk('sdb', 'exfat')
+        devices[:] = [invalid]; worker.once()
+        devices.append(sd); worker.once()
+        self.assertEqual(c.state['state'], 'ERROR')
+        self.assertIn('ext4', c.notice)
+        devices.clear(); worker.once()
+        devices[:] = [disk('sda')]; worker.once()
+        devices.append(sd); worker.once()
+        self.assertEqual(c.state['state'], 'SAFE_TO_REMOVE')
+        self.assertNotIn('ext4', c.notice)
+        self.assertEqual(len(verify(c.state['job'])['files']), 2)
+
+    def test_disconnect_after_queued_power_never_powers_off(self):
+        c = self.control
+        mounts = FakeMounts(self.source, self.target)
+        mounts.mounted = []
+        hdd, sd = disk('sda'), disk('sdb', 'exfat')
+        devices = []
+        original_update = c.update
+        def emit(state):
+            original_update(state)
+            if state['state'] == 'COPYING' and state.get('copied_bytes', 0) and len(devices) == 2:
+                c.request_shutdown(); c.confirm_shutdown()
+                devices.pop()  # virtual source disappears during the copy
+        c.update = emit
+        worker = Worker(c, Event(), mounts, current=lambda: list(devices), sleeper=lambda _: None)
+        worker.once()
+        devices.append(hdd); worker.once()
+        devices.append(sd); worker.once()
+        self.assertEqual(c.state['state'], 'ERROR')
+        self.assertFalse(c.shutdown_pending)
+        self.assertFalse(c.state.get('safe_to_remove', False))
+        self.assertFalse(c.perform_shutdown(lambda: None, lambda _: None,
+                                            lambda: self.fail('powered off after source removal')))
+        self.assertTrue((self.source / 'DCIM' / '사진.JPG').is_file())
+
+    def test_recovery_preserves_unrelated_battery_warning(self):
+        c = self.control
+        c.update({'state': 'ERROR', 'error': 'invalid destination'})
+        c.notice = '배터리 보호: UNKNOWN'
+        c.update({'state': 'READY'})
+        self.assertEqual(c.notice, '배터리 보호: UNKNOWN')
+
 
 if __name__ == '__main__':
     unittest.main()

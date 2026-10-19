@@ -1,0 +1,155 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_power_cycle.py",
+    "-q"
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.571,
+      "output": "----------------------------------------------------------------------\nRan 7 tests in 0.302s\n\nOK\n"
+    },
+    {
+      "round": 2,
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.564,
+      "output": "----------------------------------------------------------------------\nRan 7 tests in 0.304s\n\nOK\n"
+    },
+    {
+      "round": 3,
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.567,
+      "output": "----------------------------------------------------------------------\nRan 7 tests in 0.307s\n\nOK\n"
+    },
+    {
+      "round": 4,
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.575,
+      "output": "----------------------------------------------------------------------\nRan 7 tests in 0.312s\n\nOK\n"
+    },
+    {
+      "round": 5,
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.572,
+      "output": "----------------------------------------------------------------------\nRan 7 tests in 0.310s\n\nOK\n"
+    },
+    {
+      "round": 6,
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.567,
+      "output": "----------------------------------------------------------------------\nRan 7 tests in 0.306s\n\nOK\n"
+    },
+    {
+      "round": 7,
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.571,
+      "output": "----------------------------------------------------------------------\nRan 7 tests in 0.309s\n\nOK\n"
+    },
+    {
+      "round": 8,
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.567,
+      "output": "----------------------------------------------------------------------\nRan 7 tests in 0.306s\n\nOK\n"
+    },
+    {
+      "round": 9,
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.57,
+      "output": "----------------------------------------------------------------------\nRan 7 tests in 0.307s\n\nOK\n"
+    },
+    {
+      "round": 10,
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.572,
+      "output": "----------------------------------------------------------------------\nRan 7 tests in 0.308s\n\nOK\n"
+    },
+    {
+      "round": 11,
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.575,
+      "output": "----------------------------------------------------------------------\nRan 7 tests in 0.312s\n\nOK\n"
+    },
+    {
+      "round": 12,
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.571,
+      "output": "----------------------------------------------------------------------\nRan 7 tests in 0.308s\n\nOK\n"
+    },
+    {
+      "round": 13,
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.567,
+      "output": "----------------------------------------------------------------------\nRan 7 tests in 0.307s\n\nOK\n"
+    },
+    {
+      "round": 14,
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.568,
+      "output": "----------------------------------------------------------------------\nRan 7 tests in 0.307s\n\nOK\n"
+    },
+    {
+      "round": 15,
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.57,
+      "output": "----------------------------------------------------------------------\nRan 7 tests in 0.308s\n\nOK\n"
+    },
+    {
+      "round": 16,
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.571,
+      "output": "----------------------------------------------------------------------\nRan 7 tests in 0.308s\n\nOK\n"
+    },
+    {
+      "round": 17,
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.571,
+      "output": "----------------------------------------------------------------------\nRan 7 tests in 0.306s\n\nOK\n"
+    },
+    {
+      "round": 18,
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.571,
+      "output": "----------------------------------------------------------------------\nRan 7 tests in 0.310s\n\nOK\n"
+    },
+    {
+      "round": 19,
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.567,
+      "output": "----------------------------------------------------------------------\nRan 7 tests in 0.307s\n\nOK\n"
+    },
+    {
+      "round": 20,
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.568,
+      "output": "----------------------------------------------------------------------\nRan 7 tests in 0.307s\n\nOK\n"
+    }
+  ]
+}
