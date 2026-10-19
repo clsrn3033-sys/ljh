@@ -53,4 +53,17 @@ def validate_runtime(config):
         raise ValueError('Confirm panel/controller/DRM mode before enabling DSI output')
     if config.get('power_cutoff',{}).get('gpio_enabled'):
         raise ValueError('GPIO battery cutoff is outside this hardware revision')
+    preview = config.get('battery_display_simulation', {})
+    if preview.get('enabled') is True:
+        voltage, current = preview.get('voltage_v'), preview.get('current_a')
+        if (type(voltage) not in (int,float) or not math.isfinite(voltage) or not 0 < voltage <= 36
+                or type(current) not in (int,float) or not math.isfinite(current) or abs(current) > 8):
+            raise ValueError('display simulation requires finite INA-range values')
+    design = config.get('battery_design', {})
+    if design.get('empty_v') is not None:
+        positive(design['empty_v'], 'display 0% voltage')
+        positive(design.get('full_v'), 'display 100% voltage')
+        positive(design.get('capacity_ah_nominal'), 'nominal capacity')
+        if not design['empty_v'] < design['full_v']:
+            raise ValueError('display voltage endpoints must increase')
     return config

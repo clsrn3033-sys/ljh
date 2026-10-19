@@ -19,6 +19,7 @@ class Controls:
         self.settings = store.load()
         self.state = {'state': 'READY', 'error': store.error}
         self.reading = Reading()
+        self.display_battery = None  # optional, visibly simulated UI value only
         self.guard = guard or BatteryGuard()
         self.panel = self.locked = self.screen_off = self.confirm_power = False
         self.shutdown_pending = self.shutting_down = False
@@ -62,6 +63,8 @@ class Controls:
         with self.lock:
             if self.guard.block is None:
                 return 'UNCONFIGURED'
+            if self.reading.sensor_source != 'REAL':
+                return 'UNKNOWN'
             stamp = self.reading.sampled_monotonic
             if stamp is None or self.clock() - stamp > 2.5 or stamp > self.clock() + 1:
                 return 'UNKNOWN'

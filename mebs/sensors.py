@@ -24,6 +24,7 @@ class Reading:
     sampled_utc: str | None = None
     sampled_monotonic: float | None = None
     percent: float | None = None
+    percent_kind: str = 'N/A'
     runtime_hours: float | None = None
     error: str = ''
 
@@ -73,6 +74,16 @@ def estimate(voltage, current, curve, capacity_ah):
     return pct, (capacity_ah * pct / 100 / current if current is not None and current > .01 else None)
 
 
+def voltage_percent(voltage, empty_v=6.3, full_v=8.4):
+    """Display-only linear voltage estimate, never a calibrated battery SOC."""
+    if voltage is None:
+        return None
+    if (not all(type(v) in (float,int) and math.isfinite(v) for v in (voltage,empty_v,full_v))
+            or not 0 < empty_v < full_v):
+        raise ValueError('invalid voltage percentage endpoints')
+    return max(0., min(100., 100*(voltage-empty_v)/(full_v-empty_v)))
+
+
 class BatteryGuard:
     def __init__(self, warn=None, block=None):
         if (warn is not None and block is None) or (block is not None and
@@ -91,11 +102,36 @@ class BatteryGuard:
         return self.status(voltage) in ('OK', 'WARN', 'UNCONFIGURED')
 
 
-def cpu_temperature(path='/sys/class/thermal/thermal_zone0/temp'):
-    value = float(Path(path).read_text()) / 1000
-    if not math.isfinite(value) or not -20 <= value <= 125:
-        raise ValueError('invalid CPU temperature')
-    return value
+def cpu_temperature(path=None, hwmon_root='/sys/class/hwmon',
+                    thermal_path='/sys/class/thermal/thermal_zone0/temp'):
+    """Read Pi CPU thermal zone, then known CPU hwmon drivers on Linux hosts.
+
+    A caller-supplied path is read exactly; discovery never mistakes GPU edge
+    temperature for CPU temperature.
+    """
+    def read(candidate):
+        value = float(Path(candidate).read_text()) / 1000
+        if not math.isfinite(value) or not -20 <= value <= 125:
+            raise ValueError('invalid CPU temperature')
+        return value
+
+    if path is not None:
+        return read(path)
+    primary = Path(thermal_path)
+    if primary.is_file():
+        return read(primary)
+    for device in sorted(Path(hwmon_root).glob('hwmon*')):
+        try:
+            name = (device/'name').read_text().strip().lower()
+            if name not in ('k10temp', 'coretemp', 'cpu_thermal', 'soc_thermal'):
+                continue
+            for suffix in ('temp1_input', 'temp2_input'):
+                candidate = device/suffix
+                if candidate.is_file():
+                    return read(candidate)
+        except (OSError, ValueError):
+            continue
+    raise OSError('CPU temperature sensor unavailable')
 
 
 def ram_usage(path='/proc/meminfo'):

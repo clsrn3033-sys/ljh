@@ -1,0 +1,2 @@
+CPU hwmon /sys/class/hwmon/hwmon1 k10temp raw_millidegrees 50250
+MEBS_cpu_temperature_C 50.25

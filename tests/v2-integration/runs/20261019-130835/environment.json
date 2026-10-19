@@ -1,0 +1,9 @@
+{
+  "image": "/var/home/bazzite/ljh/output/pi4-v2-telemetry-v4-20261019/images/sdcard.img",
+  "sha256": "678d2b4753099f0c95e87375f7ce04305fd4beae220cf49504112b28ab9cef02",
+  "original_unchanged": true,
+  "qemu": "QEMU emulator version 10.1.5 (qemu-10.1.5-1.fc43)",
+  "adaptation": "test copy fstab mmcblk0p3 -> vda3 only",
+  "machine": "virt / cortex-a72 / 1024MiB / 2 vCPU",
+  "hardware_tested": false
+}

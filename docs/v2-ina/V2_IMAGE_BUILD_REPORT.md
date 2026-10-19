@@ -1,4 +1,6 @@
-# V2 Raspberry Pi 4B 이미지 빌드 결과
+# V2 Raspberry Pi 4B 초기 INA 이미지 빌드 결과
+
+이 보고서의 IMG는 INA 초기 이미지입니다. 최신 CPU/배터리 표시 이미지 경로와 SHA-256은 `V2_TELEMETRY_UPDATE.md`에 있습니다.
 
 - 상태: **PASS** (파일 생성·정적 검사), 실제 Pi 4B 부팅은 **HARDWARE NOT TESTED**.
 - Raspberry Pi IMG: `/var/home/bazzite/ljh/output/pi4-v2-ina-v1-20261019/images/sdcard.img`; 311427072 bytes; SHA-256 `5be3d88e1106d4631cb3af74fbd7a4e30d9b69fe0cb62605c579ab0d5cf76081`.

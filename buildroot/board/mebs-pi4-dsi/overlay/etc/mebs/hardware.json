@@ -43,13 +43,20 @@
   "i2c_logic_3v3_confirmed": false,
   "battery_pack_vbus_confirmed": false,
   "battery_bms_confirmed": false,
+  "battery_display_simulation": {
+    "enabled": true,
+    "voltage_v": 7.4,
+    "current_a": 0.5,
+    "note": "DISPLAY ONLY; SIMULATION; never used for backup safety or actual battery status"
+  },
   "battery_design": {
     "cells_series": 2,
     "capacity_ah_nominal": 3.0,
     "nominal_v": 7.4,
+    "empty_v": 6.3,
     "full_v": 8.4,
     "software_block_v": 6.4,
-    "note": "Design information only; protection activates after hardware confirmation"
+    "note": "3000mAh nominal; displayed percent is a linear 6.3-8.4V estimate, not measured SOC; protection activates after hardware confirmation"
   },
   "display": {
     "width": 800,

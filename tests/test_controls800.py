@@ -160,6 +160,7 @@ class ControlsTests(unittest.TestCase):
         self.c.reading.voltage = 6.7
         self.assertFalse(self.c.begin_job())
         self.c.reading.voltage = 7.5
+        self.c.reading.sensor_source = 'REAL'
         self.c.reading.sampled_monotonic = self.now
         self.assertTrue(self.c.begin_job())
         self.c.reading.voltage = 6.7
@@ -321,12 +322,12 @@ class WorkerIntegrationTests(unittest.TestCase):
 
     def test_low_voltage_mid_copy_cancels_and_preserves_source(self):
         self.c.guard = BatteryGuard(block=6.4)
-        self.c.reading = Reading(voltage=7.4, sampled_monotonic=time.monotonic())
+        self.c.reading = Reading(voltage=7.4, sensor_source='REAL', sampled_monotonic=time.monotonic())
         original = self.c.update
         def update(state):
             original(state)
             if state['state'] == 'COPYING' and state.get('copied_bytes', 0):
-                self.c.reading = Reading(voltage=6.4, sampled_monotonic=time.monotonic())
+                self.c.reading = Reading(voltage=6.4, sensor_source='REAL', sampled_monotonic=time.monotonic())
         self.c.update = update
         self.arm()
         self.worker.once()

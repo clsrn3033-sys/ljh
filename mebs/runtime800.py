@@ -16,7 +16,7 @@ import time
 from .appliance import BackupError, Mounts, display_paths, inventory, run_job, sync_filesystem
 from .controls import Controls, append_log
 from .devices import Roles
-from .sensors import BatteryGuard, I2C, INA226, INA231, Reading, cpu_temperature, ram_usage, estimate, validate_addresses
+from .sensors import BatteryGuard, I2C, INA226, INA231, Reading, VirtualINARegisters, cpu_temperature, ram_usage, estimate, validate_addresses, voltage_percent
 from .settings import SettingsStore
 
 
@@ -120,6 +120,7 @@ class Sensors:
         self.config, self.c = config, control
         self.handles = []
         self.ina = None
+        self.display_ina = None
         self.init_errors = []
         mode = config.get('sensor_mode', 'REAL')
         if mode == 'SIMULATION' and config.get('simulation_explicit') is not True:
@@ -144,6 +145,11 @@ class Sensors:
                                    program_calibration=item.get('program_calibration', False))
             except (OSError, ValueError) as exc:
                 self.init_errors.append(name + ': ' + str(exc))
+        preview = config.get('battery_display_simulation', {})
+        if preview.get('enabled') is True:
+            # A separate register bus supplies UI-only values. Never assign it
+            # to self.ina or c.reading, which the battery guard consumes.
+            self.display_ina = INA226(VirtualINARegisters('INA226', .01), .01)
 
     def read(self):
         r = Reading()
@@ -156,8 +162,20 @@ class Sensors:
             except (OSError, ValueError) as exc:
                 errors.append(name + ': ' + str(exc))
         r.error = '; '.join(errors) or ('배터리 센서 미설정' if not self.ina else '')
+        demo = None
+        if r.sensor_source == 'N/A' and self.display_ina:
+            preview = self.config['battery_display_simulation']
+            self.display_ina.bus.inject(preview['voltage_v'], preview['current_a'])
+            m = self.display_ina.sample()
+            design = self.config.get('battery_design', {})
+            demo = Reading(voltage=m.voltage, current_a=m.current_a, power_w=m.power_w,
+                           sensor_source='SIMULATION', sensor_model='VIRTUAL INA226',
+                           sampled_utc=m.timestamp_utc, sampled_monotonic=m.sampled_monotonic,
+                           percent=voltage_percent(m.voltage, design.get('empty_v',6.3), design.get('full_v',8.4)),
+                           percent_kind='VOLTAGE_ESTIMATE')
         with self.c.lock:
             self.c.reading = r
+            self.c.display_battery = demo
 
     def _battery(self, r):
         if self.ina:
@@ -167,6 +185,9 @@ class Sensors:
             r.voltage, r.current_a, r.power_w = measurement.voltage, measurement.current_a, measurement.power_w
             r.sensor_source, r.sensor_model = measurement.source, measurement.model
             r.sampled_utc, r.sampled_monotonic = measurement.timestamp_utc, measurement.sampled_monotonic
+            design = self.config.get('battery_design', {})
+            r.percent = voltage_percent(r.voltage, design.get('empty_v',6.3), design.get('full_v',8.4))
+            r.percent_kind = 'VOLTAGE_ESTIMATE'
 
     def run(self, stop):
         try:
@@ -295,6 +316,8 @@ def live(config, headless=False):
                                   battery_voltage=c.reading.voltage, battery_current_a=c.reading.current_a,
                                   battery_power_w=c.reading.power_w, sensor_source=c.reading.sensor_source,
                                   sensor_model=c.reading.sensor_model, sensor_timestamp=c.reading.sampled_utc,
+                                  display_battery_source=c.display_battery.sensor_source if c.display_battery else 'N/A',
+                                  display_battery_voltage=c.display_battery.voltage if c.display_battery else None,
                                   shutdown_pending=c.shutdown_pending)
                 encoded = json.dumps(status, ensure_ascii=True)
                 if encoded != last_status:
@@ -327,7 +350,8 @@ def main():
         args.mock_preview.mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory() as tmp:
             c = Controls(SettingsStore(Path(tmp)/'settings.json'))
-            c.reading = Reading(cpu_c=46, voltage=7.6, current_a=.8, percent=65)
+            Sensors({'sensor_mode':'REAL','battery_display_simulation':{'enabled':True,
+                     'voltage_v':7.4,'current_a':.5}},c).read()
             c.update(dict(state='COPYING', demo=True, source_connected=True, target_connected=True, total_bytes=1000000000, copied_bytes=640000000, total_files=45, verified_files=23))
             render(c).save(args.mock_preview/'main.png')
             c.panel = True

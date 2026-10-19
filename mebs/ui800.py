@@ -32,8 +32,14 @@ def render(control, now=None):
         text(180, 31, 'MEBS  /  AUTO BACKUP', 12, THEME["MUTED"])
         cpu = 'N/A' if c.reading.cpu_c is None else f'{c.reading.cpu_c:.0f}°C'
         ram = 'N/A' if c.reading.ram_percent is None else f'{c.reading.ram_percent:.0f}%'
-        battery = 'N/A' if c.reading.voltage is None else f'{c.reading.voltage:.2f}V'
+        battery_reading = c.display_battery if c.reading.sensor_source == 'N/A' and c.display_battery else c.reading
+        battery = 'N/A' if battery_reading.voltage is None else f'{battery_reading.voltage:.2f}V'
+        percent = 'N/A' if battery_reading.percent is None else f'~{battery_reading.percent:.0f}%'
         text(399, 32, f'CPU {cpu}  RAM {ram}  BAT {battery}', 12)
+        if battery_reading.sensor_source == 'SIMULATION':
+            text(399, 59, f'BAT {percent} · SIMULATION · 실측 없음', 11, THEME['ORANGE'])
+        elif battery_reading.percent_kind == 'VOLTAGE_ESTIMATE':
+            text(399, 59, f'BAT {percent} · 전압 기준 추정', 11, THEME['ORANGE'])
         text(616, 28, (now or datetime.now()).strftime('%H:%M'), 18)
         text(717, 28, '설정', 17, THEME["ORANGE"])
         draw.line((25, 78, 775, 78), fill=THEME["EDGE"])
@@ -49,13 +55,15 @@ def render(control, now=None):
             draw.rounded_rectangle((708, 8, 792, 70), 10, fill=THEME["EDGE"])
             text(722, 27, '전원', 20, THEME["ORANGE"])
             value = lambda v, unit: 'N/A' if v is None else f'{v:.2f}{unit}'
-            text(25, 82, f"CPU {cpu}  RAM {ram}  BAT {battery}  {value(c.reading.current_a, 'A')}  {value(c.reading.power_w, 'W')}  {c.reading.sensor_source}", 15)
-            direction = 'CHARGING' if c.reading.current_a is not None and c.reading.current_a < -.01 else 'DISCHARGING' if c.reading.current_a is not None and c.reading.current_a > .01 else 'IDLE' if c.reading.current_a is not None else 'N/A'
-            text(25, 106, ('STORAGE READY' if c.state.get('target_connected') else 'STORAGE WAIT') + '  /  ' + ('SD READY' if c.state.get('source_connected') else 'SD WAIT') + f'  /  {c.reading.sensor_model} {direction}  /  {c.battery_status()}', 11, THEME["MUTED"])
+            text(25, 82, f"CPU {cpu}  RAM {ram}  BAT {battery} {percent}  {value(battery_reading.current_a, 'A')}  {value(battery_reading.power_w, 'W')}  {battery_reading.sensor_source}", 15)
+            direction = 'CHARGING' if battery_reading.current_a is not None and battery_reading.current_a < -.01 else 'DISCHARGING' if battery_reading.current_a is not None and battery_reading.current_a > .01 else 'IDLE' if battery_reading.current_a is not None else 'N/A'
+            text(25, 106, ('STORAGE READY' if c.state.get('target_connected') else 'STORAGE WAIT') + '  /  ' + ('SD READY' if c.state.get('source_connected') else 'SD WAIT') + f'  /  {battery_reading.sensor_model} {direction}  /  {c.battery_status()}', 11, THEME["MUTED"])
             draw.rounded_rectangle((50, 124, 750, 150), 10, fill=THEME["EDGE"])
             end = 50 + int(c.settings.brightness * 7)
             draw.rounded_rectangle((50, 124, max(60, end), 150), 10, fill=THEME["ORANGE"])
-            text(55, 157, f'밝기 {c.effective_brightness}%  ·  미연결 센서: N/A', 12, THEME["MUTED"])
+            caption = ('3000mAh 정격 · 6.3V=0% / 8.4V=100% · 전압기준 추정' if battery_reading.percent is not None
+                       else '미연결 센서: N/A')
+            text(55, 157, f'밝기 {c.effective_brightness}%  ·  {caption}', 12, THEME["MUTED"])
             labels = [('야간 ' + ('ON' if c.settings.night_mode else 'OFF'), '터치 잠금', '수동 밝기'),
                       ('화면 끄기', '안전 제거', f'화면 대기 {c.settings.screen_timeout}s')]
             for row, items in enumerate(labels):

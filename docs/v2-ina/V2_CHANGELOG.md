@@ -8,3 +8,5 @@
 - `tests/test_v2_ina_gpio.py`, `tests/test_controls800.py`: 레지스터·핀맵·배터리 보호·실제 임시 파일 복사 회귀.
 - `tests/v2-integration/build_fixed_image.py`, `tests/v2-ina/*`: 새 Pi 이미지에 파일 통합, 증거 기반 자동 보고.
 - 기존 V1 디렉터리, 기존 빌드 이미지, UI 로고 파일은 수정하지 않았습니다. RTC/GPS 기능도 추가하지 않았습니다.
+
+2026-10-19 표시 보완: `mebs/sensors.py`에서 Pi thermal zone 및 CPU hwmon fallback과 6.3~8.4V 전압 추정 퍼센트를 추가했습니다. `mebs/runtime800.py`, `mebs/ui800.py`, `mebs/controls.py`에서 배터리 신호 부재 시 표시 전용 가상값과 `SIMULATION` 표기를 추가했고, 가상값이 백업 보호 판정에 들어가지 않도록 분리했습니다. 자세한 결과는 `V2_TELEMETRY_UPDATE.md`에 있습니다.

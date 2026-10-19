@@ -27,7 +27,9 @@ def main():
     if output.exists():
         raise SystemExit('Output already exists; choose a new directory')
     original=sha(source/'sdcard.img')
-    shutil.copytree(source,output,symlinks=True)
+    # A base image may carry a compressed archive of an older sdcard.img.
+    # Never copy that stale archive beside the newly assembled raw image.
+    shutil.copytree(source,output,symlinks=True,ignore=shutil.ignore_patterns('sdcard.img.zst'))
     table=json.loads(subprocess.check_output(['sfdisk','--json',str(output/'sdcard.img')]))['partitiontable']
     root=table['partitions'][1]
     offset,length=root['start']*table['sectorsize'],root['size']*table['sectorsize']

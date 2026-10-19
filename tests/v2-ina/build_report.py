@@ -52,14 +52,16 @@ fsck=(LOG/'rootfs-fsck.log').read_text() if (LOG/'rootfs-fsck.log').is_file() el
 image_check=image_sha is not None and all('BOOT ::'+name+' FOUND' in inspect for name in ['config.txt','cmdline.txt','start4.elf','fixup4.dat','Image','bcm2711-rpi-4-b.dtb']) and 'I2C_CONFIG True' in inspect and 'I2C_KERNEL True' in inspect and 'Pass 5: Checking group summary information' in fsck
 
 write('V2_INA_DRIVER_REPORT.md',f'''
-# V2 INA226/INA231 드라이버 결과
+# V2 INA226/INA231 드라이버 결과 (초기 이미지 기록)
+
+최신 CPU/배터리 화면 및 6.3~8.4V 전압 추정 퍼센트는 `V2_TELEMETRY_UPDATE.md`를 참조하십시오.
 
 - 출발 브랜치: `feature/mebs-v2-pi4b-800x480-20261018`, 출발 커밋 `4fc04cb`.
 - 구현: `mebs/ina.py`, `mebs/sensors.py`, `mebs/runtime800.py`, `mebs/hardware_profile.py`.
 - 모델 식별: INA226은 0xFE/0xFF의 TI/2260 계열 값을 검사합니다. INA231은 데이터시트에 고유 ID 레지스터가 없어 모듈 모델을 독립적으로 확인하고 `model_confirmed`를 설정해야 합니다. I²C ACK만으로 모델을 확정하지 않습니다.
 - 레지스터: shunt 01h(부호 있는 2.5µV/LSB), bus 02h(1.25mV/LSB), calibration 05h(명시적으로 활성화할 때만 기록). 전류는 확인된 션트값을 통한 shunt 전압/저항으로 계산하며 전력은 V×A로 계산합니다. 실물 션트, 극성, 3.3V 풀업 검증 전에는 활성화하지 않습니다.
 - 데이터: 전압·전류·전력, UTC와 monotonic 타임스탬프, 모델, `REAL`/`SIMULATION` 출처. 끊김/짧은 읽기/범위 초과/오래된 가상값은 N/A 또는 오류로 처리합니다.
-- 기본 이미지: REAL 모드, 센서 비활성, N/A. SOC 잔량은 검증된 방전곡선이 없으므로 표시하지 않습니다.
+- 이 초기 이미지의 기본값은 REAL 모드, 센서 비활성, N/A였습니다. 최신 화면은 실측 SOC가 아닌 전압 기준 `~%`를 표시합니다.
 - 테스트: 집중 센서/GPIO 단위 테스트 **{'PASS' if focused_pass else 'NOT TESTED/FAIL'}** ({focused_count.group(1) if focused_count else 0}개); 전체 호스트 회귀 **{'PASS' if host_pass else 'NOT TESTED/FAIL'}** ({host_count.group(1) if host_count else 0}개). 로그 `tests/v2-ina/logs/ina-gpio-tests.log`, `host-tests.log`.
 - 실제 INA226/INA231 측정: **HARDWARE NOT TESTED**. 실제 배터리/충전 회로 연결 및 전압 계측 전 사용 불가.
 
@@ -88,12 +90,14 @@ write('V2_BATTERY_TEST_REPORT.md',f'''
 - 기본 이미지에서는 센서/팩 배선, BMS, 션트가 미확인이라 보호 임계값이 꺼져 있습니다. 6.4V는 설계 후보로만 기록합니다. 실기기에서 계측 경로를 확인하고 임계값을 활성화해야 합니다.
 - `battery_real.csv`는 헤더만 있으며 실측 기록은 없습니다. **HARDWARE NOT TESTED**.
 - UI 시뮬레이션 화면: `docs/v2-ina/battery-simulation-preview.png`에 SIMULATION 표기와 전압/전류/전력, 측정 상태를 표시했습니다. 실제 센서 화면이 아닙니다.
-- SOC 퍼센트는 표시하지 않습니다. 실제 배터리 방전/충전/저전압 시험은 하지 않았습니다.
+- 실제 SOC는 검증하지 않았습니다. 최신 화면의 `~%`는 전압 직선 환산 추정치입니다. 실제 배터리 방전/충전/저전압 시험은 하지 않았습니다.
 ''')
 
 parts='\n'.join(f"|{i+1}|{p['type']}|{p['start']}|{p['size']}|" for i,p in enumerate(table['partitions'])) if table else ''
 write('V2_IMAGE_BUILD_REPORT.md',f'''
-# V2 Raspberry Pi 4B 이미지 빌드 결과
+# V2 Raspberry Pi 4B 초기 INA 이미지 빌드 결과
+
+이 보고서의 IMG는 INA 초기 이미지입니다. 최신 CPU/배터리 표시 이미지 경로와 SHA-256은 `V2_TELEMETRY_UPDATE.md`에 있습니다.
 
 - 상태: **{'PASS' if image_check else 'BLOCKED/FAIL'}** (파일 생성·정적 검사), 실제 Pi 4B 부팅은 **HARDWARE NOT TESTED**.
 - Raspberry Pi IMG: `{IMG}`; {IMG.stat().st_size if image_sha else 'N/A'} bytes; SHA-256 `{image_sha or 'N/A'}`.
@@ -157,7 +161,9 @@ qemu_names={'T01':'정상 복사·SHA-256','T02':'동일 파일 재백업','T03'
             'T10':'빈 원본 SD','T11':'한글·특수문자 파일명','T12':'수동 포맷'}
 qemu_table='\n'.join(f'|{id}|{name}|{qemu_status.get(id,"NOT TESTED")}|' for id,name in qemu_names.items())
 write('V2_TEST_SUMMARY.md',f'''
-# V2 INA/GPIO 테스트 요약
+# V2 INA/GPIO 초기 이미지 테스트 요약
+
+이 표는 초기 INA 이미지 결과입니다. 최신 화면과 새 이미지 테스트는 `V2_TELEMETRY_UPDATE.md`에 기록했습니다.
 
 |ID|항목|결과|\n|---:|---|---|
 {rows}
